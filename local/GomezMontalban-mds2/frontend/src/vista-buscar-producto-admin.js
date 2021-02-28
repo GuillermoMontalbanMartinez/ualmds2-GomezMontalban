@@ -1,14 +1,14 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 
 /**
- * `vista-compra-enviada`
+ * `vista-buscar-producto-admin`
  *
- * VistaCompraEnviada element.
+ * VistaBuscarProductoAdmin element.
  *
  * @customElement
  * @polymer
  */
-class VistaCompraEnviada extends PolymerElement {
+class VistaBuscarProductoAdmin extends PolymerElement {
 
     static get template() {
         return html`
@@ -20,10 +20,9 @@ class VistaCompraEnviada extends PolymerElement {
             </style>
         `;
     }
-    
 
     static get is() {
-        return 'vista-compra-enviada';
+        return 'vista-buscar-producto-admin';
     }
 
     static get properties() {
@@ -33,4 +32,4 @@ class VistaCompraEnviada extends PolymerElement {
     }
 }
 
-customElements.define(VistaCompraEnviada.is, VistaCompraEnviada);
+customElements.define(VistaBuscarProductoAdmin.is, VistaBuscarProductoAdmin);
