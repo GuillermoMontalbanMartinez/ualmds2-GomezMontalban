@@ -14,19 +14,19 @@ class VistaVerFicha extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; background-color: lighblue;
+<vaadin-vertical-layout style="width: 100%; height: 100%; background-color: #ECF5F9;
   " id="vaadinVerticalLayout">
- <h1 style="align-self: center; color: #000000;">Ficha cliente</h1>
+ <h1 style="align-self: center; color: #000000;background-color: #BBDFEF; border:0;">Ficha cliente</h1>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; align-self: center; flex-shrink: 0; align-items: center; margin: var(--lumo-space-m); justify-content: center;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center; margin: var(--lumo-space-xs); justify-content: center; align-items: center; flex-shrink: 0; flex-grow: 0; padding: var(--lumo-space-xs);">
-   <label style="align-self: center; flex-grow: 1; margin-left: var(--lumo-space-m); margin-right: var(--lumo-space-m); padding-right: var(--lumo-space-m); padding-left: var(--lumo-space-m); padding-bottom: var(--lumo-space-m); padding-top: var(--lumo-space-m); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); flex-shrink: 0;">ID CLIENTE : </label>
+   <label style="align-self: center; flex-grow: 1; margin-left: var(--lumo-space-m); margin-right: var(--lumo-space-m); padding-right: var(--lumo-space-m); padding-left: var(--lumo-space-m); padding-bottom: var(--lumo-space-m); padding-top: var(--lumo-space-m); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); flex-shrink: 0; font-weight: bold;">ID CLIENTE : </label>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;">
     <vaadin-text-field style="margin-right: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); background-color: #D7E9F1; margin-top: var(--lumo-space-m); flex-shrink: 0; align-self: center; flex-grow: 1;"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-xs); flex-shrink: 0; padding: var(--lumo-space-xs);">
    <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
-    <label style="align-self: center; padding-right: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding-left: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); margin-top: var(--lumo-space-m); padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-m); flex-shrink: 0; flex-grow: 1;">NOMBRE : </label>
+    <label style="align-self: center; padding-right: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding-left: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); margin-top: var(--lumo-space-m); padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-m); flex-shrink: 0; flex-grow: 1;font-weight: bold;">NOMBRE : </label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="align-self: center; padding-right: var(--lumo-space-xl); flex-shrink: 0; align-items: center; justify-content: center;">
     <vaadin-text-field style="align-self: center; margin-right: var(--lumo-space-l); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); margin-top: var(--lumo-space-m); background-color: #D7E9F1; flex-shrink: 0; flex-grow: 1;"></vaadin-text-field>
@@ -34,7 +34,7 @@ class VistaVerFicha extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; margin: var(--lumo-space-xs); padding: var(--lumo-space-xs);">
    <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center; justify-content: center; align-self: center;">
-    <label style="padding: var(--lumo-space-m); margin-top: var(--lumo-space-m); flex-shrink: 0; align-self: center; padding-left: var(--lumo-space-xs); flex-grow: 1; margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m);">APELLIDOS :</label>
+    <label style="padding: var(--lumo-space-m); margin-top: var(--lumo-space-m); flex-shrink: 0; align-self: center; padding-left: var(--lumo-space-xs); flex-grow: 1; margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m);font-weight: bold;">APELLIDOS :</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-items: center; justify-content: center; align-self: center;">
     <vaadin-select-text-field style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); align-self: center; flex-shrink: 0; background-color: #D7E9F1; flex-grow: 1;"></vaadin-select-text-field>
@@ -42,7 +42,7 @@ class VistaVerFicha extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; margin: var(--lumo-space-xs); padding: var(--lumo-space-xs);">
    <vaadin-horizontal-layout theme="spacing">
-    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding: var(--lumo-space-m); padding-left: var(--lumo-space-xs); flex-shrink: 0; align-self: center; flex-grow: 1;">DIRECCION : </label>
+    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding: var(--lumo-space-m); padding-left: var(--lumo-space-xs); flex-shrink: 0; align-self: center; flex-grow: 1;font-weight: bold;">DIRECCION : </label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-text-field style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); align-self: center; flex-shrink: 0; background-color: #D7E9F1;"></vaadin-text-field>
@@ -50,7 +50,7 @@ class VistaVerFicha extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; margin: var(--lumo-space-xs); padding: var(--lumo-space-xs);">
    <vaadin-horizontal-layout theme="spacing">
-    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; align-self: center; padding: var(--lumo-space-m); padding-left: var(--lumo-space-xs); flex-grow: 1;">LOCALIDAD : </label>
+    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; align-self: center; padding: var(--lumo-space-m); padding-left: var(--lumo-space-xs); flex-grow: 1;font-weight: bold;">LOCALIDAD : </label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-text-field style="margin-right: var(--lumo-space-xl); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; align-self: center; background-color: #D7E9F1;"></vaadin-text-field>
@@ -58,7 +58,7 @@ class VistaVerFicha extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; margin: var(--lumo-space-xs); padding: var(--lumo-space-xs);">
    <vaadin-horizontal-layout theme="spacing">
-    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; align-self: center; padding: var(--lumo-space-m); flex-grow: 1;">CALLE :</label>
+    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; align-self: center; padding: var(--lumo-space-m); flex-grow: 1;font-weight: bold;">CALLE :</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-text-field style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); align-self: center; flex-shrink: 0; background-color: #D7E9F1; flex-grow: 1;"></vaadin-text-field>
@@ -66,7 +66,7 @@ class VistaVerFicha extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; margin: var(--lumo-space-xs); padding: var(--lumo-space-xs);">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; flex-grow: 1; align-items: center; justify-content: center;">
-    <label style="margin-right: var(--lumo-space-m); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding: var(--lumo-space-m); flex-shrink: 0; align-self: center;">PORTAL : </label>
+    <label style="margin-right: var(--lumo-space-m); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">PORTAL : </label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-text-field style="flex-shrink: 0; flex-grow: 1; align-self: center; margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); background-color: #D7E9F1;"></vaadin-text-field>
@@ -74,7 +74,7 @@ class VistaVerFicha extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing">
-    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; flex-grow: 1; align-self: center;">PROVINCIA :</label>
+    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-l); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; flex-grow: 1; align-self: center; font-weight: bold;">PROVINCIA :</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-xs); padding: var(--lumo-space-xs);">
     <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; flex-grow: 1; align-self: center; background-color: #D7E9F1; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xs);"></vaadin-text-field>
@@ -82,10 +82,10 @@ class VistaVerFicha extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xs" style="align-items: center; justify-content: center; margin-right: var(--lumo-space-xs); margin-bottom: var(--lumo-space-xs); margin-left: var(--lumo-space-xs); margin-top: var(--lumo-space-xs); padding: var(--lumo-space-xs); margin: var(--lumo-space-xs);">
    <vaadin-horizontal-layout theme="spacing">
-    <label style="margin-right: var(--lumo-space-m); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);">CODIGO POSTAL :</label>
+    <label style="margin-right: var(--lumo-space-xl); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs); font-weight: bold;">CODIGO POSTAL :</label>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing">
-    <vaadin-text-field style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); background-color: #D7E9F1; margin: var(--lumo-space-m);"></vaadin-text-field>
+   <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0;">
+    <vaadin-text-field style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); background-color: #D7E9F1; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

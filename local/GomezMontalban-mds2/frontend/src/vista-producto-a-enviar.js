@@ -1,24 +1,18 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import './vista-ver-ficha.js';
 
-/**
- * `vista-producto-a-enviar`
- *
- * VistaProductoAEnviar element.
- *
- * @customElement
- * @polymer
- */
 class VistaProductoAEnviar extends PolymerElement {
 
     static get template() {
         return html`
-            <style include="shared-styles">
+<style include="shared-styles">
                 :host {
                     display: block;
                     height: 100%;
                 }
             </style>
-        `;
+<vista-ver-ficha id="vistaVerFicha"></vista-ver-ficha>
+`;
     }
 
     static get is() {
