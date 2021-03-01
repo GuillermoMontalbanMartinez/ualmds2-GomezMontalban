@@ -1,5 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import './vista-ver-ficha.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaProductoAEnviar extends PolymerElement {
 
@@ -11,7 +13,23 @@ class VistaProductoAEnviar extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vista-ver-ficha id="vistaVerFicha"></vista-ver-ficha>
+<vaadin-vertical-layout style="align-items: center; justify-content: center; 
+
+">
+ <h4 style="align-self: center; flex-shrink: 0;">NUMERO DE PEDIDO</h4>
+ <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+  <vaadin-horizontal-layout theme="spacing">
+   <vaadin-button style="align-self: center;">
+    Ficha cliente
+   </vaadin-button>
+  </vaadin-horizontal-layout>
+  <vaadin-horizontal-layout theme="spacing">
+   <vaadin-button style="align-self: center;">
+    Entregado
+   </vaadin-button>
+  </vaadin-horizontal-layout>
+ </vaadin-horizontal-layout>
+</vaadin-vertical-layout>
 `;
     }
 
