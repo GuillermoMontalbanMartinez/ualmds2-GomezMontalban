@@ -13,8 +13,8 @@ class VistaCompraEnviada extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;">
- <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-top: var(--lumo-space-m);">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; border: #ccc solid 2px; border-radius : 20px; ">
+ <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-top: var(--lumo-space-m); align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin-right: var(--lumo-space-m); padding-right: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding-left: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing">
    <label style="align-self: center;">Número del pedido</label>
   </vaadin-horizontal-layout>
@@ -22,7 +22,7 @@ class VistaCompraEnviada extends PolymerElement {
    <vaadin-text-field></vaadin-text-field>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing">
     <label style="align-self: center;">Nombre del cliente</label>
@@ -32,7 +32,7 @@ class VistaCompraEnviada extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing" style="margin-left: var(--lumo-space-xs); margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing">
     <label style="align-self: center;">Dirección</label>
@@ -42,7 +42,7 @@ class VistaCompraEnviada extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing">
     <label style="align-self: center;">Localidad</label>
@@ -52,7 +52,7 @@ class VistaCompraEnviada extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing">
     <label style="align-self: center;">Calle</label>
@@ -62,7 +62,7 @@ class VistaCompraEnviada extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing">
     <label style="align-self: center;">Portal</label>
@@ -72,7 +72,7 @@ class VistaCompraEnviada extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing">
     <label style="align-self: center;">Provincia</label>
@@ -82,7 +82,7 @@ class VistaCompraEnviada extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" style="margin-bottom: var(--lumo-space-l); margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <label style="align-self: center;">Código postal</label>

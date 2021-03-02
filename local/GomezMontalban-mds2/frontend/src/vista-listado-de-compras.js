@@ -1,6 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import './vista-compra.js';
 
 class VistaListadoDeCompras extends PolymerElement {
 
@@ -12,8 +13,23 @@ class VistaListadoDeCompras extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-text-field style="align-self: center; flex-shrink: 0; width: 100%; height: 100%;"></vaadin-text-field>
+<vaadin-vertical-layout style="width: 100%; height: 100%; ">
+ <vaadin-horizontal-layout theme="spacing" style="align-self: center;">
+  <vaadin-horizontal-layout theme="spacing">
+   <vista-compra style="margin-right: var(--lumo-space-xl); padding-right: var(--lumo-space-xl);"></vista-compra>
+  </vaadin-horizontal-layout>
+  <vaadin-horizontal-layout theme="spacing">
+   <vista-compra></vista-compra>
+  </vaadin-horizontal-layout>
+ </vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" style="align-self: center;">
+  <vaadin-horizontal-layout theme="spacing" style="margin-top: var(--lumo-space-xl);">
+   <vista-compra style="margin-right: var(--lumo-space-xl); padding-right: var(--lumo-space-xl);"></vista-compra>
+  </vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="margin-top: var(--lumo-space-xl);">
+   <vista-compra></vista-compra>
+  </vaadin-horizontal-layout>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
     }
