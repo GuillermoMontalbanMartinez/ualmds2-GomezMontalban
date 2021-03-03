@@ -1,6 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaProductosAEnviar extends PolymerElement {
 
@@ -12,9 +11,7 @@ class VistaProductosAEnviar extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-text-field style="flex-shrink: 0; align-self: center; width: 100%; height: 100%;"></vaadin-text-field>
-</vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%;"></vaadin-vertical-layout>
 `;
     }
 

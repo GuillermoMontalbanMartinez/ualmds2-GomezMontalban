@@ -13,19 +13,17 @@ class VistaProductoAEnviar extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center; justify-content: center; 
-
-">
+<vaadin-vertical-layout style="align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m);">
  <h4 style="align-self: center; flex-shrink: 0;">NUMERO DE PEDIDO</h4>
  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-button style="align-self: center;">
-    Ficha cliente
+     Ficha cliente 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-button style="align-self: center;">
-    Entregado
+     Entregado 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
