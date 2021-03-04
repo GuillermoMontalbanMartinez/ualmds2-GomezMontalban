@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-filtrar-por-categoria.js';
 
 class VistaProductosMasVendidos extends PolymerElement {
 
@@ -11,7 +12,10 @@ class VistaProductosMasVendidos extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout></vaadin-vertical-layout>
+<vaadin-vertical-layout>
+ <vista-filtrar-por-categoria style="align-self: center;"></vista-filtrar-por-categoria>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;"></vaadin-vertical-layout>
+</vaadin-vertical-layout>
 `;
     }
 
