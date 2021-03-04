@@ -13,7 +13,9 @@ class VistaReseña extends PolymerElement {
                 }
             </style>
 <vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; border: #ccc solid 2px; border-radius : 20px; justify-content: center; background : #efefef;" theme="spacing">
- <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0; height: 15%; justify-content: center; width: 15%; align-items: center; margin-left: var(--lumo-space-xl);"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0; height: 80%; justify-content: center; width: 20%; align-items: center; margin-left: var(--lumo-space-xl);">
+  <img style="width: 100%; height: 100%;">
+ </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="height: 80%; justify-content: space-between; width: 100%; align-self: center;">
   <vaadin-vertical-layout theme="spacing" style="height: 10%; width: 100%; align-items: stretch; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; flex-wrap: wrap; justify-content: space-between; flex-grow: 0; width: 80%; align-self: center;">
