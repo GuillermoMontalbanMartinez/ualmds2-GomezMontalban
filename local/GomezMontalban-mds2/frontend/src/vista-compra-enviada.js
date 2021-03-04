@@ -13,7 +13,7 @@ class VistaCompraEnviada extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; border: #ccc solid 2px; border-radius : 20px; ">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; border: #ccc solid 2px; border-radius : 20px; justify-content: center;">
  <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-top: var(--lumo-space-m); align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin-right: var(--lumo-space-m); padding-right: var(--lumo-space-m); margin-left: var(--lumo-space-m); padding-left: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing">
    <label style="align-self: center;">Número del pedido</label>
