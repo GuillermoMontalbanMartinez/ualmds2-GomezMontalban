@@ -1,24 +1,18 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
-/**
- * `vista-lista-de-emails`
- *
- * VistaListaDeEmails element.
- *
- * @customElement
- * @polymer
- */
 class VistaListaDeEmails extends PolymerElement {
 
     static get template() {
         return html`
-            <style include="shared-styles">
+<style include="shared-styles">
                 :host {
                     display: block;
                     height: 100%;
                 }
             </style>
-        `;
+<vaadin-vertical-layout></vaadin-vertical-layout>
+`;
     }
 
     static get is() {
