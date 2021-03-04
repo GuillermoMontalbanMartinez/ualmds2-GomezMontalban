@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-compras-admin.js';
 
 class VistaListadoDeCompras extends PolymerElement {
 
@@ -11,7 +12,14 @@ class VistaListadoDeCompras extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center; justify-content: center;"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="align-items: center; justify-content: center;">
+ <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+  <h1>Listado de compras realizadas</h1>
+ </vaadin-vertical-layout>
+</vaadin-vertical-layout>
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
+ <vista-compras-admin></vista-compras-admin>
+</vaadin-vertical-layout>
 `;
     }
 

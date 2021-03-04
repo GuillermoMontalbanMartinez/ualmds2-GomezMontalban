@@ -1,24 +1,22 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-compra-admin.js';
 
-/**
- * `vista-compras-admin`
- *
- * VistaComprasAdmin element.
- *
- * @customElement
- * @polymer
- */
 class VistaComprasAdmin extends PolymerElement {
 
     static get template() {
         return html`
-            <style include="shared-styles">
+<style include="shared-styles">
                 :host {
                     display: block;
                     height: 100%;
                 }
             </style>
-        `;
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
+ <vista-compra-admin></vista-compra-admin>
+ <vista-compra-admin></vista-compra-admin>
+</vaadin-vertical-layout>
+`;
     }
 
     static get is() {
