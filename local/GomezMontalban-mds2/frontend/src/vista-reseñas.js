@@ -1,28 +1,22 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
-/**
- * `vista-reseñas`
- *
- * VistaReseñas element.
- *
- * @customElement
- * @polymer
- */
-class VistaReseñas extends PolymerElement {
+class VistaReseÃ±as extends PolymerElement {
 
     static get template() {
         return html`
-            <style include="shared-styles">
+<style include="shared-styles">
                 :host {
                     display: block;
                     height: 100%;
                 }
             </style>
-        `;
+<vaadin-vertical-layout></vaadin-vertical-layout>
+`;
     }
 
     static get is() {
-        return 'vista-reseñas';
+        return 'vista-reseÃ±as';
     }
 
     static get properties() {
@@ -32,4 +26,4 @@ class VistaReseñas extends PolymerElement {
     }
 }
 
-customElements.define(VistaReseñas.is, VistaReseñas);
+customElements.define(VistaReseÃ±as.is, VistaReseÃ±as);
