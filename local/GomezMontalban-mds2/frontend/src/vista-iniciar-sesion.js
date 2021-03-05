@@ -13,17 +13,17 @@ class VistaIniciarSesion extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;" id="vista-inicio-de-sesion">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
   <h1 style="margin: var(--lumo-space-m); flex-shrink: 0; padding: var(--lumo-space-m);">Inicio de sesión</h1>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);">
-  <img style="width: 100%; height: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">
+ <vaadin-vertical-layout style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);" id="vaadinVerticalLayout-de-la-imagen-inicio-de-sesion">
+  <img style="width: 100%; height: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="img-login">
  </vaadin-vertical-layout>
- <vaadin-login-form style="flex-shrink: 0; align-self: center;"></vaadin-login-form>
+ <vaadin-login-form style="flex-shrink: 0; align-self: center;" id="vaadinLoginForm-login-inicio-de-sesion"></vaadin-login-form>
 </vaadin-vertical-layout>
-<vaadin-vertical-layout style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
- <vaadin-button style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" theme="primary">
+<vaadin-vertical-layout style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;" id="vaadinVerticalLayout-registrarse-inicio-de-sesion">
+ <vaadin-button style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" theme="primary" id="boton-registrarse-inicio-de-sesion">
    Registrate 
  </vaadin-button>
 </vaadin-vertical-layout>
