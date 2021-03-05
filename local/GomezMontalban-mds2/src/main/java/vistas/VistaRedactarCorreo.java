@@ -4,6 +4,13 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-redactar-correo template.
@@ -15,7 +22,9 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-redactar-correo.js")
 public class VistaRedactarCorreo extends PolymerTemplate<VistaRedactarCorreo.VistaRedactarCorreoModel> {
 
-    /**
+    @Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	/**
      * Creates a new VistaRedactarCorreo.
      */
     public VistaRedactarCorreo() {

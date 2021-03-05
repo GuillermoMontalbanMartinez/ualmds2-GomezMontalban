@@ -2,7 +2,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
-class EmpresaDeTransportes extends PolymerElement {
+class VistaEmpresaDeTransportes extends PolymerElement {
 
     static get template() {
         return html`
@@ -12,14 +12,14 @@ class EmpresaDeTransportes extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <h1 style="align-self: center;">Bienvenido, selecciona la opción que desea realizar</h1>
- <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);">
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;">
+ <h1>Bienvenido, selecciona la opción que desea realizar</h1>
+ <vaadin-vertical-layout theme="spacing">
   <vaadin-button theme="primary">
    Pedidos a entregar
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);">
+ <vaadin-vertical-layout theme="spacing">
   <vaadin-button theme="primary">
    Pedidos entregados
   </vaadin-button>
@@ -29,7 +29,7 @@ class EmpresaDeTransportes extends PolymerElement {
     }
 
     static get is() {
-        return 'empresa-de-transportes';
+        return 'vista-empresa-de-transportes';
     }
 
     static get properties() {
@@ -39,4 +39,4 @@ class EmpresaDeTransportes extends PolymerElement {
     }
 }
 
-customElements.define(EmpresaDeTransportes.is, EmpresaDeTransportes);
+customElements.define(VistaEmpresaDeTransportes.is, VistaEmpresaDeTransportes);

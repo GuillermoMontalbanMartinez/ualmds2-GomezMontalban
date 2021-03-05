@@ -4,7 +4,7 @@ import './vista-ofertas.js';
 import './vista-productos-mas-vendidos.js';
 import './vista-ver-publicidad.js';
 
-class CibernautaComun extends PolymerElement {
+class VistaCibernautaComun extends PolymerElement {
 
     static get template() {
         return html`
@@ -14,18 +14,18 @@ class CibernautaComun extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <h3 style="align-self: center;">Ofertas disponibles</h3>
- <vista-ofertas style="width: 100%; height: 20%;"></vista-ofertas>
- <h3 style="align-self: center;">Productos más vendidos</h3>
- <vista-productos-mas-vendidos style="height: 100%; width: 100%;"></vista-productos-mas-vendidos>
- <vista-ver-publicidad style="height: 20%; width: 100%;"></vista-ver-publicidad>
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;">
+ <h3>Ofertas disponibles</h3>
+ <vista-ofertas style="height: 100%; width: 100%;"></vista-ofertas>
+ <h3>Productos más vendidos</h3>
+ <vista-productos-mas-vendidos style="width: 100%; height: 100%;"></vista-productos-mas-vendidos>
+ <vista-ver-publicidad style="height: 70%; width: 100%;"></vista-ver-publicidad>
 </vaadin-vertical-layout>
 `;
     }
 
     static get is() {
-        return 'cibernauta-comun';
+        return 'vista-cibernauta-comun';
     }
 
     static get properties() {
@@ -35,4 +35,4 @@ class CibernautaComun extends PolymerElement {
     }
 }
 
-customElements.define(CibernautaComun.is, CibernautaComun);
+customElements.define(VistaCibernautaComun.is, VistaCibernautaComun);
