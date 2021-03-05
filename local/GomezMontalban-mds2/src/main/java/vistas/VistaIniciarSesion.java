@@ -24,10 +24,10 @@ public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.Vista
 	private Button vaadinButton;
 	@Id("vaadinVerticalLayout-registrarse-inicio-de-sesion")
 	private Element vaadinVerticalLayout;
-	@Id("vaadinLoginForm-login-inicio-de-sesion")
-	private LoginForm vaadinLoginForm;
 	@Id("img-login")
 	private Image img;
+	@Id("vaadinLoginForm-login-inicio-de-sesion")
+	private LoginForm vaadinLoginFormLoginInicioDeSesion;
 
 	/**
      * Creates a new VistaIniciarSesion.
