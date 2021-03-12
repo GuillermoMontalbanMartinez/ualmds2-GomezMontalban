@@ -33,6 +33,7 @@ import org.springframework.beans.factory.annotation.Autowired;
         enableInstallPrompt = false)
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
+
 public class MainView extends VerticalLayout {
 	
 	Cibernauta cibernauta = new Cibernauta();
@@ -67,15 +68,18 @@ public class MainView extends VerticalLayout {
 //
 //        add(textField, button);
     	this.add(cibernauta);
+    	add(cibernauta);
     	login();
     	
     }
 
 	public void login() {
-		cibernauta._banner_no_registrado._iniciar_sesion.getVaadinLoginForm().addLoginListener(e -> {
+		cibernauta._banner_no_registrado._iniciar_sesion.getVaadinLoginFormLoginInicioDeSesion().addLoginListener(e -> {
 			cibernauta.layout.remove(cibernauta._banner_no_registrado._iniciar_sesion);
-			ciberanuta.yayout.add(ciberanuta.)
-		})
+			Cibernauta.layour.add(Cibernauta.this._banner_no_registrado._iniciar_sesion);
+			
+			if (e)
+		});
 		
 	}
 

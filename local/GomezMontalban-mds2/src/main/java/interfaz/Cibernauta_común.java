@@ -5,4 +5,8 @@ public class Cibernauta_común {
 	public Ofertas _ofertas;
 	public Productos_mas_vendidos _productos_mas_vendidos;
 	public Ver_publicidad _ver_publicidad;
+	
+	public Cibernauta_común() {
+		
+	}
 }
