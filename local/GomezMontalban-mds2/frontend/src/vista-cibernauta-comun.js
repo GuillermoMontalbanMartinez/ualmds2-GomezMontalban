@@ -36,3 +36,6 @@ class VistaCibernautaComun extends PolymerElement {
 }
  
 customElements.define(VistaCibernautaComun.is, VistaCibernautaComun);
+
+
+//prueba
