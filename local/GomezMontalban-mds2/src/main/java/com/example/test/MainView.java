@@ -83,4 +83,8 @@ public class MainView extends VerticalLayout {
 		
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/GuillermoMontalbanMartinez/ualmds2-GomezMontalban.git

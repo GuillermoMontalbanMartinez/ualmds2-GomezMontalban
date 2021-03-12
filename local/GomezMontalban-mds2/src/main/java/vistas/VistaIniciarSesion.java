@@ -28,7 +28,6 @@ public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.Vista
 	private Image img;
 	@Id("vaadinLoginForm-login-inicio-de-sesion")
 	private LoginForm vaadinLoginFormLoginInicioDeSesion;
-
 	/**
      * Creates a new VistaIniciarSesion.
      */
@@ -42,4 +41,36 @@ public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.Vista
     public interface VistaIniciarSesionModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Image getImg() {
+		return img;
+	}
+
+	public void setImg(Image img) {
+		this.img = img;
+	}
+
+	public LoginForm getVaadinLoginFormLoginInicioDeSesion() {
+		return vaadinLoginFormLoginInicioDeSesion;
+	}
+
+	public void setVaadinLoginFormLoginInicioDeSesion(LoginForm vaadinLoginFormLoginInicioDeSesion) {
+		this.vaadinLoginFormLoginInicioDeSesion = vaadinLoginFormLoginInicioDeSesion;
+	}
 }

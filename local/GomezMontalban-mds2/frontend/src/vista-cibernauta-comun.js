@@ -3,9 +3,9 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-ofertas.js';
 import './vista-productos-mas-vendidos.js';
 import './vista-ver-publicidad.js';
-
+ 
 class VistaCibernautaComun extends PolymerElement {
-
+ 
     static get template() {
         return html`
 <style include="shared-styles">
@@ -23,16 +23,16 @@ class VistaCibernautaComun extends PolymerElement {
 </vaadin-vertical-layout>
 `;
     }
-
+ 
     static get is() {
         return 'vista-cibernauta-comun';
     }
-
+ 
     static get properties() {
         return {
             // Declare your properties here.
         };
     }
 }
-
+ 
 customElements.define(VistaCibernautaComun.is, VistaCibernautaComun);
