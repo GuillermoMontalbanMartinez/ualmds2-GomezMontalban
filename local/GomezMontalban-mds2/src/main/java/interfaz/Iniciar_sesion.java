@@ -5,10 +5,10 @@ public class Iniciar_sesion {
 	private JLabel _nombreL;
 	private JLabel _correoL;
 	private JTField _correoTF;
-	private JLabel _contrase�aL;
-	private JTextField _contrase�aTF;
+	private JLabel _contraseñaL;
+	private JTextField _contraseñaTF;
 	private JButton _iniciar_sesionB;
-	private JButton _olvida_contrase�aB;
+	private JButton _olvida_contraseñaB;
 	private JButton _registroB;
 	public Banner_no_registrado _banner_no_registrado;
 	public Carrito _carrito;
@@ -17,6 +17,11 @@ public class Iniciar_sesion {
 
 	public void validar_inicio_sesion() {
 		throw new UnsupportedOperationException();
+	}
+
+	public Object getVaadinLoginFormLoginInicioDeSesion() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

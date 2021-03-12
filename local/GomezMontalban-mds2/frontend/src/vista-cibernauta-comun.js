@@ -3,7 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-ofertas.js';
 import './vista-productos-mas-vendidos.js';
 import './vista-ver-publicidad.js';
- 
+
 class VistaCibernautaComun extends PolymerElement {
  
     static get template() {
@@ -36,3 +36,6 @@ class VistaCibernautaComun extends PolymerElement {
 }
  
 customElements.define(VistaCibernautaComun.is, VistaCibernautaComun);
+
+
+// prueba

@@ -1,10 +1,10 @@
 package vistas;
-
+ 
 import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
-
+ 
 /**
  * A Designer generated component for the vista-cibernauta-comun template.
  *
@@ -14,14 +14,14 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @Tag("vista-cibernauta-comun")
 @JsModule("./src/vista-cibernauta-comun.js")
 public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.VistaCibernautaComunModel> {
-
+ 
     /**
      * Creates a new VistaCibernautaComun.
      */
     public VistaCibernautaComun() {
         // You can initialise any data required for the connected UI components here.
     }
-
+ 
     /**
      * This model binds properties between VistaCibernautaComun and vista-cibernauta-comun
      */
@@ -29,3 +29,4 @@ public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.V
         // Add setters and getters for template properties here.
     }
 }
+ 
