@@ -14,10 +14,10 @@ class VistaCategoria extends PolymerElement {
             </style>
 <vaadin-vertical-layout>
  <vaadin-button theme="primary" style="align-self: center; border-radius : 5px;">
-  Categoria 
+   Categoria 
  </vaadin-button>
 </vaadin-vertical-layout>
-`x">
+x">
   Categoria 
  </vaadin-button>
 </vaadin-vertical-layout>
