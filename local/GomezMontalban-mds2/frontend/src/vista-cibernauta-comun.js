@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-ofertas.js';
 import './vista-productos-mas-vendidos.js';
 import './vista-ver-publicidad.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaCibernautaComun extends PolymerElement {
  
@@ -15,11 +16,12 @@ class VistaCibernautaComun extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; flex-shrink: 0; align-self: center;" id="vaadinVerticalLayout">
- <h3>Ofertas disponibles</h3>
+ <vaadin-horizontal-layout theme="spacing" id="banner" style="width: 100%;"></vaadin-horizontal-layout>
+ <h3 style="align-self: center;">Ofertas disponibles</h3>
  <vista-ofertas style="height: 100%; width: 100%;"></vista-ofertas>
- <h3>Productos más vendidos</h3>
- <vista-productos-mas-vendidos style="width: 100%; height: 100%;"></vista-productos-mas-vendidos>
- <vista-ver-publicidad style="height: 70%; width: 100%;"></vista-ver-publicidad>
+ <h3 style="align-self: center;">Productos más vendidos</h3>
+ <vista-productos-mas-vendidos style="width: 100%; height: 100%; align-self: center;"></vista-productos-mas-vendidos>
+ <vista-ver-publicidad style="height: 70%; width: 100%; align-self: center;"></vista-ver-publicidad>
 </vaadin-vertical-layout>
 `;
   

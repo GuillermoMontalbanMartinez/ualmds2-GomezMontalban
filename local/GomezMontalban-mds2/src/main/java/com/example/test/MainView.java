@@ -29,7 +29,7 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
     	add(cibernauta);
     	
-    	login();
+    	//login();
 
     }
     
