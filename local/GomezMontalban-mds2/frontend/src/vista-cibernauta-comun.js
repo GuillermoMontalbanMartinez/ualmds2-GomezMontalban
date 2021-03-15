@@ -1,5 +1,4 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-ofertas.js';
 import './vista-productos-mas-vendidos.js';
@@ -15,7 +14,7 @@ class VistaCibernautaComun extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; flex-shrink: 0; align-self: center;" id="vaadinVerticalLayout">
  <h3>Ofertas disponibles</h3>
  <vista-ofertas style="height: 100%; width: 100%;"></vista-ofertas>
  <h3>Productos más vendidos</h3>
@@ -39,6 +38,3 @@ class VistaCibernautaComun extends PolymerElement {
 }
  
 customElements.define(VistaCibernautaComun.is, VistaCibernautaComun);
-
-
-//prueba

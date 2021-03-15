@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-banner-no-registrado template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-banner-no-registrado.js")
 public class VistaBannerNoRegistrado extends PolymerTemplate<VistaBannerNoRegistrado.VistaBannerNoRegistradoModel> {
 
-    /**
+    @Id("vaadinButton")
+	private Button vaadinButton;
+
+	/**
      * Creates a new VistaBannerNoRegistrado.
      */
     public VistaBannerNoRegistrado() {
@@ -28,4 +33,12 @@ public class VistaBannerNoRegistrado extends PolymerTemplate<VistaBannerNoRegist
     public interface VistaBannerNoRegistradoModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
 }

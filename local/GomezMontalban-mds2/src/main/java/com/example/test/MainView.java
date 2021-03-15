@@ -14,18 +14,6 @@ import interfaz.Cibernauta;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * A sample Vaadin view class.
- * <p>
- * To implement a Vaadin view just extend any Vaadin component and
- * use @Route annotation to announce it in a URL as a Spring managed
- * bean.
- * Use the @PWA annotation make the application installable on phones,
- * tablets and some desktop browsers.
- * <p>
- * A new instance of this class is created for every new user and every
- * browser tab/window.
- */
 @Route
 @PWA(name = "Vaadin Application",
         shortName = "Vaadin App",
@@ -38,27 +26,14 @@ public class MainView extends VerticalLayout {
 	
 	Cibernauta cibernauta = new Cibernauta();
 	
-    /**
-     * Construct a new Vaadin view.
-     * <p>
-     * Build the initial UI state for the user accessing the application.
-     *
-     * @param service The message service. Automatically injected Spring managed bean.
-     */
     public MainView(@Autowired GreetService service) {
     	add(cibernauta);
     	
     	login();
+
     }
-
-	public void login() {
-		cibernauta._banner_no_registrado._iniciar_sesion.getVaadinLoginFormLoginInicioDeSesion().addLoginListener(e -> {
-			cibernauta.layout.remove(cibernauta._banner_no_registrado._iniciar_sesion);
-			Cibernauta.layour.add(Cibernauta.this._banner_no_registrado._iniciar_sesion);
-			
-			if (e)
-		});
-		
-	}
-
+    
+    public void login() {
+    	
+    }
 }
