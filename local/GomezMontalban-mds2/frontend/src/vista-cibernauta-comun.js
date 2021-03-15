@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-ofertas.js';
 import './vista-productos-mas-vendidos.js';
@@ -22,6 +23,8 @@ class VistaCibernautaComun extends PolymerElement {
  <vista-ver-publicidad style="height: 70%; width: 100%;"></vista-ver-publicidad>
 </vaadin-vertical-layout>
 `;
+  
+  
     }
  
     static get is() {
