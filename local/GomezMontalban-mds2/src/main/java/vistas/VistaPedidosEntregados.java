@@ -4,6 +4,10 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-pedidos-entregados template.
@@ -15,7 +19,16 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-pedidos-entregados.js")
 public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregados.VistaPedidosEntregadosModel> {
 
-    /**
+    @Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinButtonPedidosAEntregar")
+	private Button vaadinButton;
+	@Id("vaadinButtonPedidosEntregados")
+	private Button vaadinButton1;
+	@Id("vaadinVerticalLayoutPedidosEntregados")
+	private Element vaadinVerticalLayout;
+
+	/**
      * Creates a new VistaPedidosEntregados.
      */
     public VistaPedidosEntregados() {
@@ -28,4 +41,36 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
     public interface VistaPedidosEntregadosModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+	public Button getVaadinButton1() {
+		return vaadinButton1;
+	}
+
+	public void setVaadinButton1(Button vaadinButton1) {
+		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
 }

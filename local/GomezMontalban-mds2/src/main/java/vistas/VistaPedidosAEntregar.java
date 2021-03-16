@@ -4,6 +4,9 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-pedidos-a-entregar template.
@@ -15,7 +18,15 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-pedidos-a-entregar.js")
 public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar.VistaPedidosAEntregarModel> {
 
-    /**
+    @Id("vaadinVerticalLayoutPedidosAEntregar")
+	private Element vaadinVerticalLayout;
+	@Id("vaadinButtonProductosEntregados")
+	private Button vaadinButtonProductosEntregados;
+	@Id("vaadinButtonProductosAEntregar")
+	private Button vaadinButtonProductosAEntregar;
+	private Button vaadinButton;
+
+	/**
      * Creates a new VistaPedidosAEntregar.
      */
     public VistaPedidosAEntregar() {
@@ -28,4 +39,36 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
     public interface VistaPedidosAEntregarModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getVaadinButtonProductosEntregados() {
+		return vaadinButtonProductosEntregados;
+	}
+
+	public void setVaadinButtonProductosEntregados(Button vaadinButtonProductosEntregados) {
+		this.vaadinButtonProductosEntregados = vaadinButtonProductosEntregados;
+	}
+
+	public Button getVaadinButtonProductosAEntregar() {
+		return vaadinButtonProductosAEntregar;
+	}
+
+	public void setVaadinButtonProductosAEntregar(Button vaadinButtonProductosAEntregar) {
+		this.vaadinButtonProductosAEntregar = vaadinButtonProductosAEntregar;
+	}
 }

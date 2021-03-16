@@ -14,15 +14,16 @@ class VistaPedidosAEntregar extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutPedidosAEntregar">
+ <h1 style="align-self: center; flex-shrink: 0;">Pedidos a entregar</h1>
  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center;">
   <vaadin-horizontal-layout theme="spacing">
-   <vaadin-button style="flex-shrink: 0; align-self: center;">
+   <vaadin-button style="flex-shrink: 0; align-self: center;" id="vaadinButtonProductosAEntregar" theme="primary">
      Productos a entregar 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing">
-   <vaadin-button>
+   <vaadin-button id="vaadinButtonProductosEntregados" theme="primary">
      Productos entregados 
    </vaadin-button>
   </vaadin-horizontal-layout>
