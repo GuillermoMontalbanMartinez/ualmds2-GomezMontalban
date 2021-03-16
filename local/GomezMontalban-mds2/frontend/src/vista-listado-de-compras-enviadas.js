@@ -11,7 +11,9 @@ class VistaListadoDeComprasEnviadas extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center;"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="align-items: center; width: 100%;">
+ <h1>Listado de compras a enviar</h1>
+</vaadin-vertical-layout>
 `;
     }
 

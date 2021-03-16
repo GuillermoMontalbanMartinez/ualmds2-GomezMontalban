@@ -14,19 +14,19 @@ class VistaComprasAEnviar extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutComprasAEnviar">
+<vaadin-vertical-layout id="vaadinVerticalLayoutComprasAEnviar">
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;">
   <vaadin-horizontal-layout theme="spacing">
    <h1 style="flex-shrink: 0;">Compras realizadas</h1>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; margin-top: var(--lumo-space-m);">
-  <vaadin-button theme="primary" style="width: 100%; height: 100%; align-self: center;">
+  <vaadin-button theme="primary" style="width: 100%; height: 100%; align-self: center;" id="boton_compras_enviadas">
     Compras enviadas 
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; margin-top: var(--lumo-space-m);">
-  <vaadin-button theme="primary" style="width: 104%; height: 100%; align-self: center;">
+  <vaadin-button theme="primary" style="width: 104%; height: 100%; align-self: center;" id="boton_compras_a_enviar">
     Compras a enviar 
   </vaadin-button>
  </vaadin-vertical-layout>
