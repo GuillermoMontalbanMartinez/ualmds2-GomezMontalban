@@ -14,7 +14,7 @@ class VistaComprasAEnviar extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutComprasAEnviar">
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;">
   <vaadin-horizontal-layout theme="spacing">
    <h1 style="flex-shrink: 0;">Compras realizadas</h1>

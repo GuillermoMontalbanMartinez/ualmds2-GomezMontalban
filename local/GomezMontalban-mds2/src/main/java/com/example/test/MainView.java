@@ -24,16 +24,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class MainView extends VerticalLayout {
 	
-	Cibernauta cibernauta = new Cibernauta();
+	
+	Empresa_de_transportes edt = new Empresa_de_transportes();
 	
     public MainView(@Autowired GreetService service) {
-    	add(cibernauta);
+    	add(edt);
     	
-    	//login();
+    	
+    	
 
     }
     
-    public void login() {
-    	
-    }
+    
 }

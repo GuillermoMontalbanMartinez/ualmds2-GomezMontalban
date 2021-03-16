@@ -12,16 +12,16 @@ class VistaEmpresaDeTransportes extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;">
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayoutEmpresaDeTransportes">
  <h1>Bienvenido, selecciona la opción que desea realizar</h1>
- <vaadin-vertical-layout theme="spacing">
-  <vaadin-button theme="primary">
-   Pedidos a entregar
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayoutPedidosEntregar" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+  <vaadin-button theme="primary" style="flex-shrink: 0; align-self: center;" id="vaadinButtonPedidosAEntregar">
+    Pedidos a entregar 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing">
-  <vaadin-button theme="primary">
-   Pedidos entregados
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayoutPedidosEntregados" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+  <vaadin-button theme="primary" style="align-self: center; flex-shrink: 0;" id="vaadinButtonPedidosEntregados">
+    Pedidos entregados 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

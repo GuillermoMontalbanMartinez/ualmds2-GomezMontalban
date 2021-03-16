@@ -7,13 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
- 
-/**
- * A Designer generated component for the vista-cibernauta-comun template.
- *
- * Designer will add and remove fields with @Id mappings but
- * does not overwrite or otherwise change this file.
- */
+
 @Tag("vista-cibernauta-comun")
 @JsModule("./src/vista-cibernauta-comun.js")
 public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.VistaCibernautaComunModel> {
