@@ -23,16 +23,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 
 public class MainView extends VerticalLayout {
-	
-	
 	Empresa_de_transportes edt = new Empresa_de_transportes();
 	
     public MainView(@Autowired GreetService service) {
     	add(edt);
     	
-    	
-    	
-
     }
     
     

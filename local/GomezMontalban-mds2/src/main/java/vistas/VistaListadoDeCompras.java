@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-listado-de-compras template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-listado-de-compras.js")
 public class VistaListadoDeCompras extends PolymerTemplate<VistaListadoDeCompras.VistaListadoDeComprasModel> {
 
-    /**
+    @Id("vaadinVerticalLayoutListadoDeCompras")
+	private Element vaadinVerticalLayout;
+
+	/**
      * Creates a new VistaListadoDeCompras.
      */
     public VistaListadoDeCompras() {

@@ -12,7 +12,7 @@ class VistaListadoDeCompras extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center; justify-content: center; width: 100%;">
+<vaadin-vertical-layout style="align-items: center; justify-content: center; width: 100%;" id="vaadinVerticalLayoutListadoDeCompras">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;">
   <h1>Listado de compras realizadas</h1>
  </vaadin-vertical-layout>
