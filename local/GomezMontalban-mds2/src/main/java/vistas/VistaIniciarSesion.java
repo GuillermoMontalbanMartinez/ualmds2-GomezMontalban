@@ -20,14 +20,19 @@ import com.vaadin.flow.component.html.Image;
 @JsModule("./src/vista-iniciar-sesion.js")
 public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.VistaIniciarSesionModel> {
 
-    @Id("boton-registrarse-inicio-de-sesion")
-	private Button vaadinButton;
+   
+	@Id("login")
+	private Element login;
+	@Id("vaadinVerticalLayout-de-la-imagen-inicio-de-sesion")
+	private Element vaadinVerticalLayoutDeLaImagenInicioDeSesion;
+	@Id("ironIcon")
+	private Element ironIcon;
 	@Id("vaadinVerticalLayout-registrarse-inicio-de-sesion")
-	private Element vaadinVerticalLayout;
-	@Id("img-login")
-	private Image img;
+	private Element vaadinVerticalLayoutRegistrarseInicioDeSesion;
 	@Id("vaadinLoginForm-login-inicio-de-sesion")
 	private LoginForm vaadinLoginFormLoginInicioDeSesion;
+	@Id("botton-registro")
+	private Button bottonRegistro;
 	/**
      * Creates a new VistaIniciarSesion.
      */
@@ -42,28 +47,17 @@ public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.Vista
         // Add setters and getters for template properties here.
     }
 
-	public Button getVaadinButton() {
-		return vaadinButton;
+
+
+	
+
+
+	public Element getLogin() {
+		return login;
 	}
 
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public Image getImg() {
-		return img;
-	}
-
-	public void setImg(Image img) {
-		this.img = img;
+	public void setLogin(Element login) {
+		this.login = login;
 	}
 
 	public LoginForm getVaadinLoginFormLoginInicioDeSesion() {
@@ -72,5 +66,13 @@ public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.Vista
 
 	public void setVaadinLoginFormLoginInicioDeSesion(LoginForm vaadinLoginFormLoginInicioDeSesion) {
 		this.vaadinLoginFormLoginInicioDeSesion = vaadinLoginFormLoginInicioDeSesion;
+	}
+
+	public Button getBottonRegistro() {
+		return bottonRegistro;
+	}
+
+	public void setBottonRegistro(Button bottonRegistro) {
+		this.bottonRegistro = bottonRegistro;
 	}
 }
