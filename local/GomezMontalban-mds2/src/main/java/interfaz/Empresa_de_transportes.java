@@ -11,15 +11,21 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import vistas.VistaEmpresaDeTransportes;
 
 public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
-	public Compras_a_enviar _compras_a_enviar;
-	public Compras_enviadas _compras_enviadas;
-	public VerticalLayout layout_pedidos_entregado;
-	public VerticalLayout layout_pedidos_enviados;
+//	public Compras_a_enviar _compras_a_enviar;
+//	public Compras_enviadas _compras_enviadas;
+//	public VerticalLayout layout_pedidos_entregado;
+//	public VerticalLayout layout_pedidos_enviados;
+	public Pedidos_a_entregar pedidos_a_entregar;
+	public Pedidos_entregados pedidos_entregados;
 	public VerticalLayout layout_empresa_de_transportes;
+	public VerticalLayout layout_pedidos_a_entregar;
+	public VerticalLayout layout_pedidos_entregados;
 	
 	public Empresa_de_transportes() {
-		_compras_a_enviar = new Compras_a_enviar();
-		_compras_enviadas = new Compras_enviadas();
+//		_compras_a_enviar = new Compras_a_enviar();
+//		_compras_enviadas = new Compras_enviadas();
+		pedidos_a_entregar = new Pedidos_a_entregar();
+		pedidos_entregados = new Pedidos_entregados();
 		
 		layout_empresa_de_transportes = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		layout_pedidos_entregado = this.getVaadinVerticalLayoutPedidosEntregados().as(VerticalLayout.class);
