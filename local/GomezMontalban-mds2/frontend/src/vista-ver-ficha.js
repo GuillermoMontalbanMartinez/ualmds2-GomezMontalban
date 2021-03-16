@@ -72,20 +72,20 @@ class VistaVerFicha extends PolymerElement {
     <vaadin-text-field style="flex-shrink: 0; flex-grow: 1; align-self: center; margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); background-color: #D7E9F1;"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center;">
-   <vaadin-horizontal-layout theme="spacing">
-    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-l); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; flex-grow: 1; align-self: center; font-weight: bold;">PROVINCIA :</label>
+  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; justify-content: center; align-items: center;">
+   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0;">
+    <label style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-l); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); flex-shrink: 0; flex-grow: 0; font-weight: bold; width: 100%; height: 100%;">PROVINCIA :</label>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-xs); padding: var(--lumo-space-xs);">
-    <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; flex-grow: 1; align-self: center; background-color: #D7E9F1; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xs);"></vaadin-text-field>
+   <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0;">
+    <vaadin-text-field style="flex-shrink: 0; flex-grow: 0; background-color: #D7E9F1; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xs); width: 100%; height: 100%;"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing-xs" style="align-items: center; justify-content: center; margin-right: var(--lumo-space-xs); margin-bottom: var(--lumo-space-xs); margin-left: var(--lumo-space-xs); margin-top: var(--lumo-space-xs); padding: var(--lumo-space-xs); margin: var(--lumo-space-xs);">
-   <vaadin-horizontal-layout theme="spacing">
-    <label style="margin-right: var(--lumo-space-xl); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs); font-weight: bold;">CODIGO POSTAL :</label>
+  <vaadin-horizontal-layout theme="spacing" style="justify-content: center; margin-right: var(--lumo-space-xs); margin-bottom: var(--lumo-space-xs); margin-left: var(--lumo-space-xs); margin-top: var(--lumo-space-xs); flex-shrink: 0; align-items: center;">
+   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0;">
+    <label style="margin-right: var(--lumo-space-xl); margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs); font-weight: bold; flex-shrink: 0; flex-grow: 0; width: 100%; height: 100%;">CODIGO POSTAL :</label>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0;">
-    <vaadin-text-field style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); background-color: #D7E9F1; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;"></vaadin-text-field>
+   <vaadin-horizontal-layout style="flex-shrink: 0; width: 88%;">
+    <vaadin-text-field style="margin-top: var(--lumo-space-m); margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-m); background-color: #D7E9F1; flex-shrink: 0; flex-grow: 0; width: 100%; height: 100%;"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

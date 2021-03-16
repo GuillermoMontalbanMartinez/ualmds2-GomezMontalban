@@ -1,3 +1,5 @@
+package interfaz;
+
 import interfaz.Productos_mas_vendidos;
 import interfaz.Producto;
 

@@ -1,13 +1,10 @@
 package interfaz;
 
-public class Ver_car�cteristicas_del_producto extends Caracteristicas_del_producto_admin {
-	private Image _carrito_icono;
-	private JButton _carritoB;
-	private event _a�adir_al_carrito;
+public class Ver_carácteristicas_del_producto{
 	public Producto _producto;
-	public Rese�as _rese�as;
+	public Reseñas _reseñas;
 
-	public void a�adir_al_carrito() {
+	public void añadir_al_carrito() {
 		throw new UnsupportedOperationException();
 	}
 }
