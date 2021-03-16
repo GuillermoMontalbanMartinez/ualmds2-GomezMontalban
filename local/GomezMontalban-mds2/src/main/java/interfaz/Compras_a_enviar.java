@@ -12,7 +12,6 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 	public VerticalLayout layout_listado_de_compras;
 	
 	public Compras_a_enviar() {
-		_empresa_de_transportes = new Empresa_de_transportes();
 		_listado_de_compras = new Listado_de_compras();
 	}
 }

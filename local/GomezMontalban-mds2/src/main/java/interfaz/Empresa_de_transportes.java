@@ -18,6 +18,7 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 	public VerticalLayout layout_empresa_de_transportes;
 	
 	public Empresa_de_transportes() {
+		super();
 		_compras_a_enviar = new Compras_a_enviar();
 		_compras_enviadas = new Compras_enviadas();
 		
