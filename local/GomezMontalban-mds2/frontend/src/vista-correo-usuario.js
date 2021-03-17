@@ -14,7 +14,7 @@ class VistaCorreoUsuario extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center; align-items: center;">
+<vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center; align-items: center;" id="layout">
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; justify-content: center;">
   <h2 style="flex-grow: 0;">Bandeja de entrada</h2>
  </vaadin-horizontal-layout>

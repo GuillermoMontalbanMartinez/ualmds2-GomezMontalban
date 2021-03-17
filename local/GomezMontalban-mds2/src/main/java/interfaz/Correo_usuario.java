@@ -1,11 +1,16 @@
 package interfaz;
 
-import interfaz.Banner_registrado;
-import interfaz.Lista_de_emails;
-import interfaz.Redactar_correo;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
-public class Correo_usuario {
+
+import vistas.VistaCorreoUsuario;
+
+public class Correo_usuario extends VistaCorreoUsuario {
 	public Banner_registrado _banner_registrado;
 	public Lista_de_emails _lista_de_emails;
 	public Redactar_correo _redactar_correo;
+	public HorizontalLayout layout;
+
+	public Correo_usuario() {
+	}
 }

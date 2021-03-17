@@ -23,13 +23,13 @@ class VistaBannerRegistrado extends PolymerElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; justify-content: center; width: 10%;">
   <iron-icon style="align-self: center;"></iron-icon>
-  <vaadin-button theme="primary" style="align-self: center;">
+  <vaadin-button theme="primary" style="align-self: center;" id="Correo">
     Correo 
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; justify-content: center; margin-right: var(--lumo-space-xl); margin-left: var(--lumo-space-xl); width: 10%;">
   <iron-icon style="align-self: center;"></iron-icon>
-  <vaadin-button theme="primary" style="align-self: center;">
+  <vaadin-button theme="primary" style="align-self: center;" id="Perfil">
     Mi perfil 
   </vaadin-button>
  </vaadin-horizontal-layout>
