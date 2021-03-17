@@ -35,7 +35,6 @@ public class MainView extends VerticalLayout {
     public void login() {
     	cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addLoginListener(e -> {
     		
-    		
     		if(e.getUsername().equals("admin")) {
     			Administrador admin = new Administrador(); 
     			remove(cibernauta);
@@ -56,8 +55,6 @@ public class MainView extends VerticalLayout {
     			remove(cibernauta);
     			add(compras);
     		}
-    		
-    		
     		
     		else {
     	    	Notification.show("Este usuario no esta registrado");
