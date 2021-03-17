@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Banner_registrado {
+import vistas.VistaBannerRegistrado;
+
+public class Banner_registrado extends VistaBannerRegistrado {
 	public Cibernauta_registrado _cibernauta_registrado;
 	public Administrar_perfil _administrar_perfil;
 	public Carrito_registrado _carrito_registrado;
