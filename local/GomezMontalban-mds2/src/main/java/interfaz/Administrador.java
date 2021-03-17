@@ -9,6 +9,6 @@ public class Administrador extends VistaAdministrador {
 	public Buscar_producto_admin buscar_producto_admin;
 	
 	public Administrador() {
-		banner_admin = new Banner_admin();
+		//banner_admin = new Banner_admin();
 	}
 }

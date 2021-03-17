@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-correo-usuario template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-correo-usuario.js")
 public class VistaCorreoUsuario extends PolymerTemplate<VistaCorreoUsuario.VistaCorreoUsuarioModel> {
 
-    /**
+    @Id("layout")
+	private HorizontalLayout layout;
+
+	/**
      * Creates a new VistaCorreoUsuario.
      */
     public VistaCorreoUsuario() {
@@ -28,4 +33,12 @@ public class VistaCorreoUsuario extends PolymerTemplate<VistaCorreoUsuario.Vista
     public interface VistaCorreoUsuarioModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public HorizontalLayout getLayout() {
+		return layout;
+	}
+
+	public void setLayout(HorizontalLayout layout) {
+		this.layout = layout;
+	}
 }
