@@ -13,21 +13,21 @@ class VistaProductoAdmin extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
- <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%;">
-  <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; height: 100%;">
-   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; height: 100%;">
-    <img style="flex-shrink: 0; align-self: center; width: 100%; height: 100%; margin: var(--lumo-space-m);">
+<vaadin-vertical-layout style="width: 100%; align-items: center; justify-content: center;">
+ <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; width: 100%;">
+  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; margin: var(--lumo-space-m);">
+   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; border:1px solid black; width: 100%; margin: var(--lumo-space-m); height: 200px;">
+    <img style="flex-shrink: 0; align-self: center; width: 100%; height: 100%;">
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 50%; height: 100%;">
     <vaadin-vertical-layout theme="spacing">
-     <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m); flex-shrink: 0;">
+     <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; height: 100%;">
       <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; width: 100%; height: 100%;">Nombre</label>
      </vaadin-vertical-layout>
      <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-items: center; justify-content: center;">
       <vaadin-text-area style="width: 100%; height: 100%; flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vaadin-text-area>
      </vaadin-vertical-layout>
-     <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center;">
+     <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center; width: 100%; height: 100%;">
       <vaadin-text-area style="width: 50%; height: 100%; flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vaadin-text-area>
      </vaadin-vertical-layout>
     </vaadin-vertical-layout>

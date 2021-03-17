@@ -1,5 +1,7 @@
 package interfaz;
 
-public class Categoria_admin {
+import vistas.VistaCategoriaAdmin;
+
+public class Categoria_admin extends VistaCategoriaAdmin {
 	public Categorias_admiin _categorias_admiin;
 }

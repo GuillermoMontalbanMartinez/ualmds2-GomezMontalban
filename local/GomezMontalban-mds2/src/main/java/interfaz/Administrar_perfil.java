@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Administrar_perfil {
+import vistas.VistaAdministrarPerfil;
+
+public class Administrar_perfil extends VistaAdministrarPerfil {
 	public Banner_registrado _banner_registrado;
 	public Cerrar_sesion _cerrar_sesion;
 	public Dar_de_baja_usuario _dar_de_baja_usuario;

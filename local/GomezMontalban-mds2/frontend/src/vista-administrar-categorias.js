@@ -15,7 +15,7 @@ class VistaAdministrarCategorias extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAdministrarCategorias">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
   <h1 style="margin: var(--lumo-space-m); align-self: center;">Administrar categorias</h1>
  </vaadin-vertical-layout>
@@ -37,12 +37,12 @@ class VistaAdministrarCategorias extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary">
-      Cancelar
+       Cancelar 
      </vaadin-button>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-      Aceptar
+       Aceptar 
      </vaadin-button>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
@@ -66,12 +66,12 @@ class VistaAdministrarCategorias extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
      <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-      Cancelar
+       Cancelar 
      </vaadin-button>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-items: center; align-self: center; flex-shrink: 0; justify-content: center;">
      <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-      Aceptar
+       Aceptar 
      </vaadin-button>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
