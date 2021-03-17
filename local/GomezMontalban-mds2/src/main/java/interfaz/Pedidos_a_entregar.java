@@ -20,8 +20,7 @@ public class Pedidos_a_entregar extends VistaPedidosAEntregar {
 			}
 		});
 		
-		// this.getVaadinButtonProductosAEntregar().isDisableOnClick();
-		this.getVaadinButtonProductosAEntregar().setDisableOnClick(true);
+		this.getVaadinButtonProductosAEntregar().setVisible(false);
 	}
 	
 }
