@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-compras-enviadas template.
@@ -19,6 +20,8 @@ public class VistaComprasEnviadas extends PolymerTemplate<VistaComprasEnviadas.V
 
     @Id("vaadinVerticalLayoutComprasEnviadas")
 	private Element vaadinVerticalLayout;
+	@Id("boton_compras_a_enviar")
+	private Button boton_compras_a_enviar;
 
 	/**
      * Creates a new VistaComprasEnviadas.
@@ -40,5 +43,13 @@ public class VistaComprasEnviadas extends PolymerTemplate<VistaComprasEnviadas.V
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getBoton_compras_a_enviar() {
+		return boton_compras_a_enviar;
+	}
+
+	public void setBoton_compras_a_enviar(Button boton_compras_a_enviar) {
+		this.boton_compras_a_enviar = boton_compras_a_enviar;
 	}
 }
