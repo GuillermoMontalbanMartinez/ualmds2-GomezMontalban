@@ -23,7 +23,7 @@ public class Banner_admin extends VistaBannerAdmin {
 //	public VerticalLayout layout_administrar_categorias;
 	
 	public Banner_admin() {
-//		administrador = new Administrador();
+		administrador = new Administrador();
 		administrar_categorias = new Administrar_categorias();
 //		administrar_ofertas = new Administrar_ofertas();
 //		administrar_productos = new Administrar_productos();

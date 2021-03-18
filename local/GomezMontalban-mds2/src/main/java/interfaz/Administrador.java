@@ -21,7 +21,7 @@ public class Administrador extends VistaAdministrador {
 //		layout_banner_administrador.add(banner_admin);
 		layout_administrador = this.getVaadinVerticalLayoutAdministrador().as(VerticalLayout.class);
 		banner_admin = new Banner_admin();
-		layout_banner_administrador = this.getVistaBannerAdmin();
+//		layout_banner_administrador = this.layout_banner_administrador;
 		layout_banner_administrador.add(banner_admin);
 		
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {

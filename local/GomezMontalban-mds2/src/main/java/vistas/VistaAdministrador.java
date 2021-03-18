@@ -22,9 +22,8 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
     @Id("vaadinVerticalLayoutAdministrador")
 	private Element vaadinVerticalLayoutAdministrador;
 	@Id("vistaBannerAdmin")
-	private VerticalLayout vistaBannerAdmin;
-	@Id("vaadinVerticalLayoutAdministradorBannerVista")
-	private Element vaadinVerticalLayoutAdministradorBannerVista;@Id("vaadinButtonMostrarTodosLosProductos")
+	private Element vistaBannerAdmin;
+	@Id("vaadinButtonMostrarTodosLosProductos")
 	private Button vaadinButtonMostrarTodosLosProductos;
 
 	/**
@@ -49,20 +48,12 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 		this.vaadinVerticalLayoutAdministrador = vaadinVerticalLayoutAdministrador;
 	}
 
-	public VerticalLayout getVistaBannerAdmin() {
+	public Element getVistaBannerAdmin() {
 		return vistaBannerAdmin;
 	}
 
-	public void setVistaBannerAdmin(VerticalLayout vistaBannerAdmin) {
+	public void setVistaBannerAdmin(Element vistaBannerAdmin) {
 		this.vistaBannerAdmin = vistaBannerAdmin;
-	}
-
-	public Element getVaadinVerticalLayoutAdministradorBannerVista() {
-		return vaadinVerticalLayoutAdministradorBannerVista;
-	}
-
-	public void setVaadinVerticalLayoutAdministradorBannerVista(Element vaadinVerticalLayoutAdministradorBannerVista) {
-		this.vaadinVerticalLayoutAdministradorBannerVista = vaadinVerticalLayoutAdministradorBannerVista;
 	}
 
 	public Button getVaadinButtonMostrarTodosLosProductos() {
@@ -72,5 +63,6 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 	public void setVaadinButtonMostrarTodosLosProductos(Button vaadinButtonMostrarTodosLosProductos) {
 		this.vaadinButtonMostrarTodosLosProductos = vaadinButtonMostrarTodosLosProductos;
 	}
+
 
 }
