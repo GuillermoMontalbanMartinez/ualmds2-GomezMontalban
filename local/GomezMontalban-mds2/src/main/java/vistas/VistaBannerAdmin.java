@@ -112,4 +112,6 @@ public class VistaBannerAdmin extends PolymerTemplate<VistaBannerAdmin.VistaBann
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
+    
+
 }

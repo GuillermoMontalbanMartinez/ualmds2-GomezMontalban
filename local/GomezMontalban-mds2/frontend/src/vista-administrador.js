@@ -16,7 +16,7 @@ class VistaAdministrador extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAdministrador">
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);">
+ <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);" id="vaadinVerticalLayoutAdministradorBannerVista">
   <vista-banner-admin style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="vistaBannerAdmin"></vista-banner-admin>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">

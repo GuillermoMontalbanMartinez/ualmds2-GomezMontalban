@@ -3,6 +3,7 @@ package vistas;
 import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
@@ -19,11 +20,12 @@ import com.vaadin.flow.component.button.Button;
 public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.VistaAdministradorModel> {
 
     @Id("vaadinVerticalLayoutAdministrador")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinButtonMostrarTodosLosProductos")
-	private Button vaadinButton;
+	private Element vaadinVerticalLayoutAdministrador;
 	@Id("vistaBannerAdmin")
-	private Element vistaBannerAdmin;
+	private VerticalLayout vistaBannerAdmin;
+	@Id("vaadinVerticalLayoutAdministradorBannerVista")
+	private Element vaadinVerticalLayoutAdministradorBannerVista;@Id("vaadinButtonMostrarTodosLosProductos")
+	private Button vaadinButtonMostrarTodosLosProductos;
 
 	/**
      * Creates a new VistaAdministrador.
@@ -39,27 +41,36 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
         // Add setters and getters for template properties here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Element getVaadinVerticalLayoutAdministrador() {
+		return vaadinVerticalLayoutAdministrador;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setVaadinVerticalLayoutAdministrador(Element vaadinVerticalLayoutAdministrador) {
+		this.vaadinVerticalLayoutAdministrador = vaadinVerticalLayoutAdministrador;
 	}
 
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
-
-	public Element getVistaBannerAdmin() {
+	public VerticalLayout getVistaBannerAdmin() {
 		return vistaBannerAdmin;
 	}
 
-	public void setVistaBannerAdmin(Element vistaBannerAdmin) {
+	public void setVistaBannerAdmin(VerticalLayout vistaBannerAdmin) {
 		this.vistaBannerAdmin = vistaBannerAdmin;
 	}
+
+	public Element getVaadinVerticalLayoutAdministradorBannerVista() {
+		return vaadinVerticalLayoutAdministradorBannerVista;
+	}
+
+	public void setVaadinVerticalLayoutAdministradorBannerVista(Element vaadinVerticalLayoutAdministradorBannerVista) {
+		this.vaadinVerticalLayoutAdministradorBannerVista = vaadinVerticalLayoutAdministradorBannerVista;
+	}
+
+	public Button getVaadinButtonMostrarTodosLosProductos() {
+		return vaadinButtonMostrarTodosLosProductos;
+	}
+
+	public void setVaadinButtonMostrarTodosLosProductos(Button vaadinButtonMostrarTodosLosProductos) {
+		this.vaadinButtonMostrarTodosLosProductos = vaadinButtonMostrarTodosLosProductos;
+	}
+
 }
