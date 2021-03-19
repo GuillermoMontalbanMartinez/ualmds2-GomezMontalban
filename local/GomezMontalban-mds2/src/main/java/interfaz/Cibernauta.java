@@ -37,6 +37,16 @@ public class Cibernauta extends Cibernauta_común {
 			}
 		});
 		
+		inicio_sesion.getBottonRegistro().addClickListener(new ComponentEventListener() {
+			
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout.removeAll();
+				layout.add(inicio_sesion._registro);
+				
+			}
+		});
+		
 	}
 	
 	

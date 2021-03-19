@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Registro {
+import vistas.VistaRegistro;
+
+public class Registro extends VistaRegistro{
 	public Cibernauta _cibernauta;
 	public Iniciar_sesion _iniciar_sesion;
 
