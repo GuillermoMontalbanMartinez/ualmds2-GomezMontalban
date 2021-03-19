@@ -11,6 +11,7 @@ class VistaDarDeBajaUsuario extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-vertical-layout style="justify-content: center; align-items: center; height: 50%;">

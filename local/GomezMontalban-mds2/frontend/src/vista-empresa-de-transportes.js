@@ -10,6 +10,7 @@ class VistaEmpresaDeTransportes extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayoutEmpresaDeTransportes">

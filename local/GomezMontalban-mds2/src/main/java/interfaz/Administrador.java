@@ -16,7 +16,6 @@ public class Administrador extends VistaAdministrador {
 	public Productos_mas_vendidos_admin productos_mas_vendidos_admin;
 	public Buscar_producto_admin buscar_producto_admin;
 	public VerticalLayout layout_administrador;
-	public VerticalLayout layout_banner_administrador;
 	
 	public Administrador() {
 

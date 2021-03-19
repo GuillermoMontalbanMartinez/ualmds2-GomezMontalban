@@ -9,6 +9,7 @@ class VistaProductos extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-horizontal-layout theme="spacing" style="padding-right: var(--lumo-space-xl);"></vaadin-horizontal-layout>

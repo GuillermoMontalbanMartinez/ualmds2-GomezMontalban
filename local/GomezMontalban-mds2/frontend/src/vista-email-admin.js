@@ -13,6 +13,7 @@ class VistaEmailAdmin extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-vertical-layout style="margin: var(--lumo-space-m);">
