@@ -34,6 +34,8 @@ public class VistaBannerAdmin extends PolymerTemplate<VistaBannerAdmin.VistaBann
 	private Button vaadinButtonAdministrarCategorias;
 	@Id("vaadinVerticalLayoutBannerAdmin")
 	private Element vaadinVerticalLayout;
+	@Id("vaadinButtonCorreo")
+	private Button vaadinButtonCorreo;
 
 	/**
      * Creates a new VistaBannerAdmin.
@@ -111,6 +113,14 @@ public class VistaBannerAdmin extends PolymerTemplate<VistaBannerAdmin.VistaBann
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getVaadinButtonCorreo() {
+		return vaadinButtonCorreo;
+	}
+
+	public void setVaadinButtonCorreo(Button vaadinButtonCorreo) {
+		this.vaadinButtonCorreo = vaadinButtonCorreo;
 	}
 
 }

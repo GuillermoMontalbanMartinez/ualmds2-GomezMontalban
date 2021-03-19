@@ -16,7 +16,7 @@ class VistaAdministrarCategorias extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAdministrarCategorias">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayoutAdministrarCategorias">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
   <h1 style="margin: var(--lumo-space-m); align-self: center;">Administrar categorias</h1>
  </vaadin-vertical-layout>

@@ -16,6 +16,7 @@ public class Administrador extends VistaAdministrador {
 	public Productos_mas_vendidos_admin productos_mas_vendidos_admin;
 	public Buscar_producto_admin buscar_producto_admin;
 	public VerticalLayout layout_administrador;
+	public VerticalLayout layout_cuerpo_administrador;
 	
 	public Administrador() {
 
@@ -25,13 +26,15 @@ public class Administrador extends VistaAdministrador {
 		
 		layout_administrador.removeAll();
 		layout_administrador.add(banner_admin);
-
+		
+		layout_cuerpo_administrador = this.getLayoutcuerpoAdmin().as(VerticalLayout.class);
 		
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.administrar_categorias);
+				layout_cuerpo_administrador.removeAll();
 			}
 		});
 		
@@ -40,6 +43,7 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.administrar_cuentas);
+				layout_cuerpo_administrador.removeAll();
 			}
 		});
 		
@@ -49,6 +53,7 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.administrar_ofertas);
+				layout_cuerpo_administrador.removeAll();
 			}
 		});
 		
@@ -57,6 +62,7 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.administrar_productos);
+				layout_cuerpo_administrador.removeAll();
 			}
 		});
 		
@@ -65,6 +71,7 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.cerrar_sesion_admin);
+				layout_cuerpo_administrador.removeAll();
 			}
 		});
 		
@@ -73,14 +80,24 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.ver_listado_de_compras);
+				layout_cuerpo_administrador.removeAll();
 			}
 		});
 		
 		banner_admin.getVaadinButtonPrincipal().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.administrador);
+				
+			}
+		});
+		
+		banner_admin.getVaadinButtonCorreo().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin.correo_admin);
+				layout_cuerpo_administrador.removeAll();
 			}
 		});
 	}
