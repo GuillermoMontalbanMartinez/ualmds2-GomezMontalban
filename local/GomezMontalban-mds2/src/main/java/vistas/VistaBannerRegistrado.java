@@ -17,10 +17,10 @@ import com.vaadin.flow.component.polymertemplate.Id;
 @JsModule("./src/vista-banner-registrado.js")
 public class VistaBannerRegistrado extends PolymerTemplate<VistaBannerRegistrado.VistaBannerRegistradoModel> {
 
-    @Id("Perfil")
-	private Button perfil;
-	@Id("Correo")
+    @Id("Correo")
 	private Button correo;
+	@Id("Perfil")
+	private Button perfil;
 
 	/**
      * Creates a new VistaBannerRegistrado.

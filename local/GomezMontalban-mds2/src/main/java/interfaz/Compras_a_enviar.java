@@ -13,25 +13,7 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 	public VerticalLayout layout;
 	
 	public Compras_a_enviar() {
-		
-		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		
-		
-		this.getBoton_compras_enviadas().addClickListener(new ComponentEventListener() {
-			
-			
-
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				Compras_enviadas _compras_enviadas = new Compras_enviadas();
-				layout.removeAll();
 				
-				layout.addComponentAtIndex(0, _compras_enviadas);
-				_compras_enviadas = null;
-			}
-			
-		});
-		
 		
 	}
 }
