@@ -1,7 +1,11 @@
 package interfaz;
 
+
+
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaAdministrador;
@@ -19,11 +23,15 @@ public class Administrador extends VistaAdministrador {
 		banner_admin = new Banner_admin();
 		layout_banner_administrador = this.getVaadinVerticalLayoutAdministradorBannerVista().as(VerticalLayout.class);
 		
+//		layout_administrador.removeAll();
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {	
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
+				Notification.show("Hola");
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin.administrar_categorias);
+				layout_administrador.add(new Button());
+				
 				
 			}
 		});
