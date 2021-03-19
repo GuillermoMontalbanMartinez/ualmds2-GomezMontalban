@@ -11,6 +11,7 @@ class VistaBuscarProducto extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-horizontal-layout class="content">

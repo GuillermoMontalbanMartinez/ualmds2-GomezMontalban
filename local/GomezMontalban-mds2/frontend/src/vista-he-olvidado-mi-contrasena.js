@@ -12,6 +12,7 @@ class VistaHeOlvidadoMiContrasena extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; margin: var(--lumo-space-m); align-items: center; justify-content: center;" theme="spacing">

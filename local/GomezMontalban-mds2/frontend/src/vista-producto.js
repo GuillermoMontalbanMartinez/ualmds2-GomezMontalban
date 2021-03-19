@@ -10,6 +10,7 @@ class VistaProducto extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; border: #ccc solid 2px; border-radius : 20px; background : #efefef; padding-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); justify-content: flex-end;">

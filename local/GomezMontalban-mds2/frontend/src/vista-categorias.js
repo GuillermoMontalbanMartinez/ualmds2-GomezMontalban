@@ -11,6 +11,7 @@ class VistaCategorias extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; border: #ccc solid 2px; border-radius : 5px;

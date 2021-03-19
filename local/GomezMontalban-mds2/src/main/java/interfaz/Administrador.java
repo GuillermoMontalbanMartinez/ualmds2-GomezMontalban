@@ -16,14 +16,13 @@ public class Administrador extends VistaAdministrador {
 	public Productos_mas_vendidos_admin productos_mas_vendidos_admin;
 	public Buscar_producto_admin buscar_producto_admin;
 	public VerticalLayout layout_administrador;
-	public VerticalLayout layout_banner_administrador;
 	
 	public Administrador() {
 		layout_administrador = this.getVaadinVerticalLayoutAdministrador().as(VerticalLayout.class);
 		banner_admin = new Banner_admin();
-		layout_banner_administrador = this.getVaadinVerticalLayoutAdministradorBannerVista().as(VerticalLayout.class);
 		
-//		layout_administrador.removeAll();
+		layout_administrador.add(banner_admin);
+		
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {	
 			@Override
 			public void onComponentEvent(ComponentEvent event) {

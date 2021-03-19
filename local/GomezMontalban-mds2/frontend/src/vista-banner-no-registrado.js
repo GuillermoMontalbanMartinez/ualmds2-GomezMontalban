@@ -13,6 +13,7 @@ class VistaBannerNoRegistrado extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; justify-content: center; align-items: center;" theme="spacing">
