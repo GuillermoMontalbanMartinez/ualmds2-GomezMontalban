@@ -15,20 +15,20 @@ class VistaAdministrarPerfil extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="align-items: center;">
  <h2>Administrar perfil</h2>
- <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);">
-  Últimas compras realizadas
+ <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);" id="ultimasComprasRealizadas">
+   Últimas compras realizadas 
  </vaadin-button>
- <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);">
-  Seguimiento de mis pedidos
+ <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);" id="SeguimientoPedidos">
+   Seguimiento de mis pedidos 
  </vaadin-button>
- <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);">
-  Modificar datos personales 
+ <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);" id="modificarDatosPersonales">
+   Modificar datos personales 
  </vaadin-button>
- <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);">
-  Dar de baja esta cuenta
+ <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);" id="darBajaCuenta">
+   Dar de baja esta cuenta 
  </vaadin-button>
- <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);">
-  Cerrar sesion
+ <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);" id="CerrarSesion">
+   Cerrar sesion 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

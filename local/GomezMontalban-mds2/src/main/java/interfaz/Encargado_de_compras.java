@@ -30,10 +30,20 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 				
 			}
 		});
+				
+		this._compras_a_enviar.getBoton_compras_enviadas().addClickListener(new ComponentEventListener() {
+			
+
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				Compras_a_enviar _compras_a_enviar = new Compras_a_enviar();
+				layout.removeAll();
+				layout.add(_compras_enviadas);
+				_compras_a_enviar=null;
+			}
+		});
 		
-		
-		
-		this.getButton_compras_a_enviar().addClickListener(new ComponentEventListener() {
+		this._compras_enviadas.getBoton_compras_a_enviar().addClickListener(new ComponentEventListener() {
 			
 			@Override
 			public void onComponentEvent(ComponentEvent event) {

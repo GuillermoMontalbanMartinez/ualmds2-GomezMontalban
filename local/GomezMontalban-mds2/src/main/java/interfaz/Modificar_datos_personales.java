@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Modificar_datos_personales {
+import vistas.VistaModificarDatosPersonales;
+
+public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 	public Administrar_perfil _administrar_perfil;
 	public Carrito_registrado _carrito_registrado;
 
