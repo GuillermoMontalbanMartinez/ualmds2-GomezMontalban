@@ -43,6 +43,7 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
+		
 		banner_admin.getVaadinButtonAdministrarOfertas().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
