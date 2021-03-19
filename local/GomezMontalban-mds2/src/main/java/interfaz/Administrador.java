@@ -20,7 +20,9 @@ public class Administrador extends VistaAdministrador {
 	public Administrador() {
 
 		banner_admin = new Banner_admin();
+		
 		layout_administrador = this.getLayoutBannerAdmin().as(VerticalLayout.class);
+		
 		layout_administrador.removeAll();
 		layout_administrador.add(banner_admin);
 
