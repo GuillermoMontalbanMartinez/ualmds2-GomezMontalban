@@ -4,6 +4,7 @@ import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import ch.qos.logback.core.Layout;
 import vistas.VistaAdministrador;
 
 public class Administrador extends VistaAdministrador {
@@ -15,13 +16,11 @@ public class Administrador extends VistaAdministrador {
 	public VerticalLayout layout_banner_administrador;
 	
 	public Administrador() {
-//		this.layout_administrador = this.getVaadinVerticalLayoutAdministrador();
-//		banner_admin = new Banner_admin();
-//		layout_banner_administrador = this.getVistaBannerAdmin();
-//		layout_banner_administrador.add(banner_admin);
+
 		layout_administrador = this.getVaadinVerticalLayoutAdministrador().as(VerticalLayout.class);
+		layout_banner_administrador = this.getVistaBannerAdmin().as(VerticalLayout.class);
 		banner_admin = new Banner_admin();
-//		layout_banner_administrador = this.layout_banner_administrador;
+
 		layout_banner_administrador.add(banner_admin);
 		
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
