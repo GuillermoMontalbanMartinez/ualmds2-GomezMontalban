@@ -19,14 +19,14 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vista-administrador.js")
 public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.VistaAdministradorModel> {
 
-    @Id("vaadinVerticalLayoutAdministrador")
-	private Element vaadinVerticalLayoutAdministrador;
-	@Id("vistaBannerAdmin")
-	private Element vistaBannerAdmin;
-	@Id("vaadinButtonMostrarTodosLosProductos")
-	private Button vaadinButtonMostrarTodosLosProductos;
-	@Id("vaadinVerticalLayoutAdministradorBannerVista")
-	private Element vaadinVerticalLayoutAdministradorBannerVista;
+
+	@Id("LayoutAdmin")
+	private Element layoutAdmin;
+	@Id("layoutBannerAdmin")
+	private Element layoutBannerAdmin;
+	@Id("LayoutcuerpoAdmin")
+	private Element layoutcuerpoAdmin;
+
 	/**
      * Creates a new VistaAdministrador.
      */
@@ -41,37 +41,30 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
         // Add setters and getters for template properties here.
     }
 
-	public Element getVaadinVerticalLayoutAdministrador() {
-		return vaadinVerticalLayoutAdministrador;
+	public Element getLayoutAdmin() {
+		return layoutAdmin;
 	}
 
-	public void setVaadinVerticalLayoutAdministrador(Element vaadinVerticalLayoutAdministrador) {
-		this.vaadinVerticalLayoutAdministrador = vaadinVerticalLayoutAdministrador;
+	public void setLayoutAdmin(Element layoutAdmin) {
+		this.layoutAdmin = layoutAdmin;
 	}
 
-	public Element getVistaBannerAdmin() {
-		return vistaBannerAdmin;
+	public Element getLayoutBannerAdmin() {
+		return layoutBannerAdmin;
 	}
 
-	public void setVistaBannerAdmin(Element vistaBannerAdmin) {
-		this.vistaBannerAdmin = vistaBannerAdmin;
+	public void setLayoutBannerAdmin(Element layoutBannerAdmin) {
+		this.layoutBannerAdmin = layoutBannerAdmin;
 	}
 
-	public Button getVaadinButtonMostrarTodosLosProductos() {
-		return vaadinButtonMostrarTodosLosProductos;
+	public Element getLayoutcuerpoAdmin() {
+		return layoutcuerpoAdmin;
 	}
 
-	public void setVaadinButtonMostrarTodosLosProductos(Button vaadinButtonMostrarTodosLosProductos) {
-		this.vaadinButtonMostrarTodosLosProductos = vaadinButtonMostrarTodosLosProductos;
+	public void setLayoutcuerpoAdmin(Element layoutcuerpoAdmin) {
+		this.layoutcuerpoAdmin = layoutcuerpoAdmin;
 	}
 
-	public Element getVaadinVerticalLayoutAdministradorBannerVista() {
-		return vaadinVerticalLayoutAdministradorBannerVista;
-	}
-
-	public void setVaadinVerticalLayoutAdministradorBannerVista(Element vaadinVerticalLayoutAdministradorBannerVista) {
-		this.vaadinVerticalLayoutAdministradorBannerVista = vaadinVerticalLayoutAdministradorBannerVista;
-	}
-
+	
 
 }

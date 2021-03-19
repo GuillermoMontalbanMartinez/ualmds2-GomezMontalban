@@ -29,13 +29,6 @@ public class Banner_admin extends VistaBannerAdmin {
 		correo_admin = new Correo_admin();
 		ver_listado_de_compras = new Ver_listado_de_compras();
 		
-//		this.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
-//			@Override
-//			public void onComponentEvent(ComponentEvent event) {
-//				
-//			}
-//		});
-//		
 
 
 	}
