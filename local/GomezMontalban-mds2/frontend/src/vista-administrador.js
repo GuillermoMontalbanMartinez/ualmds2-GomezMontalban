@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-banner-admin.js';
 import './vista-filtro-por-categoria.js';
 import './vista-productos-admin.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-banner-admin.js';
 
 class VistaAdministrador extends PolymerElement {
 
@@ -16,20 +16,22 @@ class VistaAdministrador extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAdministrador">
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);" id="vaadinVerticalLayoutAdministradorBannerVista">
-  <vista-banner-admin style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="vistaBannerAdmin"></vista-banner-admin>
+<vaadin-vertical-layout theme="spacing" id="LayoutAdmin" style="width: 100%; height: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin-top: var(--lumo-space-xl);" id="layoutBannerAdmin">
+  <vista-banner-admin style="flex-shrink: 0; align-self: center;" id="vistaBannerAdmin"></vista-banner-admin>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">
-  <vista-filtro-por-categoria style="flex-shrink: 0; align-self: center;"></vista-filtro-por-categoria>
- </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);">
-  <vista-productos-admin style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);"></vista-productos-admin>
- </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); width: 100%; justify-content: center; align-items: center;">
-  <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonMostrarTodosLosProductos">
-    Mostrar todos los productos 
-  </vaadin-button>
+ <vaadin-vertical-layout style="width: 100%; height: 100%;" id="LayoutcuerpoAdmin">
+  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">
+   <vista-filtro-por-categoria style="flex-shrink: 0; align-self: center;"></vista-filtro-por-categoria>
+  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);">
+   <vista-productos-admin style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);"></vista-productos-admin>
+  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); width: 100%; justify-content: center; align-items: center;">
+   <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonMostrarTodosLosProductos">
+     Mostrar todos los productos 
+   </vaadin-button>
+  </vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
