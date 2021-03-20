@@ -35,7 +35,6 @@ public class Cerrar_sesion_admin extends VistaCerrarSesionAdmin {
 		});
 	}
 	
-
 	public void confirmar_cierre_sesion_admin() {
 		throw new UnsupportedOperationException();
 	}

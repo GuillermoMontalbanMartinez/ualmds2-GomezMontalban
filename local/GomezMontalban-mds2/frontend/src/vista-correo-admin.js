@@ -15,15 +15,15 @@ class VistaCorreoAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutCorreoAdmin">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center;">
    <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);">
     <h4 style="flex-shrink: 0; align-self: center;">Bandeja de entrada</h4>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; justify-content: flex-end; margin: var(--lumo-space-m);">
-    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-     Redactar mensaje 
+    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonRedactarMensaje">
+      Redactar mensaje 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

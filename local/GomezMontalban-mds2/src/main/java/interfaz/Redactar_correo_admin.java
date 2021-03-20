@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Redactar_correo_admin {
+import vistas.VistaRedactarCorreo;
+
+public class Redactar_correo_admin extends VistaRedactarCorreo {
 	public Correo_admin _correo_admin;
 
 	public void enviar() {
