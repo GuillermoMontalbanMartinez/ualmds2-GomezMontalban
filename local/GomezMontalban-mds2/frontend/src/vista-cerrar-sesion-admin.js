@@ -13,18 +13,18 @@ class VistaCerrarSesionAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutCerrarSesión">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
   <h1>Cerrar sesión</h1>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-  <vaadin-button theme="primary">
-   Cerrar sesión
+  <vaadin-button theme="primary" id="vaadinButtonCerrarSesion">
+    Cerrar sesión 
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-  <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-   Cancelar
+  <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonCancelar">
+    Cancelar 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

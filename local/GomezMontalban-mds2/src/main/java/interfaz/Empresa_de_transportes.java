@@ -19,21 +19,12 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 	
 	public Empresa_de_transportes() {
 		pedidos_a_entregar = new Pedidos_a_entregar();
-		
-
-		
 		pedidos_entregados = new Pedidos_entregados();
-		
-
-		
-		
 		
 		layout_empresa_de_transportes = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		layout_pedidos_a_entregar = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		layout_pedidos_entregados = this.getVaadinVerticalLayoutPedidosEntregados().as(VerticalLayout.class);
 
-		
-		
 		this.getVaadinButtonPedidosAEntregar().addClickListener(new ComponentEventListener() {
 			public void onComponentEvent(ComponentEvent event) {
 				 Notification.show("Acceso a pedidos a entregar");
@@ -68,7 +59,5 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 				layout_pedidos_a_entregar.add(pedidos_entregados);
 			}
 		});
-	}
-	
-		
+	}	
 }
