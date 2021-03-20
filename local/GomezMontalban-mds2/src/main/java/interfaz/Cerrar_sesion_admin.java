@@ -10,6 +10,7 @@ import vistas.VistaCerrarSesionAdmin;
 public class Cerrar_sesion_admin extends VistaCerrarSesionAdmin {
 	public Banner_admin banner_admin;
 	public Button cancelar;
+	public Button cerrar_sesion;
 	public VerticalLayout layout_cerrar_sesion;
 
 	
@@ -20,10 +21,20 @@ public class Cerrar_sesion_admin extends VistaCerrarSesionAdmin {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout_cerrar_sesion.removeAll();
+				layout_cerrar_sesion.add(new Administrador());
+			}
+		});
+		
+		cerrar_sesion = this.getVaadinButtonCerrarSesion();
+		cerrar_sesion.addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_cerrar_sesion.removeAll();
 				layout_cerrar_sesion.add(new Cibernauta());
 			}
 		});
 	}
+	
 
 	public void confirmar_cierre_sesion_admin() {
 		throw new UnsupportedOperationException();
