@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-dar-alta-producto template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-dar-alta-producto.js")
 public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.VistaDarAltaProductoModel> {
 
-    /**
+    @Id("vaadinVerticalLayoutAltaProducto")
+	private Element vaadinVerticalLayout;
+
+	/**
      * Creates a new VistaDarAltaProducto.
      */
     public VistaDarAltaProducto() {
@@ -28,4 +33,12 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
     public interface VistaDarAltaProductoModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
 }

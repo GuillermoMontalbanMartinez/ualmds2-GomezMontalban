@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-administrar-productos template.
@@ -17,8 +18,16 @@ import com.vaadin.flow.component.polymertemplate.Id;
 @JsModule("./src/vista-administrar-productos.js")
 public class VistaAdministrarProductos extends PolymerTemplate<VistaAdministrarProductos.VistaAdministrarProductosModel> {
 
-    @Id("vaadinVerticalLayout")
+    @Id("vaadinVerticalLayoutAdministrarProductos")
 	private Element vaadinVerticalLayout;
+	@Id("vaadinButtonAnadirProductos")
+	private Button vaadinButton;
+	@Id("vaadinButtonEliminarProducto")
+	private Button vaadinButtonEliminarProducto;
+	@Id("vaadinButtonAnadirProductos")
+	private Button vaadinButtonAnadirProductos;
+	@Id("vaadinVerticalLayoutAdministrarProductos")
+	private Element vaadinVerticalLayoutAdministrarProductos;
 
 	/**
      * Creates a new VistaAdministrarProductos.
@@ -40,5 +49,37 @@ public class VistaAdministrarProductos extends PolymerTemplate<VistaAdministrarP
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+	public Button getVaadinButtonEliminarProducto() {
+		return vaadinButtonEliminarProducto;
+	}
+
+	public void setVaadinButtonEliminarProducto(Button vaadinButtonEliminarProducto) {
+		this.vaadinButtonEliminarProducto = vaadinButtonEliminarProducto;
+	}
+
+	public Button getVaadinButtonAnadirProductos() {
+		return vaadinButtonAnadirProductos;
+	}
+
+	public void setVaadinButtonAnadirProductos(Button vaadinButtonAnadirProductos) {
+		this.vaadinButtonAnadirProductos = vaadinButtonAnadirProductos;
+	}
+
+	public Element getVaadinVerticalLayoutAdministrarProductos() {
+		return vaadinVerticalLayoutAdministrarProductos;
+	}
+
+	public void setVaadinVerticalLayoutAdministrarProductos(Element vaadinVerticalLayoutAdministrarProductos) {
+		this.vaadinVerticalLayoutAdministrarProductos = vaadinVerticalLayoutAdministrarProductos;
 	}
 }

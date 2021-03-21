@@ -23,7 +23,7 @@ class VistaCerrarSesionAdmin extends PolymerElement {
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-  <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonCancelar">
+  <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary error" id="vaadinButtonCancelar">
     Cancelar 
   </vaadin-button>
  </vaadin-vertical-layout>

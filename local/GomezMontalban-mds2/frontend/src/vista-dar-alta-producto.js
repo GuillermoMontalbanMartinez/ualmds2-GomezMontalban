@@ -18,7 +18,7 @@ class VistaDarAltaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAltaProducto">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m);">
   <h1>Dar alta producto</h1>
  </vaadin-vertical-layout>
@@ -134,12 +134,12 @@ class VistaDarAltaProducto extends PolymerElement {
   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
     <vaadin-button theme="primary">
-     Cancelar
+      Cancelar 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="width: 100%; margin: var(--lumo-space-m);">
     <vaadin-button style="width: 100%;" theme="primary">
-     Aceptar
+      Aceptar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
