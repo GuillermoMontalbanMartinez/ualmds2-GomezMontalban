@@ -17,7 +17,7 @@ class VistaDarAltaCuenta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutDarAltaCuenta">
  <h4 style="align-self: center; margin-bottom: var(--lumo-space-xl);">Dar de alta cuenta de usuario</h4>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout style="align-self: center;">
@@ -62,13 +62,13 @@ class VistaDarAltaCuenta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout style="margin-bottom: var(--lumo-space-m);">
-    <vaadin-button theme="primary">
-     Cancelar
+    <vaadin-button theme="primary error" id="vaadinButtonCancelar">
+      Cancelar 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout style="margin-bottom: var(--lumo-space-m);">
-    <vaadin-button theme="primary">
-     Aceptar
+    <vaadin-button theme="primary" id="vaadinButtonAceptar">
+      Aceptar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

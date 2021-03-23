@@ -16,22 +16,7 @@ public class Administrar_cuentas extends VistaAdministrarCuentas {
 	public Button bajaCuentas;
 	
 	public Administrar_cuentas() {
-		layout_administrar_cuentas = this.getVaadinVerticalLayoutAdministrarCuentasDeUsuario().as(VerticalLayout.class);
-		altaCuentas = this.getVaadinButtonAltaCuentaDeUsuario();
-		altaCuentas.addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrar_cuentas.removeAll();
-//				layout_administrar_cuentas.add(new Dar_alta_cuenta());
-			}
-		});
-		
-		bajaCuentas.addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrar_cuentas.removeAll();
-//				layout_administrar_cuentas.add(new Dar_baja_cuenta());
-			}
-		});
+		_dar_alta_cuenta = new Dar_alta_cuenta();
+		_dar_baja_cuenta = new Dar_baja_cuenta();
 	}
 }

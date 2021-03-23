@@ -4,6 +4,9 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-dar-baja-cuenta template.
@@ -15,7 +18,14 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-dar-baja-cuenta.js")
 public class VistaDarBajaCuenta extends PolymerTemplate<VistaDarBajaCuenta.VistaDarBajaCuentaModel> {
 
-    /**
+    @Id("vaadinVerticalLayoutDarDeBajaCuentaDeUsuario")
+	private Element vaadinVerticalLayout;
+	@Id("buttonCancelar")
+	private Button buttonCancelar;
+	@Id("buttonAceptar")
+	private Button buttonAceptar;
+
+	/**
      * Creates a new VistaDarBajaCuenta.
      */
     public VistaDarBajaCuenta() {
@@ -28,4 +38,28 @@ public class VistaDarBajaCuenta extends PolymerTemplate<VistaDarBajaCuenta.Vista
     public interface VistaDarBajaCuentaModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getButtonCancelar() {
+		return buttonCancelar;
+	}
+
+	public void setButtonCancelar(Button buttonCancelar) {
+		this.buttonCancelar = buttonCancelar;
+	}
+
+	public Button getButtonAceptar() {
+		return buttonAceptar;
+	}
+
+	public void setButtonAceptar(Button buttonAceptar) {
+		this.buttonAceptar = buttonAceptar;
+	}
 }

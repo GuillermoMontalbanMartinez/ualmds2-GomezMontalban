@@ -15,7 +15,7 @@ class VistaDarBajaCuenta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutDarDeBajaCuentaDeUsuario">
  <h1 style="align-self: center; margin-bottom: var(--lumo-space-m); margin: var(--lumo-space-xl);">Dar de baja cuenta de usuario</h1>
  <vaadin-vertical-layout theme="spacing" style="align-items: center; align-self: center; flex-shrink: 0; justify-content: center; margin-bottom: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center;">
@@ -30,13 +30,13 @@ class VistaDarBajaCuenta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0;">
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-     Cancelar
+    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary error" id="buttonCancelar">
+      Cancelar 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-button theme="primary">
-     Aceptar
+    <vaadin-button theme="primary" id="buttonAceptar">
+      Aceptar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
