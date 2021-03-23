@@ -15,11 +15,16 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		banner = this.getBanner();
 		banner.add(_banner_registrado);
 		
+		Acceder_al_catalogo catalogo = new Acceder_al_catalogo();
+
+		
 		_banner_registrado.getCorreo().addClickListener(new ComponentEventListener() {
 			
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_registrado);
+
 				layout.add(_banner_registrado._correo_usuario);
 				
 			}
@@ -30,6 +35,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_registrado);
+
 				layout.add(_banner_registrado._administrar_perfil);
 				
 			}
@@ -40,6 +47,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_registrado);
+
 				layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
 				
 			}
@@ -50,6 +59,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_registrado);
+
 				layout.add(_banner_registrado._administrar_perfil._seguimiento_del_pedido);
 				
 			}
@@ -60,6 +71,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_registrado);
+
 				layout.add(_banner_registrado._administrar_perfil._modificar_datos_personales);
 				
 			}
@@ -70,6 +83,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_registrado);
+
 				layout.add(_banner_registrado._administrar_perfil._dar_de_baja_usuario);
 				
 			}
@@ -80,12 +95,23 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_registrado);
+
 				layout.add(_banner_registrado._administrar_perfil._cerrar_sesion);
 				
 			}
 		});
 	
-		
+this.getMostrarProductos().addClickListener(new ComponentEventListener() {
+			
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout.removeAll();
+				layout.add(_banner_registrado);
+				layout.add(catalogo);
+				
+			}
+		});
 		
 	}
 	

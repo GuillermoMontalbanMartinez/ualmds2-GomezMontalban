@@ -4,6 +4,7 @@ import './vista-ofertas.js';
 import './vista-productos-mas-vendidos.js';
 import './vista-ver-publicidad.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaCibernautaComun extends PolymerElement {
  
@@ -22,6 +23,9 @@ class VistaCibernautaComun extends PolymerElement {
  <vista-ofertas style="height: 100%; width: 100%;"></vista-ofertas>
  <h3 style="align-self: center;">Productos más vendidos</h3>
  <vista-productos-mas-vendidos style="width: 100%; height: 100%; align-self: center;"></vista-productos-mas-vendidos>
+ <vaadin-button theme="primary" id="mostrarProductos">
+  Mostrar todos los productos
+ </vaadin-button>
  <vista-ver-publicidad style="height: 70%; width: 100%; align-self: center;"></vista-ver-publicidad>
 </vaadin-vertical-layout>
 `;

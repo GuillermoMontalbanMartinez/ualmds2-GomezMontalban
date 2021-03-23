@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-cibernauta-comun")
 @JsModule("./src/vista-cibernauta-comun.js")
@@ -16,6 +17,8 @@ public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.V
 	private Element vaadinVerticalLayout;
 	@Id("banner")
 	private HorizontalLayout banner;
+	@Id("mostrarProductos")
+	private Button mostrarProductos;
 
 	/**
      * Creates a new VistaCibernautaComun.
@@ -45,6 +48,14 @@ public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.V
 
 	public void setBanner(HorizontalLayout banner) {
 		this.banner = banner;
+	}
+
+	public Button getMostrarProductos() {
+		return mostrarProductos;
+	}
+
+	public void setMostrarProductos(Button mostrarProductos) {
+		this.mostrarProductos = mostrarProductos;
 	}
 }
  
