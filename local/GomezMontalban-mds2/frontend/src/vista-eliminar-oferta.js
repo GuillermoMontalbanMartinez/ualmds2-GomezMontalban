@@ -18,7 +18,7 @@ class VistaEliminarOferta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="VerticalLayoutEliminarOferta">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <h1 style="flex-shrink: 0; align-self: center; width: 100%;">Eliminar oferta</h1>
  </vaadin-vertical-layout>
@@ -60,13 +60,13 @@ class VistaEliminarOferta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-     Eliminar
+    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary" id="ButtonEliminarOfertaProducto">
+      Eliminar 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary">
-     Cancelar
+    <vaadin-button style="flex-shrink: 0; align-self: center;" theme="primary error" id="ButtonCancelarOfertaProducto">
+      Cancelar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
@@ -108,13 +108,13 @@ class VistaEliminarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary">
-      Eliminar 
+     <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary" id="ButtonElminarOfertaCategoria">
+       Eliminar 
      </vaadin-button>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
-     <vaadin-button theme="primary">
-      Cancelar
+     <vaadin-button theme="primary error" id="ButtonCancelarOfertaCategoria" style="flex-shrink: 0; align-self: center;">
+       Cancelar 
      </vaadin-button>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>

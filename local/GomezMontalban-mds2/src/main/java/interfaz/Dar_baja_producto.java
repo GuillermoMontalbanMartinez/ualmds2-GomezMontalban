@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Dar_baja_producto {
+import vistas.VistaDarBajaProducto;
+
+public class Dar_baja_producto extends VistaDarBajaProducto {
 	public Administrar_productos _administrar_productos;
 
 	public void Baja_producto() {

@@ -133,12 +133,12 @@ class VistaDarAltaProducto extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0; width: 100%; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-    <vaadin-button theme="primary">
+    <vaadin-button theme="primary error" id="ButtonCancelar">
       Cancelar 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="width: 100%; margin: var(--lumo-space-m);">
-    <vaadin-button style="width: 100%;" theme="primary">
+    <vaadin-button style="width: 100%;" theme="primary" id="ButtonAceptar">
       Aceptar 
     </vaadin-button>
    </vaadin-horizontal-layout>

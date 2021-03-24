@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-dar-alta-producto template.
@@ -17,8 +18,12 @@ import com.vaadin.flow.component.polymertemplate.Id;
 @JsModule("./src/vista-dar-alta-producto.js")
 public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.VistaDarAltaProductoModel> {
 
-    @Id("vaadinVerticalLayoutAltaProducto")
-	private Element vaadinVerticalLayout;
+    @Id("ButtonCancelar")
+	private Button buttonCancelar;
+	@Id("ButtonAceptar")
+	private Button buttonAceptar;
+	@Id("vaadinVerticalLayoutAltaProducto")
+	private Element vaadinVerticalLayoutAltaProducto;
 
 	/**
      * Creates a new VistaDarAltaProducto.
@@ -34,11 +39,27 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
         // Add setters and getters for template properties here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Button getButtonCancelar() {
+		return buttonCancelar;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setButtonCancelar(Button buttonCancelar) {
+		this.buttonCancelar = buttonCancelar;
+	}
+
+	public Button getButtonAceptar() {
+		return buttonAceptar;
+	}
+
+	public void setButtonAceptar(Button buttonAceptar) {
+		this.buttonAceptar = buttonAceptar;
+	}
+
+	public Element getVaadinVerticalLayoutAltaProducto() {
+		return vaadinVerticalLayoutAltaProducto;
+	}
+
+	public void setVaadinVerticalLayoutAltaProducto(Element vaadinVerticalLayoutAltaProducto) {
+		this.vaadinVerticalLayoutAltaProducto = vaadinVerticalLayoutAltaProducto;
 	}
 }

@@ -16,7 +16,7 @@ class VistaPublicarOferta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="VerticalLayoutPublicarOfertas">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;">
   <h1 style="align-self: center; flex-shrink: 0;">Añadir ofertas</h1>
  </vaadin-vertical-layout>
@@ -58,13 +58,13 @@ class VistaPublicarOferta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-items: center; justify-content: center; flex-shrink: 0; align-self: center;">
-    <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary">
-     Publicar oferta
+    <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary" id="ButtonPublicarOferta">
+      Publicar oferta 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-items: center; align-self: center; flex-shrink: 0; justify-content: center;">
-    <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary">
-     Cancelar
+    <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary error" id="ButtonCancelar">
+      Cancelar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
@@ -106,13 +106,13 @@ class VistaPublicarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary">
-      Publicar oferta
+     <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="ButtonPublicarOfertaCategoria">
+       Publicar oferta 
      </vaadin-button>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
-     <vaadin-button style="margin: var(--lumo-space-m);" theme="primary">
-      Cancelar 
+     <vaadin-button style="margin: var(--lumo-space-m);" theme="primary error" id="ButtonCancelarOfertaCategoria">
+       Cancelar 
      </vaadin-button>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>

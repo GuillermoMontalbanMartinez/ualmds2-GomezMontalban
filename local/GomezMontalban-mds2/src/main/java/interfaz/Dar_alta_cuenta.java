@@ -12,5 +12,4 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 	public void Alta_cuenta() {
 		throw new UnsupportedOperationException();
 	}
-
 }

@@ -16,22 +16,7 @@ public class Administrar_ofertas extends VistaAdministrarOfertas {
 	public Button eliminarOfertas;
 	
 	public Administrar_ofertas() {
-		layout_administrar_ofertas = this.getVaadinVerticalLayoutAdministrarOfertas().as(VerticalLayout.class);
-		agregarOfertas = this.getVaadinButtonAgregarOfertas();
-		agregarOfertas.addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrar_ofertas.removeAll();
-//				layout_administrar_ofertas.add(new Aña);
-			}
-		});
-		eliminarOfertas = this.getVaadinButtonAgregarOfertas();
-		eliminarOfertas.addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrar_ofertas.removeAll();
-//				layout_administrar_ofertas.add(new Eliminar_oferta());
-			}
-		});
+		_eliminar_oferta = new Eliminar_oferta();
+		_publicar_oferta = new Publicar_oferta();
 	}
 }

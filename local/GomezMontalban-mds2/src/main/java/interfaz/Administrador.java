@@ -211,6 +211,163 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
+		banner_admin.administrar_productos.getVaadinButtonAnadirProductos().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_productos._dar_alta_producto);
+			}
+		});
+		
+		banner_admin.administrar_productos.getVaadinButtonEliminarProducto().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_productos._dar_baja_producto);
+			}
+		});
+		
+				
+		banner_admin.administrar_productos._dar_alta_producto.getButtonAceptar().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				Notification.show("Dado de alta el producto");
+			}
+		});
+		
+		banner_admin.administrar_productos._dar_alta_producto.getButtonCancelar().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_productos);
+				Notification.show("Cancelado");
+			}
+		});
+		
+		banner_admin.administrar_productos._dar_baja_producto.getButtonAceptar().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_productos);
+				Notification.show("Dado de baja el producto");
+			}
+		});
+		
+		banner_admin.administrar_productos._dar_baja_producto.getButtonCancelar().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_productos);
+				Notification.show("Cancelado");
+			}
+		});
+		
+		// EMPIEZA OFERTAS
+		
+		banner_admin.administrar_ofertas.getVaadinButtonAgregarOfertas().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas._publicar_oferta);
+			}
+		});
+		
+		banner_admin.administrar_ofertas.getVaadinButtonEliminarOfertas().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas._eliminar_oferta);
+			}
+		});
+		
+		banner_admin.administrar_ofertas._publicar_oferta.getButtonPublicarOferta().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Publicada la oferta del producto");
+			}
+		});
+		
+		banner_admin.administrar_ofertas._publicar_oferta.getButtonCancelar().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Cancelado");
+			}
+		});
+		
+		banner_admin.administrar_ofertas._publicar_oferta.getButtonPublicarOfertaCategoria().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Publicada la oferta de los productos de la categoria");
+			}
+		});
+		
+		banner_admin.administrar_ofertas._publicar_oferta.getButtonCancelarOfertaCategoria().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Cancelado");
+			}
+		});
+		
+		banner_admin.administrar_ofertas._eliminar_oferta.getButtonEliminarOfertaProducto().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Eliminada la oferta del producto");
+			}
+		});
+		
+		banner_admin.administrar_ofertas._eliminar_oferta.getButtonCancelarOfertaProducto().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Cancelado");
+			}
+		});
+		
+		banner_admin.administrar_ofertas._eliminar_oferta.getButtonElminarOfertaCategoria().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Eliminada la oferta de los productos de la categoria");
+			}
+		});
+		
+		banner_admin.administrar_ofertas._eliminar_oferta.getButtonCancelarOfertaCategoria().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_ofertas);
+				Notification.show("Cancelada");
+			}
+		});
 		
 	}
 }
