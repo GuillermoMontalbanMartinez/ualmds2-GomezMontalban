@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Compra" table="Compra" lazy="false" discriminator-value="Compra">
+		<id name="id_compra" column="Id_compra" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<discriminator column="Discriminator" type="string"/>
+		<many-to-one name="tiene_item" column="ItemId_item" class="basededatos.Item" cascade="save-update,lock" unique="true" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<property name="estado_compra" column="Estado_compra" type="integer" length="10" not-null="false" lazy="false"/>
+		<property name="total_productos" column="Total_productos" type="integer" length="10" not-null="true" lazy="false"/>
+		<property name="fechaRecepcion" column="FechaRecepcion" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="fecha_envio" column="Fecha_envio" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="fecha_compra" column="Fecha_compra" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="precio_compra" column="Precio_compra" type="double" not-null="true" lazy="false"/>
+		<many-to-one name="tiene_asociado_un_cibernauta_registrado" cascade="lock" column="Cibernauta_registradoUsuariosId_usuario" class="basededatos.Cibernauta_registrado" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<subclass name="basededatos.Compra_pendiente" discriminator-value="Compra_pendiente" lazy="false">
+			<join table="Compra_pendiente">
+				<key>
+					<column name="CompraId_compra"/>
+				</key>
+			</join>
+		</subclass>
+		<subclass name="basededatos.Compra_enviada" discriminator-value="Compra_enviada" lazy="false">
+			<join table="Compra_enviada">
+				<key>
+					<column name="CompraId_compra"/>
+				</key>
+				<many-to-one name="empresa_de_transportes" cascade="lock" column="Empresa_de_transportesUsuariosId_usuario" class="basededatos.Empresa_de_transportes" not-null="false" lazy="proxy" access="field">
+				</many-to-one>
+			</join>
+		</subclass>
+		<subclass name="basededatos.Compra_recibida" discriminator-value="Compra_recibida" lazy="false">
+			<join table="Compra_recibida">
+				<key>
+					<column name="CompraId_compra"/>
+				</key>
+			</join>
+		</subclass>
+	</class>
+</hibernate-mapping>

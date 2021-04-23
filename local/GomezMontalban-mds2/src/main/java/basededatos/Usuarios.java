@@ -27,7 +27,7 @@ public class Usuarios {
 	
 	private String telefono;
 	
-	private String contraseña;
+	private String contrasena;
 	
 	private String fecha_creacion_usuario;
 	
@@ -75,12 +75,12 @@ public class Usuarios {
 		return telefono;
 	}
 	
-	public void setContraseña(String value) {
-		this.contraseña = value;
+	public void setContrasena(String value) {
+		this.contrasena = value;
 	}
 	
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
 	
 	public void setFecha_creacion_usuario(String value) {

@@ -65,11 +65,11 @@ public class ListTFGómezMontalbánData {
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
-		System.out.println("Listing Reseña...");
-		basededatos.Reseña[] basededatosReseñas = basededatos.ReseñaDAO.listReseñaByQuery(null, null);
-		length = Math.min(basededatosReseñas.length, ROW_COUNT);
+		System.out.println("Listing Resena...");
+		basededatos.Resena[] basededatosResenas = basededatos.ResenaDAO.listResenaByQuery(null, null);
+		length = Math.min(basededatosResenas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosReseñas[i]);
+			System.out.println(basededatosResenas[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -224,17 +224,17 @@ public class ListTFGómezMontalbánData {
 		}
 		System.out.println(length + " Producto record(s) retrieved."); 
 		
-		System.out.println("Listing Reseña by Criteria...");
-		basededatos.ReseñaCriteria lbasededatosReseñaCriteria = new basededatos.ReseñaCriteria();
+		System.out.println("Listing Resena by Criteria...");
+		basededatos.ResenaCriteria lbasededatosResenaCriteria = new basededatos.ResenaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosReseñaCriteria.Id_reseña.eq();
-		lbasededatosReseñaCriteria.setMaxResults(ROW_COUNT);
-		basededatos.Reseña[] basededatosReseñas = lbasededatosReseñaCriteria.listReseña();
-		length =basededatosReseñas== null ? 0 : Math.min(basededatosReseñas.length, ROW_COUNT); 
+		//lbasededatosResenaCriteria.Id_resena.eq();
+		lbasededatosResenaCriteria.setMaxResults(ROW_COUNT);
+		basededatos.Resena[] basededatosResenas = lbasededatosResenaCriteria.listResena();
+		length =basededatosResenas== null ? 0 : Math.min(basededatosResenas.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosReseñas[i]);
+			 System.out.println(basededatosResenas[i]);
 		}
-		System.out.println(length + " Reseña record(s) retrieved."); 
+		System.out.println(length + " Resena record(s) retrieved."); 
 		
 		System.out.println("Listing Oferta by Criteria...");
 		basededatos.OfertaCriteria lbasededatosOfertaCriteria = new basededatos.OfertaCriteria();

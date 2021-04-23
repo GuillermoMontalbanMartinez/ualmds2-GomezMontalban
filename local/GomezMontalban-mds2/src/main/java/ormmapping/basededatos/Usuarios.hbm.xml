@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Usuarios" table="Usuarios" lazy="false" discriminator-value="Usuarios">
+		<id name="id_usuario" column="Id_usuario" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<discriminator column="Discriminator" type="string"/>
+		<property name="nombre" column="Nombre" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="apellidos" column="Apellidos" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="correo_electronico" column="Correo_electronico" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="telefono" column="Telefono" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="contrasena" column="Contrasena" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="fecha_creacion_usuario" column="Fecha_creacion_usuario" type="string" length="255" not-null="false" lazy="false"/>
+		<subclass name="basededatos.Administrador" discriminator-value="Administrador" lazy="false">
+			<join table="Administrador">
+				<key>
+					<column name="UsuariosId_usuario"/>
+				</key>
+			</join>
+		</subclass>
+		<subclass name="basededatos.Cibernauta_registrado" discriminator-value="Cibernauta_registrado" lazy="false">
+			<set name="ORM_Realiza_reseña" lazy="true" cascade="save-update,lock" inverse="true">
+				<key column="Cibernauta_registradoUsuariosId_usuario" not-null="true"/>
+				<one-to-many class="basededatos.Resena"/>
+			</set>
+			<set name="ORM_Tiene_compra" lazy="true" cascade="save-update,lock" inverse="true">
+				<key column="Cibernauta_registradoUsuariosId_usuario" not-null="true"/>
+				<one-to-many class="basededatos.Compra"/>
+			</set>
+			<set name="ORM_Tiene_correos" lazy="true" cascade="save-update,lock" inverse="true">
+				<key column="Cibernauta_registradoUsuariosId_usuario" not-null="true"/>
+				<one-to-many class="basededatos.Correo"/>
+			</set>
+			<join table="Cibernauta_registrado">
+				<key>
+					<column name="UsuariosId_usuario"/>
+				</key>
+				<property name="pais" column="Pais" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="localidad" column="Localidad" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="calle" column="Calle" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="portal" column="Portal" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="provincia" column="Provincia" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="cp" column="Cp" type="integer" length="10" not-null="true" lazy="false"/>
+				<property name="nombre_titular_tarjeta" column="Nombre_titular_tarjeta" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="numero_tarjeta_credito" column="Numero_tarjeta_credito" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="fecha_caducidad" column="Fecha_caducidad" type="string" length="255" not-null="false" lazy="false"/>
+				<property name="cvv" column="Cvv" type="integer" length="10" not-null="true" lazy="false"/>
+			</join>
+		</subclass>
+		<subclass name="basededatos.Encargado_de_compras" discriminator-value="Encargado_de_compras" lazy="false">
+			<join table="Encargado_de_compras">
+				<key>
+					<column name="UsuariosId_usuario"/>
+				</key>
+			</join>
+		</subclass>
+		<subclass name="basededatos.Empresa_de_transportes" discriminator-value="Empresa_de_transportes" lazy="false">
+			<set name="ORM_Compra_enviada" lazy="true" cascade="save-update,lock" inverse="true">
+				<key column="Empresa_de_transportesUsuariosId_usuario" not-null="false"/>
+				<one-to-many class="basededatos.Compra_enviada"/>
+			</set>
+			<join table="Empresa_de_transportes">
+				<key>
+					<column name="UsuariosId_usuario"/>
+				</key>
+			</join>
+		</subclass>
+	</class>
+</hibernate-mapping>

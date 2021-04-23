@@ -1,5 +1,7 @@
 package basededatos;
+
 import java.util.List;
+
 public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_común, iCibernauta_registrado, iCorreo, iEmpresa_de_transportes, iEncargado_de_compras, ICompra, iItem, iBanco {
 
 	Correos db_correo;
@@ -8,7 +10,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	Encargados_de_compras db_encargado_de_compras;
 	Empresas_de_transportes db_empresas_de_transporte;
 	Productos db_productos;
-	Reseñas db_reseña;
+	Resenas db_resena;
 	Ofertas db_ofertas;
 	Categorias db_categorias;
 	Compras_pendientes db_compras_pendientes;
@@ -84,7 +86,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_lista_categorias() {
+	public java.util.List cargar_lista_categorias() {
 		// TODO - implement BDPrincipal.cargar_lista_categorias
 		throw new UnsupportedOperationException();
 	}
@@ -241,15 +243,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	 * 
 	 * @param id_item
 	 */
-	public void anadir_al_carrito(int id_item) {
-		// TODO - implement BDPrincipal.anadir_al_carrito
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param id_item
-	 */
 	public void aumentar_unidad_producto(int id_item) {
 		// TODO - implement BDPrincipal.aumentar_unidad_producto
 		throw new UnsupportedOperationException();
@@ -327,7 +320,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public String recuperar_contraseña() {
+	public String recuperar_contrasena() {
 		// TODO - implement BDPrincipal.recuperar_contrasena
 		throw new UnsupportedOperationException();
 	}
@@ -346,7 +339,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	 * 
 	 * @param id_item
 	 */
-	public void añadir_al_carrito(int id_item) {
+	public void anadir_al_carrito(int id_item) {
 		// TODO - implement BDPrincipal.a�adir_al_carrito
 		throw new UnsupportedOperationException();
 	}

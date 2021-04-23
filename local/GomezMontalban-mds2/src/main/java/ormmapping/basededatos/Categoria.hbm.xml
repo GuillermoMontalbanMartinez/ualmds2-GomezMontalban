@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Categoria" table="Categoria" lazy="false">
+		<id name="id_categorias" column="Id_categorias" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<many-to-one name="oferta" cascade="lock" column="OfertaId_ofertas" class="basededatos.Oferta" not-null="false" lazy="proxy" access="field">
+		</many-to-one>
+		<property name="nombre" column="Nombre" type="string" length="255" not-null="false" lazy="false"/>
+		<set name="ORM_Productos" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="CategoriaId_categorias" not-null="true"/>
+			<one-to-many class="basededatos.Producto"/>
+		</set>
+	</class>
+</hibernate-mapping>

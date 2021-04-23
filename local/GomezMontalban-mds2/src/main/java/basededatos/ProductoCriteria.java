@@ -72,8 +72,8 @@ public class ProductoCriteria extends AbstractORMCriteria {
 		return new FotoCriteria(createCriteria("ORM_Tiene_fotos"));
 	}
 	
-	public ReseñaCriteria createTiene_reseñasCriteria() {
-		return new ReseñaCriteria(createCriteria("ORM_Tiene_reseñas"));
+	public ResenaCriteria createTiene_reseñasCriteria() {
+		return new ResenaCriteria(createCriteria("ORM_Tiene_reseñas"));
 	}
 	
 	public Producto uniqueProducto() {

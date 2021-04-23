@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Item" table="Item" lazy="false">
+		<id name="id_item" column="Id_item" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="cantidad" column="Cantidad" type="integer" length="10" not-null="true" lazy="false"/>
+		<one-to-one name="esta_asociado_a_una_compra" class="basededatos.Compra" cascade="save-update,lock" property-ref="tiene_item" lazy="proxy" access="field"/>
+		<one-to-one name="esta_asociado_a_un_producto" class="basededatos.Producto" cascade="save-update,lock" property-ref="tiene_item" lazy="proxy" access="field"/>
+	</class>
+</hibernate-mapping>

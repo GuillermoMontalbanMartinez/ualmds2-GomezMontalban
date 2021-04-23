@@ -24,7 +24,7 @@ public class Empresa_de_transportesCriteria extends AbstractORMCriteria {
 	public final StringExpression apellidos;
 	public final StringExpression correo_electronico;
 	public final StringExpression telefono;
-	public final StringExpression contraseña;
+	public final StringExpression contrasena;
 	public final StringExpression fecha_creacion_usuario;
 	public final CollectionExpression compra_enviada;
 	
@@ -35,7 +35,7 @@ public class Empresa_de_transportesCriteria extends AbstractORMCriteria {
 		apellidos = new StringExpression("apellidos", this);
 		correo_electronico = new StringExpression("correo_electronico", this);
 		telefono = new StringExpression("telefono", this);
-		contraseña = new StringExpression("contraseña", this);
+		contrasena = new StringExpression("contrasena", this);
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this);
 		compra_enviada = new CollectionExpression("ORM_Compra_enviada", this);
 	}

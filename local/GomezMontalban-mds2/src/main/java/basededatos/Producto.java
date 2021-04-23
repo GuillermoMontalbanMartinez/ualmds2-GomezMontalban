@@ -183,7 +183,7 @@ public class Producto {
 		return ORM_tiene_reseñas;
 	}
 	
-	public final basededatos.ReseñaSetCollection tiene_reseñas = new basededatos.ReseñaSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO_TIENE_RESEÑAS, ORMConstants.KEY_RESEÑA_ESTA_ASOCIADOS_A_UN_PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final basededatos.ResenaSetCollection tiene_reseñas = new basededatos.ResenaSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO_TIENE_RESEÑAS, ORMConstants.KEY_RESENA_ESTA_ASOCIADOS_A_UN_PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void Alta_producto(String nombre, String descripcion, double precio, int id_producto, String foto1, String foto2, String foto3, String foto4, String foto5) {
 		//TODO: Implement Method

@@ -30,9 +30,9 @@ public class RetrieveAndUpdateTFGómezMontalbánData {
 			basededatos.Producto lbasededatosProducto = basededatos.ProductoDAO.loadProductoByQuery(null, null);
 			// Update the properties of the persistent object
 			basededatos.ProductoDAO.save(lbasededatosProducto);
-			basededatos.Reseña lbasededatosReseña = basededatos.ReseñaDAO.loadReseñaByQuery(null, null);
+			basededatos.Resena lbasededatosResena = basededatos.ResenaDAO.loadResenaByQuery(null, null);
 			// Update the properties of the persistent object
-			basededatos.ReseñaDAO.save(lbasededatosReseña);
+			basededatos.ResenaDAO.save(lbasededatosResena);
 			basededatos.Oferta lbasededatosOferta = basededatos.OfertaDAO.loadOfertaByQuery(null, null);
 			// Update the properties of the persistent object
 			basededatos.OfertaDAO.save(lbasededatosOferta);
@@ -108,11 +108,11 @@ public class RetrieveAndUpdateTFGómezMontalbánData {
 		//lbasededatosProductoCriteria.id_producto.eq();
 		System.out.println(lbasededatosProductoCriteria.uniqueProducto());
 		
-		System.out.println("Retrieving Reseña by ReseñaCriteria");
-		basededatos.ReseñaCriteria lbasededatosReseñaCriteria = new basededatos.ReseñaCriteria();
+		System.out.println("Retrieving Resena by ResenaCriteria");
+		basededatos.ResenaCriteria lbasededatosResenaCriteria = new basededatos.ResenaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//lbasededatosReseñaCriteria.Id_reseña.eq();
-		System.out.println(lbasededatosReseñaCriteria.uniqueReseña());
+		//lbasededatosResenaCriteria.Id_resena.eq();
+		System.out.println(lbasededatosResenaCriteria.uniqueResena());
 		
 		System.out.println("Retrieving Oferta by OfertaCriteria");
 		basededatos.OfertaCriteria lbasededatosOfertaCriteria = new basededatos.OfertaCriteria();

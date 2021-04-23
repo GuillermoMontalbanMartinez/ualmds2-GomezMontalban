@@ -80,8 +80,8 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new FotoDetachedCriteria(createCriteria("ORM_Tiene_fotos"));
 	}
 	
-	public ReseñaDetachedCriteria createTiene_reseñasCriteria() {
-		return new ReseñaDetachedCriteria(createCriteria("ORM_Tiene_reseñas"));
+	public ResenaDetachedCriteria createTiene_reseñasCriteria() {
+		return new ResenaDetachedCriteria(createCriteria("ORM_Tiene_reseñas"));
 	}
 	
 	public Producto uniqueProducto(PersistentSession session) {

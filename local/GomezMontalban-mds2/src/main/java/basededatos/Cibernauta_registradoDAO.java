@@ -323,7 +323,7 @@ public class Cibernauta_registradoDAO {
 	
 	public static boolean deleteAndDissociate(basededatos.Cibernauta_registrado cibernauta_registrado)throws PersistentException {
 		try {
-			basededatos.Reseña[] lRealiza_reseñas = cibernauta_registrado.realiza_reseña.toArray();
+			basededatos.Resena[] lRealiza_reseñas = cibernauta_registrado.realiza_reseña.toArray();
 			for(int i = 0; i < lRealiza_reseñas.length; i++) {
 				lRealiza_reseñas[i].setEsta_asociada_a_un_cibernauta_registrado(null);
 			}
@@ -345,7 +345,7 @@ public class Cibernauta_registradoDAO {
 	
 	public static boolean deleteAndDissociate(basededatos.Cibernauta_registrado cibernauta_registrado, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			basededatos.Reseña[] lRealiza_reseñas = cibernauta_registrado.realiza_reseña.toArray();
+			basededatos.Resena[] lRealiza_reseñas = cibernauta_registrado.realiza_reseña.toArray();
 			for(int i = 0; i < lRealiza_reseñas.length; i++) {
 				lRealiza_reseñas[i].setEsta_asociada_a_un_cibernauta_registrado(null);
 			}

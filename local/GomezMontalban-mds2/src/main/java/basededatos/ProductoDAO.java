@@ -339,7 +339,7 @@ public class ProductoDAO {
 			for(int i = 0; i < lTiene_fotoss.length; i++) {
 				lTiene_fotoss[i].setEsta_asociada_a_un_producto(null);
 			}
-			basededatos.Reseña[] lTiene_reseñass = producto.tiene_reseñas.toArray();
+			basededatos.Resena[] lTiene_reseñass = producto.tiene_reseñas.toArray();
 			for(int i = 0; i < lTiene_reseñass.length; i++) {
 				lTiene_reseñass[i].setEsta_asociados_a_un_producto(null);
 			}
@@ -369,7 +369,7 @@ public class ProductoDAO {
 			for(int i = 0; i < lTiene_fotoss.length; i++) {
 				lTiene_fotoss[i].setEsta_asociada_a_un_producto(null);
 			}
-			basededatos.Reseña[] lTiene_reseñass = producto.tiene_reseñas.toArray();
+			basededatos.Resena[] lTiene_reseñass = producto.tiene_reseñas.toArray();
 			for(int i = 0; i < lTiene_reseñass.length; i++) {
 				lTiene_reseñass[i].setEsta_asociados_a_un_producto(null);
 			}

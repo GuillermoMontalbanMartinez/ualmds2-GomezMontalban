@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Correo" table="Correo" lazy="false">
+		<id name="id_correo" column="Id_correo" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<many-to-one name="receptor" column="CorreoId_correo" class="basededatos.Correo" cascade="save-update,lock" unique="true" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<property name="autor" column="Autor" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="destinatario" column="Destinatario" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="asunto" column="Asunto" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="contenido" column="Contenido" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="leido" column="Leido" type="boolean" length="1" not-null="true" lazy="false"/>
+		<many-to-one name="pertenece_a_un_cibernauta_registrado" cascade="lock" column="Cibernauta_registradoUsuariosId_usuario" class="basededatos.Cibernauta_registrado" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<one-to-one name="remitente" class="basededatos.Correo" cascade="save-update,lock" property-ref="receptor" lazy="proxy" access="field"/>
+	</class>
+</hibernate-mapping>

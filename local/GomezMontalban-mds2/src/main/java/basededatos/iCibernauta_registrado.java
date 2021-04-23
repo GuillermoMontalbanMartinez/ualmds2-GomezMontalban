@@ -53,7 +53,7 @@ public interface iCibernauta_registrado {
 	 * 
 	 * @param id_item
 	 */
-	void añadir_al_carrito(int id_item);
+	void anadir_al_carrito(int id_item);
 
 	/**
 	 * 

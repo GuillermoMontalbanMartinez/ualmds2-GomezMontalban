@@ -24,7 +24,7 @@ public class Cibernauta_registradoDetachedCriteria extends AbstractORMDetachedCr
 	public final StringExpression apellidos;
 	public final StringExpression correo_electronico;
 	public final StringExpression telefono;
-	public final StringExpression contraseña;
+	public final StringExpression contrasena;
 	public final StringExpression fecha_creacion_usuario;
 	public final StringExpression pais;
 	public final StringExpression localidad;
@@ -47,7 +47,7 @@ public class Cibernauta_registradoDetachedCriteria extends AbstractORMDetachedCr
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		correo_electronico = new StringExpression("correo_electronico", this.getDetachedCriteria());
 		telefono = new StringExpression("telefono", this.getDetachedCriteria());
-		contraseña = new StringExpression("contraseña", this.getDetachedCriteria());
+		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this.getDetachedCriteria());
 		pais = new StringExpression("pais", this.getDetachedCriteria());
 		localidad = new StringExpression("localidad", this.getDetachedCriteria());
@@ -71,7 +71,7 @@ public class Cibernauta_registradoDetachedCriteria extends AbstractORMDetachedCr
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		correo_electronico = new StringExpression("correo_electronico", this.getDetachedCriteria());
 		telefono = new StringExpression("telefono", this.getDetachedCriteria());
-		contraseña = new StringExpression("contraseña", this.getDetachedCriteria());
+		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this.getDetachedCriteria());
 		pais = new StringExpression("pais", this.getDetachedCriteria());
 		localidad = new StringExpression("localidad", this.getDetachedCriteria());
@@ -88,8 +88,8 @@ public class Cibernauta_registradoDetachedCriteria extends AbstractORMDetachedCr
 		tiene_correos = new CollectionExpression("ORM_Tiene_correos", this.getDetachedCriteria());
 	}
 	
-	public ReseñaDetachedCriteria createRealiza_reseñaCriteria() {
-		return new ReseñaDetachedCriteria(createCriteria("ORM_Realiza_reseña"));
+	public ResenaDetachedCriteria createRealiza_reseñaCriteria() {
+		return new ResenaDetachedCriteria(createCriteria("ORM_Realiza_reseña"));
 	}
 	
 	public CompraDetachedCriteria createTiene_compraCriteria() {

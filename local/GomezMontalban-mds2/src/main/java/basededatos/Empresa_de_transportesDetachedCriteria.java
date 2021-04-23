@@ -24,7 +24,7 @@ public class Empresa_de_transportesDetachedCriteria extends AbstractORMDetachedC
 	public final StringExpression apellidos;
 	public final StringExpression correo_electronico;
 	public final StringExpression telefono;
-	public final StringExpression contraseña;
+	public final StringExpression contrasena;
 	public final StringExpression fecha_creacion_usuario;
 	public final CollectionExpression compra_enviada;
 	
@@ -35,7 +35,7 @@ public class Empresa_de_transportesDetachedCriteria extends AbstractORMDetachedC
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		correo_electronico = new StringExpression("correo_electronico", this.getDetachedCriteria());
 		telefono = new StringExpression("telefono", this.getDetachedCriteria());
-		contraseña = new StringExpression("contraseña", this.getDetachedCriteria());
+		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this.getDetachedCriteria());
 		compra_enviada = new CollectionExpression("ORM_Compra_enviada", this.getDetachedCriteria());
 	}
@@ -47,7 +47,7 @@ public class Empresa_de_transportesDetachedCriteria extends AbstractORMDetachedC
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		correo_electronico = new StringExpression("correo_electronico", this.getDetachedCriteria());
 		telefono = new StringExpression("telefono", this.getDetachedCriteria());
-		contraseña = new StringExpression("contraseña", this.getDetachedCriteria());
+		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this.getDetachedCriteria());
 		compra_enviada = new CollectionExpression("ORM_Compra_enviada", this.getDetachedCriteria());
 	}

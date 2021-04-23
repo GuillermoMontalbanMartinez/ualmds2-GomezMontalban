@@ -30,9 +30,9 @@ public class DeleteTFGómezMontalbánData {
 			basededatos.Producto lbasededatosProducto = basededatos.ProductoDAO.loadProductoByQuery(null, null);
 			// Delete the persistent object
 			basededatos.ProductoDAO.delete(lbasededatosProducto);
-			basededatos.Reseña lbasededatosReseña = basededatos.ReseñaDAO.loadReseñaByQuery(null, null);
+			basededatos.Resena lbasededatosResena = basededatos.ResenaDAO.loadResenaByQuery(null, null);
 			// Delete the persistent object
-			basededatos.ReseñaDAO.delete(lbasededatosReseña);
+			basededatos.ResenaDAO.delete(lbasededatosResena);
 			basededatos.Oferta lbasededatosOferta = basededatos.OfertaDAO.loadOfertaByQuery(null, null);
 			// Delete the persistent object
 			basededatos.OfertaDAO.delete(lbasededatosOferta);

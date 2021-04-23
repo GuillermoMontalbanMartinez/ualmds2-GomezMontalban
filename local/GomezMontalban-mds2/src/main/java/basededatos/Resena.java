@@ -13,16 +13,16 @@
  */
 package basededatos;
 
-public class Reseña {
-	public Reseña() {
+public class Resena {
+	public Resena() {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == ORMConstants.KEY_RESEÑA_ESTA_ASOCIADOS_A_UN_PRODUCTO) {
+		if (key == ORMConstants.KEY_RESENA_ESTA_ASOCIADOS_A_UN_PRODUCTO) {
 			this.esta_asociados_a_un_producto = (basededatos.Producto) owner;
 		}
 		
-		else if (key == ORMConstants.KEY_RESEÑA_ESTA_ASOCIADA_A_UN_CIBERNAUTA_REGISTRADO) {
+		else if (key == ORMConstants.KEY_RESENA_ESTA_ASOCIADA_A_UN_CIBERNAUTA_REGISTRADO) {
 			this.esta_asociada_a_un_cibernauta_registrado = (basededatos.Cibernauta_registrado) owner;
 		}
 	}
@@ -34,7 +34,7 @@ public class Reseña {
 		
 	};
 	
-	private int Id_reseña;
+	private int Id_resena;
 	
 	private basededatos.Producto esta_asociados_a_un_producto;
 	
@@ -44,16 +44,16 @@ public class Reseña {
 	
 	private basededatos.Cibernauta_registrado esta_asociada_a_un_cibernauta_registrado;
 	
-	private void setId_reseña(int value) {
-		this.Id_reseña = value;
+	private void setId_resena(int value) {
+		this.Id_resena = value;
 	}
 	
-	public int getId_reseña() {
-		return Id_reseña;
+	public int getId_resena() {
+		return Id_resena;
 	}
 	
 	public int getORMID() {
-		return getId_reseña();
+		return getId_resena();
 	}
 	
 	public void setComentario(String value) {
@@ -126,7 +126,7 @@ public class Reseña {
 	}
 	
 	public String toString() {
-		return String.valueOf(getId_reseña());
+		return String.valueOf(getId_resena());
 	}
 	
 }

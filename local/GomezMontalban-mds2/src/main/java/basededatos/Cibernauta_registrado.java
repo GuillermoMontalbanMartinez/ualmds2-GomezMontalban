@@ -152,7 +152,7 @@ public class Cibernauta_registrado extends basededatos.Usuarios {
 		return ORM_realiza_reseña;
 	}
 	
-	public final basededatos.ReseñaSetCollection realiza_reseña = new basededatos.ReseñaSetCollection(this, _ormAdapter, ORMConstants.KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESEÑA, ORMConstants.KEY_RESEÑA_ESTA_ASOCIADA_A_UN_CIBERNAUTA_REGISTRADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final basededatos.ResenaSetCollection realiza_reseña = new basededatos.ResenaSetCollection(this, _ormAdapter, ORMConstants.KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESEÑA, ORMConstants.KEY_RESENA_ESTA_ASOCIADA_A_UN_CIBERNAUTA_REGISTRADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM_Tiene_compra(java.util.Set value) {
 		this.ORM_tiene_compra = value;

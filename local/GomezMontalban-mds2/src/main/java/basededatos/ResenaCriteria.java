@@ -18,8 +18,8 @@ import org.orm.PersistentException;
 import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
-public class ReseñaCriteria extends AbstractORMCriteria {
-	public final IntegerExpression Id_reseña;
+public class ResenaCriteria extends AbstractORMCriteria {
+	public final IntegerExpression Id_resena;
 	public final IntegerExpression esta_asociados_a_un_productoId;
 	public final AssociationExpression esta_asociados_a_un_producto;
 	public final StringExpression comentario;
@@ -27,9 +27,9 @@ public class ReseñaCriteria extends AbstractORMCriteria {
 	public final IntegerExpression esta_asociada_a_un_cibernauta_registradoId;
 	public final AssociationExpression esta_asociada_a_un_cibernauta_registrado;
 	
-	public ReseñaCriteria(Criteria criteria) {
+	public ResenaCriteria(Criteria criteria) {
 		super(criteria);
-		Id_reseña = new IntegerExpression("Id_reseña", this);
+		Id_resena = new IntegerExpression("Id_resena", this);
 		esta_asociados_a_un_productoId = new IntegerExpression("esta_asociados_a_un_producto.id_producto", this);
 		esta_asociados_a_un_producto = new AssociationExpression("esta_asociados_a_un_producto", this);
 		comentario = new StringExpression("comentario", this);
@@ -38,11 +38,11 @@ public class ReseñaCriteria extends AbstractORMCriteria {
 		esta_asociada_a_un_cibernauta_registrado = new AssociationExpression("esta_asociada_a_un_cibernauta_registrado", this);
 	}
 	
-	public ReseñaCriteria(PersistentSession session) {
-		this(session.createCriteria(Reseña.class));
+	public ResenaCriteria(PersistentSession session) {
+		this(session.createCriteria(Resena.class));
 	}
 	
-	public ReseñaCriteria() throws PersistentException {
+	public ResenaCriteria() throws PersistentException {
 		this(TFGómezMontalbánPersistentManager.instance().getSession());
 	}
 	
@@ -54,13 +54,13 @@ public class ReseñaCriteria extends AbstractORMCriteria {
 		return new Cibernauta_registradoCriteria(createCriteria("esta_asociada_a_un_cibernauta_registrado"));
 	}
 	
-	public Reseña uniqueReseña() {
-		return (Reseña) super.uniqueResult();
+	public Resena uniqueResena() {
+		return (Resena) super.uniqueResult();
 	}
 	
-	public Reseña[] listReseña() {
+	public Resena[] listResena() {
 		java.util.List list = super.list();
-		return (Reseña[]) list.toArray(new Reseña[list.size()]);
+		return (Resena[]) list.toArray(new Resena[list.size()]);
 	}
 }
 

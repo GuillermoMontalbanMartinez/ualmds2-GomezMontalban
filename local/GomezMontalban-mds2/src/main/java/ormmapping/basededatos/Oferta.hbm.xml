@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Oferta" table="Oferta" lazy="false">
+		<id name="id_ofertas" column="Id_ofertas" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="precio_oferta" column="Precio_oferta" type="integer" length="10" not-null="true" lazy="false"/>
+		<property name="fecha" column="Fecha" type="string" length="255" not-null="false" lazy="false"/>
+		<one-to-one name="esta_asociada_a_un_producto" class="basededatos.Producto" cascade="save-update,lock" property-ref="tiene_una_oferta" lazy="proxy" access="field"/>
+		<set name="ORM_Asociada_a_una_categoria" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="OfertaId_ofertas" not-null="false"/>
+			<one-to-many class="basededatos.Categoria"/>
+		</set>
+	</class>
+</hibernate-mapping>

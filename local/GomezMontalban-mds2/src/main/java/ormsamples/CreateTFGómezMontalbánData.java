@@ -30,9 +30,9 @@ public class CreateTFGómezMontalbánData {
 			basededatos.Producto lbasededatosProducto = basededatos.ProductoDAO.createProducto();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tiene_reseñas, tiene_fotos, precio, categoria, tiene_item
 			basededatos.ProductoDAO.save(lbasededatosProducto);
-			basededatos.Reseña lbasededatosReseña = basededatos.ReseñaDAO.createReseña();
+			basededatos.Resena lbasededatosResena = basededatos.ResenaDAO.createResena();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : esta_asociada_a_un_cibernauta_registrado, valoracion, esta_asociados_a_un_producto
-			basededatos.ReseñaDAO.save(lbasededatosReseña);
+			basededatos.ResenaDAO.save(lbasededatosResena);
 			basededatos.Oferta lbasededatosOferta = basededatos.OfertaDAO.createOferta();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : precio_oferta
 			basededatos.OfertaDAO.save(lbasededatosOferta);

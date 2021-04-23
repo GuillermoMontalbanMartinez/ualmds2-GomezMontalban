@@ -24,7 +24,7 @@ public class Cibernauta_registradoCriteria extends AbstractORMCriteria {
 	public final StringExpression apellidos;
 	public final StringExpression correo_electronico;
 	public final StringExpression telefono;
-	public final StringExpression contraseña;
+	public final StringExpression contrasena;
 	public final StringExpression fecha_creacion_usuario;
 	public final StringExpression pais;
 	public final StringExpression localidad;
@@ -47,7 +47,7 @@ public class Cibernauta_registradoCriteria extends AbstractORMCriteria {
 		apellidos = new StringExpression("apellidos", this);
 		correo_electronico = new StringExpression("correo_electronico", this);
 		telefono = new StringExpression("telefono", this);
-		contraseña = new StringExpression("contraseña", this);
+		contrasena = new StringExpression("contrasena", this);
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this);
 		pais = new StringExpression("pais", this);
 		localidad = new StringExpression("localidad", this);
@@ -72,8 +72,8 @@ public class Cibernauta_registradoCriteria extends AbstractORMCriteria {
 		this(TFGómezMontalbánPersistentManager.instance().getSession());
 	}
 	
-	public ReseñaCriteria createRealiza_reseñaCriteria() {
-		return new ReseñaCriteria(createCriteria("ORM_Realiza_reseña"));
+	public ResenaCriteria createRealiza_reseñaCriteria() {
+		return new ResenaCriteria(createCriteria("ORM_Realiza_reseña"));
 	}
 	
 	public CompraCriteria createTiene_compraCriteria() {

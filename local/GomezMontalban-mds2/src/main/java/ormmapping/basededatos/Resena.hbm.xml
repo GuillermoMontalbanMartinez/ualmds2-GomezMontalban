@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Resena" table="Resena" lazy="false">
+		<id name="Id_resena" column="Id_resena" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<many-to-one name="esta_asociados_a_un_producto" cascade="lock" column="ProductoId_producto" class="basededatos.Producto" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<property name="comentario" column="Comentario" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="valoracion" column="Valoracion" type="integer" length="10" not-null="true" lazy="false"/>
+		<many-to-one name="esta_asociada_a_un_cibernauta_registrado" cascade="lock" column="Cibernauta_registradoUsuariosId_usuario" class="basededatos.Cibernauta_registrado" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

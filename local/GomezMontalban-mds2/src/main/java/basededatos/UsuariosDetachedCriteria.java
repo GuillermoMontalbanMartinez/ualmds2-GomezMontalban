@@ -24,7 +24,7 @@ public class UsuariosDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression apellidos;
 	public final StringExpression correo_electronico;
 	public final StringExpression telefono;
-	public final StringExpression contraseña;
+	public final StringExpression contrasena;
 	public final StringExpression fecha_creacion_usuario;
 	
 	public UsuariosDetachedCriteria() {
@@ -34,7 +34,7 @@ public class UsuariosDetachedCriteria extends AbstractORMDetachedCriteria {
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		correo_electronico = new StringExpression("correo_electronico", this.getDetachedCriteria());
 		telefono = new StringExpression("telefono", this.getDetachedCriteria());
-		contraseña = new StringExpression("contraseña", this.getDetachedCriteria());
+		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this.getDetachedCriteria());
 	}
 	
@@ -45,7 +45,7 @@ public class UsuariosDetachedCriteria extends AbstractORMDetachedCriteria {
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		correo_electronico = new StringExpression("correo_electronico", this.getDetachedCriteria());
 		telefono = new StringExpression("telefono", this.getDetachedCriteria());
-		contraseña = new StringExpression("contraseña", this.getDetachedCriteria());
+		contrasena = new StringExpression("contrasena", this.getDetachedCriteria());
 		fecha_creacion_usuario = new StringExpression("fecha_creacion_usuario", this.getDetachedCriteria());
 	}
 	

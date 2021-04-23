@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: David(University of Almeria)
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="basededatos.Producto" table="Producto" lazy="false">
+		<id name="id_producto" column="Id_producto" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<many-to-one name="tiene_item" column="ItemId_item" class="basededatos.Item" cascade="save-update,lock" unique="true" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<many-to-one name="categoria" cascade="lock" column="CategoriaId_categorias" class="basededatos.Categoria" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<many-to-one name="tiene_una_oferta" column="OfertaId_ofertas" class="basededatos.Oferta" cascade="save-update,lock" unique="true" not-null="false" lazy="proxy" access="field">
+		</many-to-one>
+		<property name="nombre" column="Nombre" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="descripción" column="Descripción" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="precio" column="Precio" type="double" not-null="true" lazy="false"/>
+		<set name="ORM_Tiene_fotos" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="ProductoId_producto" not-null="true"/>
+			<one-to-many class="basededatos.Foto"/>
+		</set>
+		<set name="ORM_Tiene_reseñas" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="ProductoId_producto" not-null="true"/>
+			<one-to-many class="basededatos.Resena"/>
+		</set>
+	</class>
+</hibernate-mapping>
