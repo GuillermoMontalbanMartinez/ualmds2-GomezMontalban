@@ -1,0 +1,34 @@
+/**
+ * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
+ * 
+ * This is an automatic generated file. It will be regenerated every time 
+ * you generate persistence class.
+ * 
+ * Modifying its content may cause the program not work, or your work may lost.
+ */
+
+/**
+ * Licensee: David(University of Almeria)
+ * License Type: Academic
+ */
+package basededatos;
+
+public class Administrador extends basededatos.Usuarios {
+	public Administrador() {
+	}
+	
+	public void Alta_cuenta(String nombre, String correo, String contrasena, int tipoDeUsuario) {
+		//TODO: Implement Method
+		throw new UnsupportedOperationException();
+	}
+	
+	public void Baja_cuenta(int id_usuario) {
+		//TODO: Implement Method
+		throw new UnsupportedOperationException();
+	}
+	
+	public String toString() {
+		return super.toString();
+	}
+	
+}

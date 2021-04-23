@@ -1,0 +1,65 @@
+/**
+ * "Visual Paradigm: DO NOT MODIFY THIS FILE!"
+ * 
+ * This is an automatic generated file. It will be regenerated every time 
+ * you generate persistence class.
+ * 
+ * Modifying its content may cause the program not work, or your work may lost.
+ */
+
+/**
+ * Licensee: David(University of Almeria)
+ * License Type: Academic
+ */
+package basededatos;
+
+public interface ORMConstants extends org.orm.util.ORMBaseConstants {
+	final int KEY_CATEGORIA_OFERTA = -1998381347;
+	
+	final int KEY_CATEGORIA_PRODUCTOS = 574773991;
+	
+	final int KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESEÑA = -1519235560;
+	
+	final int KEY_CIBERNAUTA_REGISTRADO_TIENE_COMPRA = 1962247180;
+	
+	final int KEY_CIBERNAUTA_REGISTRADO_TIENE_CORREOS = 704785679;
+	
+	final int KEY_COMPRA_ENVIADA_EMPRESA_DE_TRANSPORTES = 499495661;
+	
+	final int KEY_COMPRA_TIENE_ASOCIADO_UN_CIBERNAUTA_REGISTRADO = 1878488480;
+	
+	final int KEY_COMPRA_TIENE_ITEM = 1234322252;
+	
+	final int KEY_CORREO_PERTENECE_A_UN_CIBERNAUTA_REGISTRADO = 654636738;
+	
+	final int KEY_CORREO_RECEPTOR = -1772971291;
+	
+	final int KEY_CORREO_REMITENTE = 1275330070;
+	
+	final int KEY_EMPRESA_DE_TRANSPORTES_COMPRA_ENVIADA = 1504041233;
+	
+	final int KEY_FOTO_ESTA_ASOCIADA_A_UN_PRODUCTO = 207174349;
+	
+	final int KEY_ITEM_ESTA_ASOCIADO_A_UN_PRODUCTO = -1699226646;
+	
+	final int KEY_ITEM_ESTA_ASOCIADO_A_UNA_COMPRA = 106236049;
+	
+	final int KEY_OFERTA_ASOCIADA_A_UNA_CATEGORIA = -1701867704;
+	
+	final int KEY_OFERTA_ESTA_ASOCIADA_A_UN_PRODUCTO = -2024849798;
+	
+	final int KEY_PRODUCTO_CATEGORIA = -931712716;
+	
+	final int KEY_PRODUCTO_TIENE_FOTOS = 2115183544;
+	
+	final int KEY_PRODUCTO_TIENE_ITEM = -485863894;
+	
+	final int KEY_PRODUCTO_TIENE_RESEÑAS = -1350391673;
+	
+	final int KEY_PRODUCTO_TIENE_UNA_OFERTA = 5191487;
+	
+	final int KEY_RESEÑA_ESTA_ASOCIADA_A_UN_CIBERNAUTA_REGISTRADO = 1259291339;
+	
+	final int KEY_RESEÑA_ESTA_ASOCIADOS_A_UN_PRODUCTO = -1124352903;
+	
+}
