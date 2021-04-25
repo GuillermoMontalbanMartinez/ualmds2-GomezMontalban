@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Correo {
+import java.io.Serializable;
+public class Correo implements Serializable {
 	public Correo() {
 	}
 	

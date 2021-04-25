@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Empresa_de_transportes extends basededatos.Usuarios {
+import java.io.Serializable;
+public class Empresa_de_transportes extends basededatos.Usuarios implements Serializable {
 	public Empresa_de_transportes() {
 	}
 	

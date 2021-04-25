@@ -323,9 +323,9 @@ public class Cibernauta_registradoDAO {
 	
 	public static boolean deleteAndDissociate(basededatos.Cibernauta_registrado cibernauta_registrado)throws PersistentException {
 		try {
-			basededatos.Resena[] lRealiza_reseñas = cibernauta_registrado.realiza_reseña.toArray();
-			for(int i = 0; i < lRealiza_reseñas.length; i++) {
-				lRealiza_reseñas[i].setEsta_asociada_a_un_cibernauta_registrado(null);
+			basededatos.Resena[] lRealiza_resenas = cibernauta_registrado.realiza_resena.toArray();
+			for(int i = 0; i < lRealiza_resenas.length; i++) {
+				lRealiza_resenas[i].setEsta_asociada_a_un_cibernauta_registrado(null);
 			}
 			basededatos.Compra[] lTiene_compras = cibernauta_registrado.tiene_compra.toArray();
 			for(int i = 0; i < lTiene_compras.length; i++) {
@@ -345,9 +345,9 @@ public class Cibernauta_registradoDAO {
 	
 	public static boolean deleteAndDissociate(basededatos.Cibernauta_registrado cibernauta_registrado, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			basededatos.Resena[] lRealiza_reseñas = cibernauta_registrado.realiza_reseña.toArray();
-			for(int i = 0; i < lRealiza_reseñas.length; i++) {
-				lRealiza_reseñas[i].setEsta_asociada_a_un_cibernauta_registrado(null);
+			basededatos.Resena[] lRealiza_resenas = cibernauta_registrado.realiza_resena.toArray();
+			for(int i = 0; i < lRealiza_resenas.length; i++) {
+				lRealiza_resenas[i].setEsta_asociada_a_un_cibernauta_registrado(null);
 			}
 			basededatos.Compra[] lTiene_compras = cibernauta_registrado.tiene_compra.toArray();
 			for(int i = 0; i < lTiene_compras.length; i++) {

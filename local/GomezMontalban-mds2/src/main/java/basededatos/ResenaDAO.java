@@ -324,11 +324,11 @@ public class ResenaDAO {
 	public static boolean deleteAndDissociate(basededatos.Resena resena)throws PersistentException {
 		try {
 			if (resena.getEsta_asociados_a_un_producto() != null) {
-				resena.getEsta_asociados_a_un_producto().tiene_reseñas.remove(resena);
+				resena.getEsta_asociados_a_un_producto().tiene_resenas.remove(resena);
 			}
 			
 			if (resena.getEsta_asociada_a_un_cibernauta_registrado() != null) {
-				resena.getEsta_asociada_a_un_cibernauta_registrado().realiza_reseña.remove(resena);
+				resena.getEsta_asociada_a_un_cibernauta_registrado().realiza_resena.remove(resena);
 			}
 			
 			return delete(resena);
@@ -342,11 +342,11 @@ public class ResenaDAO {
 	public static boolean deleteAndDissociate(basededatos.Resena resena, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (resena.getEsta_asociados_a_un_producto() != null) {
-				resena.getEsta_asociados_a_un_producto().tiene_reseñas.remove(resena);
+				resena.getEsta_asociados_a_un_producto().tiene_resenas.remove(resena);
 			}
 			
 			if (resena.getEsta_asociada_a_un_cibernauta_registrado() != null) {
-				resena.getEsta_asociada_a_un_cibernauta_registrado().realiza_reseña.remove(resena);
+				resena.getEsta_asociada_a_un_cibernauta_registrado().realiza_resena.remove(resena);
 			}
 			
 			try {

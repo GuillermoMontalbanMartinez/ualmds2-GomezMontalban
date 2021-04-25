@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Producto {
+import java.io.Serializable;
+public class Producto implements Serializable {
 	public Producto() {
 	}
 	
@@ -21,8 +22,8 @@ public class Producto {
 		if (key == ORMConstants.KEY_PRODUCTO_TIENE_FOTOS) {
 			return ORM_tiene_fotos;
 		}
-		else if (key == ORMConstants.KEY_PRODUCTO_TIENE_RESEÑAS) {
-			return ORM_tiene_reseñas;
+		else if (key == ORMConstants.KEY_PRODUCTO_TIENE_RESENAS) {
+			return ORM_tiene_resenas;
 		}
 		
 		return null;
@@ -69,7 +70,7 @@ public class Producto {
 	
 	private java.util.Set ORM_tiene_fotos = new java.util.HashSet();
 	
-	private java.util.Set ORM_tiene_reseñas = new java.util.HashSet();
+	private java.util.Set ORM_tiene_resenas = new java.util.HashSet();
 	
 	private void setId_producto(int value) {
 		this.id_producto = value;
@@ -175,15 +176,15 @@ public class Producto {
 	
 	public final basededatos.FotoSetCollection tiene_fotos = new basededatos.FotoSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO_TIENE_FOTOS, ORMConstants.KEY_FOTO_ESTA_ASOCIADA_A_UN_PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	private void setORM_Tiene_reseñas(java.util.Set value) {
-		this.ORM_tiene_reseñas = value;
+	private void setORM_Tiene_resenas(java.util.Set value) {
+		this.ORM_tiene_resenas = value;
 	}
 	
-	private java.util.Set getORM_Tiene_reseñas() {
-		return ORM_tiene_reseñas;
+	private java.util.Set getORM_Tiene_resenas() {
+		return ORM_tiene_resenas;
 	}
 	
-	public final basededatos.ResenaSetCollection tiene_reseñas = new basededatos.ResenaSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO_TIENE_RESEÑAS, ORMConstants.KEY_RESENA_ESTA_ASOCIADOS_A_UN_PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final basededatos.ResenaSetCollection tiene_resenas = new basededatos.ResenaSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO_TIENE_RESENAS, ORMConstants.KEY_RESENA_ESTA_ASOCIADOS_A_UN_PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void Alta_producto(String nombre, String descripcion, double precio, int id_producto, String foto1, String foto2, String foto3, String foto4, String foto5) {
 		//TODO: Implement Method

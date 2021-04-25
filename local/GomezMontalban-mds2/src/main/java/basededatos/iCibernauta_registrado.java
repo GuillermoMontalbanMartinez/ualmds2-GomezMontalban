@@ -1,103 +1,38 @@
 package basededatos;
 
-import java.util.List;
-
 public interface iCibernauta_registrado {
 
-	/**
-	 * 
-	 * @param foto
-	 */
-	void adjuntar_nueva_foto_de_perfil(String foto);
+	public void adjuntar_nueva_foto_de_perfil(String aFoto);
 
-	java.util.List cargar_categorias_catalogo();
+	public Categoria[] cargar_categorias_catalogo();
 
-	/**
-	 * 
-	 * @param id_usuario
-	 */
-	FichaCliente cargar_ficha_cliente(int id_usuario);
+	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario);
 
-	List cargar_ofertas();
+	public Oferta[] cargar_ofertas();
 
-	List cargar_productos_catalogo();
+	public Producto[] cargar_productos_catalogo();
 
-	/**
-	 * 
-	 * @param respuesta
-	 */
-	void confirmar(boolean respuesta);
+	public void confirmar(boolean aRespuesta);
 
-	/**
-	 * 
-	 * @param respuesta
-	 */
-	void confirmar_cambios(boolean respuesta);
+	public void confirmar_cambios(boolean aRespuesta);
 
-	/**
-	 * 
-	 * @param destinatario
-	 * @param asunto
-	 * @param correo
-	 */
-	void enviar(String destinatario, String asunto, String correo);
+	public void enviar(String aDestinatario, String aAsunto, String aCorreo);
 
-	/**
-	 * 
-	 * @param id_usuario
-	 * @param foto
-	 */
-	void adjuntar_nueva_foto_de_perfil(int id_usuario, String foto);
+	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto);
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	void anadir_al_carrito(int id_item);
+	public void anadir_al_carrito(int aId_item);
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	void aumentar_unidad_producto(int id_item);
+	public void aumentar_unidad_producto(int aId_item);
 
-	/**
-	 * 
-	 * @param id_compra
-	 */
-	void cancelarPedido(int id_compra);
+	public void cancelarPedido(int aId_compra);
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	void decrementar_unidad_producto(int id_item);
+	public void decrementar_unidad_producto(int aId_item);
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	void eliminar_producto(int id_item);
+	public void eliminar_producto(int aId_item);
 
-	/**
-	 * 
-	 * @param valoracion
-	 * @param cuerpo
-	 */
-	void publicar(int valoracion, String cuerpo);
+	public void publicar(int aValoracion, String aCuerpo);
 
-	/**
-	 * 
-	 * @param valoracion
-	 * @param cuerpo
-	 * @param id_producto
-	 */
-	void publicar(int valoracion, String cuerpo, int id_producto);
+	public void publicar(int aValoracion, String aCuerpo, int aId_producto);
 
-	/**
-	 * 
-	 * @param id_compra
-	 */
-	void confirmar_compra(int id_compra);
-
+	public void confirmar_compra(int aId_compra);
 }

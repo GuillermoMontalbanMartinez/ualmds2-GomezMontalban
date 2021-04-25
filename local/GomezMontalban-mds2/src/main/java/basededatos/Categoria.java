@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Categoria {
+import java.io.Serializable;
+public class Categoria implements Serializable {
 	public Categoria() {
 	}
 	

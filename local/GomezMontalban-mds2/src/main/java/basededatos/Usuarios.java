@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Usuarios {
+import java.io.Serializable;
+public class Usuarios implements Serializable {
 	public Usuarios() {
 	}
 	

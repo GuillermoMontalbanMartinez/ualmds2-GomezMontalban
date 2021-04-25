@@ -13,13 +13,14 @@
  */
 package basededatos;
 
-public class Cibernauta_registrado extends basededatos.Usuarios {
+import java.io.Serializable;
+public class Cibernauta_registrado extends basededatos.Usuarios implements Serializable {
 	public Cibernauta_registrado() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == ORMConstants.KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESEÑA) {
-			return ORM_realiza_reseña;
+		if (key == ORMConstants.KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESENA) {
+			return ORM_realiza_resena;
 		}
 		else if (key == ORMConstants.KEY_CIBERNAUTA_REGISTRADO_TIENE_COMPRA) {
 			return ORM_tiene_compra;
@@ -58,7 +59,7 @@ public class Cibernauta_registrado extends basededatos.Usuarios {
 	
 	private int cvv;
 	
-	private java.util.Set ORM_realiza_reseña = new java.util.HashSet();
+	private java.util.Set ORM_realiza_resena = new java.util.HashSet();
 	
 	private java.util.Set ORM_tiene_compra = new java.util.HashSet();
 	
@@ -144,15 +145,15 @@ public class Cibernauta_registrado extends basededatos.Usuarios {
 		return cvv;
 	}
 	
-	private void setORM_Realiza_reseña(java.util.Set value) {
-		this.ORM_realiza_reseña = value;
+	private void setORM_Realiza_resena(java.util.Set value) {
+		this.ORM_realiza_resena = value;
 	}
 	
-	private java.util.Set getORM_Realiza_reseña() {
-		return ORM_realiza_reseña;
+	private java.util.Set getORM_Realiza_resena() {
+		return ORM_realiza_resena;
 	}
 	
-	public final basededatos.ResenaSetCollection realiza_reseña = new basededatos.ResenaSetCollection(this, _ormAdapter, ORMConstants.KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESEÑA, ORMConstants.KEY_RESENA_ESTA_ASOCIADA_A_UN_CIBERNAUTA_REGISTRADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final basededatos.ResenaSetCollection realiza_resena = new basededatos.ResenaSetCollection(this, _ormAdapter, ORMConstants.KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESENA, ORMConstants.KEY_RESENA_ESTA_ASOCIADA_A_UN_CIBERNAUTA_REGISTRADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM_Tiene_compra(java.util.Set value) {
 		this.ORM_tiene_compra = value;

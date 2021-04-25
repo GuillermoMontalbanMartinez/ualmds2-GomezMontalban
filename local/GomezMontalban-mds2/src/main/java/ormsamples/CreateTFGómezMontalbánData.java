@@ -19,7 +19,7 @@ public class CreateTFGómezMontalbánData {
 			// Initialize the properties of the persistent object here
 			basededatos.AdministradorDAO.save(lbasededatosAdministrador);
 			basededatos.Cibernauta_registrado lbasededatosCibernauta_registrado = basededatos.Cibernauta_registradoDAO.createCibernauta_registrado();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tiene_correos, tiene_compra, realiza_reseña, cvv, cp
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tiene_correos, tiene_compra, realiza_resena, cvv, cp
 			basededatos.Cibernauta_registradoDAO.save(lbasededatosCibernauta_registrado);
 			basededatos.Encargado_de_compras lbasededatosEncargado_de_compras = basededatos.Encargado_de_comprasDAO.createEncargado_de_compras();
 			// Initialize the properties of the persistent object here
@@ -28,7 +28,7 @@ public class CreateTFGómezMontalbánData {
 			// Initialize the properties of the persistent object here
 			basededatos.Empresa_de_transportesDAO.save(lbasededatosEmpresa_de_transportes);
 			basededatos.Producto lbasededatosProducto = basededatos.ProductoDAO.createProducto();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tiene_reseñas, tiene_fotos, precio, categoria, tiene_item
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tiene_resenas, tiene_fotos, precio, categoria, tiene_item
 			basededatos.ProductoDAO.save(lbasededatosProducto);
 			basededatos.Resena lbasededatosResena = basededatos.ResenaDAO.createResena();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : esta_asociada_a_un_cibernauta_registrado, valoracion, esta_asociados_a_un_producto

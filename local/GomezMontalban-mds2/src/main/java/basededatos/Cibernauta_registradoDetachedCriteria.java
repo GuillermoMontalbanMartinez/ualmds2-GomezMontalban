@@ -36,7 +36,7 @@ public class Cibernauta_registradoDetachedCriteria extends AbstractORMDetachedCr
 	public final StringExpression numero_tarjeta_credito;
 	public final StringExpression fecha_caducidad;
 	public final IntegerExpression cvv;
-	public final CollectionExpression realiza_reseña;
+	public final CollectionExpression realiza_resena;
 	public final CollectionExpression tiene_compra;
 	public final CollectionExpression tiene_correos;
 	
@@ -59,7 +59,7 @@ public class Cibernauta_registradoDetachedCriteria extends AbstractORMDetachedCr
 		numero_tarjeta_credito = new StringExpression("numero_tarjeta_credito", this.getDetachedCriteria());
 		fecha_caducidad = new StringExpression("fecha_caducidad", this.getDetachedCriteria());
 		cvv = new IntegerExpression("cvv", this.getDetachedCriteria());
-		realiza_reseña = new CollectionExpression("ORM_Realiza_reseña", this.getDetachedCriteria());
+		realiza_resena = new CollectionExpression("ORM_Realiza_resena", this.getDetachedCriteria());
 		tiene_compra = new CollectionExpression("ORM_Tiene_compra", this.getDetachedCriteria());
 		tiene_correos = new CollectionExpression("ORM_Tiene_correos", this.getDetachedCriteria());
 	}
@@ -83,13 +83,13 @@ public class Cibernauta_registradoDetachedCriteria extends AbstractORMDetachedCr
 		numero_tarjeta_credito = new StringExpression("numero_tarjeta_credito", this.getDetachedCriteria());
 		fecha_caducidad = new StringExpression("fecha_caducidad", this.getDetachedCriteria());
 		cvv = new IntegerExpression("cvv", this.getDetachedCriteria());
-		realiza_reseña = new CollectionExpression("ORM_Realiza_reseña", this.getDetachedCriteria());
+		realiza_resena = new CollectionExpression("ORM_Realiza_resena", this.getDetachedCriteria());
 		tiene_compra = new CollectionExpression("ORM_Tiene_compra", this.getDetachedCriteria());
 		tiene_correos = new CollectionExpression("ORM_Tiene_correos", this.getDetachedCriteria());
 	}
 	
-	public ResenaDetachedCriteria createRealiza_reseñaCriteria() {
-		return new ResenaDetachedCriteria(createCriteria("ORM_Realiza_reseña"));
+	public ResenaDetachedCriteria createRealiza_resenaCriteria() {
+		return new ResenaDetachedCriteria(createCriteria("ORM_Realiza_resena"));
 	}
 	
 	public CompraDetachedCriteria createTiene_compraCriteria() {

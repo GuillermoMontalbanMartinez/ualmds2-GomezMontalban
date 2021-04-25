@@ -1,88 +1,30 @@
 package basededatos;
 
-import java.util.List;
-
 public interface iAdministrador {
 
-	/**
-	 * 
-	 * @param id_categoria
-	 */
-	void baja_categoria(int id_categoria);
+	public void baja_categoria(int aId_categoria);
 
-	/**
-	 * 
-	 * @param nombre
-	 * @param descripcion
-	 * @param precio
-	 * @param id_producto
-	 * @param foto1
-	 * @param foto2
-	 * @param foto3
-	 * @param foto4
-	 * @param foto5
-	 */
-	void Alta_producto(String nombre, String descripcion, double precio, int id_producto, String foto1, String foto2, String foto3, String foto4, String foto5);
+	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5);
 
-	/**
-	 * 
-	 * @param nombreCategoria
-	 */
-	void alta_categorias(String nombreCategoria);
+	public void alta_categorias(String aNombreCategoria);
 
-	/**
-	 * 
-	 * @param nombre
-	 * @param correo
-	 * @param contrasena
-	 * @param tipoDeUsuario
-	 */
-	void Alta_cuenta(String nombre, String correo, String contrasena, int tipoDeUsuario);
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario);
 
-	/**
-	 * 
-	 * @param correo
-	 * @param tipoDeUsuario
-	 * @param id_usuario
-	 */
-	void Baja_cuenta(String correo, int tipoDeUsuario, int id_usuario);
+	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario);
 
-	java.util.List cargar_lista_categorias();
+	public Categoria[] cargar_lista_categorias();
 
-	List cargar_lista_productos_admin();
+	public Producto[] cargar_lista_productos_admin();
 
-	List cargar_resenas();
+	public Resena[] cargar_resenas();
 
-	/**
-	 * 
-	 * @param destinatario
-	 * @param asunto
-	 * @param correo
-	 */
-	void enviar(String destinatario, String asunto, String correo);
+	public void enviar(String aDestinatario, String aAsunto, String aCorreo);
 
-	/**
-	 * 
-	 * @param id_categoria
-	 * @param descuento
-	 * @param fechaLimite
-	 */
-	void Alta_oferta_categoria(int id_categoria, double descuento, String fechaLimite);
+	public void Alta_oferta_categoria(int aId_categoria, double aDescuento, String aFechaLimite);
 
-	/**
-	 * 
-	 * @param id_producto
-	 * @param descuento
-	 * @param fechaLimite
-	 */
-	void Alta_oferta_producto(int id_producto, double descuento, String fechaLimite);
+	public void Alta_oferta_producto(int aId_producto, double aDescuento, String aFechaLimite);
 
-	List cargar_listado_de_compras_admin();
+	public Compra[] cargar_listado_de_compras_admin();
 
-	/**
-	 * 
-	 * @param id_producto
-	 */
-	void Baja_producto(int id_producto);
-
+	public void Baja_producto(int aId_producto);
 }

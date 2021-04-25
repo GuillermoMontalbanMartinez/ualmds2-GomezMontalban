@@ -36,7 +36,7 @@ public class Cibernauta_registradoCriteria extends AbstractORMCriteria {
 	public final StringExpression numero_tarjeta_credito;
 	public final StringExpression fecha_caducidad;
 	public final IntegerExpression cvv;
-	public final CollectionExpression realiza_reseña;
+	public final CollectionExpression realiza_resena;
 	public final CollectionExpression tiene_compra;
 	public final CollectionExpression tiene_correos;
 	
@@ -59,7 +59,7 @@ public class Cibernauta_registradoCriteria extends AbstractORMCriteria {
 		numero_tarjeta_credito = new StringExpression("numero_tarjeta_credito", this);
 		fecha_caducidad = new StringExpression("fecha_caducidad", this);
 		cvv = new IntegerExpression("cvv", this);
-		realiza_reseña = new CollectionExpression("ORM_Realiza_reseña", this);
+		realiza_resena = new CollectionExpression("ORM_Realiza_resena", this);
 		tiene_compra = new CollectionExpression("ORM_Tiene_compra", this);
 		tiene_correos = new CollectionExpression("ORM_Tiene_correos", this);
 	}
@@ -72,8 +72,8 @@ public class Cibernauta_registradoCriteria extends AbstractORMCriteria {
 		this(TFGómezMontalbánPersistentManager.instance().getSession());
 	}
 	
-	public ResenaCriteria createRealiza_reseñaCriteria() {
-		return new ResenaCriteria(createCriteria("ORM_Realiza_reseña"));
+	public ResenaCriteria createRealiza_resenaCriteria() {
+		return new ResenaCriteria(createCriteria("ORM_Realiza_resena"));
 	}
 	
 	public CompraCriteria createTiene_compraCriteria() {

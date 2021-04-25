@@ -30,7 +30,7 @@ public class ProductoCriteria extends AbstractORMCriteria {
 	public final StringExpression descripción;
 	public final DoubleExpression precio;
 	public final CollectionExpression tiene_fotos;
-	public final CollectionExpression tiene_reseñas;
+	public final CollectionExpression tiene_resenas;
 	
 	public ProductoCriteria(Criteria criteria) {
 		super(criteria);
@@ -45,7 +45,7 @@ public class ProductoCriteria extends AbstractORMCriteria {
 		descripción = new StringExpression("descripción", this);
 		precio = new DoubleExpression("precio", this);
 		tiene_fotos = new CollectionExpression("ORM_Tiene_fotos", this);
-		tiene_reseñas = new CollectionExpression("ORM_Tiene_reseñas", this);
+		tiene_resenas = new CollectionExpression("ORM_Tiene_resenas", this);
 	}
 	
 	public ProductoCriteria(PersistentSession session) {
@@ -72,8 +72,8 @@ public class ProductoCriteria extends AbstractORMCriteria {
 		return new FotoCriteria(createCriteria("ORM_Tiene_fotos"));
 	}
 	
-	public ResenaCriteria createTiene_reseñasCriteria() {
-		return new ResenaCriteria(createCriteria("ORM_Tiene_reseñas"));
+	public ResenaCriteria createTiene_resenasCriteria() {
+		return new ResenaCriteria(createCriteria("ORM_Tiene_resenas"));
 	}
 	
 	public Producto uniqueProducto() {

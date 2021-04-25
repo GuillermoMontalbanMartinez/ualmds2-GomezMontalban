@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Administrador extends basededatos.Usuarios {
+import java.io.Serializable;
+public class Administrador extends basededatos.Usuarios implements Serializable {
 	public Administrador() {
 	}
 	

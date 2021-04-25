@@ -13,13 +13,12 @@
  */
 package basededatos;
 
-import java.util.List;
-
-public class Compra_recibida extends basededatos.Compra {
+import java.io.Serializable;
+public class Compra_recibida extends basededatos.Compra implements Serializable {
 	public Compra_recibida() {
 	}
 	
-	public List cargar_pedidos_encargados(int id_usuario) {
+	public basededatos.Compra[] cargar_pedidos_encargados(int id_usuario) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}

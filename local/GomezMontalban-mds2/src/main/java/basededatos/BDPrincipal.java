@@ -1,367 +1,200 @@
 package basededatos;
 
-import java.util.List;
-
 public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_común, iCibernauta_registrado, iCorreo, iEmpresa_de_transportes, iEncargado_de_compras, ICompra, iItem, iBanco {
+	public Correos _db_correo;
+	public Administradores _db_administradores;
+	public Cibernautas_registrados _db_cibernautas_registrados;
+	public Encargados_de_compras _db_encargado_de_compras;
+	public Empresas_de_transportes _db_empresas_de_transporte;
+	public Productos _db_productos;
+	public Resenas _db_resena;
+	public Ofertas _db_ofertas;
+	public Categorias _db_categorias;
+	public Compras_pendientes _db_compras_pendientes;
+	public Compras_enviadas _db_compras_enviadas;
+	public Compras_recibidas _db_compras_recibidas;
+	public Fotos _db_fotos;
+	public Items _db_item;
 
-	Correos db_correo;
-	Administradores db_administradores;
-	Cibernautas_registrados db_cibernautas_registrados;
-	Encargados_de_compras db_encargado_de_compras;
-	Empresas_de_transportes db_empresas_de_transporte;
-	Productos db_productos;
-	Resenas db_resena;
-	Ofertas db_ofertas;
-	Categorias db_categorias;
-	Compras_pendientes db_compras_pendientes;
-	Compras_enviadas db_compras_enviadas;
-	Compras_recibidas db_compras_recibidas;
-	Fotos db_fotos;
-	Items db_item;
-
-	/**
-	 * 
-	 * @param id_categoria
-	 */
-	public void baja_categoria(int id_categoria) {
-		// TODO - implement BDPrincipal.baja_categoria
+	public void baja_categoria(int aId_categoria) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param nombre
-	 * @param descripcion
-	 * @param precio
-	 * @param id_producto
-	 * @param foto1
-	 * @param foto2
-	 * @param foto3
-	 * @param foto4
-	 * @param foto5
-	 */
-	public void Alta_producto(String nombre, String descripcion, double precio, int id_producto, String foto1, String foto2, String foto3, String foto4, String foto5) {
-		// TODO - implement BDPrincipal.Alta_producto
+	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param nombreCategoria
-	 */
-	public void alta_categorias(String nombreCategoria) {
-		// TODO - implement BDPrincipal.alta_categorias
+	public void alta_categorias(String aNombreCategoria) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param nombre
-	 * @param correo
-	 * @param contrasena
-	 * @param tipoDeUsuario
-	 */
-	public void Alta_cuenta(String nombre, String correo, String contrasena, int tipoDeUsuario) {
-		// TODO - implement BDPrincipal.Alta_cuenta
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param foto
-	 */
-	public void adjuntar_nueva_foto_de_perfil(String foto) {
-		// TODO - implement BDPrincipal.adjuntar_nueva_foto_de_perfil
+	public void adjuntar_nueva_foto_de_perfil(String aFoto) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param correo
-	 * @param tipoDeUsuario
-	 * @param id_usuario
-	 */
-	public void Baja_cuenta(String correo, int tipoDeUsuario, int id_usuario) {
-		// TODO - implement BDPrincipal.Baja_cuenta
+	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public java.util.List cargar_lista_categorias() {
-		// TODO - implement BDPrincipal.cargar_lista_categorias
+	public Categoria[] cargar_lista_categorias() {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_lista_productos_admin() {
-		// TODO - implement BDPrincipal.cargar_lista_productos_admin
+	public Producto[] cargar_lista_productos_admin() {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_resenas() {
-		// TODO - implement BDPrincipal.cargar_resenas
+	public Resena[] cargar_resenas() {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param destinatario
-	 * @param asunto
-	 * @param correo
-	 */
-	public void enviar(String destinatario, String asunto, String correo) {
-		// TODO - implement BDPrincipal.enviar
+	public void enviar(String aDestinatario, String aAsunto, String aCorreo) {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_productos_mas_vendidos() {
-		// TODO - implement BDPrincipal.cargar_productos_mas_vendidos
+	public Producto[] cargar_productos_mas_vendidos() {
 		throw new UnsupportedOperationException();
 	}
 
-	public java.util.List cargar_categorias_catalogo() {
-		// TODO - implement BDPrincipal.cargar_categorias_catalogo
+	public Categoria[] cargar_categorias_catalogo() {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_usuario
-	 */
-	public FichaCliente cargar_ficha_cliente(int id_usuario) {
-		// TODO - implement BDPrincipal.cargar_ficha_cliente
+	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_ofertas() {
-		// TODO - implement BDPrincipal.cargar_ofertas
+	public Oferta[] cargar_ofertas() {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_productos_catalogo() {
-		// TODO - implement BDPrincipal.cargar_productos_catalogo
+	public Producto[] cargar_productos_catalogo() {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param respuesta
-	 */
-	public void confirmar(boolean respuesta) {
-		// TODO - implement BDPrincipal.confirmar
+	public void confirmar(boolean aRespuesta) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param respuesta
-	 */
-	public void confirmar_cambios(boolean respuesta) {
-		// TODO - implement BDPrincipal.confirmar_cambios
+	public void confirmar_cambios(boolean aRespuesta) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_usuario
-	 */
-	public java.util.List cargar_lista_de_emails(int id_usuario) {
-		// TODO - implement BDPrincipal.cargar_lista_de_emails
+	public Correo[] cargar_lista_de_emails(int aId_usuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param mensaje
-	 * @param destiantario
-	 */
-	public void correo_de_verificacion(String mensaje, String destiantario) {
-		// TODO - implement BDPrincipal.correo_de_verificacion
+	public void correo_de_verificacion(String aMensaje, String aDestiantario) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_compra
-	 */
-	public void cancelarPedido(int id_compra) {
-		// TODO - implement BDPrincipal.cancelarPedido
+	public void cancelarPedido(int aId_compra) {
 		throw new UnsupportedOperationException();
 	}
 
-	public java.util.List cargar_compras() {
-		// TODO - implement BDPrincipal.cargar_compras
+	public Compra_recibida[] cargar_compras() {
 		throw new UnsupportedOperationException();
 	}
 
-	public java.util.List cargar_compras_enviadas() {
-		// TODO - implement BDPrincipal.cargar_compras_enviadas
+	public Compra_enviada[] cargar_compras_enviadas() {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_usuario
-	 */
-	public List cargar_pedidos_encargados(int id_usuario) {
-		// TODO - implement BDPrincipal.cargar_pedidos_encargados
+	public Compra[] cargar_pedidos_encargados(int aId_usuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_pedidos_a_entregar() {
-		// TODO - implement BDPrincipal.cargar_pedidos_a_entregar
+	public Compra_pendiente[] cargar_pedidos_a_entregar() {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_usuario
-	 */
-	public List cargar_productos_comprados_recientemente(int id_usuario) {
-		// TODO - implement BDPrincipal.cargar_productos_comprados_recientemente
+	public Compra[] cargar_productos_comprados_recientemente(int aId_usuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_pedidos_entregados() {
-		// TODO - implement BDPrincipal.cargar_pedidos_entregados
+	public Compra[] cargar_lista_compras_admin() {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_lista_compras_admin() {
-		// TODO - implement BDPrincipal.cargar_lista_compras_admin
+	public void Enviar_compra(int aId_compra) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_compra
-	 */
-	public void Enviar_compra(int id_compra) {
-		// TODO - implement BDPrincipal.Enviar_compra
+	public void aumentar_unidad_producto(int aId_item) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	public void aumentar_unidad_producto(int id_item) {
-		// TODO - implement BDPrincipal.aumentar_unidad_producto
+	public void decrementar_unidad_producto(int aId_item) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	public void decrementar_unidad_producto(int id_item) {
-		// TODO - implement BDPrincipal.decrementar_unidad_producto
+	public void eliminar_producto(int aId_item) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	public void eliminar_producto(int id_item) {
-		// TODO - implement BDPrincipal.eliminar_producto
+	public void Alta_oferta_categoria(int aId_categoria, double aDescuento, String aFechaLimite) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_categoria
-	 * @param descuento
-	 * @param fechaLimite
-	 */
-	public void Alta_oferta_categoria(int id_categoria, double descuento, String fechaLimite) {
-		// TODO - implement BDPrincipal.Alta_oferta_categoria
+	public void Alta_oferta_producto(int aId_producto, double aDescuento, String aFechaLimite) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_producto
-	 * @param descuento
-	 * @param fechaLimite
-	 */
-	public void Alta_oferta_producto(int id_producto, double descuento, String fechaLimite) {
-		// TODO - implement BDPrincipal.Alta_oferta_producto
+	public void recuperar_contrasena(String aCorreo) {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargar_listado_de_compras_admin() {
-		// TODO - implement BDPrincipal.cargar_listado_de_compras_admin
+	public void Enviar_producto(int aId_compra) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param correo
-	 */
-	public void recuperar_contrasena(String correo) {
-		// TODO - implement BDPrincipal.recuperar_contrasena
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param id_compra
-	 */
-	public void Enviar_producto(int id_compra) {
-		// TODO - implement BDPrincipal.Enviar_producto
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param id_producto
-	 */
-	public void Baja_producto(int id_producto) {
-		// TODO - implement BDPrincipal.Baja_producto
+	public void Baja_producto(int aId_producto) {
 		throw new UnsupportedOperationException();
 	}
 
 	public String recuperar_contrasena() {
-		// TODO - implement BDPrincipal.recuperar_contrasena
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_usuario
-	 * @param foto
-	 */
-	public void adjuntar_nueva_foto_de_perfil(int id_usuario, String foto) {
-		// TODO - implement BDPrincipal.adjuntar_nueva_foto_de_perfil
+	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_item
-	 */
-	public void anadir_al_carrito(int id_item) {
-		// TODO - implement BDPrincipal.a�adir_al_carrito
+	public void anadir_al_carrito(int aId_item) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param valoracion
-	 * @param cuerpo
-	 * @param id_producto
-	 */
-	public void publicar(int valoracion, String cuerpo, int id_producto) {
-		// TODO - implement BDPrincipal.publicar
+	public void publicar(int aValoracion, String aCuerpo, int aId_producto) {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param id_compra
-	 */
-	public void confirmar_compra(int id_compra) {
-		// TODO - implement BDPrincipal.confirmar_compra
+	public void confirmar_compra(int aId_compra) {
 		throw new UnsupportedOperationException();
 	}
 
+	public Compra[] cargar_listado_de_compras_admin() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void publicar(int aValoracion, String aCuerpo) {
+		throw new UnsupportedOperationException();
+	}
+
+	public Compra_recibida[] cargar_pedidos_entregados() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void confirmar_compra(Object aId_compra) {
+		throw new UnsupportedOperationException();
+	}
+
+	public Item[] cargar_productos_seleccionados(int aId_usuario) {
+		throw new UnsupportedOperationException();
+	}
+
+	
 }

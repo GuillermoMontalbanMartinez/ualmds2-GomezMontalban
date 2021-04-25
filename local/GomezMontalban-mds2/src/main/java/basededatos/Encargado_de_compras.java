@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Encargado_de_compras extends basededatos.Usuarios {
+import java.io.Serializable;
+public class Encargado_de_compras extends basededatos.Usuarios implements Serializable {
 	public Encargado_de_compras() {
 	}
 	

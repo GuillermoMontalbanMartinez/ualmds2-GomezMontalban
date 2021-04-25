@@ -18,7 +18,7 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_CATEGORIA_PRODUCTOS = 574773991;
 	
-	final int KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESEÑA = -1519235560;
+	final int KEY_CIBERNAUTA_REGISTRADO_REALIZA_RESENA = -1519239621;
 	
 	final int KEY_CIBERNAUTA_REGISTRADO_TIENE_COMPRA = 1962247180;
 	
@@ -54,7 +54,7 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_PRODUCTO_TIENE_ITEM = -485863894;
 	
-	final int KEY_PRODUCTO_TIENE_RESEÑAS = -1350391673;
+	final int KEY_PRODUCTO_TIENE_RESENAS = -1350517564;
 	
 	final int KEY_PRODUCTO_TIENE_UNA_OFERTA = 5191487;
 	

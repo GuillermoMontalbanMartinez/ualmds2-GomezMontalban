@@ -339,9 +339,9 @@ public class ProductoDAO {
 			for(int i = 0; i < lTiene_fotoss.length; i++) {
 				lTiene_fotoss[i].setEsta_asociada_a_un_producto(null);
 			}
-			basededatos.Resena[] lTiene_reseñass = producto.tiene_reseñas.toArray();
-			for(int i = 0; i < lTiene_reseñass.length; i++) {
-				lTiene_reseñass[i].setEsta_asociados_a_un_producto(null);
+			basededatos.Resena[] lTiene_resenass = producto.tiene_resenas.toArray();
+			for(int i = 0; i < lTiene_resenass.length; i++) {
+				lTiene_resenass[i].setEsta_asociados_a_un_producto(null);
 			}
 			return delete(producto);
 		}
@@ -369,9 +369,9 @@ public class ProductoDAO {
 			for(int i = 0; i < lTiene_fotoss.length; i++) {
 				lTiene_fotoss[i].setEsta_asociada_a_un_producto(null);
 			}
-			basededatos.Resena[] lTiene_reseñass = producto.tiene_reseñas.toArray();
-			for(int i = 0; i < lTiene_reseñass.length; i++) {
-				lTiene_reseñass[i].setEsta_asociados_a_un_producto(null);
+			basededatos.Resena[] lTiene_resenass = producto.tiene_resenas.toArray();
+			for(int i = 0; i < lTiene_resenass.length; i++) {
+				lTiene_resenass[i].setEsta_asociados_a_un_producto(null);
 			}
 			try {
 				session.delete(producto);

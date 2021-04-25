@@ -30,7 +30,7 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression descripción;
 	public final DoubleExpression precio;
 	public final CollectionExpression tiene_fotos;
-	public final CollectionExpression tiene_reseñas;
+	public final CollectionExpression tiene_resenas;
 	
 	public ProductoDetachedCriteria() {
 		super(basededatos.Producto.class, basededatos.ProductoCriteria.class);
@@ -45,7 +45,7 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 		descripción = new StringExpression("descripción", this.getDetachedCriteria());
 		precio = new DoubleExpression("precio", this.getDetachedCriteria());
 		tiene_fotos = new CollectionExpression("ORM_Tiene_fotos", this.getDetachedCriteria());
-		tiene_reseñas = new CollectionExpression("ORM_Tiene_reseñas", this.getDetachedCriteria());
+		tiene_resenas = new CollectionExpression("ORM_Tiene_resenas", this.getDetachedCriteria());
 	}
 	
 	public ProductoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -61,7 +61,7 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 		descripción = new StringExpression("descripción", this.getDetachedCriteria());
 		precio = new DoubleExpression("precio", this.getDetachedCriteria());
 		tiene_fotos = new CollectionExpression("ORM_Tiene_fotos", this.getDetachedCriteria());
-		tiene_reseñas = new CollectionExpression("ORM_Tiene_reseñas", this.getDetachedCriteria());
+		tiene_resenas = new CollectionExpression("ORM_Tiene_resenas", this.getDetachedCriteria());
 	}
 	
 	public ItemDetachedCriteria createTiene_itemCriteria() {
@@ -80,8 +80,8 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new FotoDetachedCriteria(createCriteria("ORM_Tiene_fotos"));
 	}
 	
-	public ResenaDetachedCriteria createTiene_reseñasCriteria() {
-		return new ResenaDetachedCriteria(createCriteria("ORM_Tiene_reseñas"));
+	public ResenaDetachedCriteria createTiene_resenasCriteria() {
+		return new ResenaDetachedCriteria(createCriteria("ORM_Tiene_resenas"));
 	}
 	
 	public Producto uniqueProducto(PersistentSession session) {

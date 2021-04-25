@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Compra_pendiente extends basededatos.Compra {
+import java.io.Serializable;
+public class Compra_pendiente extends basededatos.Compra implements Serializable {
 	public Compra_pendiente() {
 	}
 	

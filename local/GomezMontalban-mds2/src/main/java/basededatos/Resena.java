@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Resena {
+import java.io.Serializable;
+public class Resena implements Serializable {
 	public Resena() {
 	}
 	
@@ -74,10 +75,10 @@ public class Resena {
 	
 	public void setEsta_asociados_a_un_producto(basededatos.Producto value) {
 		if (esta_asociados_a_un_producto != null) {
-			esta_asociados_a_un_producto.tiene_reseñas.remove(this);
+			esta_asociados_a_un_producto.tiene_resenas.remove(this);
 		}
 		if (value != null) {
-			value.tiene_reseñas.add(this);
+			value.tiene_resenas.add(this);
 		}
 	}
 	
@@ -98,10 +99,10 @@ public class Resena {
 	
 	public void setEsta_asociada_a_un_cibernauta_registrado(basededatos.Cibernauta_registrado value) {
 		if (esta_asociada_a_un_cibernauta_registrado != null) {
-			esta_asociada_a_un_cibernauta_registrado.realiza_reseña.remove(this);
+			esta_asociada_a_un_cibernauta_registrado.realiza_resena.remove(this);
 		}
 		if (value != null) {
-			value.realiza_reseña.add(this);
+			value.realiza_resena.add(this);
 		}
 	}
 	

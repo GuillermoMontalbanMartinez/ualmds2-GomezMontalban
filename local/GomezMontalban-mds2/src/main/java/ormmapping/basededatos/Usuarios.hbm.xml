@@ -25,7 +25,7 @@ License Type: Academic
 			</join>
 		</subclass>
 		<subclass name="basededatos.Cibernauta_registrado" discriminator-value="Cibernauta_registrado" lazy="false">
-			<set name="ORM_Realiza_reseña" lazy="true" cascade="save-update,lock" inverse="true">
+			<set name="ORM_Realiza_resena" lazy="true" cascade="save-update,lock" inverse="true">
 				<key column="Cibernauta_registradoUsuariosId_usuario" not-null="true"/>
 				<one-to-many class="basededatos.Resena"/>
 			</set>

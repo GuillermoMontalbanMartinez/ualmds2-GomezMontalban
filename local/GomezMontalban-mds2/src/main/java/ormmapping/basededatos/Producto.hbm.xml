@@ -23,7 +23,7 @@ License Type: Academic
 			<key column="ProductoId_producto" not-null="true"/>
 			<one-to-many class="basededatos.Foto"/>
 		</set>
-		<set name="ORM_Tiene_reseñas" lazy="true" cascade="save-update,lock" inverse="true">
+		<set name="ORM_Tiene_resenas" lazy="true" cascade="save-update,lock" inverse="true">
 			<key column="ProductoId_producto" not-null="true"/>
 			<one-to-many class="basededatos.Resena"/>
 		</set>

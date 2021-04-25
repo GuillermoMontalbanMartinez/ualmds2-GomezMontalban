@@ -13,7 +13,8 @@
  */
 package basededatos;
 
-public class Foto {
+import java.io.Serializable;
+public class Foto implements Serializable {
 	public Foto() {
 	}
 	
