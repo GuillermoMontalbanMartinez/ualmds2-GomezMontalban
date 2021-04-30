@@ -7,7 +7,7 @@ public class Encargados_de_compras {
 	public BDPrincipal _db_main_encargado_de_compras;
 	public Vector<Encargado_de_compras> _contiene_encargado_de_compras = new Vector<Encargado_de_compras>();
 
-	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario) {
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos) {
 		throw new UnsupportedOperationException();
 	}
 

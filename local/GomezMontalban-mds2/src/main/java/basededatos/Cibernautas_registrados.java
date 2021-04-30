@@ -18,4 +18,8 @@ public class Cibernautas_registrados {
 	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto) {
 		throw new UnsupportedOperationException();
 	}
+
+	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep, int aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia, int aCodigo_postal, int aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv, String aFoto_perfil) {
+		throw new UnsupportedOperationException();
+	}
 }

@@ -8,7 +8,7 @@ public interface iAdministrador {
 
 	public void alta_categorias(String aNombreCategoria);
 
-	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario);
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos);
 
 	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario);
 

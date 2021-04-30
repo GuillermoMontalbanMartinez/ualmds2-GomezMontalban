@@ -18,7 +18,7 @@ public class Encargado_de_compras extends basededatos.Usuarios implements Serial
 	public Encargado_de_compras() {
 	}
 	
-	public void Alta_cuenta(String nombre, String correo, String contrasena, int tipoDeUsuario) {
+	public void Alta_cuenta(String nombre, String correo, String contrasena, int tipoDeUsuario, String Apellidos) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}

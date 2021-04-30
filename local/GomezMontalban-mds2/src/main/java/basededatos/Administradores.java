@@ -7,7 +7,7 @@ public class Administradores {
 	public BDPrincipal _bd_main_administradores;
 	public Vector<Administrador> _contiene_administrador = new Vector<Administrador>();
 
-	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario) {
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos) {
 		throw new UnsupportedOperationException();
 	}
 
