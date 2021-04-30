@@ -1,6 +1,6 @@
 package basededatos;
 
-public interface iCibernauta extends iCibernauta_común {
+public interface iCibernauta extends iCibernauta_comÃºn {
 
 	public String recuperar_contrasena();
 

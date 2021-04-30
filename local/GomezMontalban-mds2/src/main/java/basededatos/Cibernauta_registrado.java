@@ -180,12 +180,12 @@ public class Cibernauta_registrado extends basededatos.Usuarios implements Seria
 		throw new UnsupportedOperationException();
 	}
 	
-	public void confirmar_cambios(booelan respuesta) {
+	public void confirmar_cambios(boolean respuesta) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}
 	
-	public string enviar(String destinatario, String asunto, String correo) {
+	public String enviar(String destinatario, String asunto, String correo) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}
