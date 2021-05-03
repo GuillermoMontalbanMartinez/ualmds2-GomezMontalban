@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -32,10 +33,12 @@ public class VistaDarAltaCuenta extends PolymerTemplate<VistaDarAltaCuenta.Vista
 	private TextField textNombre;
 	@Id("text-correo")
 	private TextField textCorreo;
-	@Id("text-contrasena")
-	private TextField textContrasena;
 	@Id("vaadin-select")
 	private Select vaadinSelect;
+	@Id("text-apellidos")
+	private TextField textApellidos;
+	@Id("text-contrasena")
+	private PasswordField textContrasena;
 	/**
      * Creates a new VistaDarAltaCuenta.
      */
@@ -91,20 +94,29 @@ public class VistaDarAltaCuenta extends PolymerTemplate<VistaDarAltaCuenta.Vista
 		this.textCorreo = textCorreo;
 	}
 
-	public TextField getTextContrasena() {
-		return textContrasena;
-	}
-
-	public void setTextContrasena(TextField textContrasena) {
-		this.textContrasena = textContrasena;
-	}
-
+	
 	public Select getVaadinSelect() {
 		return vaadinSelect;
 	}
 
 	public void setVaadinSelect(Select vaadinSelect) {
 		this.vaadinSelect = vaadinSelect;
+	}
+
+	public TextField getTextApellidos() {
+		return textApellidos;
+	}
+
+	public void setTextApellidos(TextField textApellidos) {
+		this.textApellidos = textApellidos;
+	}
+
+	public PasswordField getTextContrasena() {
+		return textContrasena;
+	}
+
+	public void setTextContrasena(PasswordField textContrasena) {
+		this.textContrasena = textContrasena;
 	}
 
 }

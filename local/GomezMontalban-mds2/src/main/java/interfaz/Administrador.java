@@ -180,15 +180,7 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_cuentas);
-				try {
-					Dar_alta_cuenta al = banner_admin.administrar_cuentas._dar_alta_cuenta = new Dar_alta_cuenta();
-					al.Alta_cuenta();
-					Notification.show("Dada de alta la cuenta");
-				} catch (PersistentException e) {
-					Notification.show("Error");
-					e.printStackTrace();
-				}
+				layout_administrador.add(banner_admin.administrar_cuentas);	
 				
 			}
 		});

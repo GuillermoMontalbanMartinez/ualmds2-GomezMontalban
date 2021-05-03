@@ -1,9 +1,10 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaDarAltaCuenta extends PolymerElement {
 
@@ -24,7 +25,7 @@ class VistaDarAltaCuenta extends PolymerElement {
     <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Nombre</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
-    <vaadin-text-field style="flex-shrink: 0; align-self: center;" id="text-nombre"></vaadin-text-field>
+    <vaadin-text-field style="flex-shrink: 0; align-self: center;" id="text-nombre" required></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -34,7 +35,7 @@ class VistaDarAltaCuenta extends PolymerElement {
     <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Apellidos</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 1; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
-    <vaadin-text-field style="flex-shrink: 0; flex-grow: 0; align-self: center;"></vaadin-text-field>
+    <vaadin-text-field style="flex-shrink: 0; flex-grow: 0; align-self: center;" id="text-apellidos" required></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -44,17 +45,17 @@ class VistaDarAltaCuenta extends PolymerElement {
     <label style="align-self: center; flex-shrink: 0; margin-right: var(--lumo-space-l);">Correo</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
-    <vaadin-text-field style="align-self: center; flex-shrink: 0;" id="text-correo"></vaadin-text-field>
+    <vaadin-text-field style="align-self: center; flex-shrink: 0;" id="text-correo" required invalid></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0;">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; flex-shrink: 0; align-self: center; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xl);">
-    <label style="margin-right: var(--lumo-space-xl);">Contraseña</label>
+    <label style="margin-right: var(--lumo-space-xl); flex-grow: 0;">Contraseña</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);">
-    <vaadin-text-field id="text-contrasena"></vaadin-text-field>
+    <vaadin-password-field id="text-contrasena"></vaadin-password-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -64,7 +65,7 @@ class VistaDarAltaCuenta extends PolymerElement {
     <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Tipo de usuario</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);" id="combo-box.layout">
-    <vaadin-select id="vaadin-select">
+    <vaadin-select id="vaadin-select" required invalid>
      <template>
       <vaadin-list-box>
        <vaadin-item value="0">
