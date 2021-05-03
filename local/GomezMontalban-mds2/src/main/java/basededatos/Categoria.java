@@ -14,6 +14,12 @@
 package basededatos;
 
 import java.io.Serializable;
+import java.util.Date;
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
+import com.vaadin.flow.component.textfield.TextField;
+
 public class Categoria implements Serializable {
 	public Categoria() {
 	}
@@ -107,7 +113,17 @@ public class Categoria implements Serializable {
 	
 	public void alta_categorias(String nombreCategorias) {
 		//TODO: Implement Method
-		throw new UnsupportedOperationException();
+		// throw new UnsupportedOperationException();
+		try {
+			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+			Categoria categoria = basededatos.CategoriaDAO.createCategoria();
+			categoria.setNombre(nombreCategorias);
+			basededatos.CategoriaDAO.save(categoria);
+			pt.commit();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 	}
 	
 	public String toString() {

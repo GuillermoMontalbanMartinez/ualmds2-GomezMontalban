@@ -71,17 +71,17 @@ public class Administradores {
 			case 0:
 				Administrador ad = basededatos.AdministradorDAO.loadAdministradorByORMID(aId_usuario);
 				basededatos.AdministradorDAO.delete(ad);
-				
 				break;
 
 			case 1:
 				Empresa_de_transportes et = basededatos.Empresa_de_transportesDAO.loadEmpresa_de_transportesByORMID(aId_usuario);
 				basededatos.Empresa_de_transportesDAO.delete(et);
+				break;
 			
 			case 2:
 				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.loadEncargado_de_comprasByORMID(aId_usuario);
 				basededatos.Encargado_de_comprasDAO.delete(ec);
-
+				break;
 
 			default:
 				break;
