@@ -54,7 +54,34 @@ public class Administradores {
 					
 	}
 
-	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario) {
-		throw new UnsupportedOperationException();
+	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario) throws PersistentException {
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		try {
+
+			switch (aTipoDeUsuario) {
+			
+			case 0:
+				Administrador ad = basededatos.AdministradorDAO.loadAdministradorByORMID(aId_usuario);
+				basededatos.AdministradorDAO.delete(ad);
+				break;
+
+			case 1:
+				Empresa_de_transportes et = basededatos.Empresa_de_transportesDAO.loadEmpresa_de_transportesByORMID(aId_usuario);
+				basededatos.Empresa_de_transportesDAO.delete(et);
+			
+			case 2:
+				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.loadEncargado_de_comprasByORMID(aId_usuario);
+				basededatos.Encargado_de_comprasDAO.delete(ec);
+
+
+			default:
+				break;
+			}
+						
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 }
