@@ -7,6 +7,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.select.Select;
 
 /**
  * A Designer generated component for the vista-dar-alta-cuenta template.
@@ -24,12 +28,20 @@ public class VistaDarAltaCuenta extends PolymerTemplate<VistaDarAltaCuenta.Vista
 	private Button vaadinButton;
 	@Id("vaadinButtonAceptar")
 	private Button vaadinButtonAceptar;
-
+	@Id("text-nombre")
+	private TextField textNombre;
+	@Id("text-correo")
+	private TextField textCorreo;
+	@Id("text-contrasena")
+	private TextField textContrasena;
+	@Id("vaadin-select")
+	private Select vaadinSelect;
 	/**
      * Creates a new VistaDarAltaCuenta.
      */
     public VistaDarAltaCuenta() {
         // You can initialise any data required for the connected UI components here.
+    	
     }
 
     /**
@@ -62,4 +74,37 @@ public class VistaDarAltaCuenta extends PolymerTemplate<VistaDarAltaCuenta.Vista
 	public void setVaadinButtonAceptar(Button vaadinButtonAceptar) {
 		this.vaadinButtonAceptar = vaadinButtonAceptar;
 	}
+
+	public TextField getTextNombre() {
+		return textNombre;
+	}
+
+	public void setTextNombre(TextField textNombre) {
+		this.textNombre = textNombre;
+	}
+
+	public TextField getTextCorreo() {
+		return textCorreo;
+	}
+
+	public void setTextCorreo(TextField textCorreo) {
+		this.textCorreo = textCorreo;
+	}
+
+	public TextField getTextContrasena() {
+		return textContrasena;
+	}
+
+	public void setTextContrasena(TextField textContrasena) {
+		this.textContrasena = textContrasena;
+	}
+
+	public Select getVaadinSelect() {
+		return vaadinSelect;
+	}
+
+	public void setVaadinSelect(Select vaadinSelect) {
+		this.vaadinSelect = vaadinSelect;
+	}
+
 }

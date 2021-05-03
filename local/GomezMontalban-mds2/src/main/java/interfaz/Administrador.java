@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -27,7 +29,6 @@ public class Administrador extends VistaAdministrador {
 		layout_administrador.add(banner_admin);
 		
 		layout_cuerpo_administrador = this.getLayoutcuerpoAdmin().as(VerticalLayout.class);
-
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -110,6 +111,7 @@ public class Administrador extends VistaAdministrador {
 		banner_admin.administrar_categorias.getVaadinButtonAceptarAlta().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
+				
 				Notification.show("Categoria dada de alta");
 			}
 		});
@@ -178,7 +180,16 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin);
-				Notification.show("Dada de alta la cuenta");
+				layout_administrador.add(banner_admin.administrar_cuentas);
+				try {
+					Dar_alta_cuenta al = banner_admin.administrar_cuentas._dar_alta_cuenta = new Dar_alta_cuenta();
+					al.Alta_cuenta();
+					Notification.show("Dada de alta la cuenta");
+				} catch (PersistentException e) {
+					Notification.show("Error");
+					e.printStackTrace();
+				}
+				
 			}
 		});
 		
@@ -369,5 +380,6 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
+	
 	}
 }

@@ -1,8 +1,10 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_común, iCibernauta_registrado, iCorreo, iEmpresa_de_transportes, iEncargado_de_compras, ICompra, iItem, iBanco {
 	public Correos _db_correo;
-	public Administradores _db_administradores;
+	public Administradores _db_administradores = new Administradores();
 	public Cibernautas_registrados _db_cibernautas_registrados;
 	public Encargados_de_compras _db_encargado_de_compras;
 	public Empresas_de_transportes _db_empresas_de_transporte;
@@ -28,8 +30,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos) {
-		throw new UnsupportedOperationException();
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos) throws PersistentException {
+		_db_administradores.Alta_cuenta(aNombre, aCorreo, aContrasena, aTipoDeUsuario, aApellidos);
 	}
 
 	public void adjuntar_nueva_foto_de_perfil(String aFoto) {

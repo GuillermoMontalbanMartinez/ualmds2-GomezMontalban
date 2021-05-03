@@ -12,7 +12,7 @@ public class Administradores {
 	public BDPrincipal _bd_main_administradores;
 	public Vector<Administrador> _contiene_administrador = new Vector<Administrador>();
 
-	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario) throws PersistentException {
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String apellidos) throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();		
 		Date fecha = new Date();
 		
@@ -26,6 +26,7 @@ public class Administradores {
 				ad.setCorreo_electronico(aCorreo);
 				ad.setContrasena(aContrasena);
 				ad.setFecha_creacion_usuario(fecha.toString());
+				ad.setApellidos(apellidos);
 				break;
 
 			case 1:
@@ -34,6 +35,8 @@ public class Administradores {
 				et.setCorreo_electronico(aCorreo);
 				et.setContrasena(aContrasena);
 				et.setFecha_creacion_usuario(fecha.toString());
+				et.setApellidos(apellidos);
+
 			
 			case 2:
 				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.createEncargado_de_compras();
@@ -41,6 +44,9 @@ public class Administradores {
 				ec.setCorreo_electronico(aCorreo);
 				ec.setContrasena(aContrasena);
 				ec.setFecha_creacion_usuario(fecha.toString());
+				ec.setApellidos(apellidos);
+
+				
 
 
 			default:

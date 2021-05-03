@@ -1,5 +1,7 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 public interface iAdministrador {
 
 	public void baja_categoria(int aId_categoria);
@@ -8,7 +10,7 @@ public interface iAdministrador {
 
 	public void alta_categorias(String aNombreCategoria);
 
-	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos);
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos) throws PersistentException;
 
 	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario);
 

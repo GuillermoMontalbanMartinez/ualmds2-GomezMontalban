@@ -1,15 +1,38 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
+import com.vaadin.event.MouseEvents.ClickEvent;
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.ui.Button;
+
+import basededatos.BDPrincipal;
 import vistas.VistaDarAltaCuenta;
 
 public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 	public Administrar_cuentas _administrar_cuentas;
+	public BDPrincipal ad ;
 	
-	public Dar_alta_cuenta() {
-	
-	}
 
-	public void Alta_cuenta() {
-		throw new UnsupportedOperationException();
+	public Dar_alta_cuenta() {	
+		
+	}
+	
+	
+	public void Alta_cuenta() throws PersistentException { 
+		ad = new BDPrincipal();	
+		String nombre = this.getTextNombre().getValue();
+		String contrasena =this.getTextContrasena().getValue();
+		String correo =this.getTextCorreo().getValue();
+		int a = this.getVaadinSelect().getTabIndex();
+		System.out.println(this.getVaadinSelect().getOptionalValue());
+		
+		ad.Alta_cuenta(nombre, correo, "contr", 0, correo);
+
 	}
 }

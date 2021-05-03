@@ -1,15 +1,18 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-select/src/vaadin-select-text-field.js';
-import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-select/src/vaadin-select.js';
 
 class VistaDarAltaCuenta extends PolymerElement {
 
     static get template() {
         return html`
+
+
+
+
 <style include="shared-styles">
                 :host {
                     display: block;
@@ -25,7 +28,7 @@ class VistaDarAltaCuenta extends PolymerElement {
     <label style="flex-shrink: 0; align-self: center;">Nombre de usuario</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m);">
-    <vaadin-text-field style="flex-shrink: 0; align-self: center;"></vaadin-text-field>
+    <vaadin-text-field style="flex-shrink: 0; align-self: center;" id="text-nombre"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -35,7 +38,7 @@ class VistaDarAltaCuenta extends PolymerElement {
     <label style="align-self: center; flex-shrink: 0; margin-right: var(--lumo-space-xl);">Correo</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
-    <vaadin-text-field style="align-self: center; flex-shrink: 0;"></vaadin-text-field>
+    <vaadin-text-field style="align-self: center; flex-shrink: 0;" id="text-correo"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -45,7 +48,7 @@ class VistaDarAltaCuenta extends PolymerElement {
     <label style="margin-right: var(--lumo-space-xl);">Contraseña</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);">
-    <vaadin-select-text-field style="align-self: center; flex-shrink: 0;"></vaadin-select-text-field>
+    <vaadin-text-field id="text-contrasena"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -54,8 +57,22 @@ class VistaDarAltaCuenta extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xl);">
     <label style="flex-shrink: 0; align-self: center;">Tipo de usuario</label>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center; margin-bottom: var(--lumo-space-m);">
-    <vaadin-combo-box></vaadin-combo-box>
+   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);" id="combo-box.layout">
+    <vaadin-select id="vaadin-select">
+     <template>
+      <vaadin-list-box>
+       <vaadin-item value="0">
+        Administrador
+       </vaadin-item>
+       <vaadin-item value="1">
+        Empresa de transporte
+       </vaadin-item>
+       <vaadin-item value="2">
+        Encargado de compras
+       </vaadin-item>
+      </vaadin-list-box>
+     </template>
+    </vaadin-select>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
