@@ -19,8 +19,18 @@ public class Categorias {
 			e.printStackTrace();
 		}
 	}
-	public void alta_categorias(String nombreCategorias) {
-		throw new UnsupportedOperationException();
+	
+	public void alta_categorias(String nombreCategorias) throws PersistentException {
+		try {
+			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+			Categoria categoria = basededatos.CategoriaDAO.createCategoria();
+			categoria.setNombre(nombreCategorias);
+			basededatos.CategoriaDAO.save(categoria);
+			pt.commit();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}	
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
 	public Categoria[] cargar_lista_categorias() {

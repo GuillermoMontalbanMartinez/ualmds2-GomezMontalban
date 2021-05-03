@@ -11,7 +11,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Productos _db_productos;
 	public Resenas _db_resena;
 	public Ofertas _db_ofertas;
-	public Categorias _db_categorias;
+	public Categorias _db_categorias = new Categorias();
 	public Compras_pendientes _db_compras_pendientes;
 	public Compras_enviadas _db_compras_enviadas;
 	public Compras_recibidas _db_compras_recibidas;
@@ -26,8 +26,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void alta_categorias(String aNombreCategoria) {
-		throw new UnsupportedOperationException();
+	public void alta_categorias(String aNombreCategoria) throws PersistentException {
+		_db_categorias.alta_categorias(aNombreCategoria);
 	}
 
 	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos) throws PersistentException {
