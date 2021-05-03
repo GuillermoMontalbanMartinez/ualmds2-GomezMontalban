@@ -38,6 +38,7 @@ public class Administradores {
 				et.setFecha_creacion_usuario(fecha.toString());
 				et.setApellidos(apellidos);
 				basededatos.Empresa_de_transportesDAO.save(et);
+				break;
 			
 			case 2:
 				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.createEncargado_de_compras();
@@ -47,7 +48,7 @@ public class Administradores {
 				ec.setFecha_creacion_usuario(fecha.toString());
 				ec.setApellidos(apellidos);
 				basededatos.Encargado_de_comprasDAO.save(ec);
-				
+				break;
 
 
 			default:
