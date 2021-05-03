@@ -29,10 +29,9 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 		String nombre = this.getTextNombre().getValue();
 		String contrasena =this.getTextContrasena().getValue();
 		String correo =this.getTextCorreo().getValue();
-		int a = this.getVaadinSelect().getTabIndex();
-		System.out.println(this.getVaadinSelect().getOptionalValue());
 		
-		ad.Alta_cuenta(nombre, correo, "contr", 0, correo);
+		
+		ad.Alta_cuenta(nombre, "gomez", contrasena, 0, correo);
 
 	}
 }

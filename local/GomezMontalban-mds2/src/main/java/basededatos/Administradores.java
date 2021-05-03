@@ -27,6 +27,7 @@ public class Administradores {
 				ad.setContrasena(aContrasena);
 				ad.setFecha_creacion_usuario(fecha.toString());
 				ad.setApellidos(apellidos);
+				basededatos.AdministradorDAO.save(ad);
 				break;
 
 			case 1:
@@ -36,7 +37,7 @@ public class Administradores {
 				et.setContrasena(aContrasena);
 				et.setFecha_creacion_usuario(fecha.toString());
 				et.setApellidos(apellidos);
-
+				basededatos.Empresa_de_transportesDAO.save(et);
 			
 			case 2:
 				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.createEncargado_de_compras();
@@ -45,7 +46,7 @@ public class Administradores {
 				ec.setContrasena(aContrasena);
 				ec.setFecha_creacion_usuario(fecha.toString());
 				ec.setApellidos(apellidos);
-
+				basededatos.Encargado_de_comprasDAO.save(ec);
 				
 
 
@@ -69,6 +70,7 @@ public class Administradores {
 			case 0:
 				Administrador ad = basededatos.AdministradorDAO.loadAdministradorByORMID(aId_usuario);
 				basededatos.AdministradorDAO.delete(ad);
+				
 				break;
 
 			case 1:
