@@ -1,6 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
@@ -64,23 +63,7 @@ class VistaDarAltaCuenta extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xl);">
     <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Tipo de usuario</label>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);" id="combo-box.layout">
-    <vaadin-select id="vaadin-select" required invalid>
-     <template>
-      <vaadin-list-box>
-       <vaadin-item value="0">
-         Administrador 
-       </vaadin-item>
-       <vaadin-item value="1">
-         Empresa de transporte 
-       </vaadin-item>
-       <vaadin-item value="2">
-         Encargado de compras 
-       </vaadin-item>
-      </vaadin-list-box>
-     </template>
-    </vaadin-select>
-   </vaadin-horizontal-layout>
+   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);" id="layout-select"></vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">

@@ -33,12 +33,17 @@ public class VistaDarAltaCuenta extends PolymerTemplate<VistaDarAltaCuenta.Vista
 	private TextField textNombre;
 	@Id("text-correo")
 	private TextField textCorreo;
-	@Id("vaadin-select")
-	private Select vaadinSelect;
+	
 	@Id("text-apellidos")
 	private TextField textApellidos;
 	@Id("text-contrasena")
 	private PasswordField textContrasena;
+	@Id("layout-select")
+	private HorizontalLayout layoutSelect;
+
+	
+	
+
 	/**
      * Creates a new VistaDarAltaCuenta.
      */
@@ -93,15 +98,7 @@ public class VistaDarAltaCuenta extends PolymerTemplate<VistaDarAltaCuenta.Vista
 	public void setTextCorreo(TextField textCorreo) {
 		this.textCorreo = textCorreo;
 	}
-
 	
-	public Select getVaadinSelect() {
-		return vaadinSelect;
-	}
-
-	public void setVaadinSelect(Select vaadinSelect) {
-		this.vaadinSelect = vaadinSelect;
-	}
 
 	public TextField getTextApellidos() {
 		return textApellidos;
@@ -118,5 +115,15 @@ public class VistaDarAltaCuenta extends PolymerTemplate<VistaDarAltaCuenta.Vista
 	public void setTextContrasena(PasswordField textContrasena) {
 		this.textContrasena = textContrasena;
 	}
+
+	public HorizontalLayout getLayoutSelect() {
+		return layoutSelect;
+	}
+
+	public void setLayoutSelect(HorizontalLayout layoutSelect) {
+		this.layoutSelect = layoutSelect;
+	}
+
+
 
 }

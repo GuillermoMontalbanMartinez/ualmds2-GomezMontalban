@@ -8,6 +8,7 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.server.webcomponent.WebComponentExporterTagExtractor;
 
 import vistas.VistaAdministrador;
@@ -181,7 +182,6 @@ public class Administrador extends VistaAdministrador {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin);
 				layout_administrador.add(banner_admin.administrar_cuentas);	
-				
 			}
 		});
 		

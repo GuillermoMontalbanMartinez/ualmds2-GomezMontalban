@@ -11,6 +11,7 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.ui.Button;
@@ -26,6 +27,9 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 	String correo;
 	String apellidos;
 	int tipo;
+	 Select<String> select = new Select<>();
+	 String value="";
+
 	public Dar_alta_cuenta() {	
 		 
 		 
@@ -41,6 +45,17 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 					}
 				}
 			});
+		 
+		 select.setItems("Administrador", "Encargado de compras", "Empresa de transporte");
+		 this.getLayoutSelect().add(select);
+		 
+		 select.addValueChangeListener(event -> {
+			    if (event.getValue() != null) {
+			    	value = event.getValue().toString();
+			    } 
+			});
+		
+		
 	}
 	public void Alta_cuenta() throws PersistentException { 
 		ad = new BDPrincipal();	
@@ -49,13 +64,12 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 		correo = this.getTextCorreo().getValue().toString();
 		apellidos = this.getTextApellidos().getValue().toString();
 		
-		String value;
-		this.getVaadinSelect().addValueChangeListener(
-		        event -> value = event.getValue().toString())));
+		
+		
 		        
-		if(value = "Administrador") tipo = 0;
-		else if(value = "Encargado de compras") tipo = 1;
-		else if(value = "Empresa de transporte") tipo = 2;
+		if(value == "Administrador") tipo = 0;
+		else if(value == "Encargado de compras") tipo = 1;
+		else if(value == "Empresa de transporte") tipo = 2;
 		
 		ad.Alta_cuenta(nombre, apellidos, contrasena, tipo, correo);
 
