@@ -1,6 +1,8 @@
 package basededatos;
 
 import java.util.Vector;
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 import basededatos.Categoria;
 
 public class Categorias {
@@ -8,7 +10,14 @@ public class Categorias {
 	public Vector<Categoria> _contiene_categorias = new Vector<Categoria>();
 
 	public void baja_categoria(int aId_categoria) {
-		throw new UnsupportedOperationException();
+		try {
+			PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+			Categoria categorias = basededatos.CategoriaDAO.loadCategoriaByORMID(aId_categoria);
+			basededatos.CategoriaDAO.delete(categorias);
+			t.commit();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 	public void alta_categorias(String nombreCategorias) {
 		throw new UnsupportedOperationException();
