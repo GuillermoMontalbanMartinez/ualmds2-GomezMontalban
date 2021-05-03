@@ -104,24 +104,7 @@ public class Categoria implements Serializable {
 	}
 	
 	public final basededatos.ProductoSetCollection productos = new basededatos.ProductoSetCollection(this, _ormAdapter, ORMConstants.KEY_CATEGORIA_PRODUCTOS, ORMConstants.KEY_PRODUCTO_CATEGORIA, ORMConstants.KEY_MUL_ONE_TO_MANY);
-	
-<<<<<<< HEAD
-=======
-	public void alta_categorias(String nombreCategorias) {
-		//TODO: Implement Method
-		// throw new UnsupportedOperationException();
-		try {
-			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-			Categoria categoria = basededatos.CategoriaDAO.createCategoria();
-			categoria.setNombre(nombreCategorias);
-			basededatos.CategoriaDAO.save(categoria);
-			pt.commit();
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
-	}
->>>>>>> branch 'master' of https://github.com/GuillermoMontalbanMartinez/ualmds2-GomezMontalban.git
+
 	
 	public String toString() {
 		return String.valueOf(getId_categorias());
