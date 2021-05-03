@@ -25,7 +25,7 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 	String contrasena;
 	String correo;
 	String apellidos;
-
+	int tipo;
 	public Dar_alta_cuenta() {	
 		 
 		 
@@ -49,7 +49,15 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 		correo = this.getTextCorreo().getValue().toString();
 		apellidos = this.getTextApellidos().getValue().toString();
 		
-		ad.Alta_cuenta(nombre, apellidos, contrasena, 0, correo);
+		String value;
+		this.getVaadinSelect().addValueChangeListener(
+		        event -> value = event.getValue().toString())));
+		        
+		if(value = "Administrador") tipo = 0;
+		else if(value = "Encargado de compras") tipo = 1;
+		else if(value = "Empresa de transporte") tipo = 2;
+		
+		ad.Alta_cuenta(nombre, apellidos, contrasena, tipo, correo);
 
 	}
 }

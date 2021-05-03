@@ -105,10 +105,6 @@ public class Categoria implements Serializable {
 	
 	public final basededatos.ProductoSetCollection productos = new basededatos.ProductoSetCollection(this, _ormAdapter, ORMConstants.KEY_CATEGORIA_PRODUCTOS, ORMConstants.KEY_PRODUCTO_CATEGORIA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	public void alta_categorias(String nombreCategorias) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
 	
 	public String toString() {
 		return String.valueOf(getId_categorias());

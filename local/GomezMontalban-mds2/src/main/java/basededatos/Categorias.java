@@ -10,6 +10,9 @@ public class Categorias {
 	public void baja_categoria(int aId_categoria) {
 		throw new UnsupportedOperationException();
 	}
+	public void alta_categorias(String nombreCategorias) {
+		throw new UnsupportedOperationException();
+	}
 
 	public Categoria[] cargar_lista_categorias() {
 		throw new UnsupportedOperationException();
