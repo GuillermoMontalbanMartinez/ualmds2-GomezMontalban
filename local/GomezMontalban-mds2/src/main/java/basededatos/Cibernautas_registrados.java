@@ -1,6 +1,11 @@
 package basededatos;
 
+import java.util.Date;
 import java.util.Vector;
+
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
 import basededatos.Cibernauta_registrado;
 
 public class Cibernautas_registrados {
@@ -19,7 +24,30 @@ public class Cibernautas_registrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep, int aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia, int aCodigo_postal, int aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv, String aFoto_perfil) {
-		throw new UnsupportedOperationException();
+	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep, String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia, int aCodigo_postal, String aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv, String aFoto_perfil) throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Cibernauta_registrado cibernautaRegistrado = basededatos.Cibernauta_registradoDAO.createCibernauta_registrado();
+			cibernautaRegistrado.setNombre(aNombre);
+			cibernautaRegistrado.setApellidos(aApellidos);
+			cibernautaRegistrado.setCorreo_electronico(aCorreo);
+			cibernautaRegistrado.setContrasena(aContrasena);
+			cibernautaRegistrado.setTelefono(aTelefono);
+			cibernautaRegistrado.setPais(aPais);
+			cibernautaRegistrado.setLocalidad(aLocalidad);
+			cibernautaRegistrado.setCalle(aCalle);
+			cibernautaRegistrado.setPortal(aPortal);
+			cibernautaRegistrado.setProvincia(aProvincia);
+			cibernautaRegistrado.setCp(aCodigo_postal);
+			cibernautaRegistrado.setNumero_tarjeta_credito(aN_tarjeta);
+			cibernautaRegistrado.setNombre_titular_tarjeta(aTitular);
+			cibernautaRegistrado.setFecha_caducidad(aFecha_caducidad);
+			cibernautaRegistrado.setCvv(aCvv);
+			basededatos.Cibernauta_registradoDAO.save(cibernautaRegistrado);	
+			pt.commit();
+		} catch (Exception e) {
+			pt.rollback();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 }

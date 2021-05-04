@@ -18,6 +18,7 @@ import java.io.Serializable;
 import org.orm.PersistentException;
 public class Administrador extends basededatos.Usuarios implements Serializable {
 	Administradores ad;
+	
 	public Administrador() {
 		ad = new Administradores();
 	}

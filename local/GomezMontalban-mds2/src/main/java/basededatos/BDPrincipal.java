@@ -5,10 +5,10 @@ import org.orm.PersistentException;
 public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_común, iCibernauta_registrado, iCorreo, iEmpresa_de_transportes, iEncargado_de_compras, ICompra, iItem, iBanco {
 	public Correos _db_correo;
 	public Administradores _db_administradores = new Administradores();
-	public Cibernautas_registrados _db_cibernautas_registrados;
+	public Cibernautas_registrados _db_cibernautas_registrados = new Cibernautas_registrados();
 	public Encargados_de_compras _db_encargado_de_compras;
 	public Empresas_de_transportes _db_empresas_de_transporte;
-	public Productos _db_productos;
+	public Productos _db_productos = new Productos();
 	public Resenas _db_resena;
 	public Ofertas _db_ofertas;
 	public Categorias _db_categorias = new Categorias();
@@ -22,8 +22,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) {
-		throw new UnsupportedOperationException();
+	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException {
+		_db_productos.Alta_producto(aNombre, aDescripcion, aPrecio, aId_producto, aFoto1, aFoto2, aFoto3, aFoto4, aFoto5);
 	}
 
 	public void alta_categorias(String aNombreCategoria) throws PersistentException {
@@ -182,8 +182,13 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep, int aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia, int aCodigo_postal, int aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv, String aFoto_perfil) {
-		throw new UnsupportedOperationException();
+	public boolean Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep, String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia, int aCodigo_postal, String aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv, String aFoto_perfil) throws PersistentException {
+		if (aNombre.isEmpty() || aContrasena.isEmpty() || aContrasena_rep.isEmpty() || aCorreo.isEmpty() || !aContrasena.equals(aContrasena_rep)) {
+			return false;
+		} else {
+			_db_cibernautas_registrados.Registro(aNombre, aApellidos, aCorreo, aContrasena, aContrasena_rep, aTelefono, aPais, aLocalidad, aCalle, aPortal, aProvincia, aCodigo_postal, aN_tarjeta, aTitular, aFecha_caducidad, aCvv, aFoto_perfil);
+			return true;
+		}
 	}
 
 	public void publicar(int aValoracion, String aCuerpo) {
@@ -201,5 +206,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Item[] cargar_productos_seleccionados(int aId_usuario) {
 		throw new UnsupportedOperationException();
 	}
+
 
 }

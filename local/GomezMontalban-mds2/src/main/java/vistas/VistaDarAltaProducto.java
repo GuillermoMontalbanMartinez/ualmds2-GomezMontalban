@@ -7,6 +7,9 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.html.Image;
 
 /**
  * A Designer generated component for the vista-dar-alta-producto template.
@@ -24,6 +27,24 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 	private Button buttonAceptar;
 	@Id("vaadinVerticalLayoutAltaProducto")
 	private Element vaadinVerticalLayoutAltaProducto;
+	@Id("textNombre")
+	private TextField textNombre;
+	@Id("textPrecio")
+	private TextField textPrecio;
+	@Id("textIdProducto")
+	private TextField textIdProducto;
+	@Id("textArea")
+	private TextArea textArea;
+	@Id("imgPrincipal")
+	private Image imgPrincipal;
+	@Id("im2")
+	private Image im2;
+	@Id("img3")
+	private Image img3;
+	@Id("img4")
+	private Image img4;
+	@Id("img5")
+	private Image img5;
 
 	/**
      * Creates a new VistaDarAltaProducto.
@@ -61,5 +82,77 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 
 	public void setVaadinVerticalLayoutAltaProducto(Element vaadinVerticalLayoutAltaProducto) {
 		this.vaadinVerticalLayoutAltaProducto = vaadinVerticalLayoutAltaProducto;
+	}
+
+	public TextField getTextNombre() {
+		return textNombre;
+	}
+
+	public void setTextNombre(TextField textNombre) {
+		this.textNombre = textNombre;
+	}
+
+	public TextField getTextPrecio() {
+		return textPrecio;
+	}
+
+	public void setTextPrecio(TextField textPrecio) {
+		this.textPrecio = textPrecio;
+	}
+
+	public TextField getTextIdProducto() {
+		return textIdProducto;
+	}
+
+	public void setTextIdProducto(TextField textIdProducto) {
+		this.textIdProducto = textIdProducto;
+	}
+
+	public TextArea getTextArea() {
+		return textArea;
+	}
+
+	public void setTextArea(TextArea textArea) {
+		this.textArea = textArea;
+	}
+
+	public Image getImgPrincipal() {
+		return imgPrincipal;
+	}
+
+	public void setImgPrincipal(Image imgPrincipal) {
+		this.imgPrincipal = imgPrincipal;
+	}
+
+	public Image getIm2() {
+		return im2;
+	}
+
+	public void setIm2(Image im2) {
+		this.im2 = im2;
+	}
+
+	public Image getImg3() {
+		return img3;
+	}
+
+	public void setImg3(Image img3) {
+		this.img3 = img3;
+	}
+
+	public Image getImg4() {
+		return img4;
+	}
+
+	public void setImg4(Image img4) {
+		this.img4 = img4;
+	}
+
+	public Image getImg5() {
+		return img5;
+	}
+
+	public void setImg5(Image img5) {
+		this.img5 = img5;
 	}
 }

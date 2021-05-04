@@ -68,8 +68,8 @@ public class Usuarios implements Serializable {
 		return correo_electronico;
 	}
 	
-	public void setTelefono(String value) {
-		this.telefono = value;
+	public void setTelefono(String aTelefono) {
+		this.telefono = aTelefono;
 	}
 	
 	public String getTelefono() {
