@@ -1,8 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaDarBajaCuenta extends PolymerElement {
 
@@ -23,8 +23,12 @@ class VistaDarBajaCuenta extends PolymerElement {
     <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">Correo</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-    <vaadin-text-field style="flex-shrink: 0;align-self: center; margin: var(--lumo-space-m);"></vaadin-text-field>
+    <vaadin-text-field style="flex-shrink: 0;align-self: center; margin: var(--lumo-space-m);" id="text-correo"></vaadin-text-field>
    </vaadin-horizontal-layout>
+  </vaadin-horizontal-layout>
+  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center; margin-bottom: var(--lumo-space-m);">
+   <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Tipo de ususario</label>
+   <vaadin-horizontal-layout theme="spacing" id="layout-select" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);"></vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);">

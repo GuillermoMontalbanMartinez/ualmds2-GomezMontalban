@@ -68,10 +68,11 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 		
 		        
 		if(value == "Administrador") tipo = 0;
-		else if(value == "Encargado de compras") tipo = 1;
-		else if(value == "Empresa de transporte") tipo = 2;
+		else if(value == "Empresa de transporte") tipo = 1;
+		else if(value == "Encargado de compras") tipo = 2;
 		
-		ad.Alta_cuenta(nombre, apellidos, contrasena, tipo, correo);
+		
+		ad.Alta_cuenta(nombre, correo, contrasena, tipo, apellidos );
 
 	}
 }

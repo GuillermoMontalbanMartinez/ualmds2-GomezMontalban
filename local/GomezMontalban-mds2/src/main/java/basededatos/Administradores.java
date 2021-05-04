@@ -62,32 +62,45 @@ public class Administradores {
 					
 	}
 
-	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario) throws PersistentException {
+	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario) throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
 		try {
 
 			switch (aTipoDeUsuario) {
 			
 			case 0:
-				Administrador ad = basededatos.AdministradorDAO.loadAdministradorByORMID(aId_usuario);
-				basededatos.AdministradorDAO.delete(ad);
+				Administrador ad = basededatos.AdministradorDAO.loadAdministradorByQuery(null, null);
+				if(ad.getCorreo_electronico().toString().equals(aCorreo)) {
+					basededatos.AdministradorDAO.delete(ad);
+					t.commit();
+				} 
 				break;
 
 			case 1:
-				Empresa_de_transportes et = basededatos.Empresa_de_transportesDAO.loadEmpresa_de_transportesByORMID(aId_usuario);
-				basededatos.Empresa_de_transportesDAO.delete(et);
+				Empresa_de_transportes et = basededatos.Empresa_de_transportesDAO.loadEmpresa_de_transportesByQuery(null, null);
+				if(et.getCorreo_electronico().toString().equals(aCorreo)) {
+					basededatos.Empresa_de_transportesDAO.delete(et);
+					t.commit();
+				} 
 				break;
+
+		
 			
 			case 2:
-				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.loadEncargado_de_comprasByORMID(aId_usuario);
-				basededatos.Encargado_de_comprasDAO.delete(ec);
+				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.loadEncargado_de_comprasByQuery(null, null);
+				if(ec.getCorreo_electronico().toString().equals(aCorreo)) {
+					basededatos.Encargado_de_comprasDAO.delete(ec);
+					t.commit();
+				} 
 				break;
+
+			
 
 			default:
 				break;
 			}
 						
-			t.commit();
+			
 		} catch (Exception e) {
 			t.rollback();
 		}

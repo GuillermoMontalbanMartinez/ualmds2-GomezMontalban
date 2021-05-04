@@ -200,6 +200,7 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.administrar_cuentas);
 				Notification.show("Dada de baja la cuenta");
 			}
 		});
