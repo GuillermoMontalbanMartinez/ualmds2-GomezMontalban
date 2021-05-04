@@ -18,8 +18,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Fotos _db_fotos;
 	public Items _db_item;
 
-	public void baja_categoria(int aId_categoria) {
-		throw new UnsupportedOperationException();
+	public void baja_categoria(String nombreCategoria) {
+		_db_categorias.baja_categoria(nombreCategoria);
 	}
 
 	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException {
@@ -206,6 +206,9 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Item[] cargar_productos_seleccionados(int aId_usuario) {
 		throw new UnsupportedOperationException();
 	}
-
+	
+	public Categoria[] cargar_categoria() throws PersistentException {
+		return _db_categorias.cargar_categoria();
+	}
 
 }

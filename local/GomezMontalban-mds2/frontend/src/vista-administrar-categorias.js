@@ -2,7 +2,6 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaAdministrarCategorias extends PolymerElement {
@@ -58,9 +57,7 @@ class VistaAdministrarCategorias extends PolymerElement {
     <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);">
      <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">Categoría</label>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <vaadin-combo-box style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vaadin-combo-box>
-    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);" id="layoutSelectBajasCategorias"></vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">

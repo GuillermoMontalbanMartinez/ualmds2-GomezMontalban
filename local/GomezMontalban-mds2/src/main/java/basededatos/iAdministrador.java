@@ -4,7 +4,7 @@ import org.orm.PersistentException;
 
 public interface iAdministrador {
 
-	public void baja_categoria(int aId_categoria);
+	public void baja_categoria(String nombreCategoria);
 
 	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException;
 
@@ -29,4 +29,6 @@ public interface iAdministrador {
 	public Compra[] cargar_listado_de_compras_admin();
 
 	public void Baja_producto(int aId_producto);
+	
+	public Categoria[] cargar_categoria() throws PersistentException;
 }

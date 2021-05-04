@@ -8,6 +8,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-administrar-categorias template.
@@ -33,6 +34,8 @@ public class VistaAdministrarCategorias extends PolymerTemplate<VistaAdministrar
 	private Button vaadinButtonAceptarAlta;
 	@Id("textCategoria")
 	private TextField textCategoria;
+	@Id("layoutSelectBajasCategorias")
+	private HorizontalLayout layoutSelectBajasCategorias;
 
 	/**
      * Creates a new VistaAdministrarCategorias.
@@ -102,5 +105,13 @@ public class VistaAdministrarCategorias extends PolymerTemplate<VistaAdministrar
 
 	public void setTextCategoria(TextField textCategoria) {
 		this.textCategoria = textCategoria;
+	}
+
+	public HorizontalLayout getLayoutSelectBajasCategorias() {
+		return layoutSelectBajasCategorias;
+	}
+
+	public void setLayoutSelectBajasCategorias(HorizontalLayout layoutSelectBajasCategorias) {
+		this.layoutSelectBajasCategorias = layoutSelectBajasCategorias;
 	}
 }

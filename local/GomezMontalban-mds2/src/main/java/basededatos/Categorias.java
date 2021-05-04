@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.List;
 import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
@@ -9,10 +10,10 @@ public class Categorias {
 	public BDPrincipal _db_main_categorias;
 	public Vector<Categoria> _contiene_categorias = new Vector<Categoria>();
 
-	public void baja_categoria(int aId_categoria) {
+	public void baja_categoria(String nombreCategoria) {
 		try {
 			PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-			Categoria categorias = basededatos.CategoriaDAO.loadCategoriaByORMID(aId_categoria);
+			Categoria categorias = basededatos.CategoriaDAO.loadCategoriaByQuery(null, null);
 			basededatos.CategoriaDAO.delete(categorias);
 			t.commit();
 		} catch (PersistentException e) {
@@ -33,11 +34,27 @@ public class Categorias {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
-	public Categoria[] cargar_lista_categorias() {
-		throw new UnsupportedOperationException();
-	}
-
 	public Categoria[] cargar_categorias_catalogo() {
 		throw new UnsupportedOperationException();
+	}
+	
+	public Categoria[] cargar_categoria() throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		List idsCategoria = null;
+		Categoria cat[] = null;
+		try {
+			idsCategoria =  basededatos.CategoriaDAO.queryCategoria(null, null);
+			cat = new Categoria[idsCategoria.size()];
+			
+			for(int i = 0; i < cat.length; i++) {
+				cat[i] = (Categoria) idsCategoria.get(i);
+			}
+			pt.commit();
+		} catch(Exception e) {
+			pt.rollback();
+		}
+		
+		// basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+		return cat;
 	}
 }
