@@ -38,8 +38,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario) {
-		throw new UnsupportedOperationException();
+	public void Baja_cuenta(String aCorreo, int id_usuario) throws PersistentException {
+		_db_administradores.Baja_cuenta(aCorreo, id_usuario);
 	}
 
 	public Categoria[] cargar_lista_categorias() {

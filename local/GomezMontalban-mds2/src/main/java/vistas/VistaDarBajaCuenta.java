@@ -7,6 +7,8 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-dar-baja-cuenta template.
@@ -24,6 +26,10 @@ public class VistaDarBajaCuenta extends PolymerTemplate<VistaDarBajaCuenta.Vista
 	private Button buttonCancelar;
 	@Id("buttonAceptar")
 	private Button buttonAceptar;
+	@Id("text-correo")
+	private TextField textCorreo;
+	@Id("layout-select")
+	private HorizontalLayout layoutSelect;
 
 	/**
      * Creates a new VistaDarBajaCuenta.
@@ -61,5 +67,21 @@ public class VistaDarBajaCuenta extends PolymerTemplate<VistaDarBajaCuenta.Vista
 
 	public void setButtonAceptar(Button buttonAceptar) {
 		this.buttonAceptar = buttonAceptar;
+	}
+
+	public TextField getTextCorreo() {
+		return textCorreo;
+	}
+
+	public void setTextCorreo(TextField textCorreo) {
+		this.textCorreo = textCorreo;
+	}
+
+	public HorizontalLayout getLayoutSelect() {
+		return layoutSelect;
+	}
+
+	public void setLayoutSelect(HorizontalLayout layoutSelect) {
+		this.layoutSelect = layoutSelect;
 	}
 }

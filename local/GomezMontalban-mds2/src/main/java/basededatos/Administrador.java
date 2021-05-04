@@ -27,8 +27,8 @@ public class Administrador extends basededatos.Usuarios implements Serializable 
 		ad.Alta_cuenta(nombre, correo, contrasena, tipoDeUsuario, Apellidos);
 	}
 	
-	public void Baja_cuenta(int id_usuario) throws PersistentException {
-		ad.Baja_cuenta(getCorreo_electronico(), id_usuario, id_usuario);
+	public void Baja_cuenta(String correo, int tipoDeUsuario) throws PersistentException {
+		ad.Baja_cuenta(correo, tipoDeUsuario );
 	}
 	
 	public String toString() {

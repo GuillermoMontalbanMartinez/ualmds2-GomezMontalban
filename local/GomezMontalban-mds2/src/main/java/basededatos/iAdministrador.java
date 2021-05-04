@@ -12,7 +12,7 @@ public interface iAdministrador {
 
 	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String aApellidos) throws PersistentException;
 
-	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario, int aId_usuario);
+	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario ) throws PersistentException;;
 
 	public Categoria[] cargar_lista_categorias();
 
