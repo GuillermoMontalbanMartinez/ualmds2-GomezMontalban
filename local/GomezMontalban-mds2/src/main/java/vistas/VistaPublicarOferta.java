@@ -7,6 +7,8 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-publicar-oferta template.
@@ -28,6 +30,18 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
 	private Button buttonCancelar;
 	@Id("VerticalLayoutPublicarOfertas")
 	private Element verticalLayoutPublicarOfertas;
+	@Id("textNombreProductoOferta")
+	private HorizontalLayout textNombreProductoOferta;
+	@Id("textDescuentoOferta")
+	private TextField textDescuentoOferta;
+	@Id("textFechaLimiteOfertaProducto")
+	private TextField textFechaLimiteOfertaProducto;
+	@Id("textNombreCategoriaOfertaCategoria")
+	private HorizontalLayout textNombreCategoriaOfertaCategoria;
+	@Id("textDescuentoOfertaCategoria")
+	private TextField textDescuentoOfertaCategoria;
+	@Id("textFechaLimiteOfertaCategoria")
+	private TextField textFechaLimiteOfertaCategoria;
 
 	/**
      * Creates a new VistaPublicarOferta.
@@ -81,5 +95,53 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
 
 	public void setVerticalLayoutPublicarOfertas(Element verticalLayoutPublicarOfertas) {
 		this.verticalLayoutPublicarOfertas = verticalLayoutPublicarOfertas;
+	}
+
+	public HorizontalLayout getTextNombreProductoOferta() {
+		return textNombreProductoOferta;
+	}
+
+	public void setTextNombreProductoOferta(HorizontalLayout textNombreProductoOferta) {
+		this.textNombreProductoOferta = textNombreProductoOferta;
+	}
+
+	public TextField getTextDescuentoOferta() {
+		return textDescuentoOferta;
+	}
+
+	public void setTextDescuentoOferta(TextField textDescuentoOferta) {
+		this.textDescuentoOferta = textDescuentoOferta;
+	}
+
+	public TextField getTextFechaLimiteOfertaProducto() {
+		return textFechaLimiteOfertaProducto;
+	}
+
+	public void setTextFechaLimiteOfertaProducto(TextField textFechaLimiteOfertaProducto) {
+		this.textFechaLimiteOfertaProducto = textFechaLimiteOfertaProducto;
+	}
+
+	public HorizontalLayout getTextNombreCategoriaOfertaCategoria() {
+		return textNombreCategoriaOfertaCategoria;
+	}
+
+	public void setTextNombreCategoriaOfertaCategoria(HorizontalLayout textNombreCategoriaOfertaCategoria) {
+		this.textNombreCategoriaOfertaCategoria = textNombreCategoriaOfertaCategoria;
+	}
+
+	public TextField getTextDescuentoOfertaCategoria() {
+		return textDescuentoOfertaCategoria;
+	}
+
+	public void setTextDescuentoOfertaCategoria(TextField textDescuentoOfertaCategoria) {
+		this.textDescuentoOfertaCategoria = textDescuentoOfertaCategoria;
+	}
+
+	public TextField getTextFechaLimiteOfertaCategoria() {
+		return textFechaLimiteOfertaCategoria;
+	}
+
+	public void setTextFechaLimiteOfertaCategoria(TextField textFechaLimiteOfertaCategoria) {
+		this.textFechaLimiteOfertaCategoria = textFechaLimiteOfertaCategoria;
 	}
 }
