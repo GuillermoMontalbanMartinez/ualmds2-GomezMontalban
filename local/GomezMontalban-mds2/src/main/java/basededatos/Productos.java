@@ -64,4 +64,25 @@ public class Productos {
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();	
 	}
+
+	public Producto[] cargar_productos() throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		List nombreProductos = null;
+		Producto producto[] = null;
+		try {
+			nombreProductos =  basededatos.ProductoDAO.queryProducto(null, null);
+			producto = new Producto[nombreProductos.size()];
+			
+			for(int i = 0; i < producto.length; i++) {
+				producto[i] = (Producto) nombreProductos.get(i);
+			}
+			pt.commit();
+		} catch(Exception e) {
+			pt.rollback();
+		}
+		
+		// basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+		return producto;
+		
+	}
 }

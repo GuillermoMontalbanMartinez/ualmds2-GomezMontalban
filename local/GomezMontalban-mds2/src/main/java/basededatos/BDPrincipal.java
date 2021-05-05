@@ -77,7 +77,11 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Producto[] cargar_productos_catalogo() {
 		throw new UnsupportedOperationException();
 	}
-
+	
+	public Producto[] cargar_productos() throws PersistentException {
+		return _db_productos.cargar_productos();
+	}
+	
 	public void confirmar(boolean aRespuesta) {
 		throw new UnsupportedOperationException();
 	}
