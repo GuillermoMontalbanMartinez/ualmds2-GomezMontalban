@@ -1,6 +1,7 @@
 package basededatos;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -49,5 +50,34 @@ public class Cibernautas_registrados {
 			pt.rollback();
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+	}
+	
+	public int login(String user, String password) throws PersistentException {
+		int id = -1;
+		List<Cibernauta_registrado> registrados = basededatos.Cibernauta_registradoDAO.queryCibernauta_registrado(null, null);
+		for(Cibernauta_registrado c : registrados) {
+			if(c.getNombre().toString().equals(user) && c.getContrasena().toString().equals(password)) {
+				id = 3;
+			}
+		}
+		List<Empresa_de_transportes> transportes = basededatos.Empresa_de_transportesDAO.queryEmpresa_de_transportes(null, null);
+		for(Empresa_de_transportes a : transportes) {
+			if(a.getNombre().toString().equals(user)&& a.getContrasena().toString().equals(password)) {
+				id = 1;
+			}
+		}List<Encargado_de_compras> compras = basededatos.Encargado_de_comprasDAO.queryEncargado_de_compras(null, null);
+		for(Encargado_de_compras c : compras) {
+			if(c.getNombre().toString().equals(user) && c.getContrasena().toString().equals(password)){
+				id = 2;
+			}
+		}
+		List<Administrador> admin = basededatos.AdministradorDAO.queryAdministrador(null, null);
+		for(Administrador a : admin) {
+			if(a.getNombre().toString().equals(user) && a.getContrasena().toString().equals(password)) {
+				id = 0;
+			}
+		}	
+		
+		return id;
 	}
 }

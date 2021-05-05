@@ -1,8 +1,12 @@
 package interfaz;
 
+import java.util.Optional;
+
 import org.orm.PersistentException;
 
+import com.example.test.MainView;
 import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.button.Button;
@@ -21,14 +25,13 @@ public class Administrador extends VistaAdministrador {
 	public VerticalLayout layout_administrador;
 	public VerticalLayout layout_cuerpo_administrador;
 
+
 	
 	public Administrador() {
 		banner_admin = new Banner_admin();
 		layout_administrador = this.getLayoutBannerAdmin().as(VerticalLayout.class);
-		
 		layout_administrador.removeAll();
 		layout_administrador.add(banner_admin);
-		
 		layout_cuerpo_administrador = this.getLayoutcuerpoAdmin().as(VerticalLayout.class);
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
 			@Override
@@ -91,13 +94,7 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
-		banner_admin.getVaadinButtonPrincipal().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.add(banner_admin.administrador);
-				
-			}
-		});
+		
 		
 		banner_admin.getVaadinButtonCorreo().addClickListener(new ComponentEventListener() {
 			@Override
@@ -149,14 +146,7 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
-		banner_admin.cerrar_sesion_admin.getVaadinButtonCerrarSesion().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				Notification.show("Sesión finalizada");
-				layout_administrador.add(new Administrador());
-			}
-		});
+		
 		
 		banner_admin.administrar_cuentas.getVaadinButtonAltaCuentaDeUsuario().addClickListener(new ComponentEventListener() {
 			@Override
@@ -372,6 +362,12 @@ public class Administrador extends VistaAdministrador {
 				Notification.show("Cancelada");
 			}
 		});
+		
+		
+		
+		 
+ 	
+		
 		
 	
 	}

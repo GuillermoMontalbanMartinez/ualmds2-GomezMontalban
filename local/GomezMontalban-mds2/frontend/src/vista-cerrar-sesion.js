@@ -15,11 +15,11 @@ class VistaCerrarSesion extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="align-items: center; justify-content: center;">
  <h1 style="margin-bottom: var(--lumo-space-xl);">Cerrar sesion</h1>
- <vaadin-button theme="primary" style="width: 15%; margin-bottom: var(--lumo-space-m);">
-  Cerrar sesion
+ <vaadin-button theme="primary" style="width: 15%; margin-bottom: var(--lumo-space-m);" id="cerrarSesionBoton">
+   Cerrar sesion 
  </vaadin-button>
- <vaadin-button theme="primary error" style="margin-bottom: var(--lumo-space-m);">
-  Cancelar
+ <vaadin-button theme="primary error" style="margin-bottom: var(--lumo-space-m);" id="cancelarBoton">
+   Cancelar 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

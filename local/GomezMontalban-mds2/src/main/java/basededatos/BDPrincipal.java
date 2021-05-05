@@ -211,4 +211,9 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		return _db_categorias.cargar_categoria();
 	}
 
+	@Override
+	public int login(String user, String password) throws PersistentException {
+		return _db_cibernautas_registrados.login(user,password);
+	}
+
 }
