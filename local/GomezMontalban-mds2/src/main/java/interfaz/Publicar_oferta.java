@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.util.List;
+
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.ComponentEvent;
@@ -15,7 +17,8 @@ import vistas.VistaPublicarOferta;
 public class Publicar_oferta extends VistaPublicarOferta {
 	public Administrar_ofertas _administrar_ofertas;
 	public BDPrincipal bd;
-	public double descuento;
+	String value = "";
+	public int descuento;
 	public String fechaLimite;
 	Select<Producto> select = new Select<>();
 	
@@ -25,7 +28,7 @@ public class Publicar_oferta extends VistaPublicarOferta {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				try {
-					Alta_oferta_producto(0, descuento, fechaLimite);
+					Alta_oferta_producto();
 				} catch (PersistentException e) {
 					e.printStackTrace();
 				}
@@ -42,16 +45,30 @@ public class Publicar_oferta extends VistaPublicarOferta {
 		}
 		this.getTextNombreProductoOferta().add(select);
 		
+		 select.addValueChangeListener(event -> {
+			    if (event.getValue() != null) {
+			    	value = event.getValue().toString();
+			    } 
+			});
+		
 	}
 
-	public void Alta_oferta_producto(int aId_producto, double aDescuento, String aFechaLimite) throws PersistentException {
+	public void Alta_oferta_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		descuento = Double.parseDouble(this.getTextDescuentoOferta().getValue().toString());
+		int id = -1;
+		descuento = Integer.parseInt(this.getTextDescuentoOferta().getValue().toString());
 		fechaLimite = this.getTextFechaLimiteOfertaProducto().getValue().toString();
-		bd.Alta_oferta_producto(0, descuento, fechaLimite);
+		System.out.println(fechaLimite);
+		Producto[] producto = bd.cargar_productos();
+		for (Producto pro: producto) {
+			if (pro.getNombre().toString().equals(value)) {
+				id = pro.getORMID();
+			}
+		}
+		bd.Alta_oferta_producto(id, descuento, fechaLimite);
 	}
 	
-	public void Alta_oferta_categoria(int aId_categoria, double aDescuento, String aFechaLimite) throws PersistentException {
+	public void Alta_oferta_categoria() throws PersistentException {
 		throw new UnsupportedOperationException();
 	}
 	

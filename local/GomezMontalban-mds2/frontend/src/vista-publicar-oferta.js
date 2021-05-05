@@ -2,6 +2,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaPublicarOferta extends PolymerElement {
@@ -47,7 +48,7 @@ class VistaPublicarOferta extends PolymerElement {
      <label>Fecha limite</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <vaadin-text-field style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;" id="textFechaLimiteOfertaProducto"></vaadin-text-field>
+     <vaadin-date-picker id="textFechaLimiteOfertaProducto"></vaadin-date-picker>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
@@ -94,7 +95,7 @@ class VistaPublicarOferta extends PolymerElement {
      <label style="margin: var(--lumo-space-m);">Fecha límite</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <vaadin-text-field style="margin: var(--lumo-space-m);" id="textFechaLimiteOfertaCategoria"></vaadin-text-field>
+     <vaadin-date-picker id="textFechaLimiteOfertaCategoria"></vaadin-date-picker>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>

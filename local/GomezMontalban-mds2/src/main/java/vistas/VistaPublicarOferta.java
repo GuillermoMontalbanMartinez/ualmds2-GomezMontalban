@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.datepicker.DatePicker;
 
 /**
  * A Designer generated component for the vista-publicar-oferta template.
@@ -34,14 +35,15 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
 	private HorizontalLayout textNombreProductoOferta;
 	@Id("textDescuentoOferta")
 	private TextField textDescuentoOferta;
-	@Id("textFechaLimiteOfertaProducto")
-	private TextField textFechaLimiteOfertaProducto;
+
 	@Id("textNombreCategoriaOfertaCategoria")
 	private HorizontalLayout textNombreCategoriaOfertaCategoria;
 	@Id("textDescuentoOfertaCategoria")
 	private TextField textDescuentoOfertaCategoria;
+	@Id("textFechaLimiteOfertaProducto")
+	private DatePicker textFechaLimiteOfertaProducto;
 	@Id("textFechaLimiteOfertaCategoria")
-	private TextField textFechaLimiteOfertaCategoria;
+	private DatePicker textFechaLimiteOfertaCategoria;
 
 	/**
      * Creates a new VistaPublicarOferta.
@@ -113,13 +115,7 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
 		this.textDescuentoOferta = textDescuentoOferta;
 	}
 
-	public TextField getTextFechaLimiteOfertaProducto() {
-		return textFechaLimiteOfertaProducto;
-	}
 
-	public void setTextFechaLimiteOfertaProducto(TextField textFechaLimiteOfertaProducto) {
-		this.textFechaLimiteOfertaProducto = textFechaLimiteOfertaProducto;
-	}
 
 	public HorizontalLayout getTextNombreCategoriaOfertaCategoria() {
 		return textNombreCategoriaOfertaCategoria;
@@ -137,11 +133,20 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
 		this.textDescuentoOfertaCategoria = textDescuentoOfertaCategoria;
 	}
 
-	public TextField getTextFechaLimiteOfertaCategoria() {
+	public DatePicker getTextFechaLimiteOfertaProducto() {
+		return textFechaLimiteOfertaProducto;
+	}
+
+	public void setTextFechaLimiteOfertaProducto(DatePicker textFechaLimiteOfertaProducto) {
+		this.textFechaLimiteOfertaProducto = textFechaLimiteOfertaProducto;
+	}
+
+	public DatePicker getTextFechaLimiteOfertaCategoria() {
 		return textFechaLimiteOfertaCategoria;
 	}
 
-	public void setTextFechaLimiteOfertaCategoria(TextField textFechaLimiteOfertaCategoria) {
+	public void setTextFechaLimiteOfertaCategoria(DatePicker textFechaLimiteOfertaCategoria) {
 		this.textFechaLimiteOfertaCategoria = textFechaLimiteOfertaCategoria;
 	}
+
 }
