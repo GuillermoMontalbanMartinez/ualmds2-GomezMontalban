@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -15,8 +16,23 @@ public class Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto[] cargar_productos_catalogo() {
-		throw new UnsupportedOperationException();
+	public Producto[] cargar_productos_catalogo() throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		List idsProductos = null;
+		Producto producto[] = null;
+		try {
+			idsProductos =  basededatos.CategoriaDAO.queryCategoria(null, null);
+			producto = new Producto[idsProductos.size()];
+			
+			for(int i = 0; i < producto.length; i++) {
+				producto[i] = (Producto) idsProductos.get(i);
+			}
+			pt.commit();
+		} catch(Exception e) {
+			pt.rollback();
+		}
+
+		return producto;
 	}
 
 	public Producto[] cargar_productos_mas_vendidos() {
@@ -24,7 +40,14 @@ public class Productos {
 	}
 
 	public void Baja_producto(int aId_producto) {
-		throw new UnsupportedOperationException();
+		try {
+			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+			Producto productos = basededatos.ProductoDAO.loadProductoByQuery(null, null);
+			basededatos.ProductoDAO.delete(productos);
+			pt.commit();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4_, String aFoto5) throws PersistentException {

@@ -154,8 +154,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void Baja_producto(int aId_producto) {
-		throw new UnsupportedOperationException();
+	public void Baja_producto(int aId_producto) throws PersistentException {
+		_db_productos.Baja_producto(aId_producto);
 	}
 
 	public String recuperar_contrasena() {

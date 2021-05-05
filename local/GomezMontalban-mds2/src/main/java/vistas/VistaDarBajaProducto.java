@@ -7,6 +7,8 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-dar-baja-producto template.
@@ -24,7 +26,10 @@ public class VistaDarBajaProducto extends PolymerTemplate<VistaDarBajaProducto.V
 	private Button buttonCancelar;
 	@Id("VaadinVerticalLayoutDarBajaProducto")
 	private Element vaadinVerticalLayoutDarBajaProducto;
-
+	@Id("textNombreProductoEliminarProducto")
+	private TextField textNombreProductoEliminarProducto;
+	@Id("textIdProductoEliminarProducto")
+	private HorizontalLayout textIdProductoEliminarProducto;
 	/**
      * Creates a new VistaDarBajaProducto.
      */
@@ -61,5 +66,22 @@ public class VistaDarBajaProducto extends PolymerTemplate<VistaDarBajaProducto.V
 
 	public void setVaadinVerticalLayoutDarBajaProducto(Element vaadinVerticalLayoutDarBajaProducto) {
 		this.vaadinVerticalLayoutDarBajaProducto = vaadinVerticalLayoutDarBajaProducto;
+	}
+
+
+	public TextField getTextNombreProductoEliminarProducto() {
+		return textNombreProductoEliminarProducto;
+	}
+
+	public void setTextNombreProductoEliminarProducto(TextField textNombreProductoEliminarProducto) {
+		this.textNombreProductoEliminarProducto = textNombreProductoEliminarProducto;
+	}
+
+	public HorizontalLayout getTextIdProductoEliminarProducto() {
+		return textIdProductoEliminarProducto;
+	}
+
+	public void setTextIdProductoEliminarProducto(HorizontalLayout textIdProductoEliminarProducto) {
+		this.textIdProductoEliminarProducto = textIdProductoEliminarProducto;
 	}
 }

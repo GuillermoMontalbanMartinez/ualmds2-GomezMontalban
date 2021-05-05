@@ -28,7 +28,7 @@ public interface iAdministrador {
 
 	public Compra[] cargar_listado_de_compras_admin();
 
-	public void Baja_producto(int aId_producto);
+	public void Baja_producto(int aId_producto) throws PersistentException;
 	
 	public Categoria[] cargar_categoria() throws PersistentException;
 }
