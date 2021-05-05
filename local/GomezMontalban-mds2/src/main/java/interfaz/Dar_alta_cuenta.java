@@ -27,7 +27,7 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 	String correo;
 	String apellidos;
 	int tipo;
-	 Select<String> select = new Select<>();
+	Select<String> select = new Select<>();
 	 String value="";
 
 	public Dar_alta_cuenta() {	
@@ -46,7 +46,7 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 				}
 			});
 		 
-		 select.setItems("Administrador", "Encargado de compras", "Empresa de transporte");
+		 select.setItems("Administrador", "Encargado de compras", "Empresa de transporte", "Usuario registrado");
 		 this.getLayoutSelect().add(select);
 		 
 		 select.addValueChangeListener(event -> {
@@ -70,6 +70,7 @@ public class Dar_alta_cuenta extends VistaDarAltaCuenta {
 		if(value == "Administrador") tipo = 0;
 		else if(value == "Empresa de transporte") tipo = 1;
 		else if(value == "Encargado de compras") tipo = 2;
+		else if(value == "Usuario registrado") tipo = 3;
 		
 		
 		ad.Alta_cuenta(nombre, correo, contrasena, tipo, apellidos );

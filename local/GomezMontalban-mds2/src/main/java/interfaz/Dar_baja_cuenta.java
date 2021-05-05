@@ -47,6 +47,7 @@ public class Dar_baja_cuenta extends VistaDarBajaCuenta {
 		if(value == "Administrador") tipo = 0;
 		else if(value == "Empresa de transporte") tipo = 1;
 		else if(value == "Encargado de compras") tipo = 2;
+		else if(value == "Usuario registrado") tipo = 3;
 		bd.Baja_cuenta(correo, tipo);
 		
 		

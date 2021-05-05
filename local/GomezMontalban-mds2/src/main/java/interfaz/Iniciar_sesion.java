@@ -12,10 +12,5 @@ public class Iniciar_sesion extends VistaIniciarSesion {
 	}
 	
 	
-	public void validar_inicio_sesion() {
-		throw new UnsupportedOperationException();
-	}
-
-	
 
 }

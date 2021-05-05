@@ -1,6 +1,7 @@
 package basededatos;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -28,6 +29,10 @@ public class Administradores {
 				ad.setFecha_creacion_usuario(fecha.toString());
 				ad.setApellidos(apellidos);
 				basededatos.AdministradorDAO.save(ad);
+				
+				
+				List a = basededatos.AdministradorDAO.queryAdministrador(null, null);
+
 				break;
 
 			case 1:
@@ -50,6 +55,16 @@ public class Administradores {
 				basededatos.Encargado_de_comprasDAO.save(ec);
 				break;
 
+				
+			case 3:
+				Cibernauta_registrado cr = basededatos.Cibernauta_registradoDAO.createCibernauta_registrado();
+				cr.setNombre(aNombre);
+				cr.setCorreo_electronico(aCorreo);
+				cr.setContrasena(aContrasena);
+				cr.setFecha_creacion_usuario(fecha.toString());
+				cr.setApellidos(apellidos);
+				basededatos.Cibernauta_registradoDAO.save(cr);
+				break;
 
 			default:
 				break;
@@ -90,6 +105,14 @@ public class Administradores {
 				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.loadEncargado_de_comprasByQuery(null, null);
 				if(ec.getCorreo_electronico().toString().equals(aCorreo)) {
 					basededatos.Encargado_de_comprasDAO.delete(ec);
+					t.commit();
+				} 
+				break;
+				
+			case 3:
+				Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByQuery(null, null);
+				if(cb.getCorreo_electronico().toString().equals(aCorreo)) {
+					basededatos.Cibernauta_registradoDAO.delete(cb);
 					t.commit();
 				} 
 				break;
