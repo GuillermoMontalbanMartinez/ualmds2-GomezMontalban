@@ -25,7 +25,7 @@ public class Ofertas {
 			Oferta oferta = basededatos.OfertaDAO.createOferta();
 			Producto producto = basededatos.ProductoDAO.loadProductoByORMID(aId_producto);
 			oferta.setEsta_asociada_a_un_producto(producto);
-			oferta.getEsta_asociada_a_un_producto().setPrecio(oferta.getEsta_asociada_a_un_producto().getPrecio()*((double)aDescuento/100));
+			oferta.getEsta_asociada_a_un_producto().setPrecio(oferta.getEsta_asociada_a_un_producto().getPrecio() - (oferta.getEsta_asociada_a_un_producto().getPrecio()*((double)aDescuento/100)));
 			oferta.setPrecio_oferta(aDescuento);
 			oferta.setFecha(aFechaLimite);
 			basededatos.OfertaDAO.save(oferta);
