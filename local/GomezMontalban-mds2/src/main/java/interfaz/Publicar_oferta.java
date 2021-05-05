@@ -43,11 +43,11 @@ public class Publicar_oferta extends VistaPublicarOferta {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		this.getTextNombreProductoOferta().add(select);
 		
-		 select.addValueChangeListener(event -> {
+		this.getTextNombreProductoOferta().add(select);
+		select.addValueChangeListener(event -> {
 			    if (event.getValue() != null) {
-			    	value = event.getValue().toString();
+			    	value = event.getValue().getNombre().toString();
 			    } 
 			});
 		
@@ -58,14 +58,20 @@ public class Publicar_oferta extends VistaPublicarOferta {
 		int id = -1;
 		descuento = Integer.parseInt(this.getTextDescuentoOferta().getValue().toString());
 		fechaLimite = this.getTextFechaLimiteOfertaProducto().getValue().toString();
-		System.out.println(fechaLimite);
 		Producto[] producto = bd.cargar_productos();
-		for (Producto pro: producto) {
-			if (pro.getNombre().toString().equals(value)) {
-				id = pro.getORMID();
+//		for (Producto pro: producto) {
+//			if (pro.getNombre().toString().equals(value)) {
+//				id = pro.getORMID();
+//			}
+//		}
+		
+		for (int i = 0; i < producto.length; i++) {
+			if (producto[i].getNombre().toString().equals(value)) {
+				id = producto[i].getORMID();
 			}
 		}
-		bd.Alta_oferta_producto(id, descuento, fechaLimite);
+		System.out.println(id);
+		 bd.Alta_oferta_producto(id, descuento, fechaLimite);
 	}
 	
 	public void Alta_oferta_categoria() throws PersistentException {
