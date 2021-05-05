@@ -35,4 +35,17 @@ public class Ofertas {
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
+	
+//	public void Alta_oferta_categoria(int aId_categoria, int aDescuento, String aFechaLimite) throws PersistentException {
+//		try {
+//			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+//			Oferta oferta = basededatos.OfertaDAO.createOferta();
+//			Categoria categoria = basededatos.CategoriaDAO.loadCategoriaByORMID(aId_categoria);
+//			oferta.est
+//		} catch (PersistentException e) {
+//			e.printStackTrace();
+//		}
+//		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+//	}
+	
 }

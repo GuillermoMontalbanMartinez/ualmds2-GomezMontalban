@@ -2,8 +2,10 @@ package interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.HasValue;
 import com.vaadin.flow.component.select.Select;
 
 import basededatos.BDPrincipal;
@@ -15,7 +17,7 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 	public Administrar_productos _administrar_productos;
 	public BDPrincipal bd;
 	public String nombreProducto;
-	public int idProducto;
+	// public int idProducto;
 	Select<basededatos.Producto> select = new Select();
 	
 	public Dar_baja_producto() {
@@ -31,23 +33,21 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 			}
 		});
 		
-		
-//		select.setItemLabelGenerator(Producto::getNombre);
-//		try {
-//			select.setItems(this.cargar_producto());
-//		} catch (PersistentException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		select.setItemLabelGenerator(Producto::getNombre);
+		try {
+			select.setItems(this.cargar_producto());
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		this.getTextNombreProductoEliminarProducto().add(select);
 
-		this.getTextIdProductoEliminarProducto().add(select);
-		
 }
 
 	public void Baja_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		nombreProducto = this.getTextNombreProductoEliminarProducto().getValue().toString();
-		// bd.Baja_producto();
+		nombreProducto = select.getValue().getNombre();
+		System.out.println("Nombre del producto: " + nombreProducto);
+		bd.Baja_producto(nombreProducto);	
 	}
 	
 	public basededatos.Producto[] cargar_producto() throws PersistentException {

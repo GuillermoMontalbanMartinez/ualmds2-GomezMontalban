@@ -73,9 +73,10 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Oferta[] cargar_ofertas() {
 		throw new UnsupportedOperationException();
 	}
+	
 
-	public Producto[] cargar_productos_catalogo() {
-		throw new UnsupportedOperationException();
+	public Producto[] cargar_productos_catalogo() throws PersistentException {
+		return _db_productos.cargar_productos();
 	}
 	
 	public Producto[] cargar_productos() throws PersistentException {
@@ -157,9 +158,9 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public void Enviar_producto(int aId_compra) {
 		throw new UnsupportedOperationException();
 	}
-
-	public void Baja_producto(int aId_producto) throws PersistentException {
-		_db_productos.Baja_producto(aId_producto);
+	
+	public void Baja_producto(String nombreProducto) throws PersistentException {
+		_db_productos.Baja_producto(nombreProducto);
 	}
 
 	public String recuperar_contrasena() {

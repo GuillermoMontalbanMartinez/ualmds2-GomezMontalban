@@ -1,5 +1,7 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 public interface iCibernauta_registrado {
 
 	public void adjuntar_nueva_foto_de_perfil(String aFoto);
@@ -10,7 +12,7 @@ public interface iCibernauta_registrado {
 
 	public Oferta[] cargar_ofertas();
 
-	public Producto[] cargar_productos_catalogo();
+	public Producto[] cargar_productos_catalogo() throws PersistentException;
 
 	public void confirmar(boolean aRespuesta);
 

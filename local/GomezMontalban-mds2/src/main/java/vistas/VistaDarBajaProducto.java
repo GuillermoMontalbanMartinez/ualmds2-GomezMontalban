@@ -26,10 +26,10 @@ public class VistaDarBajaProducto extends PolymerTemplate<VistaDarBajaProducto.V
 	private Button buttonCancelar;
 	@Id("VaadinVerticalLayoutDarBajaProducto")
 	private Element vaadinVerticalLayoutDarBajaProducto;
+//	@Id("textIdProductoEliminarProducto")
+//	private HorizontalLayout textIdProductoEliminarProducto;
 	@Id("textNombreProductoEliminarProducto")
-	private TextField textNombreProductoEliminarProducto;
-	@Id("textIdProductoEliminarProducto")
-	private HorizontalLayout textIdProductoEliminarProducto;
+	private HorizontalLayout textNombreProductoEliminarProducto;
 	/**
      * Creates a new VistaDarBajaProducto.
      */
@@ -69,19 +69,19 @@ public class VistaDarBajaProducto extends PolymerTemplate<VistaDarBajaProducto.V
 	}
 
 
-	public TextField getTextNombreProductoEliminarProducto() {
+	public HorizontalLayout getTextNombreProductoEliminarProducto() {
 		return textNombreProductoEliminarProducto;
 	}
 
-	public void setTextNombreProductoEliminarProducto(TextField textNombreProductoEliminarProducto) {
+	public void setTextNombreProductoEliminarProducto(HorizontalLayout textNombreProductoEliminarProducto) {
 		this.textNombreProductoEliminarProducto = textNombreProductoEliminarProducto;
 	}
 
-	public HorizontalLayout getTextIdProductoEliminarProducto() {
-		return textIdProductoEliminarProducto;
-	}
-
-	public void setTextIdProductoEliminarProducto(HorizontalLayout textIdProductoEliminarProducto) {
-		this.textIdProductoEliminarProducto = textIdProductoEliminarProducto;
-	}
+//	public HorizontalLayout getTextIdProductoEliminarProducto() {
+//		return textIdProductoEliminarProducto;
+//	}
+//
+//	public void setTextIdProductoEliminarProducto(HorizontalLayout textIdProductoEliminarProducto) {
+//		this.textIdProductoEliminarProducto = textIdProductoEliminarProducto;
+//	}
 }
