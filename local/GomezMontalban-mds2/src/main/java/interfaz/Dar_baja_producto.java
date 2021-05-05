@@ -32,13 +32,13 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 		});
 		
 		
-		select.setItemLabelGenerator(Producto::getNombre);
-		try {
-			select.setItems(this.cargar_producto());
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		select.setItemLabelGenerator(Producto::getNombre);
+//		try {
+//			select.setItems(this.cargar_producto());
+//		} catch (PersistentException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		this.getTextIdProductoEliminarProducto().add(select);
 		
@@ -47,7 +47,7 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 	public void Baja_producto() throws PersistentException {
 		bd = new BDPrincipal();
 		nombreProducto = this.getTextNombreProductoEliminarProducto().getValue().toString();
-		bd.Baja_producto();
+		// bd.Baja_producto();
 	}
 	
 	public basededatos.Producto[] cargar_producto() throws PersistentException {
