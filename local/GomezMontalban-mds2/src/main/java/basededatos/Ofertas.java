@@ -23,7 +23,9 @@ public class Ofertas {
 		try {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
 			Oferta oferta = basededatos.OfertaDAO.createOferta();
-			oferta.getEsta_asociada_a_un_producto().setPrecio(oferta.getEsta_asociada_a_un_producto().getPrecio()*(aDescuento/100));
+			Producto producto = basededatos.ProductoDAO.loadProductoByORMID(aId_producto);
+			oferta.setEsta_asociada_a_un_producto(producto);
+			oferta.getEsta_asociada_a_un_producto().setPrecio(oferta.getEsta_asociada_a_un_producto().getPrecio()*((double)aDescuento/100));
 			oferta.setPrecio_oferta(aDescuento);
 			oferta.setFecha(aFechaLimite);
 			basededatos.OfertaDAO.save(oferta);

@@ -47,7 +47,7 @@ public class Publicar_oferta extends VistaPublicarOferta {
 		
 		 select.addValueChangeListener(event -> {
 			    if (event.getValue() != null) {
-			    	value = event.getValue().toString();
+			    	value = event.getValue().getNombre().toString();
 			    } 
 			});
 		
@@ -58,12 +58,11 @@ public class Publicar_oferta extends VistaPublicarOferta {
 		int id = -1;
 		descuento = Integer.parseInt(this.getTextDescuentoOferta().getValue().toString());
 		fechaLimite = this.getTextFechaLimiteOfertaProducto().getValue().toString();
-		System.out.println(fechaLimite);
 		Producto[] producto = bd.cargar_productos();
 		for (Producto pro: producto) {
 			if (pro.getNombre().toString().equals(value)) {
 				id = pro.getORMID();
-			}
+			}			
 		}
 		bd.Alta_oferta_producto(id, descuento, fechaLimite);
 	}

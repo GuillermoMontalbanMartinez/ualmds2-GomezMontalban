@@ -10,7 +10,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Empresas_de_transportes _db_empresas_de_transporte;
 	public Productos _db_productos = new Productos();
 	public Resenas _db_resena;
-	public Ofertas _db_ofertas;
+	public Ofertas _db_ofertas = new Ofertas();
 	public Categorias _db_categorias = new Categorias();
 	public Compras_pendientes _db_compras_pendientes;
 	public Compras_enviadas _db_compras_enviadas;
