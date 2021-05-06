@@ -16,12 +16,13 @@ class VistaDarAltaCuenta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutDarAltaCuenta">
+<vaadin-vertical-layout style="width: 100%;background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutDarAltaCuenta">
  <h4 style="align-self: center; margin-bottom: var(--lumo-space-xl);">Dar de alta cuenta de usuario</h4>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout style="align-self: center;">
    <vaadin-horizontal-layout theme="spacing" style="margin-right: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m);">
-    <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Nombre</label>
+    <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);font-weight: bold;">Nombre</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
     <vaadin-text-field style="flex-shrink: 0; align-self: center;" id="text-nombre" required></vaadin-text-field>
@@ -31,7 +32,7 @@ class VistaDarAltaCuenta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 1;">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 1; margin-right: var(--lumo-space-xl); margin-bottom: var(--lumo-space-m);">
-    <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Apellidos</label>
+    <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);font-weight: bold;">Apellidos</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 1; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
     <vaadin-text-field style="flex-shrink: 0; flex-grow: 0; align-self: center;" id="text-apellidos" required></vaadin-text-field>
@@ -41,7 +42,7 @@ class VistaDarAltaCuenta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0;">
   <vaadin-horizontal-layout style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout style="align-self: center; justify-content: center; margin-bottom: var(--lumo-space-m); flex-shrink: 0; margin-right: var(--lumo-space-xl);">
-    <label style="align-self: center; flex-shrink: 0; margin-right: var(--lumo-space-l);">Correo</label>
+    <label style="align-self: center; flex-shrink: 0; margin-right: var(--lumo-space-l);font-weight: bold;">Correo</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
     <vaadin-text-field style="align-self: center; flex-shrink: 0;" id="text-correo" required invalid></vaadin-text-field>
@@ -51,7 +52,7 @@ class VistaDarAltaCuenta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0;">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; flex-shrink: 0; align-self: center; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xl);">
-    <label style="margin-right: var(--lumo-space-xl); flex-grow: 0;">Contraseña</label>
+    <label style="margin-right: var(--lumo-space-xl); flex-grow: 0;font-weight: bold;">Contraseña</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);">
     <vaadin-password-field id="text-contrasena"></vaadin-password-field>
@@ -61,7 +62,7 @@ class VistaDarAltaCuenta extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center;">
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center; margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin-bottom: var(--lumo-space-m); margin-right: var(--lumo-space-xl);">
-    <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);">Tipo de usuario</label>
+    <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);font-weight: bold;">Tipo de usuario</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);" id="layout-select"></vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
