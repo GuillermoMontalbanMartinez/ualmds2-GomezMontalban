@@ -13,14 +13,16 @@ public class Administradores {
 	public BDPrincipal _bd_main_administradores;
 	public Vector<Administrador> _contiene_administrador = new Vector<Administrador>();
 
-	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String apellidos) throws PersistentException {
-		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();		
+	public void Alta_cuenta(String aNombre, String aCorreo, String aContrasena, int aTipoDeUsuario, String apellidos)
+			throws PersistentException {
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
 		Date fecha = new Date();
-		
+
 		try {
 
 			switch (aTipoDeUsuario) {
-			
+
 			case 0:
 				Administrador ad = basededatos.AdministradorDAO.createAdministrador();
 				ad.setNombre(aNombre);
@@ -29,8 +31,7 @@ public class Administradores {
 				ad.setFecha_creacion_usuario(fecha.toString());
 				ad.setApellidos(apellidos);
 				basededatos.AdministradorDAO.save(ad);
-				
-				
+
 				List a = basededatos.AdministradorDAO.queryAdministrador(null, null);
 
 				break;
@@ -44,7 +45,7 @@ public class Administradores {
 				et.setApellidos(apellidos);
 				basededatos.Empresa_de_transportesDAO.save(et);
 				break;
-			
+
 			case 2:
 				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.createEncargado_de_compras();
 				ec.setNombre(aNombre);
@@ -55,7 +56,6 @@ public class Administradores {
 				basededatos.Encargado_de_comprasDAO.save(ec);
 				break;
 
-				
 			case 3:
 				Cibernauta_registrado cr = basededatos.Cibernauta_registradoDAO.createCibernauta_registrado();
 				cr.setNombre(aNombre);
@@ -69,61 +69,70 @@ public class Administradores {
 			default:
 				break;
 			}
-						
+
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
-					
+
 	}
 
 	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario) throws PersistentException {
-		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
 		try {
 
 			switch (aTipoDeUsuario) {
-			
+
 			case 0:
-				Administrador ad = basededatos.AdministradorDAO.loadAdministradorByQuery(null, null);
-				if(ad.getCorreo_electronico().toString().equals(aCorreo)) {
-					basededatos.AdministradorDAO.delete(ad);
-					t.commit();
-				} 
+				Administrador[] ad = basededatos.AdministradorDAO.listAdministradorByQuery(null, null);
+				for (Administrador a : ad) {
+					if (a.getCorreo_electronico().toString().equals(aCorreo)) {
+						basededatos.AdministradorDAO.delete(a);
+						t.commit();
+					}
+				}
+
 				break;
 
 			case 1:
-				Empresa_de_transportes et = basededatos.Empresa_de_transportesDAO.loadEmpresa_de_transportesByQuery(null, null);
-				if(et.getCorreo_electronico().toString().equals(aCorreo)) {
-					basededatos.Empresa_de_transportesDAO.delete(et);
-					t.commit();
-				} 
+				Empresa_de_transportes[] et = basededatos.Empresa_de_transportesDAO
+						.listEmpresa_de_transportesByQuery(null, null);
+				for (Empresa_de_transportes e : et) {
+					if (e.getCorreo_electronico().toString().equals(aCorreo)) {
+						basededatos.Empresa_de_transportesDAO.delete(e);
+						t.commit();
+					}
+				}
+
 				break;
 
-		
-			
 			case 2:
-				Encargado_de_compras ec = basededatos.Encargado_de_comprasDAO.loadEncargado_de_comprasByQuery(null, null);
-				if(ec.getCorreo_electronico().toString().equals(aCorreo)) {
-					basededatos.Encargado_de_comprasDAO.delete(ec);
-					t.commit();
-				} 
-				break;
-				
-			case 3:
-				Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByQuery(null, null);
-				if(cb.getCorreo_electronico().toString().equals(aCorreo)) {
-					basededatos.Cibernauta_registradoDAO.delete(cb);
-					t.commit();
-				} 
+				Encargado_de_compras[] ec = basededatos.Encargado_de_comprasDAO.listEncargado_de_comprasByQuery(null,
+						null);
+				for (Encargado_de_compras e : ec) {
+					if (e.getCorreo_electronico().toString().equals(aCorreo)) {
+						basededatos.Encargado_de_comprasDAO.delete(e);
+						t.commit();
+					}
+				}
 				break;
 
-			
+			case 3:
+				Cibernauta_registrado[] cb = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null,
+						null);
+				for (Cibernauta_registrado c : cb) {
+					if (c.getCorreo_electronico().toString().equals(aCorreo)) {
+						basededatos.Cibernauta_registradoDAO.delete(c);
+						t.commit();
+					}
+				}
+				break;
 
 			default:
 				break;
 			}
-						
-			
+
 		} catch (Exception e) {
 			t.rollback();
 		}
