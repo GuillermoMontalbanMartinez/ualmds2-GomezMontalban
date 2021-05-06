@@ -18,6 +18,7 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 	public BDPrincipal bd;
 	public String nombreProducto;
 	// public int idProducto;
+	String value = "";
 	Select<basededatos.Producto> select = new Select();
 	
 	public Dar_baja_producto() {
@@ -40,14 +41,17 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 			e.printStackTrace();
 		}
 		this.getTextNombreProductoEliminarProducto().add(select);
-
+		
+		 select.addValueChangeListener(event -> {
+			    if (event.getValue() != null) {
+			    	value = event.getValue().getNombre().toString();
+			    } 
+			});
 }
 
 	public void Baja_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		nombreProducto = select.getValue().getNombre();
-		System.out.println("Nombre del producto: " + nombreProducto);
-		bd.Baja_producto(nombreProducto);	
+		bd.Baja_producto(value);	
 	}
 	
 	public basededatos.Producto[] cargar_producto() throws PersistentException {

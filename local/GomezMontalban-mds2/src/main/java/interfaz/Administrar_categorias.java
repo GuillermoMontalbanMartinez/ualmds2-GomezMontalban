@@ -20,8 +20,8 @@ public class Administrar_categorias extends VistaAdministrarCategorias {
 	public BDPrincipal bd;
 	public String nombreCategoria;
 	int idCategoria;
+	String value;
 	Select<Categoria> select = new Select<>();
-	
 	
 	public Administrar_categorias() {
 		this.getVaadinButtonAceptarAlta().addClickListener(new ComponentEventListener() {
@@ -57,6 +57,12 @@ public class Administrar_categorias extends VistaAdministrarCategorias {
 		}
 		this.getLayoutSelectBajasCategorias().add(select);
 		
+		 select.addValueChangeListener(event -> {
+			    if (event.getValue() != null) {
+			    	value = event.getValue().getNombre().toString();
+			    } 
+			});
+		
 	}
 	
 
@@ -69,8 +75,7 @@ public class Administrar_categorias extends VistaAdministrarCategorias {
 
 	public void Baja_categoria() throws PersistentException {
 		bd = new BDPrincipal();
-		nombreCategoria = this.getTextCategoria().getValue().toString();
-		bd.baja_categoria(nombreCategoria);
+		bd.baja_categoria(value);
 	}
 
 

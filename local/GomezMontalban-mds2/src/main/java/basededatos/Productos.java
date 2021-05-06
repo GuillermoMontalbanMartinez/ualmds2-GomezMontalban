@@ -39,34 +39,19 @@ public class Productos {
 		throw new UnsupportedOperationException();
 	}
 
-//	public void Baja_producto(int aId_producto) {
-//		try {
-//			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-//			Producto productos = basededatos.ProductoDAO.loadProductoByQuery(null, null);
-//			basededatos.ProductoDAO.delete(productos);
-//			pt.commit();
-//		} catch (PersistentException e) {
-//			e.printStackTrace();
-//		}
-//	}
-	
-//	public void baja_categoria(String nombreCategoria) {
-//		try {
-//			PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-//			Categoria categorias = basededatos.CategoriaDAO.loadCategoriaByQuery(null, null);
-//			basededatos.CategoriaDAO.delete(categorias);
-//			t.commit();
-//		} catch (PersistentException e) {
-//			e.printStackTrace();
-//		}
-//	}
 	
 	public void Baja_producto(String nombreProducto) throws PersistentException {
 		try {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-			Producto productos = basededatos.ProductoDAO.loadProductoByQuery(null, null);
-			basededatos.ProductoDAO.delete(productos);
-			pt.commit();
+			// Producto productos = basededatos.ProductoDAO.loadProductoByQuery(null, null);
+			Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
+			for (Producto producto : productos) {
+				if (producto.getNombre().equals(nombreProducto)) {
+					basededatos.ProductoDAO.delete(producto);
+					pt.commit();
+				}
+			}
+			
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -103,7 +88,7 @@ public class Productos {
 			pt.rollback();
 		}
 		
-		// basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+
 		return producto;
 		
 	}
