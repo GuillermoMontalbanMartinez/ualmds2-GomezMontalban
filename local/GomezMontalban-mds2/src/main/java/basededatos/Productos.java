@@ -7,7 +7,6 @@ import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
 import basededatos.Producto;
-
 public class Productos {
 	public BDPrincipal _db_main_productos;
 	public Vector<Producto> _contiene_productos = new Vector<Producto>();
@@ -47,8 +46,16 @@ public class Productos {
 			Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
 			for (Producto producto : productos) {
 				if (producto.getNombre().equals(nombreProducto)) {
-					basededatos.ProductoDAO.delete(producto);
-					pt.commit();
+					if(producto.getTiene_una_oferta()==null) {
+						basededatos.ProductoDAO.delete(producto);
+						pt.commit();
+					} else {
+						Oferta oferta = producto.getTiene_una_oferta();
+						basededatos.OfertaDAO.delete(oferta);
+						basededatos.ProductoDAO.delete(producto);
+						pt.commit();						
+					}
+					
 				}
 			}
 			
