@@ -13,7 +13,7 @@ class VistaPedidosEncargados extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="height: 40%; width: 100%;">
+<vaadin-vertical-layout style="height: 40%; width: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
  <vista-pedido-encargado style="width: 100%; height: 100%;"></vista-pedido-encargado>
 </vaadin-vertical-layout>
 `;

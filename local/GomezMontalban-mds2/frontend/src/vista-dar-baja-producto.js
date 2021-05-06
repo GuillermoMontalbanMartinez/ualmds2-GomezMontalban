@@ -14,15 +14,14 @@ class VistaDarBajaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;background: rgb(34,193,195);
-background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(242,242,242,1) 93%, rgba(242,242,242,1) 100%);" id="VaadinVerticalLayoutDarBajaProducto">
+<vaadin-vertical-layout style="width: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="VaadinVerticalLayoutDarBajaProducto">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
   <h1 style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;">Eliminar producto</h1>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
-    <label style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;">Nombre del producto</label>
+    <label style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;font-weight: bold;">Nombre del producto</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;" id="textNombreProductoEliminarProducto"></vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

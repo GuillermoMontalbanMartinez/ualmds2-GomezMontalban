@@ -14,15 +14,15 @@ class VistaDarDeBajaUsuario extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="justify-content: center; align-items: center; height: 50%;">
+<vaadin-vertical-layout style="justify-content: center; align-items: center; height: 50%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
  <h2>Dar de baja la cuenta</h2>
  <h4>¿Desea dar de baja su cuenta y eliminar las reseñas publicadas de sus productos?</h4>
  <vaadin-horizontal-layout theme="spacing" style="width: 30%; justify-content: center;">
   <vaadin-button theme="primary error" style="margin-right: var(--lumo-space-xl);">
-   Cancelar
+    Cancelar 
   </vaadin-button>
   <vaadin-button theme="primary" style="margin-left: var(--lumo-space-xl);">
-   Confirmar
+    Confirmar 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

@@ -16,8 +16,10 @@ class VistaPublicarOferta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="VerticalLayoutPublicarOfertas">
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="VerticalLayoutPublicarOfertas">
+ <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
   <h1 style="align-self: center; flex-shrink: 0;">Añadir ofertas</h1>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0;">
@@ -27,7 +29,7 @@ class VistaPublicarOferta extends PolymerElement {
   <vaadin-vertical-layout>
    <vaadin-horizontal-layout>
     <vaadin-horizontal-layout style="margin-left: var(--lumo-space-xl);">
-     <label style="width: 100%; flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-xl);">Nombre </label>
+     <label style="width: 100%; flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-xl);font-weight: bold;">Nombre </label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout id="textNombreProductoOferta"></vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
@@ -35,7 +37,7 @@ class VistaPublicarOferta extends PolymerElement {
   <vaadin-vertical-layout style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
     <vaadin-horizontal-layout style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <label style="margin: var(--lumo-space-m);">Descuento</label>
+     <label style="margin: var(--lumo-space-m);font-weight: bold;">Descuento</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout>
      <vaadin-text-field style="margin: var(--lumo-space-m);" id="textDescuentoOferta"></vaadin-text-field>
@@ -45,7 +47,7 @@ class VistaPublicarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <label>Fecha limite</label>
+     <label style="font-weight: bold;">Fecha limite</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-date-picker id="textFechaLimiteOfertaProducto"></vaadin-date-picker>
@@ -74,7 +76,7 @@ class VistaPublicarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <label>Nombre Categoria</label>
+     <label style="font-weight: bold;">Nombre Categoria</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" id="textNombreCategoriaOfertaCategoria"></vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
@@ -82,7 +84,7 @@ class VistaPublicarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Descuento</label>
+     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Descuento</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center; flex-shrink: 0;">
      <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textDescuentoOfertaCategoria"></vaadin-text-field>
@@ -92,7 +94,7 @@ class VistaPublicarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <label style="margin: var(--lumo-space-m);">Fecha límite</label>
+     <label style="margin: var(--lumo-space-m);font-weight: bold;">Fecha límite</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
      <vaadin-date-picker id="textFechaLimiteOfertaCategoria"></vaadin-date-picker>

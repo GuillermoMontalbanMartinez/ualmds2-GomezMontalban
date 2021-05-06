@@ -18,7 +18,7 @@ class VistaEliminarOferta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="VerticalLayoutEliminarOferta">
+<vaadin-vertical-layout style="width: 100%; height: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="VerticalLayoutEliminarOferta">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <h1 style="flex-shrink: 0; align-self: center; width: 100%;">Eliminar oferta</h1>
  </vaadin-vertical-layout>
@@ -29,7 +29,7 @@ class VistaEliminarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: flex-end; align-self: center; flex-shrink: 0; margin: var(--lumo-space-m); width: 100%;">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <label>ID Producto</label>
+     <label style="font-weight: bold;">ID Producto</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-combo-box></vaadin-combo-box>
@@ -39,7 +39,7 @@ class VistaEliminarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: flex-end; margin: var(--lumo-space-m); width: 100%;">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout theme="spacing">
-     <label>Descuento</label>
+     <label style="font-weight: bold;">Descuento</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-select-text-field></vaadin-select-text-field>
@@ -49,7 +49,7 @@ class VistaEliminarOferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: flex-end; margin: var(--lumo-space-m); width: 100%;">
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0;">
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <label>Fecha limite</label>
+     <label style="font-weight: bold;">Fecha limite</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-time-picker-text-field></vaadin-time-picker-text-field>
