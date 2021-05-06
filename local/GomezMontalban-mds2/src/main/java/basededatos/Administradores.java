@@ -32,8 +32,6 @@ public class Administradores {
 				ad.setApellidos(apellidos);
 				basededatos.AdministradorDAO.save(ad);
 
-				List a = basededatos.AdministradorDAO.queryAdministrador(null, null);
-
 				break;
 
 			case 1:
