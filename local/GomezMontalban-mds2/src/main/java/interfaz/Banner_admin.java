@@ -12,7 +12,6 @@ import net.bytebuddy.asm.Advice.This;
 import vistas.VistaBannerAdmin;
 
 public class Banner_admin extends VistaBannerAdmin {
-	public Administrador administrador;
 	public Administrar_ofertas administrar_ofertas;
 	public Administrar_productos administrar_productos;
 	public Administrar_categorias administrar_categorias;

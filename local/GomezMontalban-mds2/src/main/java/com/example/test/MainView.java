@@ -29,8 +29,6 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 
 public class MainView extends VerticalLayout {
 
-	
-
 	public MainView(@Autowired GreetService service) {
 		Cibernauta cibernauta = new Cibernauta();
 		add(cibernauta);
@@ -47,45 +45,51 @@ public class MainView extends VerticalLayout {
 			int id = -1;
 			BDPrincipal c = new BDPrincipal();
 			try {
-				
+
 				id = c.login(usuario, password);
-				
+
 				switch (id) {
 				case 0:
-					Administrador admin = new Administrador();;
+					Administrador admin = new Administrador();
+					;
 
 					admin.banner_admin.cerrar_sesion_admin.getVaadinButtonCerrarSesion().addClickListener(t -> {
 						cerrar_sesion(admin, cibernauta);
 					});
-					
+
+					admin.banner_admin.getVaadinButtonPrincipal().addClickListener(t -> {
+						volver_a_principal(admin);
+					});
+
 					remove(cibernauta);
-					add(admin);;
+					add(admin);
 					break;
-					
-					
-					
+
 				case 1:
-					Empresa_de_transportes et = new Empresa_de_transportes();					
+					Empresa_de_transportes et = new Empresa_de_transportes();
 					remove(cibernauta);
-					add(et);;
+					add(et);
+					;
 					break;
-				
+
 				case 2:
-					Encargado_de_compras ec = new Encargado_de_compras();					
+					Encargado_de_compras ec = new Encargado_de_compras();
 					remove(cibernauta);
-					add(ec);;
+					add(ec);
+					;
 					break;
-					
-					
+
 				case 3:
 					Cibernauta_registrado registrado = new Cibernauta_registrado();
 
-					registrado._banner_registrado._administrar_perfil._cerrar_sesion.getCerrarSesionBoton().addClickListener(t -> {
-						cerrar_sesion(registrado, cibernauta);
-					});
-					
+					registrado._banner_registrado._administrar_perfil._cerrar_sesion.getCerrarSesionBoton()
+							.addClickListener(t -> {
+								cerrar_sesion(registrado, cibernauta);
+							});
+
 					remove(cibernauta);
-					add(registrado);;
+					add(registrado);
+					;
 					break;
 				default:
 					break;
@@ -95,15 +99,36 @@ public class MainView extends VerticalLayout {
 				e1.printStackTrace();
 			}
 
-			
 		});
 
-	} 
-	
+	}
+
 	public void cerrar_sesion(Component comp, Cibernauta c) {
 		c = new Cibernauta();
-		remove(comp);
+		removeAll();
 		add(c);
 		login(c);
+	}
+
+	
+	
+	public void volver_a_principal(Administrador c) {
+		Administrador admin = new Administrador();
+		Cibernauta cibernauta = new Cibernauta();
+
+		admin.banner_admin.getVaadinButtonPrincipal().addClickListener(t -> {
+			volver_a_principal(admin);
+		});
+
+		remove(c);
+		add(admin);
+		
+		
+		
+		login(cibernauta);
+		admin.banner_admin.cerrar_sesion_admin.getVaadinButtonCerrarSesion().addClickListener(t -> {
+
+			cerrar_sesion(c, cibernauta);
+		});
 	}
 }
