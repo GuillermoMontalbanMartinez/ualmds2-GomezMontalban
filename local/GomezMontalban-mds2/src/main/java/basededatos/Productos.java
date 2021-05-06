@@ -42,7 +42,6 @@ public class Productos {
 	public void Baja_producto(String nombreProducto) throws PersistentException {
 		try {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-			// Producto productos = basededatos.ProductoDAO.loadProductoByQuery(null, null);
 			Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
 			for (Producto producto : productos) {
 				if (producto.getNombre().equals(nombreProducto)) {
@@ -94,8 +93,6 @@ public class Productos {
 		} catch(Exception e) {
 			pt.rollback();
 		}
-		
-
 		return producto;
 		
 	}

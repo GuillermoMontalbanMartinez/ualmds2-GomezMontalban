@@ -13,7 +13,7 @@ class VistaAdministrarOfertas extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAdministrarOfertas">
+<vaadin-vertical-layout style="width: 100%; height: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutAdministrarOfertas">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
   <h1 style="width: 100%; align-self: center; flex-shrink: 0;">Administrar ofertas</h1>
  </vaadin-vertical-layout>

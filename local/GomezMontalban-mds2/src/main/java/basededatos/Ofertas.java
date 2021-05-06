@@ -36,6 +36,8 @@ public class Ofertas {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 	
+
+	
 //	public void Alta_oferta_categoria(int aId_categoria, int aDescuento, String aFechaLimite) throws PersistentException {
 //		try {
 //			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
