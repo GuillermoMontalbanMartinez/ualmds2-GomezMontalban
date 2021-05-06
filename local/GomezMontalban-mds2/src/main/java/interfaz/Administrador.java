@@ -33,6 +33,7 @@ public class Administrador extends VistaAdministrador {
 		layout_administrador.removeAll();
 		layout_administrador.add(banner_admin);
 		layout_cuerpo_administrador = this.getLayoutcuerpoAdmin().as(VerticalLayout.class);
+		
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -361,13 +362,7 @@ public class Administrador extends VistaAdministrador {
 				layout_administrador.add(banner_admin.administrar_ofertas);
 				Notification.show("Cancelada");
 			}
-		});
-		
-		
-		
-		 
- 	
-		
+		});		
 		
 	
 	}
