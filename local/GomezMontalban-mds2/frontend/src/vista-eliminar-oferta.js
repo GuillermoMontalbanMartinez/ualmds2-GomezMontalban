@@ -1,10 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-select/src/vaadin-select-text-field.js';
-import '@vaadin/vaadin-time-picker/src/vaadin-time-picker-text-field.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaEliminarOferta extends PolymerElement {
 
@@ -22,36 +20,31 @@ class VistaEliminarOferta extends PolymerElement {
   <h1 style="flex-shrink: 0; align-self: center; width: 100%;">Eliminar oferta</h1>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%;">
-  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: flex-end; width: 100%; margin: var(--lumo-space-m);">
-   <h4 style="align-self: center; flex-shrink: 0;">Oferta producto</h4>
-  </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: flex-end; align-self: center; flex-shrink: 0; margin: var(--lumo-space-m); width: 100%;">
+  <vaadin-vertical-layout style="align-items: center; justify-content: flex-end; align-self: center; flex-shrink: 0; width: 100%;">
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-horizontal-layout theme="spacing">
-     <label style="font-weight: bold;">ID Producto</label>
+    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 1;">
+     <label style="font-weight: bold;" id="textHorizotalLayoutNombreProductoEliminarOferta">Nombre Producto</label>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing">
-     <vaadin-combo-box></vaadin-combo-box>
-    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing"></vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: flex-end; margin: var(--lumo-space-m); width: 100%;">
+  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: flex-end; width: 100%;">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout theme="spacing">
      <label style="font-weight: bold;">Descuento</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
-     <vaadin-select-text-field></vaadin-select-text-field>
+     <vaadin-text-field id="textDescuentoEliminarOferta"></vaadin-text-field>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: flex-end; margin: var(--lumo-space-m); width: 100%;">
+  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: flex-end; width: 100%;">
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0;">
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <label style="font-weight: bold;">Fecha limite</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <vaadin-time-picker-text-field></vaadin-time-picker-text-field>
+     <vaadin-text-field id="textFechaLimiteEliminarOferta"></vaadin-text-field>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
