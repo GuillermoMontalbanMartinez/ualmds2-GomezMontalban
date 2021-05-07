@@ -224,15 +224,6 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
-				
-		banner_admin.administrar_productos._dar_alta_producto.getButtonAceptar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				Notification.show("Dado de alta el producto");
-			}
-		});
 		
 		banner_admin.administrar_productos._dar_alta_producto.getButtonCancelar().addClickListener(new ComponentEventListener() {
 			@Override

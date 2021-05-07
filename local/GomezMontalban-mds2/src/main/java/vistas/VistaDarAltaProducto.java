@@ -10,6 +10,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-dar-alta-producto template.
@@ -45,6 +46,16 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 	private Image img4;
 	@Id("img5")
 	private Image img5;
+	@Id("uploadPrincipal")
+	private Upload uploadPrincipal;
+	@Id("upload4")
+	private Upload upload4;
+	@Id("upload5")
+	private Upload upload5;
+	@Id("upload2")
+	private Upload upload2;
+	@Id("upload3")
+	private Upload upload3;
 
 	/**
      * Creates a new VistaDarAltaProducto.
@@ -154,5 +165,45 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 
 	public void setImg5(Image img5) {
 		this.img5 = img5;
+	}
+
+	public Upload getUploadPrincipal() {
+		return uploadPrincipal;
+	}
+
+	public void setUploadPrincipal(Upload uploadPrincipal) {
+		this.uploadPrincipal = uploadPrincipal;
+	}
+
+	public Upload getUpload4() {
+		return upload4;
+	}
+
+	public void setUpload4(Upload upload4) {
+		this.upload4 = upload4;
+	}
+
+	public Upload getUpload5() {
+		return upload5;
+	}
+
+	public void setUpload5(Upload upload5) {
+		this.upload5 = upload5;
+	}
+
+	public Upload getUpload2() {
+		return upload2;
+	}
+
+	public void setUpload2(Upload upload2) {
+		this.upload2 = upload2;
+	}
+
+	public Upload getUpload3() {
+		return upload3;
+	}
+
+	public void setUpload3(Upload upload3) {
+		this.upload3 = upload3;
 	}
 }
