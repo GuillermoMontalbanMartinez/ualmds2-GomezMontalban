@@ -17,19 +17,13 @@ import com.vaadin.flow.dom.Element;
 @Tag("vista-eliminar-oferta")
 @JsModule("./src/vista-eliminar-oferta.js")
 public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.VistaEliminarOfertaModel> {
-
-    @Id("ButtonCancelarOfertaCategoria")
-	private Button buttonEliminarOfertaCategoria;
-	@Id("ButtonElminarOfertaCategoria")
-	private Button buttonElminarOfertaCategoria;
 	@Id("ButtonEliminarOfertaProducto")
 	private Button buttonEliminarOfertaProducto;
 	@Id("ButtonCancelarOfertaProducto")
 	private Button buttonCancelarOfertaProducto;
 	@Id("VerticalLayoutEliminarOferta")
 	private Element verticalLayoutEliminarOferta;
-	@Id("ButtonCancelarOfertaCategoria")
-	private Button buttonCancelarOfertaCategoria;
+
 
 	/**
      * Creates a new VistaEliminarOferta.
@@ -45,13 +39,7 @@ public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.Vis
         // Add setters and getters for template properties here.
     }
 
-	public Button getButtonEliminarOfertaCategoria() {
-		return buttonEliminarOfertaCategoria;
-	}
 
-	public void setButtonEliminarOfertaCategoria(Button buttonEliminarOfertaCategoria) {
-		this.buttonEliminarOfertaCategoria = buttonEliminarOfertaCategoria;
-	}
 
 	public Button getButtonEliminarOfertaProducto() {
 		return buttonEliminarOfertaProducto;
@@ -76,20 +64,6 @@ public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.Vis
 	public void setVerticalLayoutEliminarOferta(Element verticalLayoutEliminarOferta) {
 		this.verticalLayoutEliminarOferta = verticalLayoutEliminarOferta;
 	}
-
-	public Button getButtonCancelarOfertaCategoria() {
-		return buttonCancelarOfertaCategoria;
-	}
-
-	public void setButtonCancelarOfertaCategoria(Button buttonCancelarOfertaCategoria) {
-		this.buttonCancelarOfertaCategoria = buttonCancelarOfertaCategoria;
-	}
-
-	public Button getButtonElminarOfertaCategoria() {
-		return buttonElminarOfertaCategoria;
-	}
-
-	public void setButtonElminarOfertaCategoria(Button buttonElminarOfertaCategoria) {
-		this.buttonElminarOfertaCategoria = buttonElminarOfertaCategoria;
-	}
 }
+
+

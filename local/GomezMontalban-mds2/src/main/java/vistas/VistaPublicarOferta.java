@@ -21,10 +21,10 @@ import com.vaadin.flow.component.datepicker.DatePicker;
 @JsModule("./src/vista-publicar-oferta.js")
 public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.VistaPublicarOfertaModel> {
 
-    @Id("ButtonCancelarOfertaCategoria")
-	private Button buttonCancelarOfertaCategoria;
-	@Id("ButtonPublicarOfertaCategoria")
-	private Button buttonPublicarOfertaCategoria;
+//    @Id("ButtonCancelarOfertaCategoria")
+//	private Button buttonCancelarOfertaCategoria;
+//	@Id("ButtonPublicarOfertaCategoria")
+//	private Button buttonPublicarOfertaCategoria;
 	@Id("ButtonPublicarOferta")
 	private Button buttonPublicarOferta;
 	@Id("ButtonCancelar")
@@ -36,14 +36,9 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
 	@Id("textDescuentoOferta")
 	private TextField textDescuentoOferta;
 
-	@Id("textNombreCategoriaOfertaCategoria")
-	private HorizontalLayout textNombreCategoriaOfertaCategoria;
-	@Id("textDescuentoOfertaCategoria")
-	private TextField textDescuentoOfertaCategoria;
 	@Id("textFechaLimiteOfertaProducto")
 	private DatePicker textFechaLimiteOfertaProducto;
-	@Id("textFechaLimiteOfertaCategoria")
-	private DatePicker textFechaLimiteOfertaCategoria;
+
 
 	/**
      * Creates a new VistaPublicarOferta.
@@ -59,21 +54,7 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
         // Add setters and getters for template properties here.
     }
 
-	public Button getButtonCancelarOfertaCategoria() {
-		return buttonCancelarOfertaCategoria;
-	}
 
-	public void setButtonCancelarOfertaCategoria(Button buttonCancelarOfertaCategoria) {
-		this.buttonCancelarOfertaCategoria = buttonCancelarOfertaCategoria;
-	}
-
-	public Button getButtonPublicarOfertaCategoria() {
-		return buttonPublicarOfertaCategoria;
-	}
-
-	public void setButtonPublicarOfertaCategoria(Button buttonPublicarOfertaCategoria) {
-		this.buttonPublicarOfertaCategoria = buttonPublicarOfertaCategoria;
-	}
 
 	public Button getButtonPublicarOferta() {
 		return buttonPublicarOferta;
@@ -116,37 +97,12 @@ public class VistaPublicarOferta extends PolymerTemplate<VistaPublicarOferta.Vis
 	}
 
 
-
-	public HorizontalLayout getTextNombreCategoriaOfertaCategoria() {
-		return textNombreCategoriaOfertaCategoria;
-	}
-
-	public void setTextNombreCategoriaOfertaCategoria(HorizontalLayout textNombreCategoriaOfertaCategoria) {
-		this.textNombreCategoriaOfertaCategoria = textNombreCategoriaOfertaCategoria;
-	}
-
-	public TextField getTextDescuentoOfertaCategoria() {
-		return textDescuentoOfertaCategoria;
-	}
-
-	public void setTextDescuentoOfertaCategoria(TextField textDescuentoOfertaCategoria) {
-		this.textDescuentoOfertaCategoria = textDescuentoOfertaCategoria;
-	}
-
 	public DatePicker getTextFechaLimiteOfertaProducto() {
 		return textFechaLimiteOfertaProducto;
 	}
 
 	public void setTextFechaLimiteOfertaProducto(DatePicker textFechaLimiteOfertaProducto) {
 		this.textFechaLimiteOfertaProducto = textFechaLimiteOfertaProducto;
-	}
-
-	public DatePicker getTextFechaLimiteOfertaCategoria() {
-		return textFechaLimiteOfertaCategoria;
-	}
-
-	public void setTextFechaLimiteOfertaCategoria(DatePicker textFechaLimiteOfertaCategoria) {
-		this.textFechaLimiteOfertaCategoria = textFechaLimiteOfertaCategoria;
 	}
 
 }

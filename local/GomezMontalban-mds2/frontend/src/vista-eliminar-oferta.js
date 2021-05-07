@@ -1,11 +1,10 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import '@vaadin/vaadin-select/src/vaadin-select-text-field.js';
 import '@vaadin/vaadin-time-picker/src/vaadin-time-picker-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaEliminarOferta extends PolymerElement {
 
@@ -70,55 +69,6 @@ class VistaEliminarOferta extends PolymerElement {
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
- </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
-  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center;">
-   <h4 style="flex-shrink: 0; align-self: center;">Oferta categoría</h4>
-  </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
-   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-items: center; justify-content: center; align-self: center; flex-shrink: 0;">
-    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <label>ID Categoría</label>
-    </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <vaadin-combo-box></vaadin-combo-box>
-    </vaadin-horizontal-layout>
-   </vaadin-horizontal-layout>
-  </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center; margin: var(--lumo-space-m);">
-   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <label style="flex-shrink: 0; align-self: center;">Descuento</label>
-    </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <vaadin-text-field></vaadin-text-field>
-    </vaadin-horizontal-layout>
-   </vaadin-horizontal-layout>
-  </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing">
-   <vaadin-horizontal-layout theme="spacing">
-    <vaadin-horizontal-layout theme="spacing">
-     <label style="flex-shrink: 0; align-self: center;">Fecha limite</label>
-    </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing">
-     <vaadin-text-field style="flex-shrink: 0; align-self: center;"></vaadin-text-field>
-    </vaadin-horizontal-layout>
-   </vaadin-horizontal-layout>
-  </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing">
-   <vaadin-horizontal-layout theme="spacing">
-    <vaadin-horizontal-layout theme="spacing">
-     <vaadin-button style="align-self: center; flex-shrink: 0;" theme="primary" id="ButtonElminarOfertaCategoria">
-       Eliminar 
-     </vaadin-button>
-    </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing">
-     <vaadin-button theme="primary error" id="ButtonCancelarOfertaCategoria" style="flex-shrink: 0; align-self: center;">
-       Cancelar 
-     </vaadin-button>
-    </vaadin-horizontal-layout>
-   </vaadin-horizontal-layout>
-  </vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

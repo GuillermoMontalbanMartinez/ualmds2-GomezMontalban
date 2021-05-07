@@ -143,9 +143,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void Alta_oferta_categoria(int aId_categoria, int aDescuento, String aFechaLimite) {
-		throw new UnsupportedOperationException();
-	}
 
 	public void Alta_oferta_producto(int aId_producto, int aDescuento, String aFechaLimite) throws PersistentException {
 		_db_ofertas.Alta_oferta_producto(aId_producto, aDescuento, aFechaLimite);
