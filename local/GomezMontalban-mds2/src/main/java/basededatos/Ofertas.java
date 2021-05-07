@@ -65,30 +65,4 @@ public class Ofertas {
 			e.printStackTrace();
 		}
 	}
-	
-	
-//	public void Baja_producto(String nombreProducto) throws PersistentException {
-//		try {
-//			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-//			Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
-//			for (Producto producto : productos) {
-//				if (producto.getNombre().equals(nombreProducto)) {
-//					if(producto.getTiene_una_oferta()==null) {
-//						basededatos.ProductoDAO.delete(producto);
-//						pt.commit();
-//					} else {
-//						Oferta oferta = producto.getTiene_una_oferta();
-//						basededatos.OfertaDAO.delete(oferta);
-//						basededatos.ProductoDAO.delete(producto);
-//						pt.commit();						
-//					}
-//					
-//				}
-//			}
-//			
-//		} catch (PersistentException e) {
-//			e.printStackTrace();
-//		}
-//	}
-	
 }

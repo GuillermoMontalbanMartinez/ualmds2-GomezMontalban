@@ -22,7 +22,6 @@ public class Eliminar_oferta extends VistaEliminarOferta {
 			public void onComponentEvent(ComponentEvent event) {
 				try {
 					Baja_oferta_producto();
-					// Baja_oferta();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
