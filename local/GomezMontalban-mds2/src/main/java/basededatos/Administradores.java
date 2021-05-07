@@ -137,5 +137,4 @@ public class Administradores {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
-	
 }
