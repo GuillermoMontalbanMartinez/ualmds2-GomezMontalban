@@ -86,22 +86,6 @@ public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.Vis
 		this.textHorizotalLayoutNombreProductoEliminarOferta = textHorizotalLayoutNombreProductoEliminarOferta;
 	}
 
-//	public TextField getTextDescuentoEliminarOferta() {
-//		return textDescuentoEliminarOferta;
-//	}
-//
-//	public void setTextDescuentoEliminarOferta(TextField textDescuentoEliminarOferta) {
-//		this.textDescuentoEliminarOferta = textDescuentoEliminarOferta;
-//	}
-//
-//	public TextField getTextFechaLimiteEliminarOferta() {
-//		return textFechaLimiteEliminarOferta;
-//	}
-//
-//	public void setTextFechaLimiteEliminarOferta(TextField textFechaLimiteEliminarOferta) {
-//		this.textFechaLimiteEliminarOferta = textFechaLimiteEliminarOferta;
-//	}
-
 	public HorizontalLayout getTextComboBoxEliminarOferta() {
 		return textComboBoxEliminarOferta;
 	}

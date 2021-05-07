@@ -57,7 +57,9 @@ public class Ofertas {
 			Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
 			for (Producto producto : productos) {
 				if (producto.getNombre().equals(nombreProducto) && producto.getTiene_una_oferta() != null) {
-					basededatos.OfertaDAO.delete(producto.getTiene_una_oferta());
+					//basededatos.OfertaDAO.delete(producto.getTiene_una_oferta().getORMID());
+					//basededatos.CategoriaDAO.delete(CategoriaDAO.getCategoriaByORMID(categoria.getORMID()));
+					basededatos.OfertaDAO.delete(OfertaDAO.getOfertaByORMID(producto.getTiene_una_oferta().getORMID()));
 					pt.commit();
 				}
 			}

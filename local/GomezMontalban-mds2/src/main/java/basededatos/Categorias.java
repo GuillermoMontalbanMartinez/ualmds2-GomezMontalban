@@ -14,11 +14,8 @@ public class Categorias {
 		try {
 			PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 					.beginTransaction();
-			// Categoria categorias = basededatos.CategoriaDAO.loadCategoriaByQuery(null,
-			// null);
 			List<Categoria> categorias = basededatos.CategoriaDAO.queryCategoria(null, null);
 			for (Categoria categoria : categorias) {
-				System.out.println(categoria.getNombre() + " " + nombreCategoria);
 				if (categoria.getNombre().equals(nombreCategoria)) {
 					basededatos.CategoriaDAO.delete(CategoriaDAO.getCategoriaByORMID(categoria.getORMID()));
 					t.commit();
@@ -63,8 +60,7 @@ public class Categorias {
 		} catch (Exception e) {
 			pt.rollback();
 		}
-
-		// basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+		
 		return cat;
 	}
 }
