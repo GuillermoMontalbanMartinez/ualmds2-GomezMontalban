@@ -44,14 +44,13 @@ import vistas.VistaDarAltaProducto;
 
 public class Dar_alta_producto extends VistaDarAltaProducto {
 	public Administrar_productos _administrar_productos;
-	String value,value2,value3,value4,value5;
-	String src,src2,src3,src4,src5;
+	String value, value2, value3, value4, value5;
+	String src, src2, src3, src4, src5;
 	MultiFileMemoryBuffer buffer = new MultiFileMemoryBuffer();
 	Div output = new Div();
 
 	public Dar_alta_producto() {
-		
-												 
+
 		this.getUploadPrincipal().setReceiver(buffer);
 		this.getUpload2().setReceiver(buffer);
 		this.getUpload3().setReceiver(buffer);
@@ -72,7 +71,7 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 
 		});
 
-		//UPLOADER PRINCIPAL
+		// UPLOADER PRINCIPAL
 		this.getUploadPrincipal().addSucceededListener(event -> {
 
 			value = event.getFileName();
@@ -108,7 +107,7 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 			borrar_datos();
 		});
 
-		//UPLOADER2
+		// UPLOADER2
 		this.getUpload2().addSucceededListener(event -> {
 
 			value2 = event.getFileName();
@@ -129,7 +128,6 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 			}
 
 		});
-		
 
 		this.getUpload2().addFileRejectedListener(event -> {
 			Paragraph component = new Paragraph();
@@ -140,9 +138,8 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		this.getUpload2().getElement().addEventListener("file-remove", event -> {
 			this.getIm2().setVisible(false);
 		});
-		
-		
-		//UPLOADER3
+
+		// UPLOADER3
 		this.getUpload3().addSucceededListener(event -> {
 
 			value3 = event.getFileName();
@@ -173,8 +170,8 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		this.getUpload3().getElement().addEventListener("file-remove", event -> {
 			this.getImg3().setVisible(false);
 		});
-		
-		//UPLOADER4
+
+		// UPLOADER4
 		this.getUpload4().addSucceededListener(event -> {
 
 			value4 = event.getFileName();
@@ -205,9 +202,9 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		this.getUpload4().getElement().addEventListener("file-remove", event -> {
 			this.getImg4().setVisible(false);
 		});
-		
-		//UPLOADER5
-		
+
+		// UPLOADER5
+
 		this.getUpload5().addSucceededListener(event -> {
 
 			value5 = event.getFileName();
@@ -238,12 +235,9 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		this.getUpload5().getElement().addEventListener("file-remove", event -> {
 			this.getImg5().setVisible(false);
 		});
-		
+
 	}
-	
 
-
-	
 	public void Alta_producto() throws PersistentException {
 
 		borrar_datos();
@@ -252,16 +246,16 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 	public void borrar_datos() {
 		this.getUploadPrincipal().getElement().setPropertyJson("files", Json.createArray());
 		this.getImgPrincipal().setVisible(false);
-		
+
 		this.getUpload2().getElement().setPropertyJson("files", Json.createArray());
 		this.getIm2().setVisible(false);
-		
+
 		this.getUpload3().getElement().setPropertyJson("files", Json.createArray());
 		this.getImg3().setVisible(false);
-		
+
 		this.getUpload4().getElement().setPropertyJson("files", Json.createArray());
 		this.getImg4().setVisible(false);
-		
+
 		this.getUpload5().getElement().setPropertyJson("files", Json.createArray());
 		this.getImg5().setVisible(false);
 	}
