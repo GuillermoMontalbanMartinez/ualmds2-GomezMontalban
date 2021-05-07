@@ -50,7 +50,9 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 	Div output = new Div();
 
 	public Dar_alta_producto() {
-
+		
+		
+		this.getUploadPrincipal().setMaxFileSize(900000000);
 		this.getUploadPrincipal().setReceiver(buffer);
 		this.getUpload2().setReceiver(buffer);
 		this.getUpload3().setReceiver(buffer);
