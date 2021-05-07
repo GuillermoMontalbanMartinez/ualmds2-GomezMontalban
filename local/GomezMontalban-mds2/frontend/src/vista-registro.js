@@ -17,7 +17,9 @@ class VistaRegistro extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;
+background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; margin: var(--lumo-space-m); flex-shrink: 0;">
   <img style="width: 100%; height: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">
  </vaadin-vertical-layout>
@@ -27,7 +29,7 @@ class VistaRegistro extends PolymerElement {
     <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%; align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
       <vaadin-horizontal-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m);">
-       <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Nombre de usuario</label>
+       <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Nombre de usuario</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
        <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textNombreUsuario"></vaadin-text-field>
@@ -36,7 +38,7 @@ class VistaRegistro extends PolymerElement {
      <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center;">
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; justify-content: center; align-items: center; align-self: center;">
-        <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">Apellidos</label>
+        <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);font-weight: bold;">Apellidos</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
         <vaadin-text-field id="textApellidos"></vaadin-text-field>
@@ -46,7 +48,7 @@ class VistaRegistro extends PolymerElement {
      <vaadin-vertical-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Correo</label>
+        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Correo</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
         <vaadin-text-field id="textCorreo"></vaadin-text-field>
@@ -56,7 +58,7 @@ class VistaRegistro extends PolymerElement {
      <vaadin-vertical-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
-        <label>Contraseña</label>
+        <label style="font-weight: bold;">Contraseña</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-password-field id="textPassword"></vaadin-password-field>
@@ -66,7 +68,7 @@ class VistaRegistro extends PolymerElement {
      <vaadin-vertical-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
-        <label>Repita contraseña</label>
+        <label style="font-weight: bold;">Repita contraseña</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-password-field id="textRepetirPassword"></vaadin-password-field>
@@ -76,7 +78,7 @@ class VistaRegistro extends PolymerElement {
      <vaadin-vertical-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
-        <label>Teléfono</label>
+        <label style="font-weight: bold;">Teléfono</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-text-field id="textTelefono"></vaadin-text-field>
@@ -104,7 +106,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">País</label>
+     <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);font-weight: bold;">País</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textPais"></vaadin-text-field>
@@ -114,7 +116,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">Localidad</label>
+     <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);font-weight: bold;">Localidad</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textLocalidad"></vaadin-text-field>
@@ -124,7 +126,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Calle</label>
+     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Calle</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textCalle"></vaadin-text-field>
@@ -133,8 +135,8 @@ class VistaRegistro extends PolymerElement {
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-horizontal-layout theme="spacing">
-     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Portal</label>
+    <vaadin-horizontal-layout theme="spacing; font-weight: bold;">
+     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Portal</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textPortal"></vaadin-text-field>
@@ -144,7 +146,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Provincia</label>
+     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Provincia</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textProvincia"></vaadin-text-field>
@@ -154,7 +156,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
-     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Código postal</label>
+     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Código postal</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" id="textCodigoPostal"></vaadin-text-field>
@@ -169,7 +171,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <label>Número de tarjeta</label>
+     <label style="font-weight: bold;">Número de tarjeta</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-text-field style="margin: var(--lumo-space-m);" id="textNumeroTarjeta"></vaadin-text-field>
@@ -179,7 +181,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Titular</label>
+     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Titular</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-text-field id="textTitularTarjeta"></vaadin-text-field>
@@ -189,7 +191,7 @@ class VistaRegistro extends PolymerElement {
   <vaadin-vertical-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Fecha de caducidad</label>
+     <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Fecha de caducidad</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
      <vaadin-text-field id="textFechaCaducidad"></vaadin-text-field>
@@ -200,7 +202,7 @@ class VistaRegistro extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-horizontal-layout theme="spacing">
-      <label>CVV</label>
+      <label style="font-weight: bold;">CVV</label>
      </vaadin-horizontal-layout>
      <vaadin-horizontal-layout theme="spacing">
       <vaadin-text-field id="textCVVTarjeta"></vaadin-text-field>
@@ -218,7 +220,7 @@ class VistaRegistro extends PolymerElement {
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-button style="margin: var(--lumo-space-m);" theme="primary" id="ButtonRegistro">
-     Confirmar 
+      Confirmar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

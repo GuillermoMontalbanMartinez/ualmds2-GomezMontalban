@@ -67,9 +67,6 @@ public class Publicar_oferta extends VistaPublicarOferta {
 		bd.Alta_oferta_producto(id, descuento, fechaLimite);
 	}
 	
-	public void Alta_oferta_categoria() throws PersistentException {
-		throw new UnsupportedOperationException();
-	}
 	
 	public Producto[] cargar_productos() throws PersistentException {
 		bd = new BDPrincipal();

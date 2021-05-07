@@ -13,10 +13,12 @@ class VistaVerUltimasCompras extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: flex-start;">
+<vaadin-vertical-layout style="align-items: flex-start;background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
  <h2>Últimas compras realizadas</h2>
 </vaadin-vertical-layout>
-<vista-productos-comprados-recientemente style="width: 100%; height: 100%;"></vista-productos-comprados-recientemente>
+<vista-productos-comprados-recientemente style="width: 100%; height: 100%;background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);"></vista-productos-comprados-recientemente>
 `;
     }
 

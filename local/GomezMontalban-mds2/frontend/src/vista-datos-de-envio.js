@@ -15,7 +15,7 @@ class VistaDatosDeEnvio extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m);">
   <h1>Datos de envío</h1>
  </vaadin-vertical-layout>
@@ -27,7 +27,7 @@ class VistaDatosDeEnvio extends PolymerElement {
       <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); flex-shrink: 0;">
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-         <label>ID Usuario</label>
+         <label style="font-weight: bold;">ID Usuario</label>
         </vaadin-horizontal-layout>
         <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
          <vaadin-combo-box></vaadin-combo-box>
@@ -37,7 +37,7 @@ class VistaDatosDeEnvio extends PolymerElement {
       <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-horizontal-layout theme="spacing">
-         <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">Nombre</label>
+         <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);font-weight: bold;">Nombre</label>
         </vaadin-horizontal-layout>
         <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
          <vaadin-text-field></vaadin-text-field>
@@ -48,7 +48,7 @@ class VistaDatosDeEnvio extends PolymerElement {
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-horizontal-layout theme="spacing">
          <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
-          <label>Apellidos</label>
+          <label style="font-weight: bold;">Apellidos</label>
          </vaadin-horizontal-layout>
          <vaadin-horizontal-layout theme="spacing">
           <vaadin-text-field style="flex-shrink: 0; margin: var(--lumo-space-m);"></vaadin-text-field>
@@ -59,7 +59,7 @@ class VistaDatosDeEnvio extends PolymerElement {
       <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-         <label>Dirección</label>
+         <label style="font-weight: bold;">Dirección</label>
         </vaadin-horizontal-layout>
         <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
          <vaadin-text-field></vaadin-text-field>
@@ -70,7 +70,7 @@ class VistaDatosDeEnvio extends PolymerElement {
      <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center; flex-shrink: 0;">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
-        <label style="margin: var(--lumo-space-m); align-self: center;">Localidad</label>
+        <label style="margin: var(--lumo-space-m); align-self: center;font-weight: bold;">Localidad</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
         <vaadin-text-field></vaadin-text-field>
@@ -83,7 +83,7 @@ class VistaDatosDeEnvio extends PolymerElement {
     <vaadin-vertical-layout theme="spacing">
      <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center;">
       <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-       <label style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;">Código postal</label>
+       <label style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;font-weight: bold;">Código postal</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
        <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vaadin-text-field>
@@ -92,7 +92,7 @@ class VistaDatosDeEnvio extends PolymerElement {
      <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center; margin: var(--lumo-space-m);">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Portal</label>
+        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Portal</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-items: center; justify-content: center; align-self: center;">
         <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;"></vaadin-text-field>
@@ -101,7 +101,7 @@ class VistaDatosDeEnvio extends PolymerElement {
      </vaadin-vertical-layout>
      <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
       <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-       <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+       <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;font-weight: bold;">
         <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">Provincia</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
@@ -112,7 +112,7 @@ class VistaDatosDeEnvio extends PolymerElement {
      <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
       <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Calle</label>
+        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Calle</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center;">
         <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;"></vaadin-text-field>

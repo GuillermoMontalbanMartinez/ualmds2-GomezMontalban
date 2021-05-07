@@ -22,8 +22,6 @@ public interface iAdministrador {
 
 	public void enviar(String aDestinatario, String aAsunto, String aCorreo);
 
-	public void Alta_oferta_categoria(int aId_categoria, int aDescuento, String aFechaLimite);
-
 	public void Alta_oferta_producto(int aId_producto, int aDescuento, String aFechaLimite) throws PersistentException;
 
 	public Compra[] cargar_listado_de_compras_admin();

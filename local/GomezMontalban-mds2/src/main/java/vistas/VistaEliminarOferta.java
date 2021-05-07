@@ -7,6 +7,8 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-eliminar-oferta template.
@@ -17,19 +19,19 @@ import com.vaadin.flow.dom.Element;
 @Tag("vista-eliminar-oferta")
 @JsModule("./src/vista-eliminar-oferta.js")
 public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.VistaEliminarOfertaModel> {
-
-    @Id("ButtonCancelarOfertaCategoria")
-	private Button buttonEliminarOfertaCategoria;
-	@Id("ButtonElminarOfertaCategoria")
-	private Button buttonElminarOfertaCategoria;
 	@Id("ButtonEliminarOfertaProducto")
 	private Button buttonEliminarOfertaProducto;
 	@Id("ButtonCancelarOfertaProducto")
 	private Button buttonCancelarOfertaProducto;
 	@Id("VerticalLayoutEliminarOferta")
 	private Element verticalLayoutEliminarOferta;
-	@Id("ButtonCancelarOfertaCategoria")
-	private Button buttonCancelarOfertaCategoria;
+	@Id("textHorizotalLayoutNombreProductoEliminarOferta")
+	private Label textHorizotalLayoutNombreProductoEliminarOferta;
+	@Id("textDescuentoEliminarOferta")
+	private TextField textDescuentoEliminarOferta;
+	@Id("textFechaLimiteEliminarOferta")
+	private TextField textFechaLimiteEliminarOferta;
+
 
 	/**
      * Creates a new VistaEliminarOferta.
@@ -45,13 +47,7 @@ public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.Vis
         // Add setters and getters for template properties here.
     }
 
-	public Button getButtonEliminarOfertaCategoria() {
-		return buttonEliminarOfertaCategoria;
-	}
 
-	public void setButtonEliminarOfertaCategoria(Button buttonEliminarOfertaCategoria) {
-		this.buttonEliminarOfertaCategoria = buttonEliminarOfertaCategoria;
-	}
 
 	public Button getButtonEliminarOfertaProducto() {
 		return buttonEliminarOfertaProducto;
@@ -77,19 +73,29 @@ public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.Vis
 		this.verticalLayoutEliminarOferta = verticalLayoutEliminarOferta;
 	}
 
-	public Button getButtonCancelarOfertaCategoria() {
-		return buttonCancelarOfertaCategoria;
+	public Label getTextHorizotalLayoutNombreProductoEliminarOferta() {
+		return textHorizotalLayoutNombreProductoEliminarOferta;
 	}
 
-	public void setButtonCancelarOfertaCategoria(Button buttonCancelarOfertaCategoria) {
-		this.buttonCancelarOfertaCategoria = buttonCancelarOfertaCategoria;
+	public void setTextHorizotalLayoutNombreProductoEliminarOferta(Label textHorizotalLayoutNombreProductoEliminarOferta) {
+		this.textHorizotalLayoutNombreProductoEliminarOferta = textHorizotalLayoutNombreProductoEliminarOferta;
 	}
 
-	public Button getButtonElminarOfertaCategoria() {
-		return buttonElminarOfertaCategoria;
+	public TextField getTextDescuentoEliminarOferta() {
+		return textDescuentoEliminarOferta;
 	}
 
-	public void setButtonElminarOfertaCategoria(Button buttonElminarOfertaCategoria) {
-		this.buttonElminarOfertaCategoria = buttonElminarOfertaCategoria;
+	public void setTextDescuentoEliminarOferta(TextField textDescuentoEliminarOferta) {
+		this.textDescuentoEliminarOferta = textDescuentoEliminarOferta;
+	}
+
+	public TextField getTextFechaLimiteEliminarOferta() {
+		return textFechaLimiteEliminarOferta;
+	}
+
+	public void setTextFechaLimiteEliminarOferta(TextField textFechaLimiteEliminarOferta) {
+		this.textFechaLimiteEliminarOferta = textFechaLimiteEliminarOferta;
 	}
 }
+
+

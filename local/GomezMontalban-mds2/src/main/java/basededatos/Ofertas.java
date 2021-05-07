@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -11,13 +12,27 @@ public class Ofertas {
 	public BDPrincipal _db_main_ofertas;
 	public Vector<Oferta> _contiene_ofertas = new Vector<Oferta>();
 
-	public Oferta[] cargar_ofertas() {
+	public Oferta[] cargar_ofertas() throws PersistentException {
+//		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+//		List nombreProductosOfertados = null;
+//		Oferta oferta[] = null;
+//		try {
+//			nombreProductosOfertados = basededatos.OfertaDAO.queryOferta(null, null);
+//			oferta = new Oferta[nombreProductosOfertados.size()];
+//			
+//			for (int i = 0; i < oferta.length; i++) {
+//				oferta[i].get = (Oferta) nombreProductosOfertados.
+//			}
+//			
+//			pt.commit();
+//		} catch(Exception e) {
+//			pt.rollback();
+//		}
+//		
+//		return oferta;
 		throw new UnsupportedOperationException();
 	}
-
-	public void Alta_oferta_categoria(int aId_categoria, int aDescuento, String aFechaLimite) {
-		throw new UnsupportedOperationException();
-	}
+	
 
 	public void Alta_oferta_producto(int aId_producto, int aDescuento, String aFechaLimite) throws PersistentException {
 		try {
@@ -36,16 +51,5 @@ public class Ofertas {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 	
-//	public void Alta_oferta_categoria(int aId_categoria, int aDescuento, String aFechaLimite) throws PersistentException {
-//		try {
-//			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
-//			Oferta oferta = basededatos.OfertaDAO.createOferta();
-//			Categoria categoria = basededatos.CategoriaDAO.loadCategoriaByORMID(aId_categoria);
-//			oferta.est
-//		} catch (PersistentException e) {
-//			e.printStackTrace();
-//		}
-//		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
-//	}
 	
 }

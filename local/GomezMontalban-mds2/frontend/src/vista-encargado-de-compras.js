@@ -14,7 +14,7 @@ class VistaEncargadoDeCompras extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;" id="layout_encargado_de_compras">
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="layout_encargado_de_compras">
  <vaadin-horizontal-layout theme="spacing">
   <h1>Bienvenido, selecciona la lista que desea ver</h1>
  </vaadin-horizontal-layout>

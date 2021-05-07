@@ -15,8 +15,8 @@ class VistaVerFicha extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; background-color: #ECF5F9;
-  " id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%; background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);  " id="vaadinVerticalLayout">
  <h1 style="align-self: center; color: #000000;background-color: #BBDFEF; border:0;">Ficha cliente</h1>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; align-self: center; flex-shrink: 0; align-items: center; margin: var(--lumo-space-m); justify-content: center;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center; margin: var(--lumo-space-xs); justify-content: center; align-items: center; flex-shrink: 0; flex-grow: 0; padding: var(--lumo-space-xs);">

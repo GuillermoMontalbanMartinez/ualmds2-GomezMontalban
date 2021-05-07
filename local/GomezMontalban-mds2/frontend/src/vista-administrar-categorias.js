@@ -15,9 +15,10 @@ class VistaAdministrarCategorias extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayoutAdministrarCategorias">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;background: rgb(174,238,236);
+background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutAdministrarCategorias">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
-  <h1 style="margin: var(--lumo-space-m); align-self: center;">Administrar categorias</h1>
+  <h1 style="margin: var(--lumo-space-m); align-self: center;font-weight: bold;">Administrar categorias</h1>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-xl);">
   <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0;">
@@ -26,7 +27,7 @@ class VistaAdministrarCategorias extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <label>Nombre de categoría</label>
+     <label style="font-weight: bold;">Nombre de categoría</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
      <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textCategoria"></vaadin-text-field>
@@ -50,12 +51,12 @@ class VistaAdministrarCategorias extends PolymerElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-xl); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <vaadin-vertical-layout theme="spacing">
-   <h4 style="flex-shrink: 0; align-self: center;">Dar de baja categoría</h4>
+   <h4 style="flex-shrink: 0; align-self: center;font-weight: bold;">Dar de baja categoría</h4>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; align-self: center; flex-shrink: 0; justify-content: center; margin: var(--lumo-space-m);">
     <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);">
-     <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">Categoría</label>
+     <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);font-weight: bold;">Categoría</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);" id="layoutSelectBajasCategorias"></vaadin-horizontal-layout>
    </vaadin-horizontal-layout>

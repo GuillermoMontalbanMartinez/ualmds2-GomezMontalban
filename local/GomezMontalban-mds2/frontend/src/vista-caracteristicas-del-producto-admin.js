@@ -15,7 +15,7 @@ class VistaCaracteristicasDelProductoAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
   <h1 style="flex-shrink: 0; align-self: center;">Nombre del producto</h1>
  </vaadin-vertical-layout>
@@ -27,7 +27,7 @@ class VistaCaracteristicasDelProductoAdmin extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); width: 50%;">
     <vaadin-vertical-layout theme="spacing">
      <vaadin-vertical-layout theme="spacing" style="width: 100%;">
-      <h4>Descripción del producto</h4>
+      <h4 style="font-weight: bold;">Descripción del producto</h4>
      </vaadin-vertical-layout>
      <vaadin-vertical-layout theme="spacing" style="width: 100%; margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center; flex-shrink: 0;">
       <vaadin-text-area style="margin: var(--lumo-space-m); width: 100%; height: 100%; flex-shrink: 0; align-self: center;"></vaadin-text-area>
@@ -35,7 +35,7 @@ class VistaCaracteristicasDelProductoAdmin extends PolymerElement {
      <vaadin-vertical-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
-        <label style="width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Precio:</label>
+        <label style="width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Precio</label>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
         <vaadin-text-field></vaadin-text-field>
@@ -65,7 +65,7 @@ class VistaCaracteristicasDelProductoAdmin extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; width: 100%; align-items: center; justify-content: center; align-self: center;">
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-    <label style="width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Valoración medía</label>
+    <label style="width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Valoración medía</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">
     <vaadin-text-field style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; width: 100%;"></vaadin-text-field>

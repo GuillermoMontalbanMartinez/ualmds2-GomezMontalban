@@ -295,26 +295,7 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
-		banner_admin.administrar_ofertas._publicar_oferta.getButtonPublicarOfertaCategoria().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Publicada la oferta de los productos de la categoria");
-			}
-		});
-		
-		banner_admin.administrar_ofertas._publicar_oferta.getButtonCancelarOfertaCategoria().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Cancelado");
-			}
-		});
-		
+
 		banner_admin.administrar_ofertas._eliminar_oferta.getButtonEliminarOfertaProducto().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -335,25 +316,7 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
-		banner_admin.administrar_ofertas._eliminar_oferta.getButtonElminarOfertaCategoria().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Eliminada la oferta de los productos de la categoria");
-			}
-		});
-		
-		banner_admin.administrar_ofertas._eliminar_oferta.getButtonCancelarOfertaCategoria().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Cancelada");
-			}
-		});		
+
 		
 	
 	}

@@ -17,7 +17,7 @@ class VistaDarAltaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAltaProducto">
+<vaadin-vertical-layout style="width: 100%; height: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutAltaProducto">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m);">
   <h1>Dar alta producto</h1>
  </vaadin-vertical-layout>
@@ -27,7 +27,7 @@ class VistaDarAltaProducto extends PolymerElement {
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-horizontal-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-right: var(--lumo-space-l);">
-       <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Nombre</label>
+       <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Nombre</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
        <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textNombre"></vaadin-text-field>
@@ -37,7 +37,7 @@ class VistaDarAltaProducto extends PolymerElement {
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-horizontal-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing" style="margin-right: var(--lumo-space-l);">
-       <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">Precio</label>
+       <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Precio</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
        <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textPrecio"></vaadin-text-field>
@@ -47,7 +47,7 @@ class VistaDarAltaProducto extends PolymerElement {
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-horizontal-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-       <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); margin-right: var(--lumo-space-l);">ID Producto</label>
+       <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); margin-right: var(--lumo-space-l);font-weight: bold;">ID Producto</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-left: var(--lumo-space-s);">
        <vaadin-text-field id="textIdProducto"></vaadin-text-field>
