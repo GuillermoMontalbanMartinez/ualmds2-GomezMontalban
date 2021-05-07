@@ -76,7 +76,7 @@ class VistaDarAltaProducto extends PolymerElement {
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">
      <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%;">
-      <vaadin-upload style="flex-shrink: 0; align-self: center; width: 100%;"></vaadin-upload>
+      <vaadin-upload style="flex-shrink: 0; align-self: center; width: 100%;" id="uploadPrincipal"></vaadin-upload>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
@@ -97,10 +97,10 @@ class VistaDarAltaProducto extends PolymerElement {
       <vaadin-vertical-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
         <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;">
-         <vaadin-upload style="width: 100%;"></vaadin-upload>
+         <vaadin-upload style="width: 100%;" id="upload2"></vaadin-upload>
         </vaadin-horizontal-layout>
         <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;">
-         <vaadin-upload style="width: 100%;"></vaadin-upload>
+         <vaadin-upload style="width: 100%;" id="upload3"></vaadin-upload>
         </vaadin-horizontal-layout>
        </vaadin-horizontal-layout>
       </vaadin-vertical-layout>
@@ -118,10 +118,10 @@ class VistaDarAltaProducto extends PolymerElement {
      <vaadin-vertical-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
-        <vaadin-upload></vaadin-upload>
+        <vaadin-upload id="upload4"></vaadin-upload>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing">
-        <vaadin-upload></vaadin-upload>
+        <vaadin-upload id="upload5"></vaadin-upload>
        </vaadin-horizontal-layout>
       </vaadin-horizontal-layout>
      </vaadin-vertical-layout>
