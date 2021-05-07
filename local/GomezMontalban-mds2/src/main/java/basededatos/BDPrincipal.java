@@ -42,6 +42,10 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_administradores.Baja_cuenta(aCorreo, id_usuario);
 	}
 	
+	public void Baja_oferta_producto(String nombreProducto) throws PersistentException {
+		_db_ofertas.Baja_oferta_producto(nombreProducto);
+	}
+	
 
 	public Categoria[] cargar_lista_categorias() {
 		throw new UnsupportedOperationException();

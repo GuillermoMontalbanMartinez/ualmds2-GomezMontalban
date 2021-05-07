@@ -30,7 +30,9 @@ background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1)
      <label style="font-weight: bold;">Nombre de categoría</label>
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-     <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textCategoria"></vaadin-text-field>
+     <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); background-color : white;" id="textCategoria" autoselect autofocus>
+       background-color : white;
+     </vaadin-text-field>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>

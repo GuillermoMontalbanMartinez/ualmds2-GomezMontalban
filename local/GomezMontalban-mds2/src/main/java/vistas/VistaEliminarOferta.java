@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-eliminar-oferta template.
@@ -27,10 +28,14 @@ public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.Vis
 	private Element verticalLayoutEliminarOferta;
 	@Id("textHorizotalLayoutNombreProductoEliminarOferta")
 	private Label textHorizotalLayoutNombreProductoEliminarOferta;
-	@Id("textDescuentoEliminarOferta")
-	private TextField textDescuentoEliminarOferta;
-	@Id("textFechaLimiteEliminarOferta")
-	private TextField textFechaLimiteEliminarOferta;
+//	@Id("textDescuentoEliminarOferta")
+//	private TextField textDescuentoEliminarOferta;
+//	@Id("textFechaLimiteEliminarOferta")
+//	private TextField textFechaLimiteEliminarOferta;
+//	@Id("textComboBoxEliminarOferta")
+//	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("textComboBoxEliminarOferta")
+	private HorizontalLayout textComboBoxEliminarOferta;
 
 
 	/**
@@ -81,20 +86,28 @@ public class VistaEliminarOferta extends PolymerTemplate<VistaEliminarOferta.Vis
 		this.textHorizotalLayoutNombreProductoEliminarOferta = textHorizotalLayoutNombreProductoEliminarOferta;
 	}
 
-	public TextField getTextDescuentoEliminarOferta() {
-		return textDescuentoEliminarOferta;
+//	public TextField getTextDescuentoEliminarOferta() {
+//		return textDescuentoEliminarOferta;
+//	}
+//
+//	public void setTextDescuentoEliminarOferta(TextField textDescuentoEliminarOferta) {
+//		this.textDescuentoEliminarOferta = textDescuentoEliminarOferta;
+//	}
+//
+//	public TextField getTextFechaLimiteEliminarOferta() {
+//		return textFechaLimiteEliminarOferta;
+//	}
+//
+//	public void setTextFechaLimiteEliminarOferta(TextField textFechaLimiteEliminarOferta) {
+//		this.textFechaLimiteEliminarOferta = textFechaLimiteEliminarOferta;
+//	}
+
+	public HorizontalLayout getTextComboBoxEliminarOferta() {
+		return textComboBoxEliminarOferta;
 	}
 
-	public void setTextDescuentoEliminarOferta(TextField textDescuentoEliminarOferta) {
-		this.textDescuentoEliminarOferta = textDescuentoEliminarOferta;
-	}
-
-	public TextField getTextFechaLimiteEliminarOferta() {
-		return textFechaLimiteEliminarOferta;
-	}
-
-	public void setTextFechaLimiteEliminarOferta(TextField textFechaLimiteEliminarOferta) {
-		this.textFechaLimiteEliminarOferta = textFechaLimiteEliminarOferta;
+	public void setTextComboBoxEliminarOferta(HorizontalLayout textComboBoxEliminarOferta) {
+		this.textComboBoxEliminarOferta = textComboBoxEliminarOferta;
 	}
 }
 
