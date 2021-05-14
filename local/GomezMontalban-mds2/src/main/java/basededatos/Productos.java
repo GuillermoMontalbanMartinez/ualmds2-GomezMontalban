@@ -3,6 +3,7 @@ package basededatos;
 import java.util.List;
 import java.util.Vector;
 
+import org.hibernate.tuple.entity.AbstractEntityBasedAttribute;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -63,14 +64,38 @@ public class Productos {
 		}
 	}
 
-	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4_, String aFoto5) throws PersistentException {
+	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException {
 		try {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
 			Producto producto = basededatos.ProductoDAO.createProducto();
 			producto.setNombre(aNombre);
 			producto.setDescripción(aDescripcion);
 			producto.setPrecio(aPrecio);
+			Foto foto1 = basededatos.FotoDAO.createFoto();
+			foto1.setId_foto(aFoto1);
+			producto.tiene_fotos.add(foto1);
+			Foto foto2 = basededatos.FotoDAO.createFoto();
+			foto2.setId_foto(aFoto2);
+			producto.tiene_fotos.add(foto2);
+			Foto foto3 = basededatos.FotoDAO.createFoto();
+			foto3.setId_foto(aFoto3);
+			producto.tiene_fotos.add(foto3);
+			Foto foto4 = basededatos.FotoDAO.createFoto();
+			foto4.setId_foto(aFoto4);
+			producto.tiene_fotos.add(foto4);
+			Foto foto5 = basededatos.FotoDAO.createFoto();
+			foto5.setId_foto(aFoto5);
+			producto.tiene_fotos.add(foto5);
+			
+			basededatos.FotoDAO.save(foto1);
+			basededatos.FotoDAO.save(foto2);
+			basededatos.FotoDAO.save(foto3);
+			basededatos.FotoDAO.save(foto4);
+			basededatos.FotoDAO.save(foto5);
+			
+			
 			basededatos.ProductoDAO.save(producto);
+			
 			pt.commit();
 		} catch (PersistentException e) {
 			e.printStackTrace();

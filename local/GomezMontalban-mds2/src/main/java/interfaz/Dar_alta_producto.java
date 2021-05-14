@@ -38,16 +38,18 @@ import com.vaadin.flow.component.upload.receivers.MultiFileMemoryBuffer;
 import com.vaadin.flow.internal.MessageDigestUtil;
 import com.vaadin.flow.server.StreamResource;
 
+import basededatos.BDPrincipal;
 import elemental.json.Json;
 import src.net.dv8tion.Uploader;
 import vistas.VistaDarAltaProducto;
 
 public class Dar_alta_producto extends VistaDarAltaProducto {
 	public Administrar_productos _administrar_productos;
-	String value, value2, value3, value4, value5;
+	String value, value2, value3, value4, value5, nombre="", precio="", descripcion="";
 	String src, src2, src3, src4, src5;
 	MultiFileMemoryBuffer buffer = new MultiFileMemoryBuffer();
 	Div output = new Div();
+	BDPrincipal bd;
 
 	public Dar_alta_producto() {
 
@@ -240,7 +242,12 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 
 	public void Alta_producto() throws PersistentException {
 
-		borrar_datos();
+		bd = new BDPrincipal();
+		this.nombre = this.getTextNombre().getValue();
+		this.precio = this.getTextPrecio().getValue();
+		this.descripcion = this.getTextArea().getValue();
+		
+		bd._db_productos.Alta_producto(nombre, descripcion, Double.parseDouble(precio), value, value2, value3, value4, value5);
 	}
 
 	public void borrar_datos() {
