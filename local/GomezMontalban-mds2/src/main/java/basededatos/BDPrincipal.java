@@ -22,8 +22,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_categorias.baja_categoria(nombreCategoria);
 	}
 
-	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException {
-		_db_productos.Alta_producto(aNombre, aDescripcion, aPrecio, aId_producto, aFoto1, aFoto2, aFoto3, aFoto4, aFoto5);
+	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio,  String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException {
+		_db_productos.Alta_producto(aNombre, aDescripcion, aPrecio, aFoto1, aFoto2, aFoto3, aFoto4, aFoto5);
 	}
 
 	public void alta_categorias(String aNombreCategoria) throws PersistentException {

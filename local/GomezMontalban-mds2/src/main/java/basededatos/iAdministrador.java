@@ -6,7 +6,7 @@ public interface iAdministrador {
 
 	public void baja_categoria(String nombreCategoria);
 
-	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, int aId_producto, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException;
+	public void Alta_producto(String aNombre, String aDescripcion, double aPrecio, String aFoto1, String aFoto2, String aFoto3, String aFoto4, String aFoto5) throws PersistentException;
 
 	public void alta_categorias(String aNombreCategoria) throws PersistentException;
 
