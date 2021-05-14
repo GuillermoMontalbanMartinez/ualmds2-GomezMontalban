@@ -199,4 +199,12 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 	public void setUpload3(Upload upload3) {
 		this.upload3 = upload3;
 	}
+
+	public HorizontalLayout getTextCategoria() {
+		return textCategoria;
+	}
+
+	public void setTextCategoria(HorizontalLayout textCategoria) {
+		this.textCategoria = textCategoria;
+	}
 }
