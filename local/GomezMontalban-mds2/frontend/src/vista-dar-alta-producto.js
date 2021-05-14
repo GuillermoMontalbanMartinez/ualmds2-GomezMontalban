@@ -50,7 +50,7 @@ class VistaDarAltaProducto extends PolymerElement {
      <h4 style="flex-shrink: 0; align-self: center;">Descripción</h4>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="height: 100%; width: 100%;">
-     <vaadin-text-area style="height: 75%; width: 100%; flex-shrink: 0; align-self: center;background-color:white;" id="textArea"></vaadin-text-area>
+     <vaadin-text-area style="height: 100%; width: 100%; flex-shrink: 0; align-self: center; background-color:white;" id="textArea"></vaadin-text-area>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
