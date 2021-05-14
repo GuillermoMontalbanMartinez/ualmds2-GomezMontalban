@@ -57,9 +57,10 @@ public class Ofertas {
 			Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
 			for (Producto producto : productos) {
 				if (producto.getNombre().equals(nombreProducto) && producto.getTiene_una_oferta() != null) {
-					//basededatos.OfertaDAO.delete(producto.getTiene_una_oferta().getORMID());
-					//basededatos.CategoriaDAO.delete(CategoriaDAO.getCategoriaByORMID(categoria.getORMID()));
-					basededatos.OfertaDAO.delete(OfertaDAO.getOfertaByORMID(producto.getTiene_una_oferta().getORMID()));
+					basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()).setPrecio(producto.getPrecio() * 100 / (100 - producto.getTiene_una_oferta().getPrecio_oferta()));
+					int idOferta = producto.getTiene_una_oferta().getORMID();
+					basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()).setTiene_una_oferta(null);;
+					basededatos.OfertaDAO.delete(OfertaDAO.getOfertaByORMID(idOferta));
 					pt.commit();
 				}
 			}

@@ -1,10 +1,10 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-upload/src/vaadin-upload.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaDarAltaProducto extends PolymerElement {
 
@@ -44,23 +44,13 @@ class VistaDarAltaProducto extends PolymerElement {
       </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing">
-     <vaadin-horizontal-layout theme="spacing">
-      <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-       <label style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); margin-right: var(--lumo-space-l);font-weight: bold;">ID Producto</label>
-      </vaadin-horizontal-layout>
-      <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-left: var(--lumo-space-s);">
-       <vaadin-text-field id="textIdProducto"></vaadin-text-field>
-      </vaadin-horizontal-layout>
-     </vaadin-horizontal-layout>
-    </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); height: 100%; width: 100%;">
     <vaadin-vertical-layout theme="spacing">
      <h4 style="flex-shrink: 0; align-self: center;">Descripción</h4>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="height: 100%; width: 100%;">
-     <vaadin-text-area style="height: 75%; width: 100%; flex-shrink: 0; align-self: center;background-color:white;" id="textArea"></vaadin-text-area>
+     <vaadin-text-area style="height: 100%; width: 100%; flex-shrink: 0; align-self: center; background-color:white;" id="textArea"></vaadin-text-area>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
@@ -76,7 +66,7 @@ class VistaDarAltaProducto extends PolymerElement {
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">
      <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); width: 100%;">
-      <vaadin-upload style="flex-shrink: 0; align-self: center; width: 100%;" id="uploadPrincipal"></vaadin-upload>
+      <vaadin-upload style="flex-shrink: 0; align-self: center; width: 80%;" id="uploadPrincipal"></vaadin-upload>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
