@@ -11,6 +11,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-dar-alta-producto template.
@@ -55,6 +56,8 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 	private Upload upload2;
 	@Id("upload3")
 	private Upload upload3;
+	@Id("textCategoria")
+	private HorizontalLayout textCategoria;
 
 	/**
      * Creates a new VistaDarAltaProducto.
@@ -198,5 +201,13 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 
 	public void setUpload3(Upload upload3) {
 		this.upload3 = upload3;
+	}
+
+	public HorizontalLayout getTextCategoria() {
+		return textCategoria;
+	}
+
+	public void setTextCategoria(HorizontalLayout textCategoria) {
+		this.textCategoria = textCategoria;
 	}
 }
