@@ -44,8 +44,14 @@ class VistaDarAltaProducto extends PolymerElement {
       </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout>
+     <vaadin-horizontal-layout style="margin-right: var(--lumo-space-xl);">
+      <label style="margin: var(--lumo-space-m);font-weight: bold;">Categoria</label>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout id="textCategoria"></vaadin-horizontal-layout>
+    </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); height: 100%; width: 100%;">
+   <vaadin-vertical-layout theme="spacing-xs" style="margin: var(--lumo-space-m); height: 100%; width: 100%;">
     <vaadin-vertical-layout theme="spacing">
      <h4 style="flex-shrink: 0; align-self: center;">Descripción</h4>
     </vaadin-vertical-layout>
