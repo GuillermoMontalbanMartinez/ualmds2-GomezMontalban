@@ -47,7 +47,7 @@ import vistas.VistaDarAltaProducto;
 
 public class Dar_alta_producto extends VistaDarAltaProducto {
 	public Administrar_productos _administrar_productos;
-	String value, value2, value3, value4, value5, nombre="", precio="", descripcion="";
+	String value, value2, value3, value4, value5, nombre="", precio="", descripcion="", categoria = "";
 	String src, src2, src3, src4, src5;
 	MultiFileMemoryBuffer buffer = new MultiFileMemoryBuffer();
 	Div output = new Div();
@@ -241,6 +241,23 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		this.getUpload5().getElement().addEventListener("file-remove", event -> {
 			this.getImg5().setVisible(false);
 		});
+		
+		
+		select.setItemLabelGenerator(Categoria::getNombre);
+		try {
+			select.setItems(this.cargar_categoria());
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.getTextCategoria().add(select);
+		
+		 select.addValueChangeListener(event -> {
+			    if (event.getValue() != null) {
+			    	categoria = event.getValue().getNombre().toString();
+			    } 
+			});
+		
 
 	}
 
@@ -250,8 +267,9 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		this.nombre = this.getTextNombre().getValue();
 		this.precio = this.getTextPrecio().getValue();
 		this.descripcion = this.getTextArea().getValue();
+		this.categoria = categoria;
 		
-		bd._db_productos.Alta_producto(nombre, descripcion, Double.parseDouble(precio), value, value2, value3, value4, value5);
+		bd._db_productos.Alta_producto(nombre, descripcion, Double.parseDouble(precio), src, src2,src3, src4, src5, categoria);
 	}
 
 	public void borrar_datos() {
@@ -296,5 +314,9 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		p.getElement().setText(text);
 		outputContainer.add(p);
 		outputContainer.add(content);
+	}
+	public Categoria[] cargar_categoria() throws PersistentException {
+		bd = new BDPrincipal();
+		return bd.cargar_categoria();
 	}
 }

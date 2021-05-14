@@ -19,14 +19,14 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class FotoDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final StringExpression id_foto;
+	public final IntegerExpression id_foto;
 	public final IntegerExpression esta_asociada_a_un_productoId;
 	public final AssociationExpression esta_asociada_a_un_producto;
 	public final StringExpression link_foto;
 	
 	public FotoDetachedCriteria() {
 		super(basededatos.Foto.class, basededatos.FotoCriteria.class);
-		id_foto = new StringExpression("id_foto", this.getDetachedCriteria());
+		id_foto = new IntegerExpression("id_foto", this.getDetachedCriteria());
 		esta_asociada_a_un_productoId = new IntegerExpression("esta_asociada_a_un_producto.id_producto", this.getDetachedCriteria());
 		esta_asociada_a_un_producto = new AssociationExpression("esta_asociada_a_un_producto", this.getDetachedCriteria());
 		link_foto = new StringExpression("link_foto", this.getDetachedCriteria());
@@ -34,7 +34,7 @@ public class FotoDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public FotoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, basededatos.FotoCriteria.class);
-		id_foto = new StringExpression("id_foto", this.getDetachedCriteria());
+		id_foto = new IntegerExpression("id_foto", this.getDetachedCriteria());
 		esta_asociada_a_un_productoId = new IntegerExpression("esta_asociada_a_un_producto.id_producto", this.getDetachedCriteria());
 		esta_asociada_a_un_producto = new AssociationExpression("esta_asociada_a_un_producto", this.getDetachedCriteria());
 		link_foto = new StringExpression("link_foto", this.getDetachedCriteria());

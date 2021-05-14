@@ -19,7 +19,7 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class FotoDAO {
-	public static Foto loadFotoByORMID(String id_foto) throws PersistentException {
+	public static Foto loadFotoByORMID(int id_foto) throws PersistentException {
 		try {
 			PersistentSession session = TFGómezMontalbánPersistentManager.instance().getSession();
 			return loadFotoByORMID(session, id_foto);
@@ -30,7 +30,7 @@ public class FotoDAO {
 		}
 	}
 	
-	public static Foto getFotoByORMID(String id_foto) throws PersistentException {
+	public static Foto getFotoByORMID(int id_foto) throws PersistentException {
 		try {
 			PersistentSession session = TFGómezMontalbánPersistentManager.instance().getSession();
 			return getFotoByORMID(session, id_foto);
@@ -41,7 +41,7 @@ public class FotoDAO {
 		}
 	}
 	
-	public static Foto loadFotoByORMID(String id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Foto loadFotoByORMID(int id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = TFGómezMontalbánPersistentManager.instance().getSession();
 			return loadFotoByORMID(session, id_foto, lockMode);
@@ -52,7 +52,7 @@ public class FotoDAO {
 		}
 	}
 	
-	public static Foto getFotoByORMID(String id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Foto getFotoByORMID(int id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = TFGómezMontalbánPersistentManager.instance().getSession();
 			return getFotoByORMID(session, id_foto, lockMode);
@@ -63,9 +63,9 @@ public class FotoDAO {
 		}
 	}
 	
-	public static Foto loadFotoByORMID(PersistentSession session, String id_foto) throws PersistentException {
+	public static Foto loadFotoByORMID(PersistentSession session, int id_foto) throws PersistentException {
 		try {
-			return (Foto) session.load(basededatos.Foto.class, id_foto);
+			return (Foto) session.load(basededatos.Foto.class, new Integer(id_foto));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class FotoDAO {
 		}
 	}
 	
-	public static Foto getFotoByORMID(PersistentSession session, String id_foto) throws PersistentException {
+	public static Foto getFotoByORMID(PersistentSession session, int id_foto) throws PersistentException {
 		try {
-			return (Foto) session.get(basededatos.Foto.class, id_foto);
+			return (Foto) session.get(basededatos.Foto.class, new Integer(id_foto));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class FotoDAO {
 		}
 	}
 	
-	public static Foto loadFotoByORMID(PersistentSession session, String id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Foto loadFotoByORMID(PersistentSession session, int id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Foto) session.load(basededatos.Foto.class, id_foto, lockMode);
+			return (Foto) session.load(basededatos.Foto.class, new Integer(id_foto), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class FotoDAO {
 		}
 	}
 	
-	public static Foto getFotoByORMID(PersistentSession session, String id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Foto getFotoByORMID(PersistentSession session, int id_foto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Foto) session.get(basededatos.Foto.class, id_foto, lockMode);
+			return (Foto) session.get(basededatos.Foto.class, new Integer(id_foto), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

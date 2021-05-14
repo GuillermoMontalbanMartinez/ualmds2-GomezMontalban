@@ -24,14 +24,14 @@ public class Foto implements Serializable {
 		if (!(aObj instanceof Foto))
 			return false;
 		Foto foto = (Foto)aObj;
-		if ((getId_foto() != null && !getId_foto().equals(foto.getId_foto())) || (getId_foto() == null && foto.getId_foto() != null))
+		if (getId_foto() != foto.getId_foto())
 			return false;
 		return true;
 	}
 	
 	public int hashCode() {
 		int hashcode = 0;
-		hashcode = hashcode + (getId_foto() == null ? 0 : getId_foto().hashCode());
+		hashcode = hashcode + (int) getId_foto();
 		return hashcode;
 	}
 	
@@ -48,21 +48,21 @@ public class Foto implements Serializable {
 		
 	};
 	
-	private String id_foto;
+	private int id_foto;
 	
 	private basededatos.Producto esta_asociada_a_un_producto;
 	
 	private String link_foto;
 	
-	public void setId_foto(String value) {
+	public void setId_foto(int value) {
 		this.id_foto = value;
 	}
 	
-	public String getId_foto() {
+	public int getId_foto() {
 		return id_foto;
 	}
 	
-	public String getORMID() {
+	public int getORMID() {
 		return getId_foto();
 	}
 	

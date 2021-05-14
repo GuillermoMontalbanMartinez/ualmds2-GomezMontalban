@@ -19,14 +19,14 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class FotoCriteria extends AbstractORMCriteria {
-	public final StringExpression id_foto;
+	public final IntegerExpression id_foto;
 	public final IntegerExpression esta_asociada_a_un_productoId;
 	public final AssociationExpression esta_asociada_a_un_producto;
 	public final StringExpression link_foto;
 	
 	public FotoCriteria(Criteria criteria) {
 		super(criteria);
-		id_foto = new StringExpression("id_foto", this);
+		id_foto = new  IntegerExpression("id_foto", this);
 		esta_asociada_a_un_productoId = new IntegerExpression("esta_asociada_a_un_producto.id_producto", this);
 		esta_asociada_a_un_producto = new AssociationExpression("esta_asociada_a_un_producto", this);
 		link_foto = new StringExpression("link_foto", this);
