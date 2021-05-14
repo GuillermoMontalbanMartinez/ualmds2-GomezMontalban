@@ -30,6 +30,7 @@ import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.FileBuffer;
 import com.vaadin.flow.component.upload.receivers.FileData;
@@ -39,6 +40,7 @@ import com.vaadin.flow.internal.MessageDigestUtil;
 import com.vaadin.flow.server.StreamResource;
 
 import basededatos.BDPrincipal;
+import basededatos.Categoria;
 import elemental.json.Json;
 import src.net.dv8tion.Uploader;
 import vistas.VistaDarAltaProducto;
@@ -58,6 +60,8 @@ public class Dar_alta_producto extends VistaDarAltaProducto {
 		this.getUpload3().setReceiver(buffer);
 		this.getUpload4().setReceiver(buffer);
 		this.getUpload5().setReceiver(buffer);
+		Select<Categoria> select = new Select<>();
+		
 
 		this.getButtonAceptar().addClickListener(new ComponentEventListener() {
 			@Override

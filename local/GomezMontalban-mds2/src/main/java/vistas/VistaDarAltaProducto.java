@@ -32,8 +32,7 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 	private TextField textNombre;
 	@Id("textPrecio")
 	private TextField textPrecio;
-	@Id("textIdProducto")
-	private TextField textIdProducto;
+
 	@Id("textArea")
 	private TextArea textArea;
 	@Id("imgPrincipal")
@@ -111,13 +110,7 @@ public class VistaDarAltaProducto extends PolymerTemplate<VistaDarAltaProducto.V
 		this.textPrecio = textPrecio;
 	}
 
-	public TextField getTextIdProducto() {
-		return textIdProducto;
-	}
 
-	public void setTextIdProducto(TextField textIdProducto) {
-		this.textIdProducto = textIdProducto;
-	}
 
 	public TextArea getTextArea() {
 		return textArea;

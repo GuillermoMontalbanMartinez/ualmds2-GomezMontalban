@@ -71,21 +71,36 @@ public class Productos {
 			producto.setNombre(aNombre);
 			producto.setDescripción(aDescripcion);
 			producto.setPrecio(aPrecio);
+			
+			
 			Foto foto1 = basededatos.FotoDAO.createFoto();
 			foto1.setId_foto(aFoto1);
+			foto1.setEsta_asociada_a_un_producto(producto);
 			producto.tiene_fotos.add(foto1);
+			
 			Foto foto2 = basededatos.FotoDAO.createFoto();
 			foto2.setId_foto(aFoto2);
+			foto2.setEsta_asociada_a_un_producto(producto);
 			producto.tiene_fotos.add(foto2);
+			
 			Foto foto3 = basededatos.FotoDAO.createFoto();
 			foto3.setId_foto(aFoto3);
+			foto3.setEsta_asociada_a_un_producto(producto);
 			producto.tiene_fotos.add(foto3);
+			
 			Foto foto4 = basededatos.FotoDAO.createFoto();
 			foto4.setId_foto(aFoto4);
 			producto.tiene_fotos.add(foto4);
+			foto4.setEsta_asociada_a_un_producto(producto);
+
+			
 			Foto foto5 = basededatos.FotoDAO.createFoto();
 			foto5.setId_foto(aFoto5);
 			producto.tiene_fotos.add(foto5);
+			foto5.setEsta_asociada_a_un_producto(producto);
+
+			basededatos.ProductoDAO.save(producto);
+
 			
 			basededatos.FotoDAO.save(foto1);
 			basededatos.FotoDAO.save(foto2);
@@ -94,7 +109,6 @@ public class Productos {
 			basededatos.FotoDAO.save(foto5);
 			
 			
-			basededatos.ProductoDAO.save(producto);
 			
 			pt.commit();
 		} catch (PersistentException e) {
