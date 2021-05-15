@@ -72,8 +72,9 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
 				layout.add(_banner_registrado);
-
+				
 				layout.add(_banner_registrado._administrar_perfil._modificar_datos_personales);
+				
 				
 			}
 		});

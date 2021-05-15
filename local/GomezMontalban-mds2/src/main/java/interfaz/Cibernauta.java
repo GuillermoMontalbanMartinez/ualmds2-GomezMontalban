@@ -44,7 +44,7 @@ public class Cibernauta extends Cibernauta_común {
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
 				layout.add(inicio_sesion._registro);
-				
+				Notification.show("Usuario dado de alta en el sistema", 2, Position.BOTTOM_END);
 			}
 		});
 		
@@ -59,6 +59,7 @@ public class Cibernauta extends Cibernauta_común {
 			}
 		});
 	}
+	
 	
 	
 	
