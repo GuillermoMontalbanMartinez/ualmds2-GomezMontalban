@@ -1,6 +1,10 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaProducto extends PolymerElement {
 
@@ -13,33 +17,91 @@ class VistaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; border: #ccc solid 2px; border-radius : 20px; background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
- <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0; justify-content: center; align-items: center; margin-left: var(--lumo-space-xl); width: 15%; height: 60%;">
-  <img style="height: 100%; width: 100%;">
+<vaadin-vertical-layout style="width: 100%; border: #ccc solid 2px; border-radius : 20px; background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
+ <vaadin-horizontal-layout style="width: 100%;">
+  <vaadin-horizontal-layout>
+   <label>Nombre del producto </label>
+  </vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 25%;">
+   <vaadin-text-field readonly></vaadin-text-field>
+  </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="height: 90%; justify-content: space-between; width: 100%; align-self: flex-start;">
-  <vaadin-vertical-layout theme="spacing" style="height: 10%; width: 100%; align-items: stretch; justify-content: center;">
-   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; flex-wrap: wrap; justify-content: flex-start; flex-grow: 0; width: 95%; align-self: center;">
-    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; margin-left: var(--lumo-space-xl); justify-content: flex-start;">
-     <p style="flex-grow: 0; flex-shrink: 0;">Paragraph</p>
+ <vaadin-horizontal-layout style="width: 100%;">
+  <vaadin-horizontal-layout style="width: 50%; height: 100%;">
+   <vaadin-vertical-layout style="width: 100%; height: 50%;">
+    <vaadin-vertical-layout style="width: 100%; height: 50%;">
+     <img style="width: 100%; height: 100%;">
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="width: 100%; height: 50%;">
+     <vaadin-horizontal-layout style="width: 100%; height: 100%;">
+      <vaadin-horizontal-layout style="width: 25%; height: 25%;">
+       <img style="width: 100%; height: 100%;">
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout style="width: 25%; height: 25%;">
+       <img style="width: 100%; height: 100%;">
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout style="height: 25%; width: 25%;">
+       <img style="width: 100%; height: 100%;">
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout style="width: 25%; height: 25%;">
+       <img style="width: 100%; height: 100%;">
+      </vaadin-horizontal-layout>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 50%;">
+   <vaadin-vertical-layout style="width: 100%;">
+    <vaadin-vertical-layout style="width: 100%; align-items: center; justify-content: center;">
+     <vaadin-horizontal-layout>
+      <vaadin-horizontal-layout style="align-self: center; align-items: center; justify-content: center;">
+       <label style="align-self: center;">Descripcion</label>
+      </vaadin-horizontal-layout>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="width: 100%; height: 30%;">
+     <vaadin-text-area style="width: 100%; height: 100%;" readonly></vaadin-text-area>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="width: 100%;">
+     <vaadin-horizontal-layout style="align-self: center;">
+      <vaadin-horizontal-layout style="margin: var(--lumo-space-m);">
+       <label>Precio</label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout style="margin: var(--lumo-space-m);">
+       <vaadin-text-field readonly></vaadin-text-field>
+      </vaadin-horizontal-layout>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-horizontal-layout>
+ </vaadin-horizontal-layout>
+ <vaadin-vertical-layout style="width: 100%;">
+  <vaadin-horizontal-layout style="width: 100%;">
+   <vaadin-horizontal-layout style="width: 50%;">
+    <vaadin-horizontal-layout>
+     <label style="margin: var(--lumo-space-m);">Valoracion media</label>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout>
+     <vaadin-text-field style="margin: var(--lumo-space-m);" readonly></vaadin-text-field>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
-  </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="align-self: stretch; flex-grow: 1; flex-shrink: 0; flex-direction: column; align-items: center; margin-right: var(--lumo-space-xl); height: 70%;">
-   <p style="margin-top: var(--lumo-space-xl); width: 90%; height: 90%; background : white; border : 1px solid black;">Paragraph</p>
-  </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; align-items: stretch; width: 100%; padding-right: var(--lumo-space-xl);">
-   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; flex-grow: 0; margin-bottom: var(--lumo-space-xl); padding-bottom: var(--lumo-space-xl); justify-content: space-around; align-items: flex-start;">
-    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; width: 73%; margin-bottom: var(--lumo-space-xl); align-self: flex-start;">
-     <p style="flex-grow: 0; align-self: center;">Paragraph</p>
+   <vaadin-horizontal-layout style="width: 50%;">
+    <vaadin-horizontal-layout>
+     <vaadin-button theme="icon" aria-label="Add new" id="agregarAlCarrito" style="margin: var(--lumo-space-m);">
+      <iron-icon icon="lumo:plus"></iron-icon>
+     </vaadin-button>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; flex-wrap: wrap-reverse; margin-right: var(--lumo-space-xl); height: 35%; width: 4%; margin-left: var(--lumo-space-xl);">
-     <img style="height: 100%; align-self: center; margin-top: var(--lumo-space-m); width: 100%;">
+    <vaadin-horizontal-layout>
+     <label style="margin: var(--lumo-space-m);">Carrito</label>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
-  </vaadin-vertical-layout>
+  </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
-</vaadin-horizontal-layout>
+ <vaadin-vertical-layout>
+  <h2 style="margin: var(--lumo-space-xl);">Reseñas</h2>
+ </vaadin-vertical-layout>
+</vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 `;
     }
 
