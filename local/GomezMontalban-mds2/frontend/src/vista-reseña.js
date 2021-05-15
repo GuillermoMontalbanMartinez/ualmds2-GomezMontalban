@@ -30,7 +30,7 @@ class VistaReseña extends PolymerElement {
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="width: 60%; height: 100%;">
-   <vaadin-text-area style="width: 100%;"></vaadin-text-area>
+   <vaadin-text-area style="width: 100%;" readonly></vaadin-text-area>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
