@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-categorias template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-categorias.js")
 public class VistaCategorias extends PolymerTemplate<VistaCategorias.VistaCategoriasModel> {
 
-    /**
+    @Id("comboBoxCategorias")
+	private HorizontalLayout comboBoxCategorias;
+
+	/**
      * Creates a new VistaCategorias.
      */
     public VistaCategorias() {
@@ -28,4 +33,12 @@ public class VistaCategorias extends PolymerTemplate<VistaCategorias.VistaCatego
     public interface VistaCategoriasModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public HorizontalLayout getComboBoxCategorias() {
+		return comboBoxCategorias;
+	}
+
+	public void setComboBoxCategorias(HorizontalLayout comboBoxCategorias) {
+		this.comboBoxCategorias = comboBoxCategorias;
+	}
 }
