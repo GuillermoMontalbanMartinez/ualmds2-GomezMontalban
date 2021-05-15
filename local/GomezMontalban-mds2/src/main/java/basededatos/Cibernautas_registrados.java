@@ -26,6 +26,7 @@ public class Cibernautas_registrados {
 	}
 
 	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep, String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia, int aCodigo_postal, String aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv, String aFoto_perfil) throws PersistentException {
+		Date fecha = new Date();
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Cibernauta_registrado cibernautaRegistrado = basededatos.Cibernauta_registradoDAO.createCibernauta_registrado();
@@ -44,6 +45,7 @@ public class Cibernautas_registrados {
 			cibernautaRegistrado.setNombre_titular_tarjeta(aTitular);
 			cibernautaRegistrado.setFecha_caducidad(aFecha_caducidad);
 			cibernautaRegistrado.setCvv(aCvv);
+			cibernautaRegistrado.setFecha_creacion_usuario(fecha.toString());
 			basededatos.Cibernauta_registradoDAO.save(cibernautaRegistrado);	
 			pt.commit();
 		} catch (Exception e) {
