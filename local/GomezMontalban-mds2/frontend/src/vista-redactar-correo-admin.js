@@ -26,7 +26,7 @@ class VistaContestarEmailAdmin extends PolymerElement {
     <label style="margin: var(--lumo-space-m);">Destinatario</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-    <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vaadin-text-field>
+    <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textDestinatario"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -36,22 +36,22 @@ class VistaContestarEmailAdmin extends PolymerElement {
     <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-s);">Asunto</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-    <vaadin-text-field style="flex-shrink: 0; align-self: center; margin-left: var(--lumo-space-xl);"></vaadin-text-field>
+    <vaadin-text-field style="flex-shrink: 0; align-self: center; margin-left: var(--lumo-space-xl);" id="textAsunto"></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center; height: 100%; width: 60%;">
-  <vaadin-text-area style="width: 100%; height: 100%;"></vaadin-text-area>
+  <vaadin-text-area style="width: 100%; height: 100%;" id="textCuerpo"></vaadin-text-area>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-    <vaadin-button style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);">
+    <vaadin-button style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" theme="primary error">
       Cancelar 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-    <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">
+    <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary">
       Aceptar 
     </vaadin-button>
    </vaadin-horizontal-layout>

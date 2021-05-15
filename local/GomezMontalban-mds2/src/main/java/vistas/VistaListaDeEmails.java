@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-lista-de-emails template.
@@ -19,6 +20,8 @@ public class VistaListaDeEmails extends PolymerTemplate<VistaListaDeEmails.Vista
 
     @Id("writeADescription")
 	private TextArea writeADescription;
+	@Id("listaLayout")
+	private Element listaLayout;
 
 	/**
      * Creates a new VistaListaDeEmails.
@@ -33,4 +36,12 @@ public class VistaListaDeEmails extends PolymerTemplate<VistaListaDeEmails.Vista
     public interface VistaListaDeEmailsModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getListaLayout() {
+		return listaLayout;
+	}
+
+	public void setListaLayout(Element listaLayout) {
+		this.listaLayout = listaLayout;
+	}
 }

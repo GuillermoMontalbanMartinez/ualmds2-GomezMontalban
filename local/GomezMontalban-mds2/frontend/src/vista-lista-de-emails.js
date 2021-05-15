@@ -12,7 +12,7 @@ class VistaListaDeEmails extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout></vaadin-vertical-layout>
+<vaadin-vertical-layout id="listaLayout"></vaadin-vertical-layout>
 `;
     }
 

@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-correo-usuario template.
@@ -19,6 +20,16 @@ public class VistaCorreoUsuario extends PolymerTemplate<VistaCorreoUsuario.Vista
 
     @Id("layout")
 	private HorizontalLayout layout;
+	@Id("layoutEmails")
+	private Element layoutEmails;
+	
+	public Element getLayoutEmails() {
+		return layoutEmails;
+	}
+
+	public void setLayoutEmails(Element layoutEmails) {
+		this.layoutEmails = layoutEmails;
+	}
 
 	/**
      * Creates a new VistaCorreoUsuario.
@@ -41,4 +52,9 @@ public class VistaCorreoUsuario extends PolymerTemplate<VistaCorreoUsuario.Vista
 	public void setLayout(HorizontalLayout layout) {
 		this.layout = layout;
 	}
+
+	
+
+	
+
 }

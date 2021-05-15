@@ -3,7 +3,7 @@ package basededatos;
 import org.orm.PersistentException;
 
 public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_común, iCibernauta_registrado, iCorreo, iEmpresa_de_transportes, iEncargado_de_compras, ICompra, iItem, iBanco {
-	public Correos _db_correo;
+	public Correos _db_correo = new Correos();
 	public Administradores _db_administradores = new Administradores();
 	public Cibernautas_registrados _db_cibernautas_registrados = new Cibernautas_registrados();
 	public Encargados_de_compras _db_encargado_de_compras;
@@ -59,8 +59,14 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void enviar(String aDestinatario, String aAsunto, String aCorreo) {
-		throw new UnsupportedOperationException();
+	
+	public void enviar_admin(String aDestinatario, String aAsunto, String aCorreo){
+		try {
+			_db_correo.enviar_admin(aDestinatario, aAsunto, aCorreo);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Producto[] cargar_productos_mas_vendidos() {
@@ -221,6 +227,12 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	@Override
 	public int login(String user, String password) throws PersistentException {
 		return _db_cibernautas_registrados.login(user,password);
+	}
+
+	@Override
+	public void enviar(String aDestinatario, String aAsunto, String aCorreo) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -4,6 +4,12 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-email template.
@@ -15,7 +21,18 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-email.js")
 public class VistaEmail extends PolymerTemplate<VistaEmail.VistaEmailModel> {
 
-    /**
+    @Id("vaadinTextField")
+	private TextField vaadinTextField;
+	@Id("asuntoText")
+	private TextField asuntoText;
+	@Id("leidoIcono")
+	private Element leidoIcono;
+	@Id("leidoButton")
+	private Button leidoButton;
+	@Id("VerButton")
+	private Button verButton;
+
+	/**
      * Creates a new VistaEmail.
      */
     public VistaEmail() {
@@ -28,4 +45,24 @@ public class VistaEmail extends PolymerTemplate<VistaEmail.VistaEmailModel> {
     public interface VistaEmailModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	
+
+	public TextField getVaadinTextField() {
+		return vaadinTextField;
+	}
+
+	public void setVaadinTextField(TextField vaadinTextField) {
+		this.vaadinTextField = vaadinTextField;
+	}
+
+	public TextField getAsuntoText() {
+		return asuntoText;
+	}
+
+	public void setAsuntoText(TextField asuntoText) {
+		this.asuntoText = asuntoText;
+	}
+
+	
 }

@@ -1,8 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-lista-de-emails.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaCorreoUsuario extends PolymerElement {
 
@@ -25,9 +24,7 @@ class VistaCorreoUsuario extends PolymerElement {
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-horizontal-layout>
-<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
- <vista-lista-de-emails style="width: 100%; height: 100%;"></vista-lista-de-emails>
-</vaadin-vertical-layout>
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="layoutEmails"></vaadin-vertical-layout>
 `;
     }
 

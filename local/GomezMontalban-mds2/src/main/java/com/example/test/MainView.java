@@ -32,7 +32,6 @@ public class MainView extends VerticalLayout {
 	public MainView(@Autowired GreetService service) {
 		Cibernauta cibernauta = new Cibernauta();
 		add(cibernauta);
-
 		login(cibernauta);
 
 	}
@@ -51,7 +50,6 @@ public class MainView extends VerticalLayout {
 				switch (id) {
 				case 0:
 					Administrador admin = new Administrador();
-					;
 
 					admin.banner_admin.cerrar_sesion_admin.getVaadinButtonCerrarSesion().addClickListener(t -> {
 						cerrar_sesion(admin, cibernauta);
@@ -69,14 +67,14 @@ public class MainView extends VerticalLayout {
 					Empresa_de_transportes et = new Empresa_de_transportes();
 					remove(cibernauta);
 					add(et);
-					;
+
 					break;
 
 				case 2:
 					Encargado_de_compras ec = new Encargado_de_compras();
 					remove(cibernauta);
 					add(ec);
-					;
+
 					break;
 
 				case 3:
@@ -89,9 +87,13 @@ public class MainView extends VerticalLayout {
 
 					remove(cibernauta);
 					add(registrado);
-					;
+
+					registrado._banner_registrado._correo_usuario.setUsuario(usuario);
+
 					break;
 				default:
+
+					cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().setError(true);
 					break;
 				}
 
@@ -110,8 +112,6 @@ public class MainView extends VerticalLayout {
 		login(c);
 	}
 
-	
-	
 	public void volver_a_principal(Administrador c) {
 		Administrador admin = new Administrador();
 		Cibernauta cibernauta = new Cibernauta();
@@ -122,9 +122,7 @@ public class MainView extends VerticalLayout {
 
 		remove(c);
 		add(admin);
-		
-		
-		
+
 		login(cibernauta);
 		admin.banner_admin.cerrar_sesion_admin.getVaadinButtonCerrarSesion().addClickListener(t -> {
 

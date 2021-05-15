@@ -20,7 +20,7 @@ public interface iAdministrador {
 
 	public Resena[] cargar_resenas();
 
-	public void enviar(String aDestinatario, String aAsunto, String aCorreo);
+	public void enviar_admin(String aDestinatario, String aAsunto, String aCorreo) throws PersistentException;
 
 	public void Alta_oferta_producto(int aId_producto, int aDescuento, String aFechaLimite) throws PersistentException;
 	
