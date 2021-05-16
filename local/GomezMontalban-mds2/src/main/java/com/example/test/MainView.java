@@ -33,7 +33,9 @@ public class MainView extends VerticalLayout {
 		Cibernauta cibernauta = new Cibernauta();
 		add(cibernauta);
 		login(cibernauta);
-
+		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
+			volver_a_principal(cibernauta);
+		});
 	}
 
 	public void login(Cibernauta cibernauta) {
@@ -105,6 +107,8 @@ public class MainView extends VerticalLayout {
 			}
 
 		});
+		
+		
 
 	}
 
@@ -131,5 +135,18 @@ public class MainView extends VerticalLayout {
 
 			cerrar_sesion(c, cibernauta);
 		});
+	}
+	
+	public void volver_a_principal(Cibernauta c) {
+		Cibernauta cibernauta = new Cibernauta();
+
+		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
+			volver_a_principal(cibernauta);
+		});
+
+		remove(c);
+		add(cibernauta);
+
+		login(cibernauta);
 	}
 }

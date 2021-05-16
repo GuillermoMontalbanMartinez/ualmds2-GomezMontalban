@@ -33,6 +33,8 @@ public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.Vista
 	private LoginForm vaadinLoginFormLoginInicioDeSesion;
 	@Id("botton-registro")
 	private Button bottonRegistro;
+	@Id("cancelarB")
+	private Button cancelarB;
 	/**
      * Creates a new VistaIniciarSesion.
      */
@@ -74,5 +76,13 @@ public class VistaIniciarSesion extends PolymerTemplate<VistaIniciarSesion.Vista
 
 	public void setBottonRegistro(Button bottonRegistro) {
 		this.bottonRegistro = bottonRegistro;
+	}
+
+	public Button getCancelarB() {
+		return cancelarB;
+	}
+
+	public void setCancelarB(Button cancelarB) {
+		this.cancelarB = cancelarB;
 	}
 }

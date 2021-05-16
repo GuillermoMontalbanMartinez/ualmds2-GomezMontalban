@@ -27,6 +27,9 @@ class VistaIniciarSesion extends PolymerElement {
   <vaadin-button style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" theme="primary" id="botton-registro">
     Registrarse 
   </vaadin-button>
+  <vaadin-button theme="primary error" id="cancelarB">
+   Cancelar
+  </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
