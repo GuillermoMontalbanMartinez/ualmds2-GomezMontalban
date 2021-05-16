@@ -16,6 +16,7 @@ public class Cibernauta extends Cibernauta_común {
 	public VerticalLayout layout;
 	public Acceder_al_catalogo catalogo; 
 	public Iniciar_sesion inicio_sesion;
+	public Registro registro;
 	
 	public Cibernauta() {
 		
@@ -45,6 +46,7 @@ public class Cibernauta extends Cibernauta_común {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
+				layout.add(_banner_no_registrado);
 				layout.add(inicio_sesion._registro);
 				
 			}
@@ -60,7 +62,22 @@ public class Cibernauta extends Cibernauta_común {
 				
 			}
 		});
+		
+		
+		inicio_sesion._registro.getButtonCancelar().addClickListener(new ComponentEventListener() {
+			
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout.remove(inicio_sesion._registro);
+				layout.add(inicio_sesion);
+				
+			}
+		});
+		
+		
 	}
+	
+	
 	
 	
 	

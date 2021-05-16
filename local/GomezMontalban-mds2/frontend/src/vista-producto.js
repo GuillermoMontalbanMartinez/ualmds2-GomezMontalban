@@ -17,6 +17,7 @@ class VistaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
+<<<<<<< HEAD
 <vaadin-vertical-layout style="width: 100%; border: #ccc solid 2px; border-radius : 20px; background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
  <vaadin-vertical-layout style="align-self: center; width: 100%;">
   <vaadin-horizontal-layout style="align-self: center; align-items: center; justify-content: center;">
@@ -26,6 +27,12 @@ class VistaProducto extends PolymerElement {
    <vaadin-horizontal-layout>
     <vaadin-text-field style="margin: var(--lumo-space-m);" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
+=======
+<vaadin-vertical-layout style="width: 100%; border: #ccc solid 2px; border-radius : 20px; background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%); height: 100%;">
+ <vaadin-horizontal-layout style="width: 100%;">
+  <vaadin-horizontal-layout>
+   <label>Nombre del producto </label>
+>>>>>>> branch 'master' of https://github.com/GuillermoMontalbanMartinez/ualmds2-GomezMontalban.git
   </vaadin-horizontal-layout>
   <vaadin-vertical-layout style="width: 100%;">
    <vaadin-horizontal-layout style="width: 100%;">
@@ -38,6 +45,7 @@ class VistaProducto extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
+<<<<<<< HEAD
  <vaadin-vertical-layout style="width: 100%; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout style="width: 100%; align-self: center; align-items: center; justify-content: center;">
    <vaadin-horizontal-layout style="align-self: center; align-items: center; justify-content: center;">
@@ -54,6 +62,11 @@ class VistaProducto extends PolymerElement {
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
+=======
+ <vaadin-vertical-layout>
+  <h2 style="margin: var(--lumo-space-xl);">Reseñas</h2>
+  <vaadin-vertical-layout style="width: 100%;"></vaadin-vertical-layout>
+>>>>>>> branch 'master' of https://github.com/GuillermoMontalbanMartinez/ualmds2-GomezMontalban.git
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
