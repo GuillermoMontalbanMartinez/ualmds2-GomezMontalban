@@ -19,7 +19,7 @@ class VistaCorreoUsuario extends PolymerElement {
   <h2 style="flex-grow: 0;">Bandeja de entrada</h2>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; justify-content: center;">
-  <vaadin-button theme="primary">
+  <vaadin-button theme="primary" id="redactarButton">
     Redactar mensaje 
   </vaadin-button>
  </vaadin-horizontal-layout>

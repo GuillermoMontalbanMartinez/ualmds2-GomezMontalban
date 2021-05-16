@@ -38,8 +38,7 @@ public class Correos {
 					System.out.println(c.getCorreo_electronico());
 					correo.setPertenece_a_un_cibernauta_registrado(c);
 					basededatos.CorreoDAO.save(correo);
-					correo.setRemitente(correo);
-					correo.setReceptor(correo);
+					
 				}
 			}
 			basededatos.CorreoDAO.save(correo);
@@ -53,5 +52,38 @@ public class Correos {
 
 	public String recuperar_contrasena() {
 		throw new UnsupportedOperationException();
+	}
+
+	public void enviar(String aDestinatario, String aAsunto, String aCorreo, String aAutor) throws PersistentException{
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		try {
+
+			Correo correo = basededatos.CorreoDAO.createCorreo();
+			correo.setAsunto(aAsunto);
+			correo.setDestinatario(aDestinatario);
+			correo.setContenido(aCorreo);
+			correo.setLeido(false);
+			
+			Cibernauta_registrado[] listCr = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
+			
+			for(Cibernauta_registrado c : listCr) {
+				if(c.getCorreo_electronico().equals(aDestinatario)) {
+					correo.setPertenece_a_un_cibernauta_registrado(c);
+					basededatos.CorreoDAO.save(correo);
+					
+				}
+				if(c.getNombre().equals(aAutor)) {
+					correo.setAutor(c.getCorreo_electronico());
+
+				}
+			}
+			basededatos.CorreoDAO.save(correo);
+			t.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		}
+		
 	}
 }

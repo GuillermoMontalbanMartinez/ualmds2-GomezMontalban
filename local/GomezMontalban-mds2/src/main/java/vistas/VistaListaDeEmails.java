@@ -18,8 +18,7 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vista-lista-de-emails.js")
 public class VistaListaDeEmails extends PolymerTemplate<VistaListaDeEmails.VistaListaDeEmailsModel> {
 
-    @Id("writeADescription")
-	private TextArea writeADescription;
+
 	@Id("listaLayout")
 	private Element listaLayout;
 

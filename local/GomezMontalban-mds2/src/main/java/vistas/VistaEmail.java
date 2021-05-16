@@ -25,10 +25,7 @@ public class VistaEmail extends PolymerTemplate<VistaEmail.VistaEmailModel> {
 	private TextField vaadinTextField;
 	@Id("asuntoText")
 	private TextField asuntoText;
-	@Id("leidoIcono")
-	private Element leidoIcono;
-	@Id("leidoButton")
-	private Button leidoButton;
+	
 	@Id("VerButton")
 	private Button verButton;
 
@@ -62,6 +59,15 @@ public class VistaEmail extends PolymerTemplate<VistaEmail.VistaEmailModel> {
 
 	public void setAsuntoText(TextField asuntoText) {
 		this.asuntoText = asuntoText;
+	}
+
+
+	public Button getVerButton() {
+		return verButton;
+	}
+
+	public void setVerButton(Button verButton) {
+		this.verButton = verButton;
 	}
 
 	

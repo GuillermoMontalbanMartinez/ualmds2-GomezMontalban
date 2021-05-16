@@ -79,7 +79,7 @@ public class MainView extends VerticalLayout {
 
 				case 3:
 					Cibernauta_registrado registrado = new Cibernauta_registrado();
-
+					registrado.setUsuario(usuario);
 					registrado._banner_registrado._administrar_perfil._cerrar_sesion.getCerrarSesionBoton()
 							.addClickListener(t -> {
 								cerrar_sesion(registrado, cibernauta);
@@ -88,7 +88,10 @@ public class MainView extends VerticalLayout {
 					remove(cibernauta);
 					add(registrado);
 
-					registrado._banner_registrado._correo_usuario.setUsuario(usuario);
+					
+					
+					
+					
 
 					break;
 				default:

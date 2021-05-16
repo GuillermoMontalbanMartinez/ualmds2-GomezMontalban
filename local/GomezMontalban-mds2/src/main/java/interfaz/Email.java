@@ -7,16 +7,20 @@ import com.vaadin.ui.Label;
 
 import vistas.VistaEmail;
 
-public class Email extends VistaEmail{
+public class Email extends VistaEmail {
 	public Lista_de_emails _lista_de_emails;
 	public Contestar_email _contestar_email;
+	public VerEmail _ver_email = new VerEmail();
 
-	
-	public Email(String autor, String asunto) {
-		
-		this.getAsuntoText().setValue(asunto);
-		this.getVaadinTextField().setValue(autor);
+	public Email(String autor, String asunto, String cuerpo) {
+
+		if (asunto != null && autor != null) {
+			this.getAsuntoText().setValue(asunto);
+			this.getVaadinTextField().setValue(autor);
+			_ver_email.getAsuntoText().setValue(asunto);
+			_ver_email.getAutorText().setValue(autor);
+			_ver_email.getCuerpoText().setValue(cuerpo);
+		}
 	}
-	
-	
+
 }

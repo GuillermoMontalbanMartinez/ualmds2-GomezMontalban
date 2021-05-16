@@ -1,8 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaEmail extends PolymerElement {
 
@@ -31,9 +30,6 @@ class VistaEmail extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 20%;" id="vaadinHorizontalLayout">
   <vaadin-button theme="primary" id="VerButton">
    Ver
-  </vaadin-button>
-  <vaadin-button theme="icon" aria-label="Add new" id="leidoButton" style="--lumo-icons-eye-disabled">
-   <iron-icon icon="lumo:eye-disabled" id="leidoIcono"></iron-icon>
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-horizontal-layout>

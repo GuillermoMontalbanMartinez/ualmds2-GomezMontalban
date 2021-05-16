@@ -18,7 +18,7 @@ public interface iCibernauta_registrado {
 
 	public void confirmar_cambios(boolean aRespuesta);
 
-	public void enviar(String aDestinatario, String aAsunto, String aCorreo);
+	public void enviar(String aDestinatario, String aAsunto, String aCorreo, String aAutor);
 
 	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto);
 

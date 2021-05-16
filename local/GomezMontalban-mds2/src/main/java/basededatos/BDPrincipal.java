@@ -230,8 +230,13 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 	@Override
-	public void enviar(String aDestinatario, String aAsunto, String aCorreo) {
-		// TODO Auto-generated method stub
+	public void enviar(String aDestinatario, String aAsunto, String aCorreo, String aAutor) {
+		try {
+			_db_correo.enviar(aDestinatario, aAsunto, aCorreo, aAutor);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
