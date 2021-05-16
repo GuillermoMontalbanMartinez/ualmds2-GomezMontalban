@@ -31,7 +31,7 @@ class VistaProducto extends PolymerElement {
  <vaadin-vertical-layout style="width: 100%; margin: var(--lumo-space-m);">
   <vaadin-horizontal-layout style="width: 100%;">
    <vaadin-horizontal-layout style="width: 30%;">
-    <img id="idFoto" style="width: 100%; height: 100%; margin: var(--lumo-space-m);">
+    <img id="idFoto" style="width: 80%; height: 80%; margin: var(--lumo-space-m);">
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout style="width: 70%;">
     <vaadin-text-area id="textDescripcion" style="width: 100%;" readonly></vaadin-text-area>
