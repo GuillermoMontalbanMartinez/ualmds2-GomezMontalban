@@ -20,7 +20,13 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 	private ArrayList<Producto> productos;
 	
 	public Acceder_al_catalogo() {
-		listaProductos = this.getLayoutCatalogo().as(VerticalLayout.class);
+		listaProductos = this.getLayoutProductosCatalogo();
+		try {
+			mostrar_productos();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void cargar_productos() throws PersistentException {
@@ -31,24 +37,18 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 		}
 	}
 	
-//	public void mostrar_productos() throws PersistentException {
-//		productos = new ArrayList<Producto>();	
-//		cargar_productos();
-//		for (Producto p : productos) {
-//			Producto producto = new Producto(p.);
-//			listaProductos.add(producto);
-//		}
-//	}
+	public void mostrar_productos() throws PersistentException {
+		productos = new ArrayList<Producto>();	
+		cargar_productos();
+		for (Producto p : productos) {
+			interfaz.Producto producto = new interfaz.Producto();
+			listaProductos.add(producto);
+		}
+	}
 	
-//	public void mostra_correos() throws PersistentException {
-//		correos= new ArrayList<Correo>();
-//		
-//		cargar_lista_de_emails(id);
-//		for(Correo c : correos)  {
-//			Email e = new Email(c.getAutor(), c.getAsunto());
-//			listaEmais.add(e);		
-//
-//		}
-//		
-//	}
+	public void eliminar_producto() {
+		listaProductos.removeAll();
+	}
+	
+
 }
