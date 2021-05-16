@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -35,6 +36,7 @@ public class Cibernauta extends Cibernauta_común {
 				layout.removeAll();
 				layout.add(_banner_no_registrado);
 				layout.add(inicio_sesion);
+				catalogo.eliminar_producto();
 				
 			}
 		});
