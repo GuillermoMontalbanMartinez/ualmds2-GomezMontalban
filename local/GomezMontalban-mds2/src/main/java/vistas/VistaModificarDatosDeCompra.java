@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-modificar-datos-de-compra template.
@@ -15,7 +17,16 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-modificar-datos-de-compra.js")
 public class VistaModificarDatosDeCompra extends PolymerTemplate<VistaModificarDatosDeCompra.VistaModificarDatosDeCompraModel> {
 
-    /**
+    @Id("textNumeroTarjeta")
+	private TextField textNumeroTarjeta;
+	@Id("textTitularTarjeta")
+	private TextField textTitularTarjeta;
+	@Id("textCVVTarjeta")
+	private TextField textCVVTarjeta;
+	@Id("textFechaCaducidadTarjeta")
+	private TextField textFechaCaducidadTarjeta;
+
+	/**
      * Creates a new VistaModificarDatosDeCompra.
      */
     public VistaModificarDatosDeCompra() {
@@ -28,4 +39,36 @@ public class VistaModificarDatosDeCompra extends PolymerTemplate<VistaModificarD
     public interface VistaModificarDatosDeCompraModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public TextField getTextNumeroTarjeta() {
+		return textNumeroTarjeta;
+	}
+
+	public void setTextNumeroTarjeta(TextField textNumeroTarjeta) {
+		this.textNumeroTarjeta = textNumeroTarjeta;
+	}
+
+	public TextField getTextTitularTarjeta() {
+		return textTitularTarjeta;
+	}
+
+	public void setTextTitularTarjeta(TextField textTitularTarjeta) {
+		this.textTitularTarjeta = textTitularTarjeta;
+	}
+
+	public TextField getTextCVVTarjeta() {
+		return textCVVTarjeta;
+	}
+
+	public void setTextCVVTarjeta(TextField textCVVTarjeta) {
+		this.textCVVTarjeta = textCVVTarjeta;
+	}
+
+	public TextField getTextFechaCaducidadTarjeta() {
+		return textFechaCaducidadTarjeta;
+	}
+
+	public void setTextFechaCaducidadTarjeta(TextField textFechaCaducidadTarjeta) {
+		this.textFechaCaducidadTarjeta = textFechaCaducidadTarjeta;
+	}
 }

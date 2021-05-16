@@ -61,7 +61,7 @@ public class Registro extends VistaRegistro{
 		titular = this.getTextTitularTarjeta().getValue().toString();
 		numeroTarjeta = this.getTextNumeroTarjeta().getValue().toString();
 		fechaCaducidad = this.getTextFechaCaducidad().getValue().toString();
-		cvv = Integer.parseInt(this.getTextFechaCaducidad().getValue().toString());
+		cvv = Integer.parseInt(this.getTextCVVTarjeta().getValue().toString());
 		
 		bdPrincipal.Registro(nombre, apellidos, correoElectronico, password, passwordRepeat, telefono, pais, localidad, calle, portal, provincia, cp, numeroTarjeta, titular, fechaCaducidad, cvv, null);
 	}

@@ -8,6 +8,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.button.Button;
+import vistas.VistaProductosMasVendidos;
 
 @Tag("vista-cibernauta-comun")
 @JsModule("./src/vista-cibernauta-comun.js")
@@ -19,6 +20,8 @@ public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.V
 	private HorizontalLayout banner;
 	@Id("mostrarProductos")
 	private Button mostrarProductos;
+	@Id("vistaProductosMasVendidos")
+	private VistaProductosMasVendidos vistaProductosMasVendidos;
 
 	/**
      * Creates a new VistaCibernautaComun.

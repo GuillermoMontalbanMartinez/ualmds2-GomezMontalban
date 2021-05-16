@@ -22,9 +22,9 @@ class VistaCibernautaComun extends PolymerElement {
  <h3 style="align-self: center;">Ofertas disponibles</h3>
  <vista-ofertas style="height: 100%; width: 100%;"></vista-ofertas>
  <h3 style="align-self: center;">Productos más vendidos</h3>
- <vista-productos-mas-vendidos style="width: 100%; height: 100%; align-self: center;"></vista-productos-mas-vendidos>
+ <vista-productos-mas-vendidos style="width: 100%; height: 100%; align-self: center;" id="vistaProductosMasVendidos"></vista-productos-mas-vendidos>
  <vaadin-button theme="primary" id="mostrarProductos">
-  Mostrar todos los productos
+   Mostrar todos los productos 
  </vaadin-button>
  <vista-ver-publicidad style="height: 70%; width: 100%; align-self: center;"></vista-ver-publicidad>
 </vaadin-vertical-layout>

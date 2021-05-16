@@ -8,6 +8,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.datepicker.DatePicker;
 
 /**
  * A Designer generated component for the vista-registro template.
@@ -47,14 +48,14 @@ public class VistaRegistro extends PolymerTemplate<VistaRegistro.VistaRegistroMo
 	private TextField textNumeroTarjeta;
 	@Id("textTitularTarjeta")
 	private TextField textTitularTarjeta;
-	@Id("textFechaCaducidad")
-	private TextField textFechaCaducidad;
 	@Id("textCVVTarjeta")
 	private TextField textCVVTarjeta;
 	@Id("ButtonRegistro")
 	private Button buttonRegistro;
 	@Id("ButtonCancelar")
 	private Button buttonCancelar;
+	@Id("textFechaCaducidad")
+	private DatePicker textFechaCaducidad;
 
 	/**
      * Creates a new VistaRegistro.
@@ -182,13 +183,10 @@ public class VistaRegistro extends PolymerTemplate<VistaRegistro.VistaRegistroMo
 		this.textTitularTarjeta = textTitularTarjeta;
 	}
 
-	public TextField getTextFechaCaducidad() {
+	public DatePicker getTextFechaCaducidad() {
 		return textFechaCaducidad;
 	}
 
-	public void setTextFechaCaducidad(TextField textFechaCaducidad) {
-		this.textFechaCaducidad = textFechaCaducidad;
-	}
 
 	public TextField getTextCVVTarjeta() {
 		return textCVVTarjeta;
@@ -212,5 +210,9 @@ public class VistaRegistro extends PolymerTemplate<VistaRegistro.VistaRegistroMo
 
 	public void setButtonCancelar(Button buttonCancelar) {
 		this.buttonCancelar = buttonCancelar;
+	}
+
+	public void setTextFechaCaducidad(DatePicker textFechaCaducidad) {
+		this.textFechaCaducidad = textFechaCaducidad;
 	}
 }
