@@ -17,7 +17,7 @@ class VistaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; border: #ccc solid 2px; border-radius : 20px; background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
+<vaadin-vertical-layout style="width: 100%; border: #ccc solid 2px; border-radius : 20px; background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%); height: 100%;">
  <vaadin-horizontal-layout style="width: 100%;">
   <vaadin-horizontal-layout>
    <label>Nombre del producto </label>
@@ -99,9 +99,9 @@ class VistaProducto extends PolymerElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout>
   <h2 style="margin: var(--lumo-space-xl);">Reseñas</h2>
+  <vaadin-vertical-layout style="width: 100%;"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
-<vaadin-vertical-layout style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 `;
     }
 
