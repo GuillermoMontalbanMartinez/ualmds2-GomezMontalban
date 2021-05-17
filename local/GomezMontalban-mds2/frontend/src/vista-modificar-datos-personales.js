@@ -54,9 +54,9 @@ class VistaModificarDatosPersonales extends PolymerElement {
     <vaadin-vertical-layout theme="spacing" style="width: 100%; align-items: center;">
      <h2>Foto de perfil</h2>
      <vaadin-vertical-layout theme="spacing" style="width: 50%; height: 50%;">
-      <img style="width: 100%; height: 100%;">
+      <img style="width: 100%; height: 100%;" id="imagen">
      </vaadin-vertical-layout>
-     <vaadin-upload></vaadin-upload>
+     <vaadin-upload id="uploader"></vaadin-upload>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
@@ -93,7 +93,7 @@ class VistaModificarDatosPersonales extends PolymerElement {
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
-    <vista-modificar-datos-de-compra style="height: 100%; width: 100%;"></vista-modificar-datos-de-compra>
+    <vista-modificar-datos-de-compra style="height: 100%; width: 100%;" id="vistaDatosDePago"></vista-modificar-datos-de-compra>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

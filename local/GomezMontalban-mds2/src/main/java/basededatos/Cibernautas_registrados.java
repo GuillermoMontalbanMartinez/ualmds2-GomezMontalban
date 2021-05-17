@@ -82,4 +82,38 @@ public class Cibernautas_registrados {
 		
 		return id;
 	}
+	
+	public void modificar_datos_personales(String nombreUsuario, String apellidos, String correo, String contrasena,
+			String repetirContrasena, String telefono, String Pais, String localidad, String calle, String portal,
+			String provincia, int codigoPostal, String numeroTarjeta, String titularTarjeta, String fechaCaducidad,
+			int cvv, String img, int id) throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		try {
+			// Cibernauta_registrado cibernautaRegistrado[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
+			Cibernauta_registrado cb = Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(id);
+			
+				if (contrasena.equals(repetirContrasena)) {
+					cb.setNombre(nombreUsuario);
+					cb.setApellidos(apellidos);
+					cb.setCorreo_electronico(correo);
+					cb.setContrasena(contrasena);
+					cb.setTelefono(telefono);
+					cb.setPais(Pais);
+					cb.setLocalidad(localidad);
+					cb.setCalle(calle);
+					cb.setPortal(portal);
+					cb.setProvincia(provincia);
+					cb.setCp(codigoPostal);
+					cb.setNumero_tarjeta_credito(numeroTarjeta);
+					cb.setNombre_titular_tarjeta(titularTarjeta);
+					cb.setFecha_caducidad(fechaCaducidad);
+					cb.setCvv(cvv);
+					basededatos.Cibernauta_registradoDAO.save(cb);	
+				}
+			pt.commit();
+		} catch (Exception e) {
+			pt.rollback();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+	}
 }

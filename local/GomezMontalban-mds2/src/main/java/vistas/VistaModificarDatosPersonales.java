@@ -7,6 +7,9 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import vistas.VistaModificarDatosDeCompra;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.html.Image;
 
 /**
  * A Designer generated component for the vista-modificar-datos-personales template.
@@ -46,6 +49,12 @@ public class VistaModificarDatosPersonales extends PolymerTemplate<VistaModifica
 	private Button buttonCancelar;
 	@Id("textGuardarCambios")
 	private Button textGuardarCambios;
+	@Id("vistaDatosDePago")
+	private VistaModificarDatosDeCompra vistaDatosDePago;
+	@Id("uploader")
+	private Upload uploader;
+	@Id("imagen")
+	private Image imagen;
 
 	/**
      * Creates a new VistaModificarDatosPersonales.
@@ -171,5 +180,29 @@ public class VistaModificarDatosPersonales extends PolymerTemplate<VistaModifica
 
 	public void setTextGuardarCambios(Button textGuardarCambios) {
 		this.textGuardarCambios = textGuardarCambios;
+	}
+
+	public VistaModificarDatosDeCompra getVistaDatosDePago() {
+		return vistaDatosDePago;
+	}
+
+	public void setVistaDatosDePago(VistaModificarDatosDeCompra vistaDatosDePago) {
+		this.vistaDatosDePago = vistaDatosDePago;
+	}
+
+	public Upload getUploader() {
+		return uploader;
+	}
+
+	public void setUploader(Upload uploader) {
+		this.uploader = uploader;
+	}
+
+	public Image getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(Image imagen) {
+		this.imagen = imagen;
 	}
 }

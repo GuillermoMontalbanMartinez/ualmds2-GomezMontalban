@@ -231,7 +231,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		this.usuario = usuario;
 		_banner_registrado._correo_usuario.setUsuario(usuario);
 		_banner_registrado._correo_usuario._redactar_correo.setAutor(usuario);
-
+		_banner_registrado._administrar_perfil._modificar_datos_personales.setUsuario(usuario);
 	}
 
 }

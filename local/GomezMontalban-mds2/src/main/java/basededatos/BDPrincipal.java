@@ -240,4 +240,15 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		
 	}
 
+	@Override
+	public void modificar_datos_personales(String nombreUsuario, String apellidos, String correo, String contrasena,
+			String repetirContrasena, String telefono, String Pais, String localidad, String calle, String portal,
+			String provincia, int codigoPostal, String numeroTarjeta, String titularTarjeta, String fechaCaducidad,
+			int cvv, String img, int id) throws PersistentException {
+		_db_cibernautas_registrados.modificar_datos_personales(nombreUsuario, apellidos, correo, contrasena, repetirContrasena, telefono, Pais, localidad, calle, portal, provincia, codigoPostal, numeroTarjeta, titularTarjeta, fechaCaducidad, cvv, img, id);
+		
+	}
+	
+	
+
 }
