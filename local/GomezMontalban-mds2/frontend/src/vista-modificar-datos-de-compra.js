@@ -1,7 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaModificarDatosDeCompra extends PolymerElement {
 
@@ -26,7 +27,7 @@ class VistaModificarDatosDeCompra extends PolymerElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 30%; justify-content: flex-start;">
   <h4 style="width: 60%;">Fecha de caducidad</h4>
-  <vaadin-text-field style="align-self: center;" id="textFechaCaducidadTarjeta"></vaadin-text-field>
+  <vaadin-date-picker id="textFechaCaducidad" style="flex-shrink: 1; align-self: center;"></vaadin-date-picker>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 30%; justify-content: flex-start;">
   <h4 style="width: 60%;">CVV </h4>

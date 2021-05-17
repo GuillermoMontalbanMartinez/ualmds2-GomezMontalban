@@ -19,10 +19,12 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.upload.receivers.MultiFileMemoryBuffer;
 
 import basededatos.BDPrincipal;
 import basededatos.Cibernauta_registrado;
+import basededatos.Producto;
 import elemental.json.Json;
 import src.net.dv8tion.Uploader;
 import vistas.VistaModificarDatosPersonales;
@@ -52,6 +54,7 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 	public int id;
 	MultiFileMemoryBuffer buffer = new MultiFileMemoryBuffer();
 	Div output = new Div();
+
 	
 	public Modificar_datos_personales() {
 		this.getTextGuardarCambios().addClickListener(new ComponentEventListener() {
@@ -66,6 +69,8 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 				}
 			}
 		});
+		
+
 	 
 		this.getUploader().setReceiver(buffer);
 		
@@ -127,7 +132,7 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 
 		titular = this.getVistaDatosDePago().getTextTitularTarjeta().getValue().toString();
 		numeroTarjeta = this.getVistaDatosDePago().getTextNumeroTarjeta().getValue().toString();
-		fechaCaducidad = this.getVistaDatosDePago().getTextFechaCaducidadTarjeta().getValue().toString();
+		fechaCaducidad = this.getVistaDatosDePago().getTextFechaCaducidad().getValue().toString();
 		cvv = Integer.parseInt(this.getVistaDatosDePago().getTextCVVTarjeta().getValue().toString());
 
 		bdPrincipal._db_cibernautas_registrados.modificar_datos_personales(nombre, apellidos, correoElectronico, password, passwordRepeat, telefono, pais, localidad, calle, portal, provincia, cp, titular, numeroTarjeta, fechaCaducidad, cvv, src, id);

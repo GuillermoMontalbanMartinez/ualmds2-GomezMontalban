@@ -6,6 +6,8 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.datepicker.DatePicker;
 
 /**
  * A Designer generated component for the vista-modificar-datos-de-compra template.
@@ -23,8 +25,8 @@ public class VistaModificarDatosDeCompra extends PolymerTemplate<VistaModificarD
 	private TextField textTitularTarjeta;
 	@Id("textCVVTarjeta")
 	private TextField textCVVTarjeta;
-	@Id("textFechaCaducidadTarjeta")
-	private TextField textFechaCaducidadTarjeta;
+	@Id("textFechaCaducidad")
+	private DatePicker textFechaCaducidad;
 
 	/**
      * Creates a new VistaModificarDatosDeCompra.
@@ -64,11 +66,11 @@ public class VistaModificarDatosDeCompra extends PolymerTemplate<VistaModificarD
 		this.textCVVTarjeta = textCVVTarjeta;
 	}
 
-	public TextField getTextFechaCaducidadTarjeta() {
-		return textFechaCaducidadTarjeta;
+	public DatePicker getTextFechaCaducidad() {
+		return textFechaCaducidad;
 	}
 
-	public void setTextFechaCaducidadTarjeta(TextField textFechaCaducidadTarjeta) {
-		this.textFechaCaducidadTarjeta = textFechaCaducidadTarjeta;
+	public void setTextFechaCaducidad(DatePicker textFechaCaducidad) {
+		this.textFechaCaducidad = textFechaCaducidad;
 	}
 }
