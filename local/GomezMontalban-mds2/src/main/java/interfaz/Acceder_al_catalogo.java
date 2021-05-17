@@ -41,7 +41,6 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 			
 		}
  		
- 		
 	}
 	
 	public void mostrar_productos() throws PersistentException {

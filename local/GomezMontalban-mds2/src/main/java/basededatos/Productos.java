@@ -72,17 +72,6 @@ public class Productos {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 					.beginTransaction();
 
-//			Producto[] p = basededatos.ProductoDAO.listProductoByQuery(null, null);
-//			
-//			for(Producto pr:  p) {
-//				if(pr.getNombre().equals(aNombre)) {
-//					Foto foto1 = basededatos.FotoDAO.createFoto();
-//					foto1.setLink_foto(aFoto1);
-//					foto1.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(pr.getORMID()));
-//					basededatos.FotoDAO.save(foto1);
-//				}
-//			}
-
 			Producto producto = basededatos.ProductoDAO.createProducto();
 			Categoria[] categorias = basededatos.CategoriaDAO.listCategoriaByQuery(null, null);
 
@@ -104,14 +93,6 @@ public class Productos {
 			asociar_foto(producto,aFoto4 );
 			asociar_foto(producto,aFoto5 );
 			
-
-		
-//			basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()).tiene_fotos.add(foto1);
-//			basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()).tiene_fotos.add(foto2);
-//			basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()).tiene_fotos.add(foto3);
-//			basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()).tiene_fotos.add(foto4);
-//			basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()).tiene_fotos.add(foto5);
-
 			pt.commit();
 		} catch (PersistentException e) {
 			e.printStackTrace();
@@ -147,10 +128,7 @@ public class Productos {
 					Foto foto = basededatos.FotoDAO.createFoto();
 					foto.setLink_foto(link);
 					foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
-					basededatos.FotoDAO.save(foto);
-				
-			
-
+					basededatos.FotoDAO.save(foto);		
 			pt.commit();
 		} catch (PersistentException e) {
 			e.printStackTrace();
