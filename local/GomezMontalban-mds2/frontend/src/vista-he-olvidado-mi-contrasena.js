@@ -33,8 +33,8 @@ class VistaHeOlvidadoMiContrasena extends PolymerElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-  <vaadin-button theme="primary">
-   Enviar
+  <vaadin-button theme="primary" id="buttonEnviarPasword">
+    Enviar 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

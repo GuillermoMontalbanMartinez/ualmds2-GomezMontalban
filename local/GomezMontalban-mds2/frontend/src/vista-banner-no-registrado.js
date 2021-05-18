@@ -20,11 +20,11 @@ class VistaBannerNoRegistrado extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; justify-content: center; height: 100%; width: 100%;">
   <vaadin-horizontal-layout style="flex-shrink: 0; align-self: center; flex-grow: 0; justify-content: center; margin-right: var(--lumo-space-m);">
    <vaadin-button theme="primary" id="getPrincipal">
-    Principal
+     Principal 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; flex-grow: 1;">
-   <vaadin-text-field placeholder="Search" style="flex-shrink: 1; align-self: center; flex-grow: 1;">
+   <vaadin-text-field placeholder="Search" style="flex-shrink: 1; align-self: center; flex-grow: 1;" id="buscadorTextField">
     <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
    </vaadin-text-field>
   </vaadin-horizontal-layout>

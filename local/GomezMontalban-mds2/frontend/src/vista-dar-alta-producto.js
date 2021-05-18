@@ -30,7 +30,7 @@ class VistaDarAltaProducto extends PolymerElement {
        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Nombre</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-       <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);background-color:white;" id="textNombre"></vaadin-text-field>
+       <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textNombre"></vaadin-text-field>
       </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
@@ -40,7 +40,7 @@ class VistaDarAltaProducto extends PolymerElement {
        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Precio</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); margin-left: var(--lumo-space-xl);">
-       <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);background-color:white;" id="textPrecio"></vaadin-text-field>
+       <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textPrecio"></vaadin-text-field>
       </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
@@ -56,7 +56,7 @@ class VistaDarAltaProducto extends PolymerElement {
      <h4 style="flex-shrink: 0; align-self: center;">Descripción</h4>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="height: 100%; width: 100%;">
-     <vaadin-text-area style="height: 100%; width: 100%; flex-shrink: 0; align-self: center; background-color:white;" id="textArea"></vaadin-text-area>
+     <vaadin-text-area style="height: 100%; width: 100%; flex-shrink: 0; align-self: center; " id="textArea"></vaadin-text-area>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>

@@ -20,6 +20,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Fotos _db_fotos;
 	public Items _db_item = new Items();
 
+
 	public void baja_categoria(String nombreCategoria) {
 		_db_categorias.baja_categoria(nombreCategoria);
 	}
@@ -181,8 +182,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void anadir_al_carrito(int aId_Producto, int aIdusuario) throws PersistentException {
-		_db_item.anadir_al_carrito(aId_Producto, aIdusuario);
+	public void anadir_al_carrito(int aId_item) {
+		throw new UnsupportedOperationException();
 	}
 
 	public void publicar(int aValoracion, String aCuerpo, int aId_producto) {
@@ -248,6 +249,17 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 			String provincia, int codigoPostal, String numeroTarjeta, String titularTarjeta, String fechaCaducidad,
 			int cvv, String img, int id) throws PersistentException {
 		_db_cibernautas_registrados.modificar_datos_personales(nombreUsuario, apellidos, correo, contrasena, repetirContrasena, telefono, Pais, localidad, calle, portal, provincia, codigoPostal, numeroTarjeta, titularTarjeta, fechaCaducidad, cvv, img, id);
+		
+	}
+
+	public void BajaCuentaCibernautaRegistrado() throws PersistentException {
+		_db_cibernautas_registrados.BajaCuentaCibernautaRegistrado();
+		
+	}
+
+	@Override
+	public void anadir_al_carrito(int aIdProducto, int aIdUsuario) throws PersistentException {
+		// TODO Auto-generated method stub
 		
 	}
 	

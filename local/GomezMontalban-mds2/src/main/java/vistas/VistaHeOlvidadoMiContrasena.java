@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-he-olvidado-mi-contrasena template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-he-olvidado-mi-contrasena.js")
 public class VistaHeOlvidadoMiContrasena extends PolymerTemplate<VistaHeOlvidadoMiContrasena.VistaHeOlvidadoMiContrasenaModel> {
 
-    /**
+    @Id("buttonEnviarPasword")
+	private Button buttonEnviarPasword;
+
+	/**
      * Creates a new VistaHeOlvidadoMiContrasena.
      */
     public VistaHeOlvidadoMiContrasena() {

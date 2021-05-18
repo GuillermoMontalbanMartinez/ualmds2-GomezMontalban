@@ -26,7 +26,8 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 	private Element layoutBannerAdmin;
 	@Id("LayoutcuerpoAdmin")
 	private Element layoutcuerpoAdmin;
-
+	@Id("ButtonMostrarTodosLosProductos")
+	private Button vaadinButtonMostrarTodosLosProductos;
 	/**
      * Creates a new VistaAdministrador.
      */
@@ -63,6 +64,14 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 
 	public void setLayoutcuerpoAdmin(Element layoutcuerpoAdmin) {
 		this.layoutcuerpoAdmin = layoutcuerpoAdmin;
+	}
+
+	public Button getVaadinButtonMostrarTodosLosProductos() {
+		return vaadinButtonMostrarTodosLosProductos;
+	}
+
+	public void setVaadinButtonMostrarTodosLosProductos(Button vaadinButtonMostrarTodosLosProductos) {
+		this.vaadinButtonMostrarTodosLosProductos = vaadinButtonMostrarTodosLosProductos;
 	}
 
 	

@@ -115,4 +115,24 @@ public class Cibernautas_registrados {
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
+
+	public void BajaCuentaCibernautaRegistrado() throws PersistentException {
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		
+		try {
+//			Cibernauta_registrado[] cibernautaRegistrado = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
+//			for (Cibernauta_registrado cbr : cibernautaRegistrado) {
+//				if ( )
+//					t.commit();
+//			}
+			basededatos.Cibernauta_registradoDAO.delete(null);
+			t.commit();
+			
+		} catch(PersistentException e) {
+			t.rollback();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+	}
+
 }
