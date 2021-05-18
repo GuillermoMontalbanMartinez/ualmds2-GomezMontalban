@@ -16,8 +16,7 @@ class VistaDarAltaCuenta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;background: rgb(174,238,236);
-background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutDarAltaCuenta">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutDarAltaCuenta">
  <h4 style="align-self: center; margin-bottom: var(--lumo-space-xl);">Dar de alta cuenta de usuario</h4>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout style="align-self: center;">

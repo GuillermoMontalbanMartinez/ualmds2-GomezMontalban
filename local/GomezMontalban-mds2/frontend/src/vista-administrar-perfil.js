@@ -13,7 +13,7 @@ class VistaAdministrarPerfil extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
+<vaadin-vertical-layout style="align-items: center;">
  <h2>Administrar perfil</h2>
  <vaadin-button theme="primary" style="width: 50%; margin-bottom: var(--lumo-space-l);" id="ultimasComprasRealizadas">
    Últimas compras realizadas 

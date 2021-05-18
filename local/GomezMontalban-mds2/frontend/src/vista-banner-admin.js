@@ -14,7 +14,7 @@ class VistaBannerAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;background-color: #e6ffe6; border-radius: 20px; border : 1px solid black;" id="vaadinVerticalLayoutBannerAdmin">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutBannerAdmin">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; width: 100%; align-self: center; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0;"></vaadin-horizontal-layout>
