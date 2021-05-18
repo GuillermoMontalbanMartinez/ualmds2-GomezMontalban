@@ -89,7 +89,6 @@ public class Cibernautas_registrados {
 			int cvv, String img, int id) throws PersistentException {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
 		try {
-			// Cibernauta_registrado cibernautaRegistrado[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
 			Cibernauta_registrado cb = Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(id);
 			
 				if (contrasena.equals(repetirContrasena)) {

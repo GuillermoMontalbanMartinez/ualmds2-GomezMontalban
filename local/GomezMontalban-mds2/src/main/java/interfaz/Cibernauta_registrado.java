@@ -224,7 +224,22 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 			}
 		});
-
+		
+		this._banner_registrado._administrar_perfil._modificar_datos_personales.getButtonCancelar().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout.remove(_banner_registrado._administrar_perfil._modificar_datos_personales);
+				layout.add(_banner_registrado._administrar_perfil);
+			}
+		});
+		
+		this._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonCancelarBajaUsuario().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout.remove(_banner_registrado._administrar_perfil._dar_de_baja_usuario);
+				layout.add(_banner_registrado._administrar_perfil);
+			}
+		});
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {

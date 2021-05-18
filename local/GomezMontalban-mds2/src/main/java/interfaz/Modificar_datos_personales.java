@@ -88,6 +88,20 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 				}
 			}
 		});
+		
+//		this.getButtonCancelar().addClickListener(new ComponentEventListener() {
+//			@Override
+//			public void onComponentEvent(ComponentEvent event) {
+//				try {
+//					modificar_datos_personales();
+//					Notification.show("Datos modificados");
+//				} catch (PersistentException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+		
 
 		this.getUploader().setReceiver(buffer);
 
