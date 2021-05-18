@@ -24,7 +24,7 @@ public class Administrador extends VistaAdministrador {
 	public Buscar_producto_admin buscar_producto_admin;
 	public VerticalLayout layout_administrador;
 	public VerticalLayout layout_cuerpo_administrador;
-
+	public Acceder_al_catalogo_admin catalogoAdmin;
 
 	
 	public Administrador() {
@@ -322,7 +322,7 @@ public class Administrador extends VistaAdministrador {
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin);
-				layout_administrador.add(catalogoAdmin);
+		//		layout_administrador.add(catalogoAdmin);
 			}
 		});
 		
