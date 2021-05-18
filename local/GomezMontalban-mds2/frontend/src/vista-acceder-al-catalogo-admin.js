@@ -16,20 +16,18 @@ class VistaAccederAlCatalogoAdmin extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; margin: var(--lumo-space-m); align-items: center; justify-content: center;" theme="spacing" id="layoutCatalogoAdmin">
- <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: flex-start; align-items: center; justify-content: center; width: 100%;">
-  <h1 style="width: 100%; margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;">Catálogo</h1>
+ <h1 style="flex-shrink: 0; align-self: flex-start;">Catálogo </h1>
+</vaadin-vertical-layout>
+<vaadin-horizontal-layout style="height: 100%;">
+ <vaadin-vertical-layout style="width: 20%; align-items: flex-start;">
+  <vista-categorias-admin style="width: 100%;"></vista-categorias-admin>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">
-  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: flex-start; width: 100%;">
-   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center; width: 40%;">
-    <vista-categorias-admin></vista-categorias-admin>
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; width: 40%; margin: var(--lumo-space-m); align-self: center;" id="layoutProductosAdmin">
-    <vista-productos-admin style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="layoutVistaProductosAdmin"></vista-productos-admin>
-   </vaadin-horizontal-layout>
+ <vaadin-vertical-layout id="layoutProductosCatalogoAdmin" style="width: 80%;">
+  <vaadin-horizontal-layout style="width: 100%;">
+   <vista-productos-admin></vista-productos-admin>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
-</vaadin-vertical-layout>
+</vaadin-horizontal-layout>
 `;
     }
 

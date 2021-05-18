@@ -8,6 +8,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import vistas.VistaProductosAdmin;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 /**
  * A Designer generated component for the vista-acceder-al-catalogo-admin template.
@@ -21,10 +22,8 @@ public class VistaAccederAlCatalogoAdmin extends PolymerTemplate<VistaAccederAlC
 
     @Id("layoutCatalogoAdmin")
 	private Element layoutCatalogoAdmin;
-	@Id("layoutProductosAdmin")
-	private HorizontalLayout layoutProductosAdmin;
-	@Id("layoutVistaProductosAdmin")
-	private VistaProductosAdmin layoutVistaProductosAdmin;
+	@Id("layoutProductosCatalogoAdmin")
+	private VerticalLayout layoutProductosCatalogoAdmin;
 
 	/**
      * Creates a new VistaAccederAlCatalogoAdmin.
@@ -48,19 +47,12 @@ public class VistaAccederAlCatalogoAdmin extends PolymerTemplate<VistaAccederAlC
 		this.layoutCatalogoAdmin = layoutCatalogoAdmin;
 	}
 
-	public VistaProductosAdmin getLayoutVistaProductosAdmin() {
-		return layoutVistaProductosAdmin;
+
+	public VerticalLayout getLayoutProductosCatalogoAdmin() {
+		return layoutProductosCatalogoAdmin;
 	}
 
-	public void setLayoutVistaProductosAdmin(VistaProductosAdmin layoutVistaProductosAdmin) {
-		this.layoutVistaProductosAdmin = layoutVistaProductosAdmin;
-	}
-
-	public HorizontalLayout getLayoutProductosAdmin() {
-		return layoutProductosAdmin;
-	}
-
-	public void setLayoutProductosAdmin(HorizontalLayout layoutProductosAdmin) {
-		this.layoutProductosAdmin = layoutProductosAdmin;
+	public void setLayoutProductosCatalogoAdmin(VerticalLayout layoutProductosCatalogoAdmin) {
+		this.layoutProductosCatalogoAdmin = layoutProductosCatalogoAdmin;
 	}
 }

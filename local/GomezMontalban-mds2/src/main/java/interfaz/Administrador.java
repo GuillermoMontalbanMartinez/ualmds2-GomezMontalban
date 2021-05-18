@@ -321,12 +321,13 @@ public class Administrador extends VistaAdministrador {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				layout_administrador.removeAll();
+				layout_cuerpo_administrador.removeAll();
 				layout_administrador.add(banner_admin);
-		//		layout_administrador.add(catalogoAdmin);
+				layout_administrador.add(catalogoAdmin);
 			}
 		});
 		
-		
-	
 	}
+
+	
 }

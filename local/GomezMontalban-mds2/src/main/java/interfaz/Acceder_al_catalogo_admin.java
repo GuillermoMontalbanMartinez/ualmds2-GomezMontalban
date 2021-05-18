@@ -8,19 +8,19 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Producto;
+import vistas.VistaAccederAlCatalogoAdmin;
 
-public class Acceder_al_catalogo_admin {
+public class Acceder_al_catalogo_admin extends VistaAccederAlCatalogoAdmin {
 	public Buscar_producto_admin _buscar_producto_admin;
 	public Categorias_admiin _categorias_admin;
 	public Productos_catalogo_admin _productos_catalogo_admin;
-	public HorizontalLayout listaProductos;
+	public VerticalLayout listaProductos;
 	ArrayList<Producto> productos;
 	ArrayList<interfaz.Producto> vista_productos;
 	private String usuario;
 
 	public Acceder_al_catalogo_admin() {
-//		listaProductos = this.getLayoutProductosCatalogo();
-		listaProductos = this.listaProductos;
+		listaProductos = this.getLayoutProductosCatalogoAdmin();
 		vista_productos = new ArrayList<interfaz.Producto>();
 
 		try {
@@ -51,6 +51,11 @@ public class Acceder_al_catalogo_admin {
 
 		}
 
+	}
+	
+	public void eliminar_producto() {
+		listaProductos.removeAll();
+		vista_productos.clear();
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {
