@@ -33,12 +33,19 @@ public class MainView extends VerticalLayout {
 		Cibernauta cibernauta = new Cibernauta();
 		add(cibernauta);
 		login(cibernauta);
-		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
-			volver_a_principal(cibernauta);
-		});
+		
 	}
 
 	public void login(Cibernauta cibernauta) {
+		
+		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
+			volver_a_principal(cibernauta);
+		});
+		
+		cibernauta._banner_no_registrado.getGetPrincipal().addClickListener(t -> {
+			volver_a_principal(cibernauta);
+		});
+		
 		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addLoginListener(e -> {
 
 			String usuario = e.getUsername();
@@ -87,6 +94,9 @@ public class MainView extends VerticalLayout {
 								cerrar_sesion(registrado, cibernauta);
 							});
 
+					registrado._banner_registrado.getPrincipalButton().addClickListener(event ->{
+						volver_a_principal(registrado);
+					});
 					remove(cibernauta);
 					add(registrado);
 
@@ -101,6 +111,8 @@ public class MainView extends VerticalLayout {
 					cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().setError(true);
 					break;
 				}
+				
+				
 
 			} catch (PersistentException e1) {
 				e1.printStackTrace();
@@ -139,7 +151,6 @@ public class MainView extends VerticalLayout {
 	
 	public void volver_a_principal(Cibernauta c) {
 		Cibernauta cibernauta = new Cibernauta();
-
 		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
 			volver_a_principal(cibernauta);
 		});
@@ -149,4 +160,30 @@ public class MainView extends VerticalLayout {
 
 		login(cibernauta);
 	}
+	
+	
+	public void volver_a_principal(Cibernauta_registrado c) {
+		Cibernauta_registrado registrado = new Cibernauta_registrado();
+		Cibernauta cibernauta = new Cibernauta();
+
+		try {
+			registrado.setUsuario(c.getUsuario());
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		registrado._banner_registrado.getPrincipalButton().addClickListener(t -> {
+			volver_a_principal(registrado);
+		});
+
+		remove(c);
+		add(registrado);
+
+		login(cibernauta);
+		registrado._banner_registrado._administrar_perfil._cerrar_sesion.getCerrarSesionBoton().addClickListener(t -> {
+
+			cerrar_sesion(c, cibernauta);
+		});
+	}
+	
 }

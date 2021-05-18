@@ -16,7 +16,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Compras_enviadas _db_compras_enviadas;
 	public Compras_recibidas _db_compras_recibidas;
 	public Fotos _db_fotos;
-	public Items _db_item;
+	public Items _db_item = new Items();;
 
 	public void baja_categoria(String nombreCategoria) {
 		_db_categorias.baja_categoria(nombreCategoria);
@@ -179,8 +179,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void anadir_al_carrito(int aId_item) {
-		throw new UnsupportedOperationException();
+	public void anadir_al_carrito(int aId_Producto, int aIdusuario) throws PersistentException {
+		_db_item.anadir_al_carrito(aId_Producto, aIdusuario);
 	}
 
 	public void publicar(int aValoracion, String aCuerpo, int aId_producto) {

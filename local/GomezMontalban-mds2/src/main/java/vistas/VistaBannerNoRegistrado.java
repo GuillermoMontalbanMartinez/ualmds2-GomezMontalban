@@ -19,6 +19,8 @@ public class VistaBannerNoRegistrado extends PolymerTemplate<VistaBannerNoRegist
 
     @Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("getPrincipal")
+	private Button getPrincipal;
 
 	/**
      * Creates a new VistaBannerNoRegistrado.
@@ -40,5 +42,13 @@ public class VistaBannerNoRegistrado extends PolymerTemplate<VistaBannerNoRegist
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public Button getGetPrincipal() {
+		return getPrincipal;
+	}
+
+	public void setGetPrincipal(Button getPrincipal) {
+		this.getPrincipal = getPrincipal;
 	}
 }

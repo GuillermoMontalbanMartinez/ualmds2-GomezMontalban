@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-productos-seleccionados template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-productos-seleccionados.js")
 public class VistaProductosSeleccionados extends PolymerTemplate<VistaProductosSeleccionados.VistaProductosSeleccionadosModel> {
 
-    /**
+    @Id("listaProductosSeleccionadosLAyout")
+	private Element listaProductosSeleccionadosLAyout;
+
+	/**
      * Creates a new VistaProductosSeleccionados.
      */
     public VistaProductosSeleccionados() {
@@ -28,4 +33,12 @@ public class VistaProductosSeleccionados extends PolymerTemplate<VistaProductosS
     public interface VistaProductosSeleccionadosModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getListaProductosSeleccionadosLAyout() {
+		return listaProductosSeleccionadosLAyout;
+	}
+
+	public void setListaProductosSeleccionadosLAyout(Element listaProductosSeleccionadosLAyout) {
+		this.listaProductosSeleccionadosLAyout = listaProductosSeleccionadosLAyout;
+	}
 }

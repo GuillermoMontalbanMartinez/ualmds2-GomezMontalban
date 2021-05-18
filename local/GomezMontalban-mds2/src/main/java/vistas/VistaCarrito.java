@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import vistas.VistaProductosSeleccionados;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-carrito template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-carrito.js")
 public class VistaCarrito extends PolymerTemplate<VistaCarrito.VistaCarritoModel> {
 
-    /**
+    @Id("vistaProductosSeleccionados")
+	private VistaProductosSeleccionados vistaProductosSeleccionados;
+
+	/**
      * Creates a new VistaCarrito.
      */
     public VistaCarrito() {
@@ -28,4 +33,12 @@ public class VistaCarrito extends PolymerTemplate<VistaCarrito.VistaCarritoModel
     public interface VistaCarritoModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public VistaProductosSeleccionados getVistaProductosSeleccionados() {
+		return vistaProductosSeleccionados;
+	}
+
+	public void setVistaProductosSeleccionados(VistaProductosSeleccionados vistaProductosSeleccionados) {
+		this.vistaProductosSeleccionados = vistaProductosSeleccionados;
+	}
 }

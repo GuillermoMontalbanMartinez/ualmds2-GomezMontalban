@@ -22,7 +22,7 @@ public interface iCibernauta_registrado {
 
 	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto);
 
-	public void anadir_al_carrito(int aId_item);
+	public void anadir_al_carrito(int aIdProducto, int aIdUsuario) throws PersistentException;
 
 	public void aumentar_unidad_producto(int aId_item);
 

@@ -29,14 +29,31 @@ public class Items {
 //		throw new UnsupportedOperationException();
 //	}
 	
-	public void anadir_al_carrito(int idProducto) throws PersistentException {
-		try {
-			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+	public void anadir_al_carrito(int idProducto, int idUsuario) throws PersistentException {
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+
+		try {	
+			
+			Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO.getCibernauta_registradoByORMID(idUsuario);
+
+			
+			Producto producto = basededatos.ProductoDAO.loadProductoByORMID(idProducto);
 			Item item = basededatos.ItemDAO.createItem();
 			item.setCantidad(1);
-			item.setEsta_asociado_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(idProducto));
+			item.setEsta_asociado_a_un_producto(producto);
+			basededatos.ItemDAO.save(item);
+
+			Compra compra = basededatos.CompraDAO.createCompra();
+			compra.setTotal_productos(1);
+			compra.setTiene_asociado_un_cibernauta_registrado(cb);
+			compra.setTiene_item(item);
+			compra.setPrecio_compra(producto.getPrecio());
+			basededatos.CompraDAO.save(compra);
+			
+			t.commit();
 			// item.setEsta_asociado_a_una_compra(compra);
 		} catch (PersistentException e) {
+			t.rollback();
 			e.printStackTrace();
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();

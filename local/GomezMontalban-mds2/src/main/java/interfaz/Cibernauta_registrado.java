@@ -12,6 +12,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 	public HorizontalLayout banner;
 	public VerticalLayout layout;
 	private String usuario;
+	Acceder_al_catalogo catalogo;
 
 	public Cibernauta_registrado() {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
@@ -19,7 +20,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		banner = this.getBanner();
 		banner.add(_banner_registrado);
 
-		Acceder_al_catalogo catalogo = new Acceder_al_catalogo();
+		catalogo = new Acceder_al_catalogo();
 
 		_banner_registrado.getCorreo().addClickListener(new ComponentEventListener() {
 
@@ -203,6 +204,24 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 			}
 		});
+		
+		
+		this._banner_registrado.getCarritoButton().addClickListener(new ComponentEventListener() {
+
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				try {
+					_banner_registrado._carrito_registrado.mostrar_productos();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				layout.removeAll();
+				layout.add(_banner_registrado);
+				layout.add(_banner_registrado._carrito_registrado);
+
+			}
+		});
 
 
 		this._banner_registrado._correo_usuario._redactar_correo.getCancelar().addClickListener(new ComponentEventListener() {
@@ -224,7 +243,32 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 			}
 		});
+		
+		for(Producto p : catalogo.vista_productos) {
 
+			p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					try {
+						p.añadir_al_carrito();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			});
+
+		}
+		
+		this._banner_registrado.getCarritoButton().addClickListener(new ComponentEventListener() {
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout.removeAll();
+				layout.add(_banner_registrado);
+				layout.add(_banner_registrado._carrito_registrado);
+			}
+		});
+		
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {
@@ -232,6 +276,15 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		_banner_registrado._correo_usuario.setUsuario(usuario);
 		_banner_registrado._correo_usuario._redactar_correo.setAutor(usuario);
 		_banner_registrado._administrar_perfil._modificar_datos_personales.setUsuario(usuario);
+		_banner_registrado._carrito_registrado.setUsuario(usuario);
+		catalogo.setUsuario(usuario);
+
 	}
+	
+	public String getUsuario() {
+		return this.usuario;
+	}
+	
+	
 
 }

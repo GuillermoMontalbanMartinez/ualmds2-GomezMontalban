@@ -21,6 +21,10 @@ public class VistaBannerRegistrado extends PolymerTemplate<VistaBannerRegistrado
 	private Button correo;
 	@Id("Perfil")
 	private Button perfil;
+	@Id("principalButton")
+	private Button principalButton;
+	@Id("carritoButton")
+	private Button carritoButton;
 
 	/**
      * Creates a new VistaBannerRegistrado.
@@ -50,5 +54,21 @@ public class VistaBannerRegistrado extends PolymerTemplate<VistaBannerRegistrado
 
 	public void setCorreo(Button correo) {
 		this.correo = correo;
+	}
+
+	public Button getPrincipalButton() {
+		return principalButton;
+	}
+
+	public void setPrincipalButton(Button principalButton) {
+		this.principalButton = principalButton;
+	}
+
+	public Button getCarritoButton() {
+		return carritoButton;
+	}
+
+	public void setCarritoButton(Button carritoButton) {
+		this.carritoButton = carritoButton;
 	}
 }

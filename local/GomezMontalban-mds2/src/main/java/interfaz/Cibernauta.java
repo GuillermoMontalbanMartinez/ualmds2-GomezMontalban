@@ -74,6 +74,25 @@ public class Cibernauta extends Cibernauta_común {
 			}
 		});
 		
+		for(interfaz.Producto p : this.catalogo.vista_productos) {
+			p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
+				
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					layout.removeAll();
+					layout.add(_banner_no_registrado);
+					layout.add(inicio_sesion);
+					catalogo.eliminar_producto();
+					
+				}
+			});
+			
+			
+			
+	
+		}
+		
+		
 		
 	}
 	

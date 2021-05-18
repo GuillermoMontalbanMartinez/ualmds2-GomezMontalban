@@ -12,7 +12,7 @@ class VistaProductosSeleccionados extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout></vaadin-vertical-layout>
+<vaadin-vertical-layout id="listaProductosSeleccionadosLAyout"></vaadin-vertical-layout>
 `;
     }
 
