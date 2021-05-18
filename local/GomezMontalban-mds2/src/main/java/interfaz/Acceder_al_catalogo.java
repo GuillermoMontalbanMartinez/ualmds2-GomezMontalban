@@ -58,6 +58,7 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 	
 	public void eliminar_producto() {
 		listaProductos.removeAll();
+		vista_productos.clear();
 	}
 	
 	

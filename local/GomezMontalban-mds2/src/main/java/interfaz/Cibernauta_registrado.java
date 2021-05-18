@@ -210,6 +210,9 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
+				
+				_banner_registrado._carrito_registrado.eliminar_productos();
+
 				try {
 					_banner_registrado._carrito_registrado.mostrar_productos();
 				} catch (PersistentException e) {
@@ -260,14 +263,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 		}
 		
-		this._banner_registrado.getCarritoButton().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout.removeAll();
-				layout.add(_banner_registrado);
-				layout.add(_banner_registrado._carrito_registrado);
-			}
-		});
+		
 		
 		this._banner_registrado._administrar_perfil._modificar_datos_personales.getButtonCancelar().addClickListener(new ComponentEventListener() {
 			@Override
@@ -284,6 +280,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 				layout.add(_banner_registrado._administrar_perfil);
 			}
 		});
+		
+	
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {

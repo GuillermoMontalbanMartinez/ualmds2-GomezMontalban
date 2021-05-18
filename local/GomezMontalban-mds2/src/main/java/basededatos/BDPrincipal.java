@@ -1,5 +1,7 @@
 package basededatos;
 
+import java.util.ArrayList;
+
 import org.orm.PersistentException;
 
 public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_común, iCibernauta_registrado, iCorreo, iEmpresa_de_transportes, iEncargado_de_compras, ICompra, iItem, iBanco {
@@ -16,7 +18,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Compras_enviadas _db_compras_enviadas;
 	public Compras_recibidas _db_compras_recibidas;
 	public Fotos _db_fotos;
-	public Items _db_item = new Items();;
+	public Items _db_item = new Items();
 
 	public void baja_categoria(String nombreCategoria) {
 		_db_categorias.baja_categoria(nombreCategoria);
@@ -142,12 +144,12 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void aumentar_unidad_producto(int aId_item) {
-		throw new UnsupportedOperationException();
+	public void aumentar_unidad_producto(int aId_item) throws PersistentException {
+		_db_item.aumentar_unidad_producto(aId_item);
 	}
 
-	public void decrementar_unidad_producto(int aId_item) {
-		throw new UnsupportedOperationException();
+	public void decrementar_unidad_producto(int aId_item) throws PersistentException {
+		_db_item.decrementar_unidad_producto(aId_item);
 	}
 
 	public void eliminar_producto(int aId_item) {
@@ -216,8 +218,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public Item[] cargar_productos_seleccionados(int aId_usuario) {
-		throw new UnsupportedOperationException();
+	public ArrayList<Item> cargar_productos_seleccionados(int aId_usuario) throws PersistentException{
+		return _db_item.cargar_productos_seleccionados(aId_usuario);
 	}
 	
 	public Categoria[] cargar_categoria() throws PersistentException {
