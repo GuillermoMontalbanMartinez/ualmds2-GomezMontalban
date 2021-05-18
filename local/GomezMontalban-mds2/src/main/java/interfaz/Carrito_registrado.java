@@ -28,14 +28,17 @@ public class Carrito_registrado extends Carrito {
 		vista_productos = new ArrayList<interfaz.Producto_seleccionado>();
 
 	}
-	
+
 	public void cargar_productos_seleccionados() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		for(Item i : bd.cargar_productos_seleccionados(id)) {
-			productos.add(i.getEsta_asociado_a_un_producto());
+		ArrayList<Item> items = bd.cargar_productos_seleccionados(id);
+		if (!(items == null)) {
+			for (Item i : items) {
+				productos.add(i.getEsta_asociado_a_un_producto());
+			}
+
 		}
-		
-		
+
 	}
 
 	public void mostrar_productos() throws PersistentException {
@@ -61,7 +64,6 @@ public class Carrito_registrado extends Carrito {
 	public void confirmar_compra() {
 		throw new UnsupportedOperationException();
 	}
-	
 
 	public void setUsuario(String usuario) throws PersistentException {
 		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
