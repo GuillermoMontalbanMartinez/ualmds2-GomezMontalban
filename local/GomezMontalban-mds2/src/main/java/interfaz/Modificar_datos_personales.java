@@ -29,7 +29,7 @@ import elemental.json.Json;
 import src.net.dv8tion.Uploader;
 import vistas.VistaModificarDatosPersonales;
 
-public class Modificar_datos_personales extends VistaModificarDatosPersonales{
+public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 	public Administrar_perfil _administrar_perfil;
 	public Carrito_registrado _carrito_registrado;
 	public BDPrincipal bdPrincipal;
@@ -55,8 +55,27 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 	MultiFileMemoryBuffer buffer = new MultiFileMemoryBuffer();
 	Div output = new Div();
 
-	
 	public Modificar_datos_personales() {
+
+//
+//		this.getTextNombreDeUsuario().setValue(nombre);
+//		this.getTextApellidos().setValue(apellidos);
+//		this.getTextCorreo().setValue(correoElectronico);
+//		this.getTextTelefono().setValue(telefono);
+//		this.getTextPassword().setValue(password);
+//		this.getTextRepeatPassword().setValue(passwordRepeat);
+//		this.getTextPais().setValue(pais);
+//		this.getTextLocalidad().setValue(localidad);
+//		this.getTextCalle().setValue(calle);
+//		this.getTextProvincia().setValue(provincia);
+//		this.getTextCogidoPostal().setValue(String.valueOf(cp));
+//		this.getVistaDatosDePago().getTextTitularTarjeta().setValue(titular);
+//		this.getVistaDatosDePago().getTextNumeroTarjeta().setValue(numeroTarjeta);
+//		this.getVistaDatosDePago().getTextFechaCaducidad().setName(String.valueOf(fechaCaducidad));
+//		this.getVistaDatosDePago().getTextCVVTarjeta().setValue(String.valueOf(cvv));
+//		this.getImagen().setSrc(src);
+		
+		
 		this.getTextGuardarCambios().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -69,12 +88,9 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 				}
 			}
 		});
-		
 
-	 
 		this.getUploader().setReceiver(buffer);
-		
-		
+
 		// UPLOADER PRINCIPAL
 		this.getUploader().addSucceededListener(event -> {
 
@@ -110,13 +126,13 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 		getButtonCancelar().addClickListener(event -> {
 			borrar_datos();
 		});
-		
-		
+
 	}
+
 
 	public void modificar_datos_personales() throws PersistentException {
 		bdPrincipal = new BDPrincipal();
-		
+
 		nombre = this.getTextNombreDeUsuario().getValue().toString();
 		apellidos = this.getTextApellidos().getValue().toString();
 		correoElectronico = this.getTextCorreo().getValue().toString();
@@ -135,29 +151,31 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales{
 		fechaCaducidad = this.getVistaDatosDePago().getTextFechaCaducidad().getValue().toString();
 		cvv = Integer.parseInt(this.getVistaDatosDePago().getTextCVVTarjeta().getValue().toString());
 
-		bdPrincipal._db_cibernautas_registrados.modificar_datos_personales(nombre, apellidos, correoElectronico, password, passwordRepeat, telefono, pais, localidad, calle, portal, provincia, cp, titular, numeroTarjeta, fechaCaducidad, cvv, src, id);
+		bdPrincipal._db_cibernautas_registrados.modificar_datos_personales(nombre, apellidos, correoElectronico,
+				password, passwordRepeat, telefono, pais, localidad, calle, portal, provincia, cp, titular,
+				numeroTarjeta, fechaCaducidad, cvv, src, id);
 	}
 
 	public void adjuntar_nueva_foto_de_perfil() {
 		throw new UnsupportedOperationException();
 	}
-	
+
 	private void showOutput(String text, Component content, HasComponents outputContainer) {
 		HtmlComponent p = new HtmlComponent(Tag.P);
 		p.getElement().setText(text);
 		outputContainer.add(p);
 		outputContainer.add(content);
 	}
-	
+
 	public void borrar_datos() {
 		this.getUploader().getElement().setPropertyJson("files", Json.createArray());
 		this.getImagen().setVisible(false);
 
 	}
-	
+
 	public void setUsuario(String nombre) throws PersistentException {
 		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
-		
+
 		for (Cibernauta_registrado cib : cb) {
 			if (cib.getNombre().equals(nombre)) {
 				id = cib.getORMID();

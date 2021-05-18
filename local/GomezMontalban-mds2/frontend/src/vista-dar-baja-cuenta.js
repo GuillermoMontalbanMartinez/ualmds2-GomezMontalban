@@ -15,7 +15,7 @@ class VistaDarBajaCuenta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutDarDeBajaCuentaDeUsuario">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutDarDeBajaCuentaDeUsuario">
  <h1 style="align-self: center; margin-bottom: var(--lumo-space-m); margin: var(--lumo-space-xl);">Dar de baja cuenta de usuario</h1>
  <vaadin-vertical-layout theme="spacing" style="align-items: center; align-self: center; flex-shrink: 0; justify-content: center; margin-bottom: var(--lumo-space-m);">
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center;">

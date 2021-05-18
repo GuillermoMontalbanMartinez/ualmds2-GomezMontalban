@@ -15,7 +15,7 @@ class VistaProductoCompradoRecientemente extends PolymerElement {
                 }
             </style>
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="height: 100%; width: 100%; border: #ccc solid 2px; border-radius : 20px; background : #efefef; padding-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); justify-content: flex-end;">
+ <vaadin-horizontal-layout theme="spacing" style="height: 100%; width: 100%; ">
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0; justify-content: center; align-items: center; margin-left: var(--lumo-space-xl); width: 15%; height: 60%;">
    <img style="height: 100%; width: 100%;">
   </vaadin-horizontal-layout>
@@ -41,10 +41,10 @@ class VistaProductoCompradoRecientemente extends PolymerElement {
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 15%; height: 100%; align-items: center; justify-content: center;">
   <vaadin-button theme="primary" style="margin-bottom: var(--lumo-space-l);">
-   Volver a comprar
+    Volver a comprar 
   </vaadin-button>
   <vaadin-button theme="primary" style="width: 90%;">
-   Reseñar
+    Reseñar 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>

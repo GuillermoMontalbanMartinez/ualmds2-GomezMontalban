@@ -13,7 +13,7 @@ class VistaAdministrarProductos extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutAdministrarProductos">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAdministrarProductos">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;">
   <h1>Administrar productos</h1>
  </vaadin-vertical-layout>

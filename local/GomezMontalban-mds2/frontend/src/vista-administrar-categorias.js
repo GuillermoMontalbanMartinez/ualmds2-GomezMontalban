@@ -15,8 +15,7 @@ class VistaAdministrarCategorias extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;background: rgb(174,238,236);
-background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutAdministrarCategorias">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayoutAdministrarCategorias">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
   <h1 style="margin: var(--lumo-space-m); align-self: center;font-weight: bold;">Administrar categorias</h1>
  </vaadin-vertical-layout>
@@ -31,7 +30,7 @@ background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1)
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
      <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); background-color : white;" id="textCategoria" autoselect autofocus>
-       background-color : white;
+       background-color : white; 
      </vaadin-text-field>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>

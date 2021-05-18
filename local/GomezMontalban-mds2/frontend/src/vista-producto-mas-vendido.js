@@ -13,7 +13,7 @@ class VistaProductoMasVendido extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; border: #ccc solid 2px; border-radius : 20px; background : #efefef;" id="vaadinHorizontalLayoutProductoMasVendido">
+<vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; " id="vaadinHorizontalLayoutProductoMasVendido">
  <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0; height: 15%; justify-content: center; width: 15%; align-items: center; margin-left: var(--lumo-space-xl);"></vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="height: 80%; justify-content: space-between; width: 100%; align-self: center;">
   <vaadin-vertical-layout theme="spacing" style="height: 10%; width: 100%; align-items: stretch; justify-content: center;">

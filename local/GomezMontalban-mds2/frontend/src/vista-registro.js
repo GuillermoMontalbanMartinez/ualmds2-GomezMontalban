@@ -19,8 +19,7 @@ class VistaRegistro extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%;
-background: rgb(174,238,236);
-background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
+">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; margin: var(--lumo-space-m); flex-shrink: 0;">
   <img style="width: 100%; height: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;">
  </vaadin-vertical-layout>

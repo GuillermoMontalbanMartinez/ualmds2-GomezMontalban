@@ -17,7 +17,7 @@ class VistaDarAltaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutAltaProducto">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAltaProducto">
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m);">
   <h1>Dar alta producto</h1>
  </vaadin-vertical-layout>

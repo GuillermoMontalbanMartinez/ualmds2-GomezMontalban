@@ -16,10 +16,8 @@ class VistaPublicarOferta extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;background: rgb(174,238,236);
-background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="VerticalLayoutPublicarOfertas">
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;background: rgb(174,238,236);
-background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="VerticalLayoutPublicarOfertas">
+ <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;">
   <h1 style="align-self: center; flex-shrink: 0;">Añadir ofertas</h1>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0;">

@@ -14,6 +14,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.theme.lumo.Lumo;
+import com.vaadin.flow.theme.material.*;
 
 import basededatos.BDPrincipal;
 import basededatos.iCibernauta_registrado;
@@ -26,6 +29,8 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 @PWA(name = "Vaadin Application", shortName = "Vaadin App", description = "This is an example Vaadin application.", enableInstallPrompt = false)
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
+@Theme(value = Lumo.class, variant = Lumo.DARK)
+// @Theme(value = Material.class, variant = Material.DARK)
 
 public class MainView extends VerticalLayout {
 

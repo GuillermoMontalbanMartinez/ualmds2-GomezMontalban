@@ -13,8 +13,7 @@ class VistaCerrarSesion extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center; justify-content: center;background: rgb(174,238,236);
-background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);">
+<vaadin-vertical-layout style="align-items: center; justify-content: center;">
  <h1 style="margin-bottom: var(--lumo-space-xl);">Cerrar sesion</h1>
  <vaadin-button theme="primary" style="width: 15%; margin-bottom: var(--lumo-space-m);" id="cerrarSesionBoton">
    Cerrar sesion 

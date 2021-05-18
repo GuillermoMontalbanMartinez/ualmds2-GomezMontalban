@@ -13,8 +13,7 @@ class VistaAdministrarCuentas extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;background: rgb(174,238,236);
-background: radial-gradient(circle, rgba(174,238,236,1) 63%, rgba(239,248,249,1) 100%);" id="vaadinVerticalLayoutAdministrarCuentasDeUsuario">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayoutAdministrarCuentasDeUsuario">
  <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
   <h1 style="margin: var(--lumo-space-m);">Administrar cuentas de usuario</h1>
  </vaadin-vertical-layout>
