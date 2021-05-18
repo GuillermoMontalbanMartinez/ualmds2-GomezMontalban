@@ -51,8 +51,12 @@ public class MainView extends VerticalLayout {
 			volver_a_principal(cibernauta);
 		});
 		
+		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addForgotPasswordListener(e ->{
+			Notification.show("AA");
+		});
+		
 		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addLoginListener(e -> {
-
+			
 			String usuario = e.getUsername();
 			String password = e.getPassword();
 			int id = -1;
