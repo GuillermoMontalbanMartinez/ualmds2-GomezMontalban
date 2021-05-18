@@ -24,11 +24,11 @@ public interface iCibernauta_registrado {
 
 	public void anadir_al_carrito(int aIdProducto, int aIdUsuario) throws PersistentException;
 
-	public void aumentar_unidad_producto(int aId_item);
+	public void aumentar_unidad_producto(int aId_item) throws PersistentException;
 
 	public void cancelarPedido(int aId_compra);
 
-	public void decrementar_unidad_producto(int aId_item);
+	public void decrementar_unidad_producto(int aId_item) throws PersistentException;
 
 	public void eliminar_producto(int aId_item);
 

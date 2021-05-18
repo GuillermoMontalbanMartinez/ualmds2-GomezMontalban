@@ -6,6 +6,7 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
 import basededatos.Cibernauta_registrado;
 import basededatos.Foto;
 import basededatos.Item;
@@ -18,46 +19,39 @@ public class Carrito_registrado extends Carrito {
 	int id;
 	public VerticalLayout listaProductos;
 	ArrayList<interfaz.Producto_seleccionado> vista_productos;
-	
-	ArrayList<basededatos.Producto> productos = new ArrayList();
+
+	ArrayList<basededatos.Producto> productos;
+
 	public Carrito_registrado() {
-		listaProductos = this.getVistaProductosSeleccionados().getListaProductosSeleccionadosLAyout().as(VerticalLayout.class);
-		vista_productos = new ArrayList<interfaz.Producto_seleccionado> ();
-		
+		listaProductos = this.getVistaProductosSeleccionados().getListaProductosSeleccionadosLAyout()
+				.as(VerticalLayout.class);
+		vista_productos = new ArrayList<interfaz.Producto_seleccionado>();
+
 	}
 	
-	
-	public void cargar_productos_catalogo() throws PersistentException{
+	public void cargar_productos_seleccionados() throws PersistentException {
+		BDPrincipal bd = new BDPrincipal();
+		for(Item i : bd.cargar_productos_seleccionados(id)) {
+			productos.add(i.getEsta_asociado_a_un_producto());
+		}
 		
- 		basededatos.Compra compras [] = basededatos.CompraDAO.listCompraByQuery(null, null);
- 		basededatos.Producto pro [] = basededatos.ProductoDAO.listProductoByQuery(null, null);
- 		for(basededatos.Compra c : compras) {
- 			
- 			
- 			for(basededatos.Producto p : pro) {
- 				if(p.getTiene_item().getORMID() == c.getTiene_item().getORMID()) {
- 					if(id == c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
- 		 				productos.add(c.getTiene_item().getEsta_asociado_a_un_producto()); 	
- 		 			}
- 				}
- 			}
- 			
- 			
- 			
- 		}
+		
 	}
-	
+
 	public void mostrar_productos() throws PersistentException {
-		cargar_productos_catalogo();
+		productos = new ArrayList();
+		cargar_productos_seleccionados();
 		for (Producto p : productos) {
-			interfaz.Producto_seleccionado producto = new interfaz.Producto_seleccionado(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+			interfaz.Producto_seleccionado producto = new interfaz.Producto_seleccionado(p.getNombre(),
+					p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), id);
 			listaProductos.add(producto);
 			vista_productos.add(producto);
 		}
 	}
-	
-	public void eliminar_producto() {
+
+	public void eliminar_productos() {
 		listaProductos.removeAll();
+		vista_productos.clear();
 	}
 
 	public void realizar_compra() {
@@ -68,10 +62,10 @@ public class Carrito_registrado extends Carrito {
 		throw new UnsupportedOperationException();
 	}
 	
-	
+
 	public void setUsuario(String usuario) throws PersistentException {
 		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
-		
+
 		for (Cibernauta_registrado cib : cb) {
 			if (cib.getNombre().equals(usuario)) {
 				id = cib.getORMID();
