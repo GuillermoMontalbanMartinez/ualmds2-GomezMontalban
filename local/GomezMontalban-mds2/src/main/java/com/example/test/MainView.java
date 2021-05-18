@@ -53,6 +53,9 @@ public class MainView extends VerticalLayout {
 		
 		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addForgotPasswordListener(e ->{
 			Notification.show("AA");
+			Cibernauta cb = new Cibernauta();
+			removeAll();
+			
 		});
 		
 		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addLoginListener(e -> {
@@ -132,6 +135,7 @@ public class MainView extends VerticalLayout {
 		
 
 	}
+
 
 	public void cerrar_sesion(Component comp, Cibernauta c) {
 		c = new Cibernauta();

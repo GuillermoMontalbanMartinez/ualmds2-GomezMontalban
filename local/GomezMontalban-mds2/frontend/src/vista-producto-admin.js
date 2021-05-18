@@ -14,7 +14,7 @@ class VistaProductoAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; ">
+<vaadin-vertical-layout style="width: 100%; " id="vistaProductoAdmin">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; width: 100%;">
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; margin: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; border:1px solid black; width: 100%; margin: var(--lumo-space-m); height: 200px;">

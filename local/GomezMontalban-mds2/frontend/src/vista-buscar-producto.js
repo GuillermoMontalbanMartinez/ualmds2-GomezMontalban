@@ -14,8 +14,8 @@ class VistaBuscarProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-horizontal-layout class="content">
- <vaadin-text-field placeholder="Search" style="width: 100%;">
+<vaadin-horizontal-layout class="content" style="width: 100%; align-items: center; justify-content: center;">
+ <vaadin-text-field placeholder="Search" style="width: 50%; align-self: center;">
   <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
  </vaadin-text-field>
 </vaadin-horizontal-layout>

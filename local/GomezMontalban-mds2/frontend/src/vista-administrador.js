@@ -28,7 +28,7 @@ class VistaAdministrador extends PolymerElement {
    <vista-productos-admin style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);"></vista-productos-admin>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); width: 100%; justify-content: center; align-items: center;">
-   <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonMostrarTodosLosProductos">
+   <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="ButtonMostrarTodosLosProductos">
      Mostrar todos los productos 
    </vaadin-button>
   </vaadin-vertical-layout>

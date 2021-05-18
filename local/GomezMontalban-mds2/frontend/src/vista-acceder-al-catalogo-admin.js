@@ -15,7 +15,7 @@ class VistaAccederAlCatalogoAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; margin: var(--lumo-space-m); align-items: center; justify-content: center;" theme="spacing">
+<vaadin-vertical-layout style="width: 100%; margin: var(--lumo-space-m); align-items: center; justify-content: center;" theme="spacing" id="layoutCatalogoAdmin">
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: flex-start; align-items: center; justify-content: center; width: 100%;">
   <h1 style="width: 100%; margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;">Catálogo</h1>
  </vaadin-vertical-layout>
@@ -24,8 +24,8 @@ class VistaAccederAlCatalogoAdmin extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center; width: 40%;">
     <vista-categorias-admin></vista-categorias-admin>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; width: 40%; margin: var(--lumo-space-m); align-self: center;">
-    <vista-productos-admin style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vista-productos-admin>
+   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; width: 40%; margin: var(--lumo-space-m); align-self: center;" id="layoutProductosAdmin">
+    <vista-productos-admin style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="layoutVistaProductosAdmin"></vista-productos-admin>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

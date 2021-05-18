@@ -27,7 +27,7 @@ class VistaDarBajaCuenta extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center; margin-bottom: var(--lumo-space-m);">
-   <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);font-weight: bold;">Tipo de ususario</label>
+   <label style="flex-shrink: 0; align-self: center; margin-right: var(--lumo-space-l);font-weight: bold;">Tipo de usuario</label>
    <vaadin-horizontal-layout theme="spacing" id="layout-select" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xs);"></vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
