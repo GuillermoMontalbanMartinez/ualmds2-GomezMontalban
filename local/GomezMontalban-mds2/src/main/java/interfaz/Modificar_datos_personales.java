@@ -193,6 +193,27 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 		for (Cibernauta_registrado cib : cb) {
 			if (cib.getNombre().equals(nombre)) {
 				id = cib.getORMID();
+				
+				this.getTextNombreDeUsuario().setValue(cib.getNombre());
+				this.getTextApellidos().setValue(cib.getApellidos());
+				this.getTextCorreo().setValue(cib.getCorreo_electronico());
+				this.getTextTelefono().setValue(cib.getTelefono());
+				this.getTextPassword().setValue(cib.getContrasena());
+				this.getTextRepeatPassword().setValue(cib.getContrasena());
+				this.getTextPais().setValue(cib.getPais());
+				this.getTextLocalidad().setValue(cib.getLocalidad());
+				this.getTextCalle().setValue(cib.getCalle());
+				this.getTextPortal().setValue(cib.getPortal());
+				this.getTextProvincia().setValue(cib.getProvincia());
+				this.getTextCogidoPostal().setValue(String.valueOf(cib.getCp()));
+				this.getVistaDatosDePago().getTextTitularTarjeta().setValue(cib.getNombre_titular_tarjeta());
+				this.getVistaDatosDePago().getTextNumeroTarjeta().setValue(cib.getNumero_tarjeta_credito());
+				this.getVistaDatosDePago().getTextFechaCaducidad().setName(String.valueOf(cib.getFecha_caducidad()));
+				this.getVistaDatosDePago().getTextCVVTarjeta().setValue(String.valueOf(cib.getCvv()));
+				
+				
+				
+				
 			}
 		}
 	}
