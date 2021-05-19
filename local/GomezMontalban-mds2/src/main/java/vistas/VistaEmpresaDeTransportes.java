@@ -12,11 +12,7 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vista-empresa-de-transportes.js")
 public class VistaEmpresaDeTransportes extends PolymerTemplate<VistaEmpresaDeTransportes.VistaEmpresaDeTransportesModel> {
 
-    @Id("vaadinVerticalLayoutPedidosEntregar")
-	private Element vaadinVerticalLayoutPedidosEntregar;
-	@Id("vaadinVerticalLayoutPedidosEntregados")
-	private Element vaadinVerticalLayoutPedidosEntregados;
-	@Id("vaadinButtonPedidosEntregados")
+    @Id("vaadinButtonPedidosEntregados")
 	private Button vaadinButtonPedidosEntregados;
 	@Id("vaadinButtonPedidosAEntregar")
 	private Button vaadinButtonPedidosAEntregar;
@@ -37,21 +33,21 @@ public class VistaEmpresaDeTransportes extends PolymerTemplate<VistaEmpresaDeTra
         // Add setters and getters for template properties here.
     }
 
-	public Element getVaadinVerticalLayoutPedidosEntregar() {
-		return vaadinVerticalLayoutPedidosEntregar;
-	}
-
-	public void setVaadinVerticalLayoutPedidosEntregar(Element vaadinVerticalLayoutPedidosEntregar) {
-		this.vaadinVerticalLayoutPedidosEntregar = vaadinVerticalLayoutPedidosEntregar;
-	}
-
-	public Element getVaadinVerticalLayoutPedidosEntregados() {
-		return vaadinVerticalLayoutPedidosEntregados;
-	}
-
-	public void setVaadinVerticalLayoutPedidosEntregados(Element vaadinVerticalLayoutPedidosEntregados) {
-		this.vaadinVerticalLayoutPedidosEntregados = vaadinVerticalLayoutPedidosEntregados;
-	}
+//	public Element getVaadinVerticalLayoutPedidosEntregar() {
+//		return vaadinVerticalLayoutPedidosEntregar;
+//	}
+//
+//	public void setVaadinVerticalLayoutPedidosEntregar(Element vaadinVerticalLayoutPedidosEntregar) {
+//		this.vaadinVerticalLayoutPedidosEntregar = vaadinVerticalLayoutPedidosEntregar;
+//	}
+//
+//	public Element getVaadinVerticalLayoutPedidosEntregados() {
+//		return vaadinVerticalLayoutPedidosEntregados;
+//	}
+//
+//	public void setVaadinVerticalLayoutPedidosEntregados(Element vaadinVerticalLayoutPedidosEntregados) {
+//		this.vaadinVerticalLayoutPedidosEntregados = vaadinVerticalLayoutPedidosEntregados;
+//	}
 
 	public Button getVaadinButtonPedidosAEntregar() {
 		return vaadinButtonPedidosAEntregar;

@@ -8,6 +8,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.dom.Element;
+import vistas.VistaProductosEnviados;
 
 /**
  * A Designer generated component for the vista-pedidos-entregados template.
@@ -19,14 +20,14 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vista-pedidos-entregados.js")
 public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregados.VistaPedidosEntregadosModel> {
 
-    @Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinButtonPedidosAEntregar")
-	private Button vaadinButton;
-	@Id("vaadinButtonPedidosEntregados")
+    @Id("vaadinButtonPedidosEntregados")
 	private Button vaadinButton1;
 	@Id("vaadinVerticalLayoutPedidosEntregados")
 	private Element vaadinVerticalLayout;
+	@Id("vaadinButtonPedidosAEntregar")
+	private Button vaadinButtonPedidosAEntregar;
+	@Id("vistaListaProductosEnviados")
+	private VistaProductosEnviados vistaListaProductosEnviados;
 
 	/**
      * Creates a new VistaPedidosEntregados.
@@ -42,21 +43,21 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
         // Add setters and getters for template properties here.
     }
 
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
+//	public HorizontalLayout getVaadinHorizontalLayout() {
+//		return vaadinHorizontalLayout;
+//	}
+//
+//	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+//		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+//	}
 
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
+//	public Button getVaadinButton() {
+//		return vaadinButton;
+//	}
+//
+//	public void setVaadinButton(Button vaadinButton) {
+//		this.vaadinButton = vaadinButton;
+//	}
 
 	public Button getVaadinButton1() {
 		return vaadinButton1;
@@ -72,5 +73,21 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getVaadinButtonPedidosAEntregar() {
+		return vaadinButtonPedidosAEntregar;
+	}
+
+	public void setVaadinButtonPedidosAEntregar(Button vaadinButtonPedidosAEntregar) {
+		this.vaadinButtonPedidosAEntregar = vaadinButtonPedidosAEntregar;
+	}
+
+	public VistaProductosEnviados getVistaListaProductosEnviados() {
+		return vistaListaProductosEnviados;
+	}
+
+	public void setVistaListaProductosEnviados(VistaProductosEnviados vistaListaProductosEnviados) {
+		this.vistaListaProductosEnviados = vistaListaProductosEnviados;
 	}
 }

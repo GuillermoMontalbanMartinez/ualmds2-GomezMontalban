@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-productos-enviados template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-productos-enviados.js")
 public class VistaProductosEnviados extends PolymerTemplate<VistaProductosEnviados.VistaProductosEnviadosModel> {
 
-    /**
+    @Id("verticalLayoutListadoProductosEnviados")
+	private Element verticalLayoutListadoProductosEnviados;
+
+	/**
      * Creates a new VistaProductosEnviados.
      */
     public VistaProductosEnviados() {
@@ -28,4 +33,12 @@ public class VistaProductosEnviados extends PolymerTemplate<VistaProductosEnviad
     public interface VistaProductosEnviadosModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getVerticalLayoutListadoProductosEnviados() {
+		return verticalLayoutListadoProductosEnviados;
+	}
+
+	public void setVerticalLayoutListadoProductosEnviados(Element verticalLayoutListadoProductosEnviados) {
+		this.verticalLayoutListadoProductosEnviados = verticalLayoutListadoProductosEnviados;
+	}
 }
