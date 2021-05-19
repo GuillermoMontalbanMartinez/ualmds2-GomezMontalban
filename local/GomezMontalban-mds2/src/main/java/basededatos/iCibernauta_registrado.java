@@ -1,5 +1,7 @@
 package basededatos;
 
+import java.util.ArrayList;
+
 import org.orm.PersistentException;
 
 public interface iCibernauta_registrado {
@@ -12,7 +14,7 @@ public interface iCibernauta_registrado {
 
 	public Oferta[] cargar_ofertas();
 
-	public Producto[] cargar_productos_catalogo() throws PersistentException;
+	public ArrayList<Producto> cargar_productos_catalogo() throws PersistentException;
 
 	public void confirmar(boolean aRespuesta);
 

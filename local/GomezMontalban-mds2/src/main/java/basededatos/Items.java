@@ -35,27 +35,44 @@ public class Items {
 				.beginTransaction();
 
 		try {
+			Producto producto = basededatos.ProductoDAO.loadProductoByORMID(idProducto);
 
 			boolean aumentado = false;
 			for (Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
+				System.out.println("id Compra: "+c.getORMID() + " id item : " + c.getTiene_item().getORMID());
 				if (c.getTiene_asociado_un_cibernauta_registrado().getORMID() == idUsuario) {
-					if (c.getTiene_item().getEsta_asociado_a_un_producto().getORMID() == idProducto) {
-						c.getTiene_item().setCantidad(c.getTiene_item().getCantidad() + 1);
+
+
+					// if (c.getTiene_item().getEsta_asociado_a_un_producto().getORMID() ==
+					// idProducto) {
+					if (c.getTiene_item().getEsta_asociado_a_un_producto().getNombre().equals(producto.getNombre())
+							&& (c.getTiene_item().getEsta_asociado_a_un_producto().getPrecio() == producto.getPrecio()
+									&& c.getTiene_item().getEsta_asociado_a_un_producto().getDescripción()
+											.equals(producto.getDescripción()))) {
+						
+
+						c.getTiene_item().setCantidad(c.getTiene_item().getCantidad()+1);
 						aumentado = true;
+						break;
+
 					}
+					
+
 				}
+				
+
 //				if (i.getEsta_asociado_a_un_producto().getORMID() == idProducto) {
 //					i.setCantidad(i.getCantidad() + 1);
 //					aumentado = true;
 //				}
 			}
 			if (!aumentado) {
-				Producto producto = basededatos.ProductoDAO.loadProductoByORMID(idProducto);
 
 				Item item = basededatos.ItemDAO.createItem();
 				Compra compra = basededatos.CompraDAO.createCompra();
 
 				if (producto.getTiene_item() != null) {
+
 					Producto aux = basededatos.ProductoDAO.createProducto();
 					aux.setNombre(producto.getNombre());
 					aux.setCategoria(producto.getCategoria());
@@ -99,7 +116,6 @@ public class Items {
 
 			}
 
-			
 			// item.setEsta_asociado_a_una_compra(compra);
 		} catch (PersistentException e) {
 			t.rollback();
@@ -142,11 +158,16 @@ public class Items {
 			ArrayList<Item> items = new ArrayList<Item>();
 			basededatos.Compra compras[] = basededatos.CompraDAO.listCompraByQuery(null, null);
 			basededatos.Producto pro[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
+
 			for (basededatos.Compra c : compras) {
 				for (basededatos.Producto p : pro) {
-					if (p.getTiene_item().getORMID() == c.getTiene_item().getORMID()) {
-						if (aId_usuario == c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
-							items.add(c.getTiene_item());
+					if (p.getTiene_item() == null) {
+						continue;
+					} else {
+						if (p.getTiene_item().getORMID() == c.getTiene_item().getORMID()) {
+							if (aId_usuario == c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
+								items.add(c.getTiene_item());
+							}
 						}
 					}
 				}
@@ -154,7 +175,8 @@ public class Items {
 			}
 			return items;
 		} catch (Exception e) {
-			System.out.println("Yikes");
+			e.printStackTrace();
+			System.out.println("aqui esta");
 			return null;
 		}
 	}
@@ -169,7 +191,11 @@ public class Items {
 			foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
 			basededatos.FotoDAO.save(foto);
 			pt.commit();
-			try{ Thread.sleep(500); } catch (InterruptedException e ) { System.out.println("Pausa"); }
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				System.out.println("Pausa");
+			}
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}

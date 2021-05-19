@@ -89,8 +89,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 	
 
-	public Producto[] cargar_productos_catalogo() throws PersistentException {
-		return _db_productos.cargar_productos();
+	public ArrayList<Producto> cargar_productos_catalogo() throws PersistentException {
+		return _db_productos.cargar_productos_catalogo();
 	}
 	
 	public Producto[] cargar_productos() throws PersistentException {

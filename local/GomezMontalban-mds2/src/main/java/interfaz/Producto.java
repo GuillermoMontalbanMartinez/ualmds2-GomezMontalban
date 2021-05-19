@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.util.ArrayList;
+
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.ComponentEvent;
@@ -30,7 +32,7 @@ public class Producto extends VistaProducto {
 
 	public void añadir_al_carrito() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		basededatos.Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
+		ArrayList<basededatos.Producto> productos = bd.cargar_productos_catalogo();
 		for (basededatos.Producto p : productos) {
 			if (p.getNombre().equals(this.nombreP)
 					&& p.getDescripción().equals(this.descripcion)

@@ -34,6 +34,7 @@ public class Carrito_registrado extends Carrito {
 		ArrayList<Item> items = bd.cargar_productos_seleccionados(id);
 		if (!(items == null)) {
 			for (Item i : items) {
+				System.out.println("olee");
 				productos.add(i.getEsta_asociado_a_un_producto());
 			}
 

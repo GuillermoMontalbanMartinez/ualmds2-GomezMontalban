@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -17,18 +18,33 @@ public class Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto[] cargar_productos_catalogo() throws PersistentException {
+	public ArrayList<Producto> cargar_productos_catalogo() throws PersistentException {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
-		List idsProductos = null;
-		Producto producto[] = null;
+		Producto[] products = basededatos.ProductoDAO.listProductoByQuery(null, null);
+		ArrayList<Producto> producto = new ArrayList<Producto>();
 		try {
-			idsProductos = basededatos.CategoriaDAO.queryCategoria(null, null);
-			producto = new Producto[idsProductos.size()];
 
-			for (int i = 0; i < producto.length; i++) {
-				producto[i] = (Producto) idsProductos.get(i);
+			if (producto.size() == 0) {
+				producto.add(products[0]);
+
 			}
+			boolean repe = false;
+			for (Producto p : products) {
+				for (int i = 0; i < producto.size(); i++) {
+					if (p.getNombre().equals(producto.get(i).getNombre())
+							&& (p.getPrecio() == producto.get(i).getPrecio()
+									&& p.getDescripción().equals(producto.get(i).getDescripción()))) {
+						repe = true;
+
+					}
+
+				}
+				if (!repe)
+					producto.add(p);
+				repe = false;
+			}
+
 			pt.commit();
 		} catch (Exception e) {
 			pt.rollback();
@@ -86,13 +102,13 @@ public class Productos {
 			producto.setPrecio(aPrecio);
 
 			basededatos.ProductoDAO.save(producto);
-			
-			asociar_foto(producto,aFoto1 );
-			asociar_foto(producto,aFoto2 );
-			asociar_foto(producto,aFoto3 );
-			asociar_foto(producto,aFoto4 );
-			asociar_foto(producto,aFoto5 );
-			
+
+			asociar_foto(producto, aFoto1);
+			asociar_foto(producto, aFoto2);
+			asociar_foto(producto, aFoto3);
+			asociar_foto(producto, aFoto4);
+			asociar_foto(producto, aFoto5);
+
 			pt.commit();
 		} catch (PersistentException e) {
 			e.printStackTrace();
@@ -124,11 +140,11 @@ public class Productos {
 		try {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 					.beginTransaction();
-						
-					Foto foto = basededatos.FotoDAO.createFoto();
-					foto.setLink_foto(link);
-					foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
-					basededatos.FotoDAO.save(foto);		
+
+			Foto foto = basededatos.FotoDAO.createFoto();
+			foto.setLink_foto(link);
+			foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
+			basededatos.FotoDAO.save(foto);
 			pt.commit();
 		} catch (PersistentException e) {
 			e.printStackTrace();

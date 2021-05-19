@@ -56,6 +56,6 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 	
 	public basededatos.Producto[] cargar_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		return bd.cargar_productos_catalogo();
+		return bd.cargar_productos();
 	}
 }

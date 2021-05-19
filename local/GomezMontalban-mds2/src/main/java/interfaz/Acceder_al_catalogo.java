@@ -7,6 +7,7 @@ import org.orm.PersistentTransaction;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
 import basededatos.Cibernauta_registrado;
 import basededatos.Correo;
 import basededatos.Foto;
@@ -36,8 +37,12 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 		}
 	}
 	
-	public void cargar_productos() throws PersistentException {
-		Producto[] productosArray = basededatos.ProductoDAO.listProductoByQuery(null, null);
+	public void cargar_productos_catalogo() throws PersistentException {
+		
+		
+		
+		BDPrincipal bd = new BDPrincipal();
+		ArrayList<Producto> productosArray = bd.cargar_productos_catalogo();
 				
  		for (Producto p : productosArray) {
 			productos.add(p);
@@ -48,7 +53,7 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 	
 	public void mostrar_productos() throws PersistentException {
 		productos = new ArrayList<Producto>();	
-		cargar_productos();
+		cargar_productos_catalogo();
 		for (Producto p : productos) {
 			interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
 			listaProductos.add(producto);

@@ -65,6 +65,6 @@ public class Eliminar_oferta extends VistaEliminarOferta {
 	
 	public basededatos.Producto[] cargar_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		return bd.cargar_productos_catalogo();
+		return bd.cargar_productos();
 	}
 }
