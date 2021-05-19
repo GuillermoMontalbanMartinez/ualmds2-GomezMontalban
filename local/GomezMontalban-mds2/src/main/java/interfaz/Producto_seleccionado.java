@@ -64,7 +64,20 @@ public class Producto_seleccionado extends VistaProductoSeleccionado {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		});			
+		});	
+		
+		this.getQuitarButton().addClickListener(event ->{
+			try {
+				eliminar_producto();
+
+				try{ Thread.sleep(1000); } catch (InterruptedException e ) { System.out.println("Pausa"); }
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});	
+		
+		
 		}
 	
 
@@ -84,8 +97,9 @@ public class Producto_seleccionado extends VistaProductoSeleccionado {
 
 	}
 
-	public void eliminar_producto() {
-		throw new UnsupportedOperationException();
+	public void eliminar_producto() throws PersistentException {
+		bd = new BDPrincipal();
+		bd.eliminar_producto(idItem);
 	}
 
 }

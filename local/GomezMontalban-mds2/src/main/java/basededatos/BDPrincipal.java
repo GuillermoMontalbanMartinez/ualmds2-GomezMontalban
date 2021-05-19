@@ -153,8 +153,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_item.decrementar_unidad_producto(aId_item);
 	}
 
-	public void eliminar_producto(int aId_item) {
-		throw new UnsupportedOperationException();
+	public void eliminar_producto(int aId_item) throws PersistentException{
+		_db_item.eliminar_producto(aId_item);
 	}
 
 

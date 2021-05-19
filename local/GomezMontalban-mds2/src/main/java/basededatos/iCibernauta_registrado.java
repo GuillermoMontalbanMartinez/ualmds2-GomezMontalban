@@ -32,7 +32,7 @@ public interface iCibernauta_registrado {
 
 	public void decrementar_unidad_producto(int aId_item) throws PersistentException;
 
-	public void eliminar_producto(int aId_item);
+	public void eliminar_producto(int aId_item) throws PersistentException;
 
 	public void publicar(int aValoracion, String aCuerpo);
 

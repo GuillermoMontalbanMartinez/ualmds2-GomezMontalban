@@ -39,9 +39,8 @@ public class Items {
 
 			boolean aumentado = false;
 			for (Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
-				System.out.println("id Compra: "+c.getORMID() + " id item : " + c.getTiene_item().getORMID());
+				System.out.println("id Compra: " + c.getORMID() + " id item : " + c.getTiene_item().getORMID());
 				if (c.getTiene_asociado_un_cibernauta_registrado().getORMID() == idUsuario) {
-
 
 					// if (c.getTiene_item().getEsta_asociado_a_un_producto().getORMID() ==
 					// idProducto) {
@@ -49,17 +48,14 @@ public class Items {
 							&& (c.getTiene_item().getEsta_asociado_a_un_producto().getPrecio() == producto.getPrecio()
 									&& c.getTiene_item().getEsta_asociado_a_un_producto().getDescripción()
 											.equals(producto.getDescripción()))) {
-						
 
-						c.getTiene_item().setCantidad(c.getTiene_item().getCantidad()+1);
+						c.getTiene_item().setCantidad(c.getTiene_item().getCantidad() + 1);
 						aumentado = true;
 						break;
 
 					}
-					
 
 				}
-				
 
 //				if (i.getEsta_asociado_a_un_producto().getORMID() == idProducto) {
 //					i.setCantidad(i.getCantidad() + 1);
@@ -149,8 +145,37 @@ public class Items {
 		}
 	}
 
-	public void eliminar_producto(int aId_item) {
-		throw new UnsupportedOperationException();
+	public void eliminar_producto(int aId_item) throws PersistentException {
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		
+		Item item = basededatos.ItemDAO.getItemByORMID(aId_item);
+		for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+			if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
+				basededatos.FotoDAO.deleteAndDissociate(f);
+			}
+		}
+
+		basededatos.CompraDAO.deleteAndDissociate(item.getEsta_asociado_a_una_compra());
+
+		Producto p = item.getEsta_asociado_a_un_producto();
+		for (Producto producto : ProductoDAO.listProductoByQuery(null, null)) {
+			
+			
+			if (p.getNombre().equals(producto.getNombre()) && p.getPrecio() == producto.getPrecio()
+					&& p.getDescripción().equals(producto.getDescripción())){
+
+				System.out.println("");
+				ProductoDAO.deleteAndDissociate(p);
+			} else {
+				p.setTiene_item(null);
+			}
+		}
+
+		basededatos.ItemDAO.deleteAndDissociate(item);
+		
+		t.commit();
+
 	}
 
 	public ArrayList<Item> cargar_productos_seleccionados(int aId_usuario) throws PersistentException {
