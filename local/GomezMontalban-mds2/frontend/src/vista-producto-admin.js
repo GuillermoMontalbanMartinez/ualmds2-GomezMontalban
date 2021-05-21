@@ -1,7 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaProductoAdmin extends PolymerElement {
 
@@ -15,23 +17,39 @@ class VistaProductoAdmin extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; " id="vistaProductoAdmin">
- <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; width: 100%;">
-  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; margin: var(--lumo-space-m);">
-   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; border:1px solid black; width: 100%; margin: var(--lumo-space-m); height: 200px;">
-    <img style="flex-shrink: 0; align-self: center; width: 100%; height: 100%;">
+ <vaadin-vertical-layout style="width: 100%;">
+  <vaadin-horizontal-layout>
+   <label>Producto: </label>
+   <vaadin-text-field id="textNombreProducto" readonly></vaadin-text-field>
+  </vaadin-horizontal-layout>
+ </vaadin-vertical-layout>
+ <vaadin-vertical-layout style="width: 100%;">
+  <vaadin-horizontal-layout style="width: 100%;">
+   <vaadin-horizontal-layout style="width: 30%;">
+    <img id="textImagen" style="width: 100%; height: 100%;">
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 50%; height: 100%;">
-    <vaadin-vertical-layout theme="spacing">
-     <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; height: 100%;">
-      <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; width: 100%; height: 100%;">Nombre</label>
+   <vaadin-horizontal-layout style="width: 70%;">
+    <vaadin-vertical-layout style="width: 100%;">
+     <vaadin-vertical-layout>
+      <label>DESCRIPCIÓN </label>
      </vaadin-vertical-layout>
-     <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-items: center; justify-content: center;">
-      <vaadin-text-area style="width: 100%; height: 100%; flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vaadin-text-area>
-     </vaadin-vertical-layout>
-     <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center; width: 100%; height: 100%;">
-      <vaadin-text-area style="width: 50%; height: 100%; flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);"></vaadin-text-area>
+     <vaadin-vertical-layout style="width: 100%;">
+      <vaadin-text-area id="textDescripcion" style="width: 100%;" readonly></vaadin-text-area>
      </vaadin-vertical-layout>
     </vaadin-vertical-layout>
+   </vaadin-horizontal-layout>
+  </vaadin-horizontal-layout>
+ </vaadin-vertical-layout>
+ <vaadin-vertical-layout style="align-self: center;">
+  <vaadin-horizontal-layout>
+   <vaadin-horizontal-layout style="margin: var(--lumo-space-m);">
+    <vaadin-button id="buttonVerCaracteristicasDelProducto" style="margin: var(--lumo-space-m);" theme="primary">
+     Ver Caracteristicas del producto
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+   <vaadin-horizontal-layout style="margin: var(--lumo-space-m);">
+    <label style="margin: var(--lumo-space-m);">Precio</label>
+    <vaadin-text-field id="textPrecio" style="margin: var(--lumo-space-m);" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

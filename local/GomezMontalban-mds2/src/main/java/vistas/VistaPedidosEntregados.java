@@ -28,7 +28,7 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
 	private Button vaadinButtonPedidosAEntregar;
 	@Id("vistaListaProductosEnviados")
 	private VistaProductosEnviados vistaListaProductosEnviados;
-	@Id("buttonCerrarSesion")
+	@Id("buttonInicio")
 	private Button buttonCerrarSesion;
 
 	/**

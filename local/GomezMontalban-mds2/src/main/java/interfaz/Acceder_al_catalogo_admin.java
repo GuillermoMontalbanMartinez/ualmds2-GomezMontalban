@@ -16,12 +16,12 @@ public class Acceder_al_catalogo_admin extends VistaAccederAlCatalogoAdmin {
 	public Productos_catalogo_admin _productos_catalogo_admin;
 	public VerticalLayout listaProductos;
 	ArrayList<Producto> productos;
-	ArrayList<interfaz.Producto> vista_productos;
+	ArrayList<interfaz.Producto_admin> vista_productos;
 	private String usuario;
 
 	public Acceder_al_catalogo_admin() {
 		listaProductos = this.getLayoutProductosCatalogoAdmin();
-		vista_productos = new ArrayList<interfaz.Producto>();
+		vista_productos = new ArrayList<interfaz.Producto_admin>();
 
 		try {
 			mostrar_productos_admin();
@@ -35,8 +35,9 @@ public class Acceder_al_catalogo_admin extends VistaAccederAlCatalogoAdmin {
 		productos = new ArrayList<Producto>();
 		cargar_productos_admin();
 		for (Producto p : productos) {
-			interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(),
-					String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+//			interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(), p.getDescripción(),
+//					String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+			interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
 			listaProductos.add(producto);
 			vista_productos.add(producto);
 		}
@@ -58,11 +59,11 @@ public class Acceder_al_catalogo_admin extends VistaAccederAlCatalogoAdmin {
 		vista_productos.clear();
 	}
 
-	public void setUsuario(String usuario) throws PersistentException {
-		this.usuario = usuario;
-		for (interfaz.Producto producto : vista_productos) {
-			producto.setUsuario(usuario);
-		}
-	}
+//	public void setUsuario(String usuario) throws PersistentException {
+//		this.usuario = usuario;
+//		for (interfaz.Producto_admin producto : vista_productos) {
+//			producto.setUsuario(usuario);
+//		}
+//	}
 
 }

@@ -15,7 +15,7 @@ class VistaPedidoEncargado extends PolymerElement {
                 }
             </style>
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="height: 100%; width: 100%; border: #ccc solid 2px; border-radius : 20px; background : #efefef; padding-right: var(--lumo-space-s); margin-bottom: var(--lumo-space-m); justify-content: flex-end;">
+ <vaadin-horizontal-layout theme="spacing" style="height: 100%; width: 100%; border: #ccc solid 2px; border-radius : 20px;">
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-shrink: 0; justify-content: center; align-items: center; margin-left: var(--lumo-space-xl); width: 15%; height: 60%;">
    <img style="height: 100%; width: 100%;">
   </vaadin-horizontal-layout>
@@ -42,7 +42,7 @@ class VistaPedidoEncargado extends PolymerElement {
  <vaadin-vertical-layout theme="spacing-s" style="width: 10%; height: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin-right: var(--lumo-space-m);">
   <label style="flex-shrink: 0; align-self: center;">Estado</label>
   <vaadin-button theme="primary error" style="margin-left: var(--lumo-space-xs);">
-   Cancelar
+    Cancelar 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>

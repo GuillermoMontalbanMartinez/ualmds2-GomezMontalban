@@ -14,17 +14,22 @@ class VistaBannerAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutBannerAdmin">
- <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; width: 100%; align-self: center; align-items: center; justify-content: center;">
+<vaadin-vertical-layout style="width: 100%; " id="vaadinVerticalLayoutBannerAdmin">
+ <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; width: 100%; align-self: center; align-items: center; justify-content: center;  border: 4px solid black;
+  border-radius: 5px;">
   <vaadin-horizontal-layout theme="spacing">
-   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0;"></vaadin-horizontal-layout>
+   <vaadin-horizontal-layout theme="spacing" style="align-items: center; justify-content: center; align-self: center; flex-shrink: 0;">
+    <img>
+   </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonAdministrarCategorias">
       Administrar categorías 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+     <img>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; width: 100%;" theme="primary" id="vaadinButtonAdministrarProductos">
        Administrar productos 
@@ -32,7 +37,9 @@ class VistaBannerAdmin extends PolymerElement {
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+     <img>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
      <vaadin-button style="width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonAdministrarOfertas">
        Administrar ofertas 
@@ -40,7 +47,9 @@ class VistaBannerAdmin extends PolymerElement {
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+     <img>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-button style="width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonAdministrarCuentas">
        Administrar cuentas 
@@ -50,7 +59,9 @@ class VistaBannerAdmin extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
+     <img>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-button style="flex-shrink: 0; align-self: center; width: 100%; margin: var(--lumo-space-m);" theme="primary" id="vaadinButtonPrincipal">
        Principal 
@@ -58,7 +69,9 @@ class VistaBannerAdmin extends PolymerElement {
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0; align-items: center; justify-content: center;">
-    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+     <img>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-items: center; justify-content: center; align-self: center; flex-shrink: 0;">
      <vaadin-button style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;" theme="primary" id="vaadinButtonCorreo">
        Correo 
@@ -66,7 +79,9 @@ class VistaBannerAdmin extends PolymerElement {
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-items: center; justify-content: center; align-self: center;">
-    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
+     <img>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
      <vaadin-button style="margin: var(--lumo-space-m); width: 100%; align-self: center; flex-shrink: 0;" theme="primary" id="vaadinButtonListadoDeCompras">
        Listado de compras 
@@ -74,7 +89,9 @@ class VistaBannerAdmin extends PolymerElement {
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
+     <img>
+    </vaadin-horizontal-layout>
     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
      <vaadin-button style="margin: var(--lumo-space-m); width: 100%; flex-shrink: 0; align-self: center;" theme="primary" id="vaadinButtonCerrarSesión">
        Cerrar sesión 

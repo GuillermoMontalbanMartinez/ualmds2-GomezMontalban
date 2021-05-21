@@ -47,8 +47,6 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 				Notification.show("Acceso a pedidos entregados");
 				layout_empresa_de_transportes.removeAll();
 				layout_empresa_de_transportes.add(pedidos_entregados);
-//				layout_pedidos_a_entregar.removeAll(); esto
-//				layout_pedidos_a_entregar.add(pedidos_entregados);
 				
 			}
 		});
@@ -59,12 +57,29 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 				 Notification.show("Acceso a pedidos a entregar");
 				layout_empresa_de_transportes.removeAll();
 				layout_empresa_de_transportes.add(pedidos_a_entregar);
-//				 layout_pedidos_entregados.removeAll();
-//				 layout_pedidos_entregados.add(pedidos_a_entregar);
+
 			}
 		});
 		
-
+		// Boton inicio de pedidos a entregar
+		pedidos_a_entregar.getButtonCerrarSesion().addClickListener(new ComponentEventListener() {
+			public void onComponentEvent(ComponentEvent event) {
+				Notification.show("Empresa de transportes");
+				layout_empresa_de_transportes.removeAll();
+				layout_empresa_de_transportes.add(new Empresa_de_transportes());
+			}
+		});
+		
+		// Boton inicio de pedidos entregados
+		pedidos_entregados.getButtonCerrarSesion().addClickListener(new ComponentEventListener() {
+			public void onComponentEvent(ComponentEvent event) {
+				Notification.show("Empresa de transportes");
+				layout_empresa_de_transportes.removeAll();
+				layout_empresa_de_transportes.add(layout_empresa_de_transportes);
+				layout_empresa_de_transportes.add();				
+			}
+		});
+		
 	}	
 	
 	
