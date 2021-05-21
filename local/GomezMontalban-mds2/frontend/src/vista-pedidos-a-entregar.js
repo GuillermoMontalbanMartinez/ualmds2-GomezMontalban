@@ -19,7 +19,7 @@ class VistaPedidosAEntregar extends PolymerElement {
  <h1 style="align-self: center; flex-shrink: 0;">Pedidos a entregar</h1>
  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-   <vaadin-button style="flex-shrink: 0; align-self: center;" id="vaadinButtonProductosAEntregar">
+   <vaadin-button style="flex-shrink: 0; align-self: center;" id="vaadinButtonProductosAEntregar" theme="primary" disabled>
      Productos a entregar 
    </vaadin-button>
   </vaadin-horizontal-layout>
@@ -29,7 +29,7 @@ class VistaPedidosAEntregar extends PolymerElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vista-productos-a-enviar style="width: 100%;"></vista-productos-a-enviar>
+ <vista-productos-a-enviar style="width: 100%;" id="vistaListaProductosAEnviar"></vista-productos-a-enviar>
 </vaadin-vertical-layout>
 `;
     }

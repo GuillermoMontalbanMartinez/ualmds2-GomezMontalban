@@ -24,12 +24,12 @@ class VistaPedidosEntregados extends PolymerElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="flex-shrink: 0; align-items: center; justify-content: center; align-self: center;">
-   <vaadin-button id="vaadinButtonPedidosEntregados" theme="primary">
+   <vaadin-button id="vaadinButtonPedidosEntregados" theme="primary" disabled>
      Pedidos entregados 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vista-productos-enviados style="align-self: center; width: 100%;"></vista-productos-enviados>
+ <vista-productos-enviados style="align-self: center; width: 100%;" id="vistaListaProductosEnviados"></vista-productos-enviados>
 </vaadin-vertical-layout>
 `;
     }

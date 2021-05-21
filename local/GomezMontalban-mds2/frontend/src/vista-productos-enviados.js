@@ -12,7 +12,7 @@ class VistaProductosEnviados extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; align-items: center; justify-content: center;"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; align-items: center; justify-content: center;" id="verticalLayoutListadoProductosEnviados"></vaadin-vertical-layout>
 `;
     }
 

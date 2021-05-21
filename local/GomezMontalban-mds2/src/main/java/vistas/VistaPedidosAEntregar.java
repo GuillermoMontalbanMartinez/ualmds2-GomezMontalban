@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.dom.Element;
+import vistas.VistaProductosAEnviar;
 
 /**
  * A Designer generated component for the vista-pedidos-a-entregar template.
@@ -25,7 +26,8 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 	@Id("vaadinButtonProductosAEntregar")
 	private Button vaadinButtonProductosAEntregar;
 	private Button vaadinButton;
-
+	@Id("vistaListaProductosAEnviar")
+	private VistaProductosAEnviar vistaListaProductosAEnviar;
 	/**
      * Creates a new VistaPedidosAEntregar.
      */
@@ -70,5 +72,13 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 
 	public void setVaadinButtonProductosAEntregar(Button vaadinButtonProductosAEntregar) {
 		this.vaadinButtonProductosAEntregar = vaadinButtonProductosAEntregar;
+	}
+
+	public VistaProductosAEnviar getVistaListaProductosAEnviar() {
+		return vistaListaProductosAEnviar;
+	}
+
+	public void setVistaListaProductosAEnviar(VistaProductosAEnviar vistaListaProductosAEnviar) {
+		this.vistaListaProductosAEnviar = vistaListaProductosAEnviar;
 	}
 }

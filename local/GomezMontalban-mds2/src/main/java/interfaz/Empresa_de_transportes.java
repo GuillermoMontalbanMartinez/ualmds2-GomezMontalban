@@ -20,10 +20,10 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 	public Empresa_de_transportes() {
 		pedidos_a_entregar = new Pedidos_a_entregar();
 		pedidos_entregados = new Pedidos_entregados();
-		
 		layout_empresa_de_transportes = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		layout_pedidos_a_entregar = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		layout_pedidos_entregados = this.getVaadinVerticalLayoutPedidosEntregados().as(VerticalLayout.class);
+		// layout_pedidos_entregados = this.getVaadinVerticalLayoutPedidosEntregados().as(VerticalLayout.class);
+		
 
 		this.getVaadinButtonPedidosAEntregar().addClickListener(new ComponentEventListener() {
 			public void onComponentEvent(ComponentEvent event) {
@@ -41,23 +41,31 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 			}
 		});
 		
-		pedidos_entregados.getVaadinButton().addClickListener(new ComponentEventListener() {
-			public void onComponentEvent(ComponentEvent event) {
-				pedidos_a_entregar = new Pedidos_a_entregar();
-				Notification.show("Acceso a pedidos a entregar");
-				layout_pedidos_entregados.removeAll();
-				layout_pedidos_entregados.add(pedidos_a_entregar);
-			}
-		});
 		
 		pedidos_a_entregar.getVaadinButtonProductosEntregados().addClickListener(new ComponentEventListener() {
 			public void onComponentEvent(ComponentEvent event) {
-				pedidos_entregados = new Pedidos_entregados();
 				Notification.show("Acceso a pedidos entregados");
-				layout_pedidos_a_entregar.removeAll();
-				// layout_pedidos_a_entregar.remove(layout_pedidos_a_entregar);
-				layout_pedidos_a_entregar.add(pedidos_entregados);
+				layout_empresa_de_transportes.removeAll();
+				layout_empresa_de_transportes.add(pedidos_entregados);
+//				layout_pedidos_a_entregar.removeAll(); esto
+//				layout_pedidos_a_entregar.add(pedidos_entregados);
+				
 			}
 		});
+		
+		
+		pedidos_entregados.getVaadinButtonPedidosAEntregar().addClickListener(new ComponentEventListener() {
+			public void onComponentEvent(ComponentEvent event) {
+				 Notification.show("Acceso a pedidos a entregar");
+				layout_empresa_de_transportes.removeAll();
+				layout_empresa_de_transportes.add(pedidos_a_entregar);
+//				 layout_pedidos_entregados.removeAll();
+//				 layout_pedidos_entregados.add(pedidos_a_entregar);
+			}
+		});
+		
+
 	}	
+	
+	
 }
