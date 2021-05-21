@@ -96,9 +96,16 @@ public class MainView extends VerticalLayout {
 					ec._compras_a_enviar.getButtonCerrarSesion().addClickListener(t -> {
 						inicioEncargadoDeCompras(ec);
 					});
+					
+					ec._compras_enviadas.getButtonCerrarSesion().addClickListener(t -> {
+						inicioEncargadoDeCompras(ec);
+					});
+					
 					ec.getButtonCerrarSesion().addClickListener(t -> {
 						cerrar_sesion(ec, cibernauta);
 					});
+					
+					
 					remove(cibernauta);
 					add(ec);
 
@@ -150,16 +157,7 @@ public class MainView extends VerticalLayout {
 		});
 		remove(ec);
 		add(encargadoDeCompras);
-//		Cibernauta cibernauta = new Cibernauta();
-//		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
-//			volver_a_principal(cibernauta);
-//		});
-//
-//		remove(c);
-//		add(cibernauta);
-//
-//		login(cibernauta);
-		
+	
 	}
 
 	public void cerrar_sesion(Component comp, Cibernauta c) {

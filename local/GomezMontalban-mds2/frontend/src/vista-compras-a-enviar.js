@@ -16,8 +16,8 @@ class VistaComprasAEnviar extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout id="vaadinVerticalLayoutComprasAEnviar">
- <vaadin-button id="buttonCerrarSesion" style="align-self: flex-end;" theme="primary error">
-  Cerrar sesión
+ <vaadin-button id="buttonCerrarSesion" style="align-self: flex-start;" theme="primary">
+  Inicio 
  </vaadin-button>
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;">
   <vaadin-horizontal-layout theme="spacing">
