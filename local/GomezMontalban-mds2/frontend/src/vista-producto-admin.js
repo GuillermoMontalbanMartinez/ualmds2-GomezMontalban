@@ -16,19 +16,20 @@ class VistaProductoAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; " id="vistaProductoAdmin">
+<vaadin-vertical-layout style="width: 100%;   border: 2.5px solid white;
+  border-radius: 25px;" id="vistaProductoAdmin">
  <vaadin-vertical-layout style="width: 100%;">
   <vaadin-horizontal-layout>
-   <label>Producto: </label>
-   <vaadin-text-field id="textNombreProducto" readonly></vaadin-text-field>
+   <label style="margin: var(--lumo-space-m);">Producto: </label>
+   <vaadin-text-field id="textNombreProducto" style="margin: var(--lumo-space-m);" readonly></vaadin-text-field>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="width: 100%;">
   <vaadin-horizontal-layout style="width: 100%;">
-   <vaadin-horizontal-layout style="width: 30%;">
-    <img id="textImagen" style="width: 100%; height: 100%;">
+   <vaadin-horizontal-layout style="width: 25%;">
+    <img id="textImagen" style="width: 80%; height: 80%;">
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="width: 70%;">
+   <vaadin-horizontal-layout style="width: 75%;">
     <vaadin-vertical-layout style="width: 100%;">
      <vaadin-vertical-layout>
       <label>DESCRIPCIÓN </label>

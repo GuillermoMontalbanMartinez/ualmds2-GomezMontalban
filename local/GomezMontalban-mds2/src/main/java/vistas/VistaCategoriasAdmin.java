@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-categorias-admin template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-categorias-admin.js")
 public class VistaCategoriasAdmin extends PolymerTemplate<VistaCategoriasAdmin.VistaCategoriasAdminModel> {
 
-    /**
+    @Id("selectCategorias")
+	private HorizontalLayout selectCategorias;
+
+	/**
      * Creates a new VistaCategoriasAdmin.
      */
     public VistaCategoriasAdmin() {
