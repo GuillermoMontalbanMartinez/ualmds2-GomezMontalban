@@ -24,10 +24,9 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 	ArrayList<interfaz.Producto> vista_productos;
 	private String usuario;
 
-	
 	public Acceder_al_catalogo() {
 		listaProductos = this.getLayoutProductosCatalogo();
-		vista_productos = new ArrayList<interfaz.Producto> ();
+		vista_productos = new ArrayList<interfaz.Producto>();
 
 		try {
 			mostrar_productos();
@@ -36,40 +35,38 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void cargar_productos_catalogo() throws PersistentException {
-		
-		
-		
+
 		BDPrincipal bd = new BDPrincipal();
 		ArrayList<Producto> productosArray = bd.cargar_productos_catalogo();
-				
- 		for (Producto p : productosArray) {
+
+		for (Producto p : productosArray) {
 			productos.add(p);
-			
+
 		}
- 		
+
 	}
-	
+
 	public void mostrar_productos() throws PersistentException {
-		productos = new ArrayList<Producto>();	
+		productos = new ArrayList<Producto>();
 		cargar_productos_catalogo();
 		for (Producto p : productos) {
-			interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+			interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(),
+					String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
 			listaProductos.add(producto);
 			vista_productos.add(producto);
 		}
 	}
-	
+
 	public void eliminar_producto() {
 		listaProductos.removeAll();
 		vista_productos.clear();
 	}
-	
-	
+
 	public void setUsuario(String usuario) throws PersistentException {
 		this.usuario = usuario;
-		for(interfaz.Producto producto : vista_productos) {
+		for (interfaz.Producto producto : vista_productos) {
 			producto.setUsuario(usuario);
 		}
 	}

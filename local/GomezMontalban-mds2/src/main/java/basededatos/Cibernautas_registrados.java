@@ -25,11 +25,16 @@ public class Cibernautas_registrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep, String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia, int aCodigo_postal, String aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv, String aFoto_perfil) throws PersistentException {
+	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep,
+			String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia,
+			int aCodigo_postal, String aN_tarjeta, String aTitular, String aFecha_caducidad, int aCvv,
+			String aFoto_perfil) throws PersistentException {
 		Date fecha = new Date();
-		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
 		try {
-			Cibernauta_registrado cibernautaRegistrado = basededatos.Cibernauta_registradoDAO.createCibernauta_registrado();
+			Cibernauta_registrado cibernautaRegistrado = basededatos.Cibernauta_registradoDAO
+					.createCibernauta_registrado();
 			cibernautaRegistrado.setNombre(aNombre);
 			cibernautaRegistrado.setApellidos(aApellidos);
 			cibernautaRegistrado.setCorreo_electronico(aCorreo);
@@ -46,69 +51,73 @@ public class Cibernautas_registrados {
 			cibernautaRegistrado.setFecha_caducidad(aFecha_caducidad);
 			cibernautaRegistrado.setCvv(aCvv);
 			cibernautaRegistrado.setFecha_creacion_usuario(fecha.toString());
-			basededatos.Cibernauta_registradoDAO.save(cibernautaRegistrado);	
+			basededatos.Cibernauta_registradoDAO.save(cibernautaRegistrado);
 			pt.commit();
 		} catch (Exception e) {
 			pt.rollback();
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
-	
+
 	public int login(String user, String password) throws PersistentException {
 		int id = -1;
-		List<Cibernauta_registrado> registrados = basededatos.Cibernauta_registradoDAO.queryCibernauta_registrado(null, null);
-		for(Cibernauta_registrado c : registrados) {
-			if(c.getNombre().toString().equals(user) && c.getContrasena().toString().equals(password)) {
+		List<Cibernauta_registrado> registrados = basededatos.Cibernauta_registradoDAO.queryCibernauta_registrado(null,
+				null);
+		for (Cibernauta_registrado c : registrados) {
+			if (c.getNombre().toString().equals(user) && c.getContrasena().toString().equals(password)) {
 				id = 3;
 			}
 		}
-		List<Empresa_de_transportes> transportes = basededatos.Empresa_de_transportesDAO.queryEmpresa_de_transportes(null, null);
-		for(Empresa_de_transportes a : transportes) {
-			if(a.getNombre().toString().equals(user)&& a.getContrasena().toString().equals(password)) {
+		List<Empresa_de_transportes> transportes = basededatos.Empresa_de_transportesDAO
+				.queryEmpresa_de_transportes(null, null);
+		for (Empresa_de_transportes a : transportes) {
+			if (a.getNombre().toString().equals(user) && a.getContrasena().toString().equals(password)) {
 				id = 1;
 			}
-		}List<Encargado_de_compras> compras = basededatos.Encargado_de_comprasDAO.queryEncargado_de_compras(null, null);
-		for(Encargado_de_compras c : compras) {
-			if(c.getNombre().toString().equals(user) && c.getContrasena().toString().equals(password)){
+		}
+		List<Encargado_de_compras> compras = basededatos.Encargado_de_comprasDAO.queryEncargado_de_compras(null, null);
+		for (Encargado_de_compras c : compras) {
+			if (c.getNombre().toString().equals(user) && c.getContrasena().toString().equals(password)) {
 				id = 2;
 			}
 		}
 		List<Administrador> admin = basededatos.AdministradorDAO.queryAdministrador(null, null);
-		for(Administrador a : admin) {
-			if(a.getNombre().toString().equals(user) && a.getContrasena().toString().equals(password)) {
+		for (Administrador a : admin) {
+			if (a.getNombre().toString().equals(user) && a.getContrasena().toString().equals(password)) {
 				id = 0;
 			}
-		}	
-		
+		}
+
 		return id;
 	}
-	
+
 	public void modificar_datos_personales(String nombreUsuario, String apellidos, String correo, String contrasena,
 			String repetirContrasena, String telefono, String Pais, String localidad, String calle, String portal,
 			String provincia, int codigoPostal, String numeroTarjeta, String titularTarjeta, String fechaCaducidad,
 			int cvv, String img, int id) throws PersistentException {
-		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
 		try {
 			Cibernauta_registrado cb = Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(id);
-			
-				if (contrasena.equals(repetirContrasena)) {
-					cb.setNombre(nombreUsuario);
-					cb.setApellidos(apellidos);
-					cb.setCorreo_electronico(correo);
-					cb.setContrasena(contrasena);
-					cb.setTelefono(telefono);
-					cb.setPais(Pais);
-					cb.setLocalidad(localidad);
-					cb.setCalle(calle);
-					cb.setPortal(portal);
-					cb.setProvincia(provincia);
-					cb.setCp(codigoPostal);
-					cb.setNumero_tarjeta_credito(numeroTarjeta);
-					cb.setNombre_titular_tarjeta(titularTarjeta);
-					cb.setFecha_caducidad(fechaCaducidad);
-					cb.setCvv(cvv);
-					basededatos.Cibernauta_registradoDAO.save(cb);	
-				}
+
+			if (contrasena.equals(repetirContrasena)) {
+				cb.setNombre(nombreUsuario);
+				cb.setApellidos(apellidos);
+				cb.setCorreo_electronico(correo);
+				cb.setContrasena(contrasena);
+				cb.setTelefono(telefono);
+				cb.setPais(Pais);
+				cb.setLocalidad(localidad);
+				cb.setCalle(calle);
+				cb.setPortal(portal);
+				cb.setProvincia(provincia);
+				cb.setCp(codigoPostal);
+				cb.setNumero_tarjeta_credito(numeroTarjeta);
+				cb.setNombre_titular_tarjeta(titularTarjeta);
+				cb.setFecha_caducidad(fechaCaducidad);
+				cb.setCvv(cvv);
+				basededatos.Cibernauta_registradoDAO.save(cb);
+			}
 			pt.commit();
 		} catch (Exception e) {
 			pt.rollback();
@@ -119,7 +128,7 @@ public class Cibernautas_registrados {
 	public void BajaCuentaCibernautaRegistrado() throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
-		
+
 		try {
 //			Cibernauta_registrado[] cibernautaRegistrado = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
 //			for (Cibernauta_registrado cbr : cibernautaRegistrado) {
@@ -128,8 +137,8 @@ public class Cibernautas_registrados {
 //			}
 			basededatos.Cibernauta_registradoDAO.delete(null);
 			t.commit();
-			
-		} catch(PersistentException e) {
+
+		} catch (PersistentException e) {
 			t.rollback();
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();

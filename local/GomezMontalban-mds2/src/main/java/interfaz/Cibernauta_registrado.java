@@ -4,6 +4,7 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -40,60 +41,55 @@ public class Cibernauta_registrado extends Cibernauta_común {
 				}
 
 				for (Email email : _banner_registrado._correo_usuario.emails) {
-					
+
 					email.getVerButton().addClickListener(t -> {
 						layout.remove(_banner_registrado._correo_usuario);
 						layout.add(email._ver_email);
-						if(email.getVaadinTextField().getValue().equals("Administrador")){
+						if (email.getVaadinTextField().getValue().equals("Administrador")) {
 							email._ver_email.getResponderButton().setEnabled(false);
 						}
 					});
-					
+
 					email._ver_email.getAtrasButton().addClickListener(new ComponentEventListener() {
 
 						@Override
 						public void onComponentEvent(ComponentEvent event) {
 							layout.remove(email._ver_email);
-							layout.add(_banner_registrado._correo_usuario);							
-							
-						}						
+							layout.add(_banner_registrado._correo_usuario);
+
+						}
 					});
-					
+
 					email._ver_email.getResponderButton().addClickListener(new ComponentEventListener() {
 
 						@Override
 						public void onComponentEvent(ComponentEvent event) {
 							layout.remove(email._ver_email);
-							layout.add(_banner_registrado._correo_usuario._redactar_correo);					
-							_banner_registrado._correo_usuario._redactar_correo.getDestinatarioText().setValue(email.getVaadinTextField().getValue().toString());
-							_banner_registrado._correo_usuario._redactar_correo.getAsuntoText().setValue("RE: "+email.getAsuntoText().getValue().toString());
+							layout.add(_banner_registrado._correo_usuario._redactar_correo);
+							_banner_registrado._correo_usuario._redactar_correo.getDestinatarioText()
+									.setValue(email.getVaadinTextField().getValue().toString());
+							_banner_registrado._correo_usuario._redactar_correo.getAsuntoText()
+									.setValue("RE: " + email.getAsuntoText().getValue().toString());
 						}
 
-						
 					});
 
 				}
 
-
 			}
 		});
-		
-		
+
 		_banner_registrado._correo_usuario.getRedactarButton().addClickListener(new ComponentEventListener() {
 
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				layout.remove(_banner_registrado._correo_usuario);		
+				layout.remove(_banner_registrado._correo_usuario);
 				layout.add(_banner_registrado._correo_usuario._redactar_correo);
-				
+
 			}
 
-			
 		});
-		
-		
-		
-		
+
 		_banner_registrado.getPerfil().addClickListener(new ComponentEventListener() {
 
 			@Override
@@ -128,22 +124,21 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 				layout.add(_banner_registrado._administrar_perfil._seguimiento_del_pedido);
 
-				
 			}
 		});
-		
-		_banner_registrado._administrar_perfil.getModificarDatosPersonales().addClickListener(new ComponentEventListener() {
-			
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout.removeAll();
-				layout.add(_banner_registrado);
-				
-				layout.add(_banner_registrado._administrar_perfil._modificar_datos_personales);
-				
-				
-			}
-		});
+
+		_banner_registrado._administrar_perfil.getModificarDatosPersonales()
+				.addClickListener(new ComponentEventListener() {
+
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout.removeAll();
+						layout.add(_banner_registrado);
+
+						layout.add(_banner_registrado._administrar_perfil._modificar_datos_personales);
+
+					}
+				});
 
 		_banner_registrado._administrar_perfil.getModificarDatosPersonales()
 				.addClickListener(new ComponentEventListener() {
@@ -162,6 +157,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
+				Notification.show("prueba");
 				layout.removeAll();
 				layout.add(_banner_registrado);
 
@@ -205,13 +201,12 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 			}
 		});
-		
-		
+
 		this._banner_registrado.getCarritoButton().addClickListener(new ComponentEventListener() {
 
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				
+
 				_banner_registrado._carrito_registrado.eliminar_productos();
 
 				try {
@@ -227,28 +222,29 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			}
 		});
 
+		this._banner_registrado._correo_usuario._redactar_correo.getCancelar()
+				.addClickListener(new ComponentEventListener() {
 
-		this._banner_registrado._correo_usuario._redactar_correo.getCancelar().addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout.remove(_banner_registrado._correo_usuario._redactar_correo);
+						layout.add(_banner_registrado._correo_usuario);
 
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout.remove(_banner_registrado._correo_usuario._redactar_correo);
-				layout.add(_banner_registrado._correo_usuario);			
+					}
+				});
 
-			}
-		});
-		
-		this._banner_registrado._correo_usuario._redactar_correo.getEnviar().addClickListener(new ComponentEventListener() {
+		this._banner_registrado._correo_usuario._redactar_correo.getEnviar()
+				.addClickListener(new ComponentEventListener() {
 
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout.remove(_banner_registrado._correo_usuario._redactar_correo);
-				layout.add(_banner_registrado._correo_usuario);			
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout.remove(_banner_registrado._correo_usuario._redactar_correo);
+						layout.add(_banner_registrado._correo_usuario);
 
-			}
-		});
-		
-		for(Producto p : catalogo.vista_productos) {
+					}
+				});
+
+		for (Producto p : catalogo.vista_productos) {
 
 			p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
 				@Override
@@ -263,28 +259,38 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			});
 
 		}
+
+		this._banner_registrado._administrar_perfil._modificar_datos_personales.getButtonCancelar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout.remove(_banner_registrado._administrar_perfil._modificar_datos_personales);
+						layout.add(_banner_registrado._administrar_perfil);
+					}
+				});
+
+		this._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonCancelarBajaUsuario()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout.remove(_banner_registrado._administrar_perfil._dar_de_baja_usuario);
+						layout.add(_banner_registrado._administrar_perfil);
+					}
+				});
+
+		// No da de baja al usuario
+		this._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonConfirmarBajaUsuario()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						Notification.show("prueba 2");
+						// layout.remove(_banner_registrado._administrar_perfil._dar_de_baja_usuario);
+						// layout.add(_banner_registrado._administrar_perfil);
+					}
+				});
 		
-		
-		
-		this._banner_registrado._administrar_perfil._modificar_datos_personales.getButtonCancelar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout.remove(_banner_registrado._administrar_perfil._modificar_datos_personales);
-				layout.add(_banner_registrado._administrar_perfil);
-			}
-		});
-		
-		this._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonCancelarBajaUsuario().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout.remove(_banner_registrado._administrar_perfil._dar_de_baja_usuario);
-				layout.add(_banner_registrado._administrar_perfil);
-			}
-		});
-		
-	
-		
-	
+		// this._banner_registrado._carrito_registrado._modificar_datos_personales.getb
+
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {
@@ -296,11 +302,9 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		catalogo.setUsuario(usuario);
 
 	}
-	
+
 	public String getUsuario() {
 		return this.usuario;
 	}
-	
-	
 
 }

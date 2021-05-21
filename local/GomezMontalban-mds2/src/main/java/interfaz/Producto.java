@@ -17,6 +17,7 @@ public class Producto extends VistaProducto {
 	public Ver_carácteristicas_del_producto _ver_carácteristicas_del_producto;
 	public int idUsuario;
 	public String nombreP, descripcion, precio, foto;
+
 	public Producto(String nombre, String descripcion, String precio, String foto) {
 
 		this.getTextNombre().setValue(nombre);
@@ -34,18 +35,16 @@ public class Producto extends VistaProducto {
 		BDPrincipal bd = new BDPrincipal();
 		ArrayList<basededatos.Producto> productos = bd.cargar_productos_catalogo();
 		for (basededatos.Producto p : productos) {
-			if (p.getNombre().equals(this.nombreP)
-					&& p.getDescripción().equals(this.descripcion)
+			if (p.getNombre().equals(this.nombreP) && p.getDescripción().equals(this.descripcion)
 					&& p.getPrecio() == Double.valueOf(this.precio)) {
-				
+
 				bd._db_item.anadir_al_carrito(p.getORMID(), idUsuario);
 
-				
 			}
 
 		}
 	}
-	
+
 	public void setUsuario(String nombre) throws PersistentException {
 		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
 		for (Cibernauta_registrado cib : cb) {
