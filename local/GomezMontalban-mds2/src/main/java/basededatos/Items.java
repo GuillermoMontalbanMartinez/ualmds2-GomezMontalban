@@ -146,15 +146,12 @@ public class Items {
 	}
 
 	public void eliminar_producto(int aId_item) throws PersistentException {
+		int count = 0;
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
 		
 		Item item = basededatos.ItemDAO.getItemByORMID(aId_item);
-		for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
-			if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
-				basededatos.FotoDAO.deleteAndDissociate(f);
-			}
-		}
+		
 
 		basededatos.CompraDAO.deleteAndDissociate(item.getEsta_asociado_a_una_compra());
 
@@ -166,7 +163,16 @@ public class Items {
 					&& p.getDescripción().equals(producto.getDescripción())){
 
 				System.out.println("");
+				count++;
+			}
+			
+			if(count >=2) {
 				ProductoDAO.deleteAndDissociate(p);
+				for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+					if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
+						basededatos.FotoDAO.deleteAndDissociate(f);
+					}
+				}
 			} else {
 				p.setTiene_item(null);
 			}
