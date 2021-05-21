@@ -13,6 +13,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 	public VerticalLayout layout;
 	private String usuario;
 	Acceder_al_catalogo catalogo;
+	public Producto producto;
 
 	public Cibernauta_registrado() {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
@@ -280,6 +281,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 				layout.add(_banner_registrado._administrar_perfil);
 			}
 		});
+		
+	
 		
 	
 	}

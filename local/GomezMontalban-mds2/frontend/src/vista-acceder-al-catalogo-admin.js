@@ -22,9 +22,9 @@ class VistaAccederAlCatalogoAdmin extends PolymerElement {
  <vaadin-vertical-layout style="width: 20%; align-items: flex-start;">
   <vista-categorias-admin style="width: 100%;"></vista-categorias-admin>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout id="layoutProductosCatalogoAdmin" style="width: 80%;">
-  <vaadin-horizontal-layout style="width: 100%;">
-   <vista-productos-admin></vista-productos-admin>
+ <vaadin-vertical-layout id="layoutProductosCatalogoAdmin" style="width: 80%; height: 60%;">
+  <vaadin-horizontal-layout style="width: 100%; height: 100%;">
+   <vista-productos-admin style="height: 100%;"></vista-productos-admin>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
