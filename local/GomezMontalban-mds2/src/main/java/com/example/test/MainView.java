@@ -86,6 +86,18 @@ public class MainView extends VerticalLayout {
 
 				case 1:
 					Empresa_de_transportes et = new Empresa_de_transportes();
+					
+					et.getButtonCerrarSesion().addClickListener( t -> {
+						cerrar_sesion(et, cibernauta);
+					});
+					
+					et.pedidos_a_entregar.getButtonCerrarSesion().addClickListener( t -> {
+						volver_a_principal(et);
+					});
+					
+					et.pedidos_entregados.getButtonCerrarSesion().addClickListener(t -> {
+						volver_a_principal(et);
+					});
 					remove(cibernauta);
 					add(et);
 
@@ -165,6 +177,19 @@ public class MainView extends VerticalLayout {
 		removeAll();
 		add(c);
 		login(c);
+	}
+	
+	public void volver_a_principal(Empresa_de_transportes et) {
+		Empresa_de_transportes empresaDeTransportes = new Empresa_de_transportes();
+		Cibernauta cibernauta = new Cibernauta();
+		
+		empresaDeTransportes.getVaadinButtonPedidosAEntregar().addClickListener( t -> {
+			volver_a_principal(empresaDeTransportes);
+		});
+		
+		remove(et);
+		add(empresaDeTransportes);
+		
 	}
 
 	public void volver_a_principal(Administrador c) {
