@@ -16,6 +16,9 @@ class VistaPedidosAEntregar extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayoutPedidosAEntregar">
+ <vaadin-button id="buttonCerrarSesion" style="align-self: flex-end;" theme="primary error">
+  Cerrar sesión 
+ </vaadin-button>
  <h1 style="align-self: center; flex-shrink: 0;">Pedidos a entregar</h1>
  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
   <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">

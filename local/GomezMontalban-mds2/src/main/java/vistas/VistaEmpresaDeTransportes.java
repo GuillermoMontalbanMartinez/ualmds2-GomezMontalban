@@ -18,6 +18,8 @@ public class VistaEmpresaDeTransportes extends PolymerTemplate<VistaEmpresaDeTra
 	private Button vaadinButtonPedidosAEntregar;
 	@Id("vaadinVerticalLayoutEmpresaDeTransportes")
 	private Element vaadinVerticalLayout;
+	@Id("buttonCerrarSesion")
+	private Button buttonCerrarSesion;
 
 	/**
      * Creates a new VistaEmpresaDeTransportes.
@@ -71,6 +73,14 @@ public class VistaEmpresaDeTransportes extends PolymerTemplate<VistaEmpresaDeTra
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getButtonCerrarSesion() {
+		return buttonCerrarSesion;
+	}
+
+	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
+		this.buttonCerrarSesion = buttonCerrarSesion;
 	}
 
 

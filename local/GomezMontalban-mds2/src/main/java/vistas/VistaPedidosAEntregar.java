@@ -28,6 +28,8 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 	private Button vaadinButton;
 	@Id("vistaListaProductosAEnviar")
 	private VistaProductosAEnviar vistaListaProductosAEnviar;
+	@Id("buttonCerrarSesion")
+	private Button buttonCerrarSesion;
 	/**
      * Creates a new VistaPedidosAEntregar.
      */
@@ -80,5 +82,13 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 
 	public void setVistaListaProductosAEnviar(VistaProductosAEnviar vistaListaProductosAEnviar) {
 		this.vistaListaProductosAEnviar = vistaListaProductosAEnviar;
+	}
+
+	public Button getButtonCerrarSesion() {
+		return buttonCerrarSesion;
+	}
+
+	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
+		this.buttonCerrarSesion = buttonCerrarSesion;
 	}
 }
