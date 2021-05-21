@@ -1,8 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import './vista-listado-de-compras.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaComprasAEnviar extends PolymerElement {
 
@@ -16,6 +16,9 @@ class VistaComprasAEnviar extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout id="vaadinVerticalLayoutComprasAEnviar">
+ <vaadin-button id="buttonCerrarSesion" style="align-self: flex-end;" theme="primary error">
+  Cerrar sesión
+ </vaadin-button>
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;">
   <vaadin-horizontal-layout theme="spacing">
    <h1 style="flex-shrink: 0;">Compras realizadas</h1>
@@ -27,10 +30,11 @@ class VistaComprasAEnviar extends PolymerElement {
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="align-self: center; margin-top: var(--lumo-space-m);">
-  <vaadin-button theme="primary" style="width: 104%; height: 100%; align-self: center;" id="boton_compras_a_enviar">
+  <vaadin-button theme="primary" style="width: 104%; height: 100%; align-self: center;" id="boton_compras_a_enviar" disabled>
     Compras a enviar 
   </vaadin-button>
  </vaadin-vertical-layout>
+ <h1 style="align-self: center;">Listado de compras realizadas </h1>
  <vista-listado-de-compras style="align-self: center; width: 100%;"></vista-listado-de-compras>
 </vaadin-vertical-layout>
 `;

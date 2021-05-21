@@ -24,6 +24,8 @@ public class VistaEncargadoDeCompras extends PolymerTemplate<VistaEncargadoDeCom
 	private Button button_compras_enviadas;
 	@Id("button_compras_a_enviar")
 	private Button button_compras_a_enviar;
+	@Id("buttonCerrarSesion")
+	private Button buttonCerrarSesion;
 
 	/**
      * Creates a new VistaEncargadoDeCompras.
@@ -61,5 +63,13 @@ public class VistaEncargadoDeCompras extends PolymerTemplate<VistaEncargadoDeCom
 
 	public void setButton_compras_a_enviar(Button button_compras_a_enviar) {
 		this.button_compras_a_enviar = button_compras_a_enviar;
+	}
+
+	public Button getButtonCerrarSesion() {
+		return buttonCerrarSesion;
+	}
+
+	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
+		this.buttonCerrarSesion = buttonCerrarSesion;
 	}
 }

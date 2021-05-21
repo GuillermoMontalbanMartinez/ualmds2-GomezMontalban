@@ -12,9 +12,7 @@ class VistaListadoDeCompras extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center; justify-content: center; width: 100%;" id="vaadinVerticalLayoutListadoDeCompras">
- <h1>Listado de compras realizadas</h1>
-</vaadin-vertical-layout>
+<vaadin-vertical-layout style="align-items: center; justify-content: center; width: 100%;" id="vaadinVerticalLayoutListadoDeCompras"></vaadin-vertical-layout>
 `;
     }
 

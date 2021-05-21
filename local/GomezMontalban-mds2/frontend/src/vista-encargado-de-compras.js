@@ -15,6 +15,9 @@ class VistaEncargadoDeCompras extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;" id="layout_encargado_de_compras">
+ <vaadin-button id="buttonCerrarSesion" style="align-self: flex-end;" theme="primary error">
+  Cerrar sesión
+ </vaadin-button>
  <vaadin-horizontal-layout theme="spacing">
   <h1>Bienvenido, selecciona la lista que desea ver</h1>
  </vaadin-horizontal-layout>
