@@ -30,7 +30,7 @@ class VistaProductoAEnviar extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-button style="align-self: center;" id="buttonEntregado" theme="primary">
-     Entregado 
+    Marcar como entregado
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>

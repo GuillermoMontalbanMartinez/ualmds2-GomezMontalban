@@ -15,7 +15,7 @@ class VistaReseña extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;" id="verticalLayoutResena">
  <vaadin-horizontal-layout style="width: 100%; height: 100%;">
   <vaadin-horizontal-layout style="width: 40%; height: 100%;">
    <vaadin-vertical-layout style="width: 100%;">
@@ -24,13 +24,13 @@ class VistaReseña extends PolymerElement {
       <label style="margin: var(--lumo-space-m);">Valoración media</label>
      </vaadin-horizontal-layout>
      <vaadin-horizontal-layout style="margin: var(--lumo-space-m);">
-      <vaadin-text-field style="margin: var(--lumo-space-m);" readonly></vaadin-text-field>
+      <vaadin-text-field style="margin: var(--lumo-space-m);" readonly id="textValorarionMedia"></vaadin-text-field>
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="width: 60%; height: 100%;">
-   <vaadin-text-area style="width: 100%;" readonly></vaadin-text-area>
+   <vaadin-text-area style="width: 100%;" readonly id="textDescripcionResena"></vaadin-text-area>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
