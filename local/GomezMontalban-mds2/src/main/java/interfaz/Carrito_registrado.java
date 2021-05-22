@@ -71,7 +71,6 @@ public class Carrito_registrado extends Carrito {
 	public void confirmar_compra() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
 		for(Producto p : productos) {
-			System.out.println((p.getTiene_item().getEsta_asociado_a_una_compra().getORMID()));
 			bd.confirmar_compra(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
 		}
 		vista_productos.clear();
