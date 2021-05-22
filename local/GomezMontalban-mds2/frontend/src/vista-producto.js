@@ -17,7 +17,7 @@ class VistaProducto extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; ">
+<vaadin-vertical-layout style="width: 100%; border: #ccc solid 2px; border-radius : 5px;">
  <vaadin-vertical-layout style="align-self: center;">
   <vaadin-horizontal-layout>
    <vaadin-horizontal-layout>
@@ -49,8 +49,11 @@ class VistaProducto extends PolymerElement {
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout>
-    <vaadin-button theme="icon" aria-label="Add new" id="buttonAgregarCarrito" style="align-self: center;">
+    <vaadin-button theme="icon" aria-label="Add new" id="buttonAgregarCarrito" style="align-self: center; margin-right: var(--lumo-space-xl);">
      <iron-icon icon="lumo:plus"></iron-icon>
+    </vaadin-button>
+    <vaadin-button theme="primary" id="verCaracteristicas" style="align-self: center; flex-grow: 1; margin-left: var(--lumo-space-xl);">
+     Ver carácteristicas
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

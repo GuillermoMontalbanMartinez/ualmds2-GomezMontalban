@@ -76,12 +76,12 @@ public class Acceder_al_catalogo_admin extends VistaAccederAlCatalogoAdmin {
 //					String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
 			if(value!=null) {
 				if(p.getCategoria().getNombre().equals(value)) {
-					interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+					interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 					listaProductos.add(producto);
 					vista_productos.add(producto);
 				}
 			} else {
-				interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+				interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 				listaProductos.add(producto);
 				vista_productos.add(producto);
 			}

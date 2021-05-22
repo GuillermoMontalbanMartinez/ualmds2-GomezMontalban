@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -81,6 +83,17 @@ public class Cibernauta extends Cibernauta_común {
 					layout.add(_banner_no_registrado);
 					layout.add(inicio_sesion);
 					catalogo.eliminar_producto();
+
+				}
+			});
+
+			p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+					layout.removeAll();
+					layout.add(_banner_no_registrado);
+					layout.add(p._ver_carácteristicas_del_producto);
 
 				}
 			});

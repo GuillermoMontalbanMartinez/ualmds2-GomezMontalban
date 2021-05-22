@@ -9,17 +9,22 @@ import com.vaadin.flow.component.ComponentEventListener;
 
 import basededatos.BDPrincipal;
 import basededatos.Cibernauta_registrado;
+import basededatos.Foto;
 import vistas.VistaProducto;
 
 public class Producto extends VistaProducto {
 	public Oferta _oferta;
 	public Productos _productos;
-	public Ver_carácteristicas_del_producto _ver_carácteristicas_del_producto;
+	public Ver_carácteristicas_del_producto _ver_carácteristicas_del_producto = new Ver_carácteristicas_del_producto();
+	public Iniciar_sesion i = new Iniciar_sesion();
 	public int idUsuario;
+	public int idProducto;
 	public String nombreP, descripcion, precio, foto;
 
-	public Producto(String nombre, String descripcion, String precio, String foto) {
+	public Producto(String nombre, String descripcion, String precio, String foto, int id) {
 
+	
+		this.idProducto = id;
 		this.getTextNombre().setValue(nombre);
 		this.getTextDescripcion().setValue(descripcion);
 		this.getTextPrecio().setValue(precio);
@@ -29,28 +34,66 @@ public class Producto extends VistaProducto {
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.foto = foto;
+
+		try {
+			basededatos.Producto producto = basededatos.ProductoDAO.getProductoByORMID(idProducto);
+			_ver_carácteristicas_del_producto.getNombreText().setValue(producto.getNombre());
+			_ver_carácteristicas_del_producto.getDescripcionText().setValue(producto.getDescripción());
+			_ver_carácteristicas_del_producto.getVaadinTextField().setValue(String.valueOf(producto.getPrecio()));
+			int aux = 0;
+			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+				if (f.getEsta_asociada_a_un_producto().equals(producto)) {
+					switch (aux) {
+					case 0:
+						_ver_carácteristicas_del_producto.getFoto().setSrc(f.getLink_foto());
+						aux++;
+						break;
+
+					case 1:
+						_ver_carácteristicas_del_producto.getFoto1().setSrc(f.getLink_foto());
+						aux++;
+						break;
+					case 2:
+						_ver_carácteristicas_del_producto.getFoto2().setSrc(f.getLink_foto());
+						aux++;
+						break;
+					case 3:
+						_ver_carácteristicas_del_producto.getFoto3().setSrc(f.getLink_foto());
+						aux++;
+						break;
+					case 4:
+						_ver_carácteristicas_del_producto.getFoto4().setSrc(f.getLink_foto());
+						break;
+					default:
+						break;
+					}
+
+				}
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 	public void añadir_al_carrito() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		ArrayList<basededatos.Producto> productos = bd.cargar_productos_catalogo();
-		for (basededatos.Producto p : productos) {
-			if (p.getNombre().equals(this.nombreP) && p.getDescripción().equals(this.descripcion)
-					&& p.getPrecio() == Double.valueOf(this.precio)) {
-
-				bd._db_item.anadir_al_carrito(p.getORMID(), idUsuario);
-
-			}
-
-		}
+		bd._db_item.anadir_al_carrito(this.idProducto, idUsuario);
 	}
 
 	public void setUsuario(String nombre) throws PersistentException {
+		BDPrincipal bd = new BDPrincipal();
 		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
 		for (Cibernauta_registrado cib : cb) {
 			if (cib.getNombre().equals(nombre)) {
 				idUsuario = cib.getORMID();
 			}
 		}
+
+	}
+
+	public int getIdProducto() {
+		return this.idProducto;
 	}
 }

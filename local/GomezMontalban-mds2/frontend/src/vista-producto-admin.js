@@ -32,7 +32,7 @@ class VistaProductoAdmin extends PolymerElement {
    <vaadin-horizontal-layout style="width: 75%;">
     <vaadin-vertical-layout style="width: 100%;">
      <vaadin-vertical-layout>
-      <label>DESCRIPCIÓN </label>
+      <label>Descripción</label>
      </vaadin-vertical-layout>
      <vaadin-vertical-layout style="width: 100%;">
       <vaadin-text-area id="textDescripcion" style="width: 100%;" readonly></vaadin-text-area>
@@ -44,13 +44,13 @@ class VistaProductoAdmin extends PolymerElement {
  <vaadin-vertical-layout style="align-self: center;">
   <vaadin-horizontal-layout>
    <vaadin-horizontal-layout style="margin: var(--lumo-space-m);">
-    <vaadin-button id="buttonVerCaracteristicasDelProducto" style="margin: var(--lumo-space-m);" theme="primary">
-     Ver Caracteristicas del producto
+    <vaadin-button id="buttonVerCaracteristicasDelProducto" style="margin: var(--lumo-space-m); align-self: center;" theme="primary">
+      Ver Caracteristicas del producto 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout style="margin: var(--lumo-space-m);">
-    <label style="margin: var(--lumo-space-m);">Precio</label>
-    <vaadin-text-field id="textPrecio" style="margin: var(--lumo-space-m);" readonly></vaadin-text-field>
+    <label style="margin: var(--lumo-space-m); align-self: center;">Precio</label>
+    <vaadin-text-field id="textPrecio" style="margin: var(--lumo-space-m); align-self: center;" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

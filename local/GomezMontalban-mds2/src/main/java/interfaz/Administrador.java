@@ -25,6 +25,7 @@ public class Administrador extends VistaAdministrador {
 	public VerticalLayout layout_administrador;
 	public VerticalLayout layout_cuerpo_administrador;
 	public Acceder_al_catalogo_admin catalogoAdmin;
+	
 
 	
 	public Administrador() {
@@ -327,7 +328,21 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
-		
+		for (Producto_admin p : catalogoAdmin.vista_productos) {
+
+			
+			
+			p.getButtonVerCaracteristicasDelProducto().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					Ver_carácteristicas_del_producto v = new  Ver_carácteristicas_del_producto();
+					layout_administrador.removeAll();
+					layout_administrador.add(banner_admin);
+					layout_administrador.add(p._caracteristicas_del_producto_admin);
+
+				}
+			});
+		}
 	}
 
 	

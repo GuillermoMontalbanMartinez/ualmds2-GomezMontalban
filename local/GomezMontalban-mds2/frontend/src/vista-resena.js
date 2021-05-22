@@ -38,7 +38,7 @@ class VistaReseña extends PolymerElement {
     }
 
     static get is() {
-        return 'vista-reseña';
+        return 'vista-resena';
     }
 
     static get properties() {
@@ -48,4 +48,4 @@ class VistaReseña extends PolymerElement {
     }
 }
 
-customElements.define(VistaReseña.is, VistaReseña);
+customElements.define(VistaResena.is, VistaResena);

@@ -32,6 +32,9 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	@Id("textNombre")
 	private TextField textNombre;
 
+	@Id("verCaracteristicas")
+	private Button verCaracteristicas;
+
 	/**
      * Creates a new VistaProducto.
      */
@@ -84,6 +87,14 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 
 	public void setTextNombre(TextField textNombre) {
 		this.textNombre = textNombre;
+	}
+
+	public Button getVerCaracteristicas() {
+		return verCaracteristicas;
+	}
+
+	public void setVerCaracteristicas(Button verCaracteristicas) {
+		this.verCaracteristicas = verCaracteristicas;
 	}
 
 
