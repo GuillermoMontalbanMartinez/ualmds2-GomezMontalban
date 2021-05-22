@@ -1,6 +1,9 @@
 package basededatos;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+
 import basededatos.Compra_pendiente;
 
 public class Compras_pendientes {
@@ -11,7 +14,19 @@ public class Compras_pendientes {
 		throw new UnsupportedOperationException();
 	}
 
-	public void confirmar_compra(int aId_compra) {
-		throw new UnsupportedOperationException();
+	public void confirmar_compra(int aId_compra) throws PersistentException {
+		Compra compra = basededatos.CompraDAO.loadCompraByORMID(aId_compra);
+		Compra_pendiente c = basededatos.Compra_pendienteDAO.createCompra_pendiente();
+		compra.setEstado_compra(1);
+		c.setFecha_compra(compra.getFecha_compra());
+		c.setTiene_asociado_un_cibernauta_registrado(compra.getTiene_asociado_un_cibernauta_registrado());
+		c.setPrecio_compra(compra.getPrecio_compra());
+		c.setTiene_item(compra.getTiene_item());
+		c.setTotal_productos(compra.getTotal_productos());
+		c.setEstado_compra(1);
+		c.setFecha_envio(compra.getFecha_compra());
+		
+		basededatos.Compra_pendienteDAO.save(c);
+		
 	}
 }

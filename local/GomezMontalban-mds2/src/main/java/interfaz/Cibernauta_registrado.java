@@ -291,6 +291,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		
 		// this._banner_registrado._carrito_registrado._modificar_datos_personales.getb
 
+		
+		
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {

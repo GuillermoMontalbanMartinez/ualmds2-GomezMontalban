@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import vistas.VistaProductosSeleccionados;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-carrito template.
@@ -19,6 +20,10 @@ public class VistaCarrito extends PolymerTemplate<VistaCarrito.VistaCarritoModel
 
     @Id("vistaProductosSeleccionados")
 	private VistaProductosSeleccionados vistaProductosSeleccionados;
+	@Id("comprarButton")
+	private Button comprarButton;
+	@Id("cambiarDatosButton")
+	private Button cambiarDatosButton;
 
 	/**
      * Creates a new VistaCarrito.
@@ -40,5 +45,21 @@ public class VistaCarrito extends PolymerTemplate<VistaCarrito.VistaCarritoModel
 
 	public void setVistaProductosSeleccionados(VistaProductosSeleccionados vistaProductosSeleccionados) {
 		this.vistaProductosSeleccionados = vistaProductosSeleccionados;
+	}
+
+	public Button getComprarButton() {
+		return comprarButton;
+	}
+
+	public void setComprarButton(Button comprarButton) {
+		this.comprarButton = comprarButton;
+	}
+
+	public Button getCambiarDatosButton() {
+		return cambiarDatosButton;
+	}
+
+	public void setCambiarDatosButton(Button cambiarDatosButton) {
+		this.cambiarDatosButton = cambiarDatosButton;
 	}
 }

@@ -207,7 +207,6 @@ public class Items {
 			return items;
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("aqui esta");
 			return null;
 		}
 	}

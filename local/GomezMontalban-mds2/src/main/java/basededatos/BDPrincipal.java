@@ -14,7 +14,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Resenas _db_resena;
 	public Ofertas _db_ofertas = new Ofertas();
 	public Categorias _db_categorias = new Categorias();
-	public Compras_pendientes _db_compras_pendientes;
+	public Compras_pendientes _db_compras_pendientes = new Compras_pendientes();
 	public Compras_enviadas _db_compras_enviadas;
 	public Compras_recibidas _db_compras_recibidas;
 	public Fotos _db_fotos;
@@ -191,7 +191,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 	public void confirmar_compra(int aId_compra) {
-		throw new UnsupportedOperationException();
+		_db_compras_pendientes.confirmar_compra(aId_compra);
 	}
 
 	public Compra[] cargar_listado_de_compras_admin() {

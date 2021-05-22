@@ -20,10 +20,10 @@ class VistaCarrito extends PolymerElement {
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 10%;">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; flex-grow: 0; justify-content: flex-end; align-self: flex-start;">
   <p style="align-self: center; flex-grow: 0; margin-right: var(--lumo-space-xl);">Precio : </p>
-  <vaadin-button theme="primary" style="align-self: center; margin-left: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);">
+  <vaadin-button theme="primary" style="align-self: center; margin-left: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);" id="comprarButton">
     Comprar 
   </vaadin-button>
-  <vaadin-button theme="primary" style="align-self: center; margin-left: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);">
+  <vaadin-button theme="primary" style="align-self: center; margin-left: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);" id="cambiarDatosButton">
     Cambiar datos de pago 
   </vaadin-button>
  </vaadin-horizontal-layout>

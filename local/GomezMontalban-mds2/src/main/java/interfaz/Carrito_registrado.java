@@ -27,6 +27,10 @@ public class Carrito_registrado extends Carrito {
 				.as(VerticalLayout.class);
 		vista_productos = new ArrayList<interfaz.Producto_seleccionado>();
 
+		
+		this.getComprarButton().addClickListener(e -> {
+			confirmar_compra();
+		});
 	}
 
 	public void cargar_productos_seleccionados() throws PersistentException {
@@ -34,7 +38,6 @@ public class Carrito_registrado extends Carrito {
 		ArrayList<Item> items = bd.cargar_productos_seleccionados(id);
 		if (!(items == null)) {
 			for (Item i : items) {
-				System.out.println("olee");
 				productos.add(i.getEsta_asociado_a_un_producto());
 			}
 
@@ -58,12 +61,14 @@ public class Carrito_registrado extends Carrito {
 		vista_productos.clear();
 	}
 
-	public void realizar_compra() {
-		throw new UnsupportedOperationException();
-	}
+	
 
 	public void confirmar_compra() {
-		throw new UnsupportedOperationException();
+		BDPrincipal bd = new BDPrincipal();
+		for(Producto p : productos) {
+			bd.confirmar_compra(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
+
+		}
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {
