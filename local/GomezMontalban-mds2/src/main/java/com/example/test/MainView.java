@@ -91,12 +91,12 @@ public class MainView extends VerticalLayout {
 						cerrar_sesion(et, cibernauta);
 					});
 					
-					et.pedidos_a_entregar.getButtonCerrarSesion().addClickListener( t -> {
-						volver_a_principal(et);
+					et.pedidos_a_entregar.getButtonInicio().addClickListener( t -> {
+						inicioEmpresaDeTransportes(et);
 					});
 					
-					et.pedidos_entregados.getButtonCerrarSesion().addClickListener(t -> {
-						volver_a_principal(et);
+					et.pedidos_entregados.getButtonInicioPedidosEntregados().addClickListener(t -> {
+						inicioEmpresaDeTransportes(et);
 					});
 					remove(cibernauta);
 					add(et);
@@ -105,11 +105,11 @@ public class MainView extends VerticalLayout {
 
 				case 2:
 					Encargado_de_compras ec = new Encargado_de_compras();
-					ec._compras_a_enviar.getButtonCerrarSesion().addClickListener(t -> {
+					ec._compras_a_enviar.getButtonInicio().addClickListener(t -> {
 						inicioEncargadoDeCompras(ec);
 					});
 					
-					ec._compras_enviadas.getButtonCerrarSesion().addClickListener(t -> {
+					ec._compras_enviadas.getButtonInicio().addClickListener(t -> {
 						inicioEncargadoDeCompras(ec);
 					});
 					
@@ -133,6 +133,10 @@ public class MainView extends VerticalLayout {
 
 					registrado._banner_registrado.getPrincipalButton().addClickListener(event ->{
 						volver_a_principal(registrado);
+					});
+					
+					registrado._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonConfirmarBajaUsuario().addClickListener(event ->{
+						cerrar_sesion(registrado, cibernauta);
 					});
 					remove(cibernauta);
 					add(registrado);
@@ -161,16 +165,48 @@ public class MainView extends VerticalLayout {
 
 	}
 
-	// Esto esta fallando
+	
+	public void inicioEmpresaDeTransportes(Empresa_de_transportes et) {
+		Empresa_de_transportes empresaDeTransportes = new Empresa_de_transportes();
+		Cibernauta cibernauta = new Cibernauta();
+		empresaDeTransportes.pedidos_a_entregar.getButtonInicio().addClickListener(t -> {
+			inicioEmpresaDeTransportes(et);
+		});
+		
+		empresaDeTransportes.pedidos_entregados.getButtonInicioPedidosEntregados().addClickListener(t -> {
+			inicioEmpresaDeTransportes(et);
+		});
+		remove(et);
+		removeAll();
+		add(empresaDeTransportes);
+		
+		empresaDeTransportes.getButtonCerrarSesion().addClickListener(t -> {
+			cerrar_sesion(et, cibernauta);
+		});
+		
+	}
+
 	public void inicioEncargadoDeCompras(Encargado_de_compras ec) {
 		Encargado_de_compras encargadoDeCompras = new Encargado_de_compras();
-		encargadoDeCompras.getButtonCerrarSesion().addClickListener(t -> {
+		Cibernauta cibernauta = new Cibernauta();
+		encargadoDeCompras._compras_a_enviar.getButtonInicio().addClickListener(t -> {
+			inicioEncargadoDeCompras(ec);
+		});
+		
+		encargadoDeCompras._compras_enviadas.getButtonInicio().addClickListener(t -> {
 			inicioEncargadoDeCompras(ec);
 		});
 		remove(ec);
+		removeAll();
 		add(encargadoDeCompras);
+		
+		encargadoDeCompras.getButtonCerrarSesion().addClickListener(t -> {
+			cerrar_sesion(ec, cibernauta);
+		});
 	
 	}
+	
+
 
 	public void cerrar_sesion(Component comp, Cibernauta c) {
 		c = new Cibernauta();
@@ -189,6 +225,10 @@ public class MainView extends VerticalLayout {
 		
 		remove(et);
 		add(empresaDeTransportes);
+
+		empresaDeTransportes.getButtonCerrarSesion().addClickListener(t -> {
+			cerrar_sesion(et, cibernauta);
+		});
 		
 	}
 

@@ -20,17 +20,16 @@ import vistas.VistaProductosEnviados;
 @JsModule("./src/vista-pedidos-entregados.js")
 public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregados.VistaPedidosEntregadosModel> {
 
-    @Id("vaadinButtonPedidosEntregados")
-	private Button vaadinButton1;
+//    @Id("vaadinButtonPedidosEntregados")
+//	private Button vaadinButton1;
 	@Id("vaadinVerticalLayoutPedidosEntregados")
 	private Element vaadinVerticalLayout;
 	@Id("vaadinButtonPedidosAEntregar")
 	private Button vaadinButtonPedidosAEntregar;
 	@Id("vistaListaProductosEnviados")
 	private VistaProductosEnviados vistaListaProductosEnviados;
-	@Id("buttonInicio")
-	private Button buttonCerrarSesion;
-
+	@Id("buttonInicioPedidosEntregados")
+	private Button buttonInicioPedidosEntregados;
 	/**
      * Creates a new VistaPedidosEntregados.
      */
@@ -61,13 +60,13 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
 //		this.vaadinButton = vaadinButton;
 //	}
 
-	public Button getVaadinButton1() {
-		return vaadinButton1;
-	}
-
-	public void setVaadinButton1(Button vaadinButton1) {
-		this.vaadinButton1 = vaadinButton1;
-	}
+//	public Button getVaadinButton1() {
+//		return vaadinButton1;
+//	}
+//
+//	public void setVaadinButton1(Button vaadinButton1) {
+//		this.vaadinButton1 = vaadinButton1;
+//	}
 
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
@@ -93,11 +92,19 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
 		this.vistaListaProductosEnviados = vistaListaProductosEnviados;
 	}
 
-	public Button getButtonCerrarSesion() {
-		return buttonCerrarSesion;
+//	public Button getButtonCerrarSesion() {
+//		return buttonCerrarSesion;
+//	}
+//
+//	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
+//		this.buttonCerrarSesion = buttonCerrarSesion;
+//	}
+
+	public Button getButtonInicioPedidosEntregados() {
+		return buttonInicioPedidosEntregados;
 	}
 
-	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
-		this.buttonCerrarSesion = buttonCerrarSesion;
+	public void setButtonInicioPedidosEntregados(Button buttonInicioPedidosEntregados) {
+		this.buttonInicioPedidosEntregados = buttonInicioPedidosEntregados;
 	}
 }

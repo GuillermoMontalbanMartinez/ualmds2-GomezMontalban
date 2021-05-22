@@ -25,11 +25,11 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 	private Button vaadinButtonProductosEntregados;
 	@Id("vaadinButtonProductosAEntregar")
 	private Button vaadinButtonProductosAEntregar;
-	private Button vaadinButton;
 	@Id("vistaListaProductosAEnviar")
 	private VistaProductosAEnviar vistaListaProductosAEnviar;
-	@Id("buttonInicio")
-	private Button buttonCerrarSesion;
+	@Id("buttonInicioPedidosAEntregar")
+	private Button buttonInicio;
+
 	/**
      * Creates a new VistaPedidosAEntregar.
      */
@@ -44,13 +44,13 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
         // Add setters and getters for template properties here.
     }
 
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
+//	public Button getVaadinButton() {
+//		return vaadinButton;
+//	}
+//
+//	public void setVaadinButton(Button vaadinButton) {
+//		this.vaadinButton = vaadinButton;
+//	}
 
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
@@ -84,11 +84,13 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 		this.vistaListaProductosAEnviar = vistaListaProductosAEnviar;
 	}
 
-	public Button getButtonCerrarSesion() {
-		return buttonCerrarSesion;
+	public Button getButtonInicio() {
+		return buttonInicio;
 	}
 
-	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
-		this.buttonCerrarSesion = buttonCerrarSesion;
+	public void setButtonInicio(Button buttonInicio) {
+		this.buttonInicio = buttonInicio;
 	}
+
+
 }

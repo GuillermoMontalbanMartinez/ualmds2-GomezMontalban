@@ -17,6 +17,8 @@ public interface iCibernauta_registrado {
 	public ArrayList<Producto> cargar_productos_catalogo() throws PersistentException;
 
 	public void confirmar(boolean aRespuesta);
+	
+	public void BajaCuentaCibernautaRegistrado(int idUsuario) throws PersistentException;
 
 	public void confirmar_cambios(boolean aRespuesta);
 

@@ -252,8 +252,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		
 	}
 
-	public void BajaCuentaCibernautaRegistrado() throws PersistentException {
-		_db_cibernautas_registrados.BajaCuentaCibernautaRegistrado();
+	public void BajaCuentaCibernautaRegistrado(int idUsuario) throws PersistentException {
+		_db_cibernautas_registrados.BajaCuentaCibernautaRegistrado(idUsuario);
 		
 	}
 
