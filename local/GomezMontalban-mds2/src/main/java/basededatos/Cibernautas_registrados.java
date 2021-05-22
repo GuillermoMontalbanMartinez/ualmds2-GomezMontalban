@@ -125,17 +125,23 @@ public class Cibernautas_registrados {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void BajaCuentaCibernautaRegistrado() throws PersistentException {
+	public void BajaCuentaCibernautaRegistrado(int idUsuario) throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
 
 		try {
-//			Cibernauta_registrado[] cibernautaRegistrado = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
-//			for (Cibernauta_registrado cbr : cibernautaRegistrado) {
-//				if ( )
-//					t.commit();
-//			}
-			basededatos.Cibernauta_registradoDAO.delete(null);
+			List<Compra> compras = basededatos.CompraDAO.queryCompra(null, null);
+			
+			for (Compra c : compras) {
+				if (idUsuario ==  c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
+					basededatos.CompraDAO.delete(c);
+				}
+			}
+			
+			// Item item = basededatos.ItemDAO.loadItemByORMID(idUsuario);
+			// basededatos.ItemDAO.delete(item);
+			basededatos.Cibernauta_registradoDAO.deleteAndDissociate(
+					basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(idUsuario));
 			t.commit();
 
 		} catch (PersistentException e) {

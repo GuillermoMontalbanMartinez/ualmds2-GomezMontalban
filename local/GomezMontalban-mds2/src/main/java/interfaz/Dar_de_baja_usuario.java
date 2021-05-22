@@ -6,18 +6,20 @@ import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 
 import basededatos.BDPrincipal;
+import basededatos.Cibernauta_registrado;
 import vistas.VistaDarDeBajaUsuario;
 
 public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario{
 	public Administrar_perfil _administrar_perfil;
 	public BDPrincipal bd;
+	public int idUsuario;
 	
 	public Dar_de_baja_usuario() {
 		this.getButtonConfirmarBajaUsuario().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				try {
-					confirmar();
+					bajaCuentaCibernautaRegistrado();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -41,8 +43,19 @@ public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario{
 //		
 //	}
 //	
-	public void confirmar() throws PersistentException{
+	public void bajaCuentaCibernautaRegistrado() throws PersistentException {
 		bd = new BDPrincipal();
-		bd.BajaCuentaCibernautaRegistrado();
+		bd.BajaCuentaCibernautaRegistrado(idUsuario);
 	}
+	
+	public void setUsuario(String nombre) throws PersistentException {
+		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
+
+		for (Cibernauta_registrado cib : cb) {
+			if (cib.getNombre().equals(nombre)) {
+				idUsuario = cib.getORMID();
+			}
+		}
+	}
+	
 }

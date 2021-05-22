@@ -24,8 +24,9 @@ public class VistaComprasAEnviar extends PolymerTemplate<VistaComprasAEnviar.Vis
 	private Button boton_compras_a_enviar;
 	@Id("boton_compras_enviadas")
 	private Button boton_compras_enviadas;
-	@Id("buttonCerrarSesion")
-	private Button buttonCerrarSesion;
+
+	@Id("buttonInicio")
+	private Button buttonInicio;
 
 
 	public VistaComprasAEnviar() {
@@ -68,14 +69,15 @@ public class VistaComprasAEnviar extends PolymerTemplate<VistaComprasAEnviar.Vis
 	}
 
 
-	public Button getButtonCerrarSesion() {
-		return buttonCerrarSesion;
+	public Button getButtonInicio() {
+		return buttonInicio;
 	}
 
 
-	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
-		this.buttonCerrarSesion = buttonCerrarSesion;
+	public void setButtonInicio(Button buttonInicio) {
+		this.buttonInicio = buttonInicio;
 	}
-    
+
+
     
 }

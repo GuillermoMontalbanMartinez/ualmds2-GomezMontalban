@@ -278,16 +278,16 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					}
 				});
 
-		// No da de baja al usuario
-		this._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonConfirmarBajaUsuario()
-				.addClickListener(new ComponentEventListener() {
-					@Override
-					public void onComponentEvent(ComponentEvent event) {
-						Notification.show("prueba 2");
-						// layout.remove(_banner_registrado._administrar_perfil._dar_de_baja_usuario);
-						// layout.add(_banner_registrado._administrar_perfil);
-					}
-				});
+//		// No da de baja al usuario
+//		this._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonConfirmarBajaUsuario()
+//				.addClickListener(new ComponentEventListener() {
+//					@Override
+//					public void onComponentEvent(ComponentEvent event) {
+//						Notification.show("prueba 2");
+//						// layout.remove(_banner_registrado._administrar_perfil._dar_de_baja_usuario);
+//						// layout.add(_banner_registrado._administrar_perfil);
+//					}
+//				});
 		
 		// this._banner_registrado._carrito_registrado._modificar_datos_personales.getb
 
@@ -302,6 +302,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		_banner_registrado._administrar_perfil._modificar_datos_personales.setUsuario(usuario);
 		_banner_registrado._carrito_registrado.setUsuario(usuario);
 		catalogo.setUsuario(usuario);
+		_banner_registrado._administrar_perfil._dar_de_baja_usuario.setUsuario(usuario);
 
 	}
 

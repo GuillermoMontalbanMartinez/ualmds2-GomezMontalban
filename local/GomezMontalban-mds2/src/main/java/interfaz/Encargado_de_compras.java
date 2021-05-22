@@ -58,23 +58,6 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			}
 		});
 		
-//		this._compras_a_enviar.getButtonCerrarSesion().addClickListener(new ComponentEventListener() {
-//			@Override
-//			public void onComponentEvent(ComponentEvent event) {
-//				Notification.show("Inicio");
-//				layout.removeAll();
-//				layout.add(this.);
-//			}
-//		});
-//		
-//		this._compras_enviadas.getButtonCerrarSesion().addClickListener(new ComponentEventListener() {
-//			@Override
-//			public void onComponentEvent(ComponentEvent event) {
-//				Notification.show("Inicio");
-//				layout.removeAll();
-//				layout.add(_compras_a_enviar);
-//			}
-//		});
 		
 	}
 }

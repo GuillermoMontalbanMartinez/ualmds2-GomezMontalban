@@ -22,9 +22,8 @@ public class VistaComprasEnviadas extends PolymerTemplate<VistaComprasEnviadas.V
 	private Element vaadinVerticalLayout;
 	@Id("boton_compras_a_enviar")
 	private Button boton_compras_a_enviar;
-	@Id("buttonCerrarSesion")
-	private Button buttonCerrarSesion;
-
+	@Id("buttonInicio")
+	private Button buttonInicio;
 	/**
      * Creates a new VistaComprasEnviadas.
      */
@@ -55,11 +54,13 @@ public class VistaComprasEnviadas extends PolymerTemplate<VistaComprasEnviadas.V
 		this.boton_compras_a_enviar = boton_compras_a_enviar;
 	}
 
-	public Button getButtonCerrarSesion() {
-		return buttonCerrarSesion;
+	public Button getButtonInicio() {
+		return buttonInicio;
 	}
 
-	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
-		this.buttonCerrarSesion = buttonCerrarSesion;
+	public void setButtonInicio(Button buttonInicio) {
+		this.buttonInicio = buttonInicio;
 	}
+
+
 }
