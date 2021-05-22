@@ -39,7 +39,7 @@ public class Items {
 
 			boolean aumentado = false;
 			for (Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
-				System.out.println("id Compra: " + c.getORMID() + " id item : " + c.getTiene_item().getORMID());
+				if(c.getEstado_compra()!=0)continue;
 				if (c.getTiene_asociado_un_cibernauta_registrado().getORMID() == idUsuario) {
 
 					// if (c.getTiene_item().getEsta_asociado_a_un_producto().getORMID() ==
@@ -195,7 +195,7 @@ public class Items {
 					if (p.getTiene_item() == null) {
 						continue;
 					} else {
-						if (p.getTiene_item().getORMID() == c.getTiene_item().getORMID()) {
+						if (p.getTiene_item().getORMID() == c.getTiene_item().getORMID() && c.getEstado_compra()==0) {
 							if (aId_usuario == c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
 								items.add(c.getTiene_item());
 							}
@@ -221,11 +221,7 @@ public class Items {
 			foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
 			basededatos.FotoDAO.save(foto);
 			pt.commit();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				System.out.println("Pausa");
-			}
+			
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}

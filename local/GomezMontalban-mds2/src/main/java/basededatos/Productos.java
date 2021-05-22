@@ -108,7 +108,6 @@ public class Productos {
 			asociar_foto(producto, aFoto3);
 			asociar_foto(producto, aFoto4);
 			asociar_foto(producto, aFoto5);
-
 			pt.commit();
 		} catch (PersistentException e) {
 			e.printStackTrace();
@@ -141,11 +140,13 @@ public class Productos {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 					.beginTransaction();
 
-			Foto foto = basededatos.FotoDAO.createFoto();
+			Foto foto =  basededatos.FotoDAO.createFoto();
 			foto.setLink_foto(link);
 			foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
 			basededatos.FotoDAO.save(foto);
 			pt.commit();
+			System.out.println("si");
+
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
