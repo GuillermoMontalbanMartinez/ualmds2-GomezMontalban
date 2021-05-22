@@ -13,13 +13,9 @@ class VistaCategoriasAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
- <vaadin-vertical-layout theme="spacing" style="width: 100%; margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-  <h2>Categorías </h2>
- </vaadin-vertical-layout>
- <vaadin-horizontal-layout style="align-self: center;">
-  <label style="margin: var(--lumo-space-m);">Categorias </label>
-  <vaadin-horizontal-layout id="selectCategorias" style="margin: var(--lumo-space-m);"></vaadin-horizontal-layout>
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;">
+ <vaadin-horizontal-layout theme="spacing" style="margin-bottom: var(--lumo-space-m);">
+  <h2>Categorias</h2>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

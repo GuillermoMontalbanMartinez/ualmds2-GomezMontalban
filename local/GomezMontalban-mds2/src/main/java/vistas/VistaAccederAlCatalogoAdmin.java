@@ -25,6 +25,9 @@ public class VistaAccederAlCatalogoAdmin extends PolymerTemplate<VistaAccederAlC
 	@Id("layoutProductosCatalogoAdmin")
 	private VerticalLayout layoutProductosCatalogoAdmin;
 
+	@Id("layoutSelect")
+	private HorizontalLayout layoutSelect;
+
 	/**
      * Creates a new VistaAccederAlCatalogoAdmin.
      */
@@ -54,5 +57,15 @@ public class VistaAccederAlCatalogoAdmin extends PolymerTemplate<VistaAccederAlC
 
 	public void setLayoutProductosCatalogoAdmin(VerticalLayout layoutProductosCatalogoAdmin) {
 		this.layoutProductosCatalogoAdmin = layoutProductosCatalogoAdmin;
+	}
+
+
+
+	public HorizontalLayout getLayoutSelect() {
+		return layoutSelect;
+	}
+
+	public void setLayoutSelect(HorizontalLayout layoutSelect) {
+		this.layoutSelect = layoutSelect;
 	}
 }

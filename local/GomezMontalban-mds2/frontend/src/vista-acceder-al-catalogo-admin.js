@@ -1,8 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import './vista-categorias-admin.js';
 import './vista-productos-admin.js';
+import './vista-categorias-admin.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaAccederAlCatalogoAdmin extends PolymerElement {
 
@@ -20,9 +20,10 @@ class VistaAccederAlCatalogoAdmin extends PolymerElement {
 </vaadin-vertical-layout>
 <vaadin-horizontal-layout style="height: 100%;">
  <vaadin-vertical-layout style="width: 20%; align-items: flex-start;">
-  <vista-categorias-admin style="width: 100%;"></vista-categorias-admin>
+  <vista-categorias-admin style="height: 10%; margin-bottom: var(--lumo-space-xl); padding-bottom: var(--lumo-space-xl);"></vista-categorias-admin>
+  <vaadin-horizontal-layout theme="spacing" id="layoutSelect" style="align-self: center;"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout id="layoutProductosCatalogoAdmin" style="width: 80%; height: 60%;">
+ <vaadin-vertical-layout id="layoutProductosCatalogoAdmin" style="width: 80%;">
   <vaadin-horizontal-layout style="width: 100%; height: 100%;">
    <vista-productos-admin style="height: 100%;"></vista-productos-admin>
   </vaadin-horizontal-layout>
