@@ -154,15 +154,12 @@ public class MainView extends VerticalLayout {
 				}
 				
 				
-
 			} catch (PersistentException e1) {
 				e1.printStackTrace();
 			}
 
 		});
 		
-		
-
 	}
 
 	

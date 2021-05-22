@@ -130,8 +130,18 @@ public class Cibernautas_registrados {
 				.beginTransaction();
 
 		try {
-
-			basededatos.Cibernauta_registradoDAO.deleteAndDissociate(basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(idUsuario));
+			List<Compra> compras = basededatos.CompraDAO.queryCompra(null, null);
+			
+			for (Compra c : compras) {
+				if (idUsuario ==  c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
+					basededatos.CompraDAO.delete(c);
+				}
+			}
+			
+			// Item item = basededatos.ItemDAO.loadItemByORMID(idUsuario);
+			// basededatos.ItemDAO.delete(item);
+			basededatos.Cibernauta_registradoDAO.deleteAndDissociate(
+					basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(idUsuario));
 			t.commit();
 
 		} catch (PersistentException e) {
