@@ -18,10 +18,6 @@ class VistaCategoria extends PolymerElement {
    Categoria 
  </vaadin-button>
 </vaadin-vertical-layout>
-x">
-  Categoria 
- </vaadin-button>
-</vaadin-vertical-layout>
 `;
     }
 

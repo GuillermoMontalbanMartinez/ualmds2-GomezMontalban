@@ -20,7 +20,8 @@ class VistaAccederCatalogo extends PolymerElement {
 </vaadin-vertical-layout>
 <vaadin-horizontal-layout theme="spacing" style="height: 100%;">
  <vaadin-vertical-layout theme="spacing" style="width: 20%;">
-  <vista-categorias style="width: 100%;"></vista-categorias>
+  <vista-categorias style="width: 100%; height: 10%; flex-shrink: 1; margin-bottom: var(--lumo-space-l); padding-bottom: var(--lumo-space-l);"></vista-categorias>
+  <vaadin-horizontal-layout theme="spacing" id="selectLayout" style="align-self: center;"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="layoutProductosCatalogo">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%;">

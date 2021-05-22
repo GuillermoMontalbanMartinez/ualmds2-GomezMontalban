@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-acceder-catalogo template.
@@ -22,6 +23,8 @@ public class VistaAccederCatalogo extends PolymerTemplate<VistaAccederCatalogo.V
 	private VerticalLayout layoutProductosCatalogo;
 	@Id("layoutCatalogo")
 	private Element layoutCatalogo;
+	@Id("selectLayout")
+	private HorizontalLayout selectLayout;
 
 	/**
      * Creates a new VistaAccederCatalogo.
@@ -51,5 +54,13 @@ public class VistaAccederCatalogo extends PolymerTemplate<VistaAccederCatalogo.V
 
 	public void setLayoutCatalogo(Element layoutCatalogo) {
 		this.layoutCatalogo = layoutCatalogo;
+	}
+
+	public HorizontalLayout getSelectLayout() {
+		return selectLayout;
+	}
+
+	public void setSelectLayout(HorizontalLayout selectLayout) {
+		this.selectLayout = selectLayout;
 	}
 }
