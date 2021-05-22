@@ -127,6 +127,11 @@ public class Items {
 
 		Item i = basededatos.ItemDAO.getItemByORMID(aId_item);
 		i.setCantidad(i.getCantidad() + 1);
+		for(Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
+			if(c.getTiene_item().getORMID()==aId_item) {
+				c.setPrecio_compra(i.getCantidad()*i.getEsta_asociado_a_un_producto().getPrecio());
+			}
+		}
 		basededatos.ItemDAO.save(i);
 		t.commit();
 
@@ -139,6 +144,11 @@ public class Items {
 		Item i = basededatos.ItemDAO.getItemByORMID(aId_item);
 		if (i.getCantidad() >= 2) {
 			i.setCantidad(i.getCantidad() - 1);
+			for(Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
+				if(c.getTiene_item().getORMID()==aId_item) {
+					c.setPrecio_compra(i.getCantidad()*i.getEsta_asociado_a_un_producto().getPrecio());
+				}
+			}
 			basededatos.ItemDAO.save(i);
 			t.commit();
 
@@ -167,12 +177,13 @@ public class Items {
 			}
 			
 			if(count >=2) {
-				ProductoDAO.deleteAndDissociate(p);
 				for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 					if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
 						basededatos.FotoDAO.deleteAndDissociate(f);
 					}
 				}
+				ProductoDAO.deleteAndDissociate(p);
+
 			} else {
 				p.setTiene_item(null);
 			}
