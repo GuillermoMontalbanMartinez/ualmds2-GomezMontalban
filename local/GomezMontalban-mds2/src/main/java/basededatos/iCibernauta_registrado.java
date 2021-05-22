@@ -38,7 +38,7 @@ public interface iCibernauta_registrado {
 
 	public void publicar(int aValoracion, String aCuerpo, int aId_producto);
 
-	public void confirmar_compra(int aId_compra);
+	public void confirmar_compra(int aId_compra) throws PersistentException;
 
 	public void modificar_datos_personales(String nombreUsuario, String apellidos, String correo, String contrasena,
 			String repetirContrasena, String telefono, String Pais, String localidad, String calle, String portal,

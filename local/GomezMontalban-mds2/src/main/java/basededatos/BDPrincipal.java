@@ -190,7 +190,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void confirmar_compra(int aId_compra) {
+	public void confirmar_compra(int aId_compra) throws PersistentException {
 		_db_compras_pendientes.confirmar_compra(aId_compra);
 	}
 

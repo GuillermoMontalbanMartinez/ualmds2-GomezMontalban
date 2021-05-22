@@ -29,7 +29,12 @@ public class Carrito_registrado extends Carrito {
 
 		
 		this.getComprarButton().addClickListener(e -> {
-			confirmar_compra();
+			try {
+				confirmar_compra();
+			} catch (PersistentException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		});
 	}
 
@@ -63,7 +68,7 @@ public class Carrito_registrado extends Carrito {
 
 	
 
-	public void confirmar_compra() {
+	public void confirmar_compra() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
 		for(Producto p : productos) {
 			bd.confirmar_compra(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
