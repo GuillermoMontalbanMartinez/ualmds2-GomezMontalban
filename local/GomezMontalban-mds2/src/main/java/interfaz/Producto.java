@@ -43,7 +43,7 @@ public class Producto extends VistaProducto {
 			int aux = 0;
 			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 				if (f.getEsta_asociada_a_un_producto().equals(producto)) {
-					switch (aux) {
+					switch (aux%5) {
 					case 0:
 						_ver_carácteristicas_del_producto.getFoto().setSrc(f.getLink_foto());
 						aux++;
@@ -90,6 +90,7 @@ public class Producto extends VistaProducto {
 				idUsuario = cib.getORMID();
 			}
 		}
+		_ver_carácteristicas_del_producto.setUsuario(idUsuario, idProducto);
 
 	}
 

@@ -103,26 +103,62 @@ public class Cibernauta extends Cibernauta_común {
 			});
 
 		}
-		
 
-		
-	_banner_no_registrado.getBuscadorTextField().addKeyDownListener(com.vaadin.flow.component.Key.ENTER, (ComponentEventListener<KeyDownEvent>) keyDownEvent -> {
-		System.out.println(_banner_no_registrado.getBuscadorTextField().getValue());
-		layout.removeAll();
-		layout.add(_banner_no_registrado);
-		catalogo.eliminar_producto();
-		try {
-			catalogo.buscarProducto(_banner_no_registrado.getBuscadorTextField().getValue());
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		layout.add(catalogo);
-	});
+		_banner_no_registrado.getBuscadorTextField().addKeyDownListener(com.vaadin.flow.component.Key.ENTER,
+				(ComponentEventListener<KeyDownEvent>) keyDownEvent -> {
+					System.out.println(_banner_no_registrado.getBuscadorTextField().getValue());
+					layout.removeAll();
+					layout.add(_banner_no_registrado);
+					catalogo.eliminar_producto();
+					try {
+						catalogo.buscarProducto(_banner_no_registrado.getBuscadorTextField().getValue());
+
+						for (interfaz.Producto p : this.catalogo.vista_productos) {
+							p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									layout.removeAll();
+									layout.add(_banner_no_registrado);
+									layout.add(inicio_sesion);
+									catalogo.eliminar_producto();
+
+								}
+							});
+
+							p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+									layout.removeAll();
+									layout.add(_banner_no_registrado);
+									layout.add(p._ver_carácteristicas_del_producto);
+
+								}
+							});
+							
+							
+							p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									layout.removeAll();
+									layout.add(_banner_no_registrado);
+									layout.add(inicio_sesion);
+									catalogo.eliminar_producto();
+
+								}
+							});
+							
+						}
+
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					layout.add(catalogo);
+				});
 
 	}
-
-	
-
 
 }
