@@ -122,7 +122,7 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 				System.out.println(f.getEsta_asociada_a_un_producto().getNombre());
 				if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
-					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), f.getLink_foto());
+					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), f.getLink_foto(), p.getORMID());
 					listaProductos.add(producto);
 					vista_productos.add(producto);
 					break;

@@ -29,7 +29,7 @@ public class Buscar_producto extends VistaBuscarProducto {
     	
     	layoutListadoProductos = this.getLayoutListadoProductos().as(VerticalLayout.class);
     	for (Producto p : productos) {
-			interfaz.Producto produc = new interfaz.Producto(p.getNombre(),p.getDescripción(),String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+			interfaz.Producto produc = new interfaz.Producto(p.getNombre(),p.getDescripción(),String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 			layoutListadoProductos.add(produc);
 		}
 	}
