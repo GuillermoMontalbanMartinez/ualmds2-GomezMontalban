@@ -18,7 +18,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Ofertas _db_ofertas = new Ofertas();
 	public Categorias _db_categorias = new Categorias();
 	public Compras_pendientes _db_compras_pendientes = new Compras_pendientes();
-	public Compras_enviadas _db_compras_enviadas;
+	public Compras_enviadas _db_compras_enviadas = new Compras_enviadas();
 	public Compras_recibidas _db_compras_recibidas;
 	public Fotos _db_fotos;
 	public Items _db_item = new Items();
@@ -137,8 +137,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public Compra[] cargar_productos_comprados_recientemente(int aId_usuario) {
-		throw new UnsupportedOperationException();
+	public Compra[] cargar_productos_comprados_recientemente(int aId_usuario) throws PersistentException {
+		return _db_compras_enviadas.cargar_productos_comprados_recientemente(aId_usuario);
 	}
 
 	public Compra[] cargar_lista_compras_admin() {
@@ -190,8 +190,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void publicar(int aValoracion, String aCuerpo, int aId_producto) {
-		throw new UnsupportedOperationException();
+	public void publicar(int aValoracion, String aCuerpo, int aId_producto, int aId_usuario)throws PersistentException {
+		_db_resena.publicar(aValoracion, aCuerpo, aId_producto, aId_usuario);
 	}
 
 	public void confirmar_compra(int aId_compra) throws PersistentException {
@@ -211,9 +211,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		}
 	}
 
-	public void publicar(int aValoracion, String aCuerpo) {
-		throw new UnsupportedOperationException();
-	}
 
 	public Compra_recibida[] cargar_pedidos_entregados() {
 		throw new UnsupportedOperationException();
@@ -271,6 +268,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		return _db_productos.buscarProductos(string);
 	}
 	
-	
+	public void volver_a_comprar(int idProducto, int idUsuario) throws PersistentException {
+		 _db_item.anadir_al_carrito(idProducto, idUsuario);
+	}
 
 }

@@ -16,7 +16,7 @@ class VistaVerUltimasCompras extends PolymerElement {
 <vaadin-vertical-layout>
  <h2>Últimas compras realizadas</h2>
 </vaadin-vertical-layout>
-<vista-productos-comprados-recientemente style="width: 100%; height: 100%;"></vista-productos-comprados-recientemente>
+<vista-productos-comprados-recientemente style="width: 100%; height: 100%;" id="productosCompradosLista"></vista-productos-comprados-recientemente>
 `;
     }
 

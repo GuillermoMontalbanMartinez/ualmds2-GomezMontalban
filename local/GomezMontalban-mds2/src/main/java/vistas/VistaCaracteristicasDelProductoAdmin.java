@@ -8,6 +8,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-caracteristicas-del-producto-admin template.
@@ -37,7 +39,8 @@ public class VistaCaracteristicasDelProductoAdmin extends PolymerTemplate<VistaC
 	private TextArea descripcionText;
 	@Id("precioText")
 	private TextField precioText;
-
+	@Id("layoutResenas")
+	private Element layoutResenas;
 	/**
      * Creates a new VistaCaracteristicasDelProductoAdmin.
      */
@@ -123,4 +126,14 @@ public class VistaCaracteristicasDelProductoAdmin extends PolymerTemplate<VistaC
 	public void setPrecioText(TextField precioText) {
 		this.precioText = precioText;
 	}
+
+	public Element getLayoutResenas() {
+		return layoutResenas;
+	}
+
+	public void setLayoutResenas(Element layoutResenas) {
+		this.layoutResenas = layoutResenas;
+	}
+
+	
 }

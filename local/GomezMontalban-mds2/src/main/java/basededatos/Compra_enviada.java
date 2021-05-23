@@ -57,10 +57,7 @@ public class Compra_enviada extends basededatos.Compra implements Serializable {
 		return empresa_de_transportes;
 	}
 	
-	public basededatos.Compra[] cargar_productos_comprados_recientemente(int id_usuario) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
+	
 	
 	public String toString() {
 		return super.toString();

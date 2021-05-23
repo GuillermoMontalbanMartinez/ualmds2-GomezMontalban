@@ -65,15 +65,8 @@ public class Correo_usuario extends VistaCorreoUsuario {
 
 	}
 
-	public void setUsuario(String usuario) throws PersistentException {
-		this.usuario = usuario;
-
-		Cibernauta_registrado[] cb = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
-		for (Cibernauta_registrado c : cb) {
-			if (c.getNombre().equals(usuario)) {
-				id = c.getORMID();
-			}
-		}
+	public void setUsuario(int id) throws PersistentException {
+		this.id = id;
 		cargar_lista_de_emails(id);
 
 	}

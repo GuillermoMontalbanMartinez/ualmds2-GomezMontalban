@@ -1,9 +1,58 @@
 package interfaz;
 
-public class Escribir_reseña {
+import org.orm.PersistentException;
+
+import com.vaadin.flow.component.ComponentEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.select.Select;
+
+import basededatos.BDPrincipal;
+import vistas.VistaEscribirResenaProducto;
+
+public class Escribir_reseña extends VistaEscribirResenaProducto {
 	public Producto_comprado_recientemente _producto_comprado_recientemente;
 
-	public void publicar() {
-		throw new UnsupportedOperationException();
+	Select<String> select = new Select<>();
+	String value = "";
+
+	private int idProducto;
+
+	private int idUsuario;
+
+	public Escribir_reseña() {
+		select.setItems("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+		this.getSelectLayout().add(select);
+
+		select.addValueChangeListener(event -> {
+			if (event.getValue() != null) {
+				value = event.getValue().toString();
+			}
+		});
+		
+		this.getPublicarButton().addClickListener(e ->{
+			try {
+				publicar();
+			} catch (PersistentException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
+
+	}
+
+	public void publicar() throws PersistentException{
+		BDPrincipal bd = new BDPrincipal();
+
+		bd.publicar(Integer.parseInt(value), this.getCuerpoText().getValue(), idProducto, idUsuario);
+	}
+
+	public void setIdProducto(int idProducto) {
+		this.idProducto = idProducto;
+
+	}
+	
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+
 	}
 }

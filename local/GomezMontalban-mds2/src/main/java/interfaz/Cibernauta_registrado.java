@@ -16,6 +16,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 	private String usuario;
 	Acceder_al_catalogo catalogo;
 	public Producto producto;
+	private int id;
 
 	public Cibernauta_registrado() {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
@@ -110,8 +111,79 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					public void onComponentEvent(ComponentEvent event) {
 						layout.removeAll();
 						layout.add(_banner_registrado);
+						try {
+							_banner_registrado._administrar_perfil._ver_ultimas_compras.limpiar();
+							_banner_registrado._administrar_perfil._ver_ultimas_compras.mostrar_productos_comprados();
 
+						} catch (PersistentException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						for (Producto_comprado_recientemente c : _banner_registrado._administrar_perfil._ver_ultimas_compras.compraInterfazList) {
+							c.getReseñar().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									layout.removeAll();
+									layout.add(_banner_registrado);
+
+									layout.add(c._escribir_resena);
+
+								}
+							});
+
+							c.getVolverAComprar().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									try {
+										c.volver_a_comprar();
+									} catch (PersistentException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+							});
+							
+							
+							c.getReseñar().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									layout.removeAll();
+									layout.add(_banner_registrado);
+									layout.add(c._escribir_resena);
+
+								}
+							});
+							
+							
+							c._escribir_resena.getCancelarButton().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									layout.remove(c._escribir_resena);
+									layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
+
+								}
+							});
+							
+							c._escribir_resena.getPublicarButton().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									
+									layout.remove(c._escribir_resena);
+									layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
+
+								}
+							});
+							
+							
+						}
 						layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
+						layout.add(
+								_banner_registrado._administrar_perfil._ver_ultimas_compras._productos_comprados_recientemente);
 
 					}
 				});
@@ -352,7 +424,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 											}
 											layout.removeAll();
 											layout.add(_banner_registrado);
-										//	layout.add(_buscar_producto);
+											// layout.add(_buscar_producto);
 											catalogo.eliminar_producto();
 
 										}
@@ -371,13 +443,23 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 	public void setUsuario(String usuario) throws PersistentException {
 		this.usuario = usuario;
-		_banner_registrado._correo_usuario.setUsuario(usuario);
-		_banner_registrado._correo_usuario._redactar_correo.setAutor(usuario);
-		_banner_registrado._administrar_perfil._modificar_datos_personales.setUsuario(usuario);
-		_banner_registrado._carrito_registrado.setUsuario(usuario);
-		catalogo.setUsuario(usuario);
-		_banner_registrado._administrar_perfil._dar_de_baja_usuario.setUsuario(usuario);
 
+		basededatos.Cibernauta_registrado[] cb = basededatos.Cibernauta_registradoDAO
+				.listCibernauta_registradoByQuery(null, null);
+		for (basededatos.Cibernauta_registrado c : cb) {
+			if (c.getNombre().equals(usuario)) {
+				id = c.getORMID();
+			}
+		}
+		_banner_registrado._correo_usuario.setUsuario(id);
+		_banner_registrado._correo_usuario._redactar_correo.setAutor(usuario);
+		_banner_registrado._administrar_perfil._modificar_datos_personales.setUsuario(id);
+		_banner_registrado._carrito_registrado.setUsuario(id);
+		catalogo.setUsuario(usuario);
+		_banner_registrado._administrar_perfil._dar_de_baja_usuario.setUsuario(id);
+		_banner_registrado._administrar_perfil._ver_ultimas_compras.setUsuario(usuario);
+
+		
 	}
 
 	public String getUsuario() {

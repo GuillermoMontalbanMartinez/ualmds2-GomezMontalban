@@ -1,9 +1,16 @@
 package interfaz;
 
+import java.util.ArrayList;
+
 import org.orm.PersistentException;
+
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Cibernauta_registrado;
 import basededatos.Foto;
+import basededatos.Producto;
+import basededatos.Resena;
 import vistas.VistaProductoAdmin;
 
 public class Producto_admin extends VistaProductoAdmin {
@@ -11,6 +18,11 @@ public class Producto_admin extends VistaProductoAdmin {
 	public Caracteristicas_del_producto_admin _caracteristicas_del_producto_admin  = new Caracteristicas_del_producto_admin();
 	public String nombreP, descripcion, precio, foto;
 	public int idProducto;
+	ArrayList<Producto> productos;
+	ArrayList<interfaz.Producto_admin> vista_productos;
+	VerticalLayout reseñas = _caracteristicas_del_producto_admin.getLayoutResenas().as(VerticalLayout.class);
+	double reseñaMedia=0;
+
 	public Producto_admin(String nombreProducto, String descripcion, String precio, String foto, int id) {
 
 		this.idProducto = id;
@@ -30,6 +42,7 @@ public class Producto_admin extends VistaProductoAdmin {
 			_caracteristicas_del_producto_admin.getNombreText().setValue(producto.getNombre());
 			_caracteristicas_del_producto_admin.getDescripcionText().setValue(producto.getDescripción());
 			_caracteristicas_del_producto_admin.getPrecioText().setValue(String.valueOf(producto.getPrecio()));
+			_caracteristicas_del_producto_admin.setIdProducto(id);
 			int aux = 0;
 			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 				if (f.getEsta_asociada_a_un_producto().equals(producto)) {
@@ -65,6 +78,24 @@ public class Producto_admin extends VistaProductoAdmin {
 			e.printStackTrace();
 		}
 
+		
+		
+		try {
+			_caracteristicas_del_producto_admin.setIdProducto(idProducto);
+			ArrayList<Resena> cargar_resenas;
+			cargar_resenas = _caracteristicas_del_producto_admin.cargar_resenas();
+			for(Resena r : cargar_resenas ) {
+				interfaz.Reseña resena = new interfaz.Reseña(r.getEsta_asociada_a_un_cibernauta_registrado().getNombre(), r.getValoracion(), r.getComentario());
+				reseñas.add(resena);
+				reseñaMedia+=r.getValoracion();
+			}
+			reseñaMedia/= cargar_resenas.size();
+			_caracteristicas_del_producto_admin.getValoracionText().setValue(String.valueOf(reseñaMedia));
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }
