@@ -26,7 +26,7 @@ public class Correo_usuario extends VistaCorreoUsuario {
 	int id;
 	private BDPrincipal bd;
 	private ArrayList<Correo> correos = new ArrayList<Correo>();
-	public ArrayList<Email> emails = new ArrayList<Email>();;
+	public ArrayList<Email> emails = new ArrayList<Email>();
 
 	public Correo_usuario() {
 		listaEmails = this.getLayoutEmails().as(VerticalLayout.class);
@@ -34,16 +34,17 @@ public class Correo_usuario extends VistaCorreoUsuario {
 	}
 
 	public void cargar_lista_de_emails(int id_usuario) throws PersistentException {
-		try{Correo[] co = basededatos.CorreoDAO.listCorreoByQuery(null, null);
+		try {
+			Correo[] co = basededatos.CorreoDAO.listCorreoByQuery(null, null);
 
-		for (Correo c : co) {
-			if (c.getPertenece_a_un_cibernauta_registrado()
-					.equals(basededatos.Cibernauta_registradoDAO.getCibernauta_registradoByORMID(id))) {
-				correos.add(c);
+			for (Correo c : co) {
+				if (c.getPertenece_a_un_cibernauta_registrado()
+						.equals(basededatos.Cibernauta_registradoDAO.getCibernauta_registradoByORMID(id))) {
+					correos.add(c);
+				}
 			}
-		}
-		}catch(Exception e) {
-			System.out.println("yikes");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -59,7 +60,6 @@ public class Correo_usuario extends VistaCorreoUsuario {
 	}
 
 	public void eliminar_correos() {
-
 
 		listaEmails.removeAll();
 
