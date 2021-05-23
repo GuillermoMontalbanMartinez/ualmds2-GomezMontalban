@@ -256,11 +256,11 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					}
 				}
 			});
-			
+
 			p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
 				@Override
 				public void onComponentEvent(ComponentEvent event) {
-					Ver_carácteristicas_del_producto v = new  Ver_carácteristicas_del_producto();
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
 					layout.removeAll();
 					layout.add(_banner_registrado);
 					layout.add(p._ver_carácteristicas_del_producto);
@@ -298,9 +298,9 @@ public class Cibernauta_registrado extends Cibernauta_común {
 //						// layout.add(_banner_registrado._administrar_perfil);
 //					}
 //				});
-		
+
 		// this._banner_registrado._carrito_registrado._modificar_datos_personales.getb
-		
+
 		_banner_registrado.getBuscardorTextField().addKeyDownListener(com.vaadin.flow.component.Key.ENTER,
 				(ComponentEventListener<KeyDownEvent>) keyDownEvent -> {
 					System.out.println(_banner_registrado.getBuscardorTextField().getValue());
@@ -323,7 +323,6 @@ public class Cibernauta_registrado extends Cibernauta_común {
 									}
 									layout.removeAll();
 									layout.add(_banner_registrado);
-									// layout.add(inicio_sesion);
 									catalogo.eliminar_producto();
 
 								}
@@ -339,26 +338,26 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 								}
 							});
-							
-							
-							p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
 
-								@Override
-								public void onComponentEvent(ComponentEvent event) {
-									try {
-										p.añadir_al_carrito();
-									} catch (PersistentException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-									}
-									layout.removeAll();
-									layout.add(_banner_registrado);
-									 layout.add(_buscar_producto);
-									catalogo.eliminar_producto();
+							p._ver_carácteristicas_del_producto.getAnadirAlCarrito()
+									.addClickListener(new ComponentEventListener() {
 
-								}
-							});
-							
+										@Override
+										public void onComponentEvent(ComponentEvent event) {
+											try {
+												p.añadir_al_carrito();
+											} catch (PersistentException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											}
+											layout.removeAll();
+											layout.add(_banner_registrado);
+										//	layout.add(_buscar_producto);
+											catalogo.eliminar_producto();
+
+										}
+									});
+
 						}
 
 					} catch (PersistentException e) {
@@ -367,8 +366,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					}
 					layout.add(catalogo);
 				});
-		
-		
+
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {
@@ -379,7 +377,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		_banner_registrado._carrito_registrado.setUsuario(usuario);
 		catalogo.setUsuario(usuario);
 		_banner_registrado._administrar_perfil._dar_de_baja_usuario.setUsuario(usuario);
-		
+
 	}
 
 	public String getUsuario() {

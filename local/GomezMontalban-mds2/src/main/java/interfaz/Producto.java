@@ -79,6 +79,7 @@ public class Producto extends VistaProducto {
 
 	public void añadir_al_carrito() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
+		System.out.println(this.idProducto + " " + idUsuario);
 		bd._db_item.anadir_al_carrito(this.idProducto, idUsuario);
 	}
 
