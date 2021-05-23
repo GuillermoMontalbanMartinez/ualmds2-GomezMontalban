@@ -30,7 +30,7 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 @Theme(value = Lumo.class, variant = Lumo.DARK)
-// @Theme(value = Material.class, variant = Material.DARK)
+//@Theme(value = Material.class, variant = Material.DARK)
 
 public class MainView extends VerticalLayout {
 

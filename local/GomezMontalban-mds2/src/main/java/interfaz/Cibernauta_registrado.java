@@ -4,6 +4,7 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.KeyDownEvent;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -299,7 +300,73 @@ public class Cibernauta_registrado extends Cibernauta_común {
 //				});
 		
 		// this._banner_registrado._carrito_registrado._modificar_datos_personales.getb
+		
+		_banner_registrado.getBuscardorTextField().addKeyDownListener(com.vaadin.flow.component.Key.ENTER,
+				(ComponentEventListener<KeyDownEvent>) keyDownEvent -> {
+					System.out.println(_banner_registrado.getBuscardorTextField().getValue());
+					layout.removeAll();
+					layout.add(_banner_registrado);
+					catalogo.eliminar_producto();
+					try {
+						catalogo.buscarProducto(_banner_registrado.getBuscardorTextField().getValue());
 
+						for (interfaz.Producto p : this.catalogo.vista_productos) {
+							p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									try {
+										p.añadir_al_carrito();
+									} catch (PersistentException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									layout.removeAll();
+									layout.add(_banner_registrado);
+									// layout.add(inicio_sesion);
+									catalogo.eliminar_producto();
+
+								}
+							});
+
+							p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+									layout.removeAll();
+									layout.add(_banner_registrado);
+									layout.add(p._ver_carácteristicas_del_producto);
+
+								}
+							});
+							
+							
+							p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+
+								@Override
+								public void onComponentEvent(ComponentEvent event) {
+									try {
+										p.añadir_al_carrito();
+									} catch (PersistentException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									layout.removeAll();
+									layout.add(_banner_registrado);
+									 layout.add(_buscar_producto);
+									catalogo.eliminar_producto();
+
+								}
+							});
+							
+						}
+
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					layout.add(catalogo);
+				});
 		
 		
 	}

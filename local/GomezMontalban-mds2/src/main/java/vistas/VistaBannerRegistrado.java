@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-banner-registrado template.
@@ -25,6 +26,8 @@ public class VistaBannerRegistrado extends PolymerTemplate<VistaBannerRegistrado
 	private Button principalButton;
 	@Id("carritoButton")
 	private Button carritoButton;
+	@Id("buscardorTextField")
+	private TextField buscardorTextField;
 
 	/**
      * Creates a new VistaBannerRegistrado.
@@ -70,5 +73,13 @@ public class VistaBannerRegistrado extends PolymerTemplate<VistaBannerRegistrado
 
 	public void setCarritoButton(Button carritoButton) {
 		this.carritoButton = carritoButton;
+	}
+
+	public TextField getBuscardorTextField() {
+		return buscardorTextField;
+	}
+
+	public void setBuscardorTextField(TextField buscardorTextField) {
+		this.buscardorTextField = buscardorTextField;
 	}
 }

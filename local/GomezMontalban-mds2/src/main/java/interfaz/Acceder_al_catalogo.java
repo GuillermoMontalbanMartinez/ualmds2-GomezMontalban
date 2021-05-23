@@ -26,8 +26,8 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 	ArrayList<Producto> productos;
 	ArrayList<interfaz.Producto> vista_productos;
 	private String usuario;
-	 String value=null;
-	 
+	String value = null;
+
 	public Acceder_al_catalogo() {
 		Select<Categoria> select = new Select<Categoria>();
 		listaProductos = this.getLayoutProductosCatalogo();
@@ -39,7 +39,7 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		select.setItemLabelGenerator(Categoria::getNombre);
 		try {
 			select.setItems(this.cargar_categoria());
@@ -49,20 +49,19 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 		}
 		this.getSelectLayout().add(select);
 
-		
-		 select.addValueChangeListener(event -> {
-			    if (event.getValue() != null) {
-			    	value = event.getValue().getNombre().toString();
-			    	try {
-			    		eliminar_producto();
-						mostrar_productos();
-					} catch (PersistentException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-			    } 
-			});
-		
+		select.addValueChangeListener(event -> {
+			if (event.getValue() != null) {
+				value = event.getValue().getNombre().toString();
+				try {
+					eliminar_producto();
+					mostrar_productos();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+
 	}
 
 	public void cargar_productos_catalogo() throws PersistentException {
@@ -81,14 +80,16 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 		productos = new ArrayList<Producto>();
 		cargar_productos_catalogo();
 		for (Producto p : productos) {
-			if(value!=null) {
-				if(p.getCategoria().getNombre().equals(value)) {
-					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
+			if (value != null) {
+				if (p.getCategoria().getNombre().equals(value)) {
+					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(),
+							String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 					listaProductos.add(producto);
 					vista_productos.add(producto);
 				}
 			} else {
-				interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
+				interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(),
+						String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 				listaProductos.add(producto);
 				vista_productos.add(producto);
 			}
@@ -111,27 +112,25 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 		BDPrincipal bd = new BDPrincipal();
 		return bd.cargar_categoria();
 	}
-	
-	public void buscarProducto(String string) throws PersistentException  {
+
+	public void buscarProducto(String string) throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		Producto[] aux =  bd.buscarProductos(string);
-		
-		
+		Producto[] aux = bd.buscarProductos(string);
+
 		for (Producto p : aux) {
 			System.out.println(p.getNombre());
 			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 				System.out.println(f.getEsta_asociada_a_un_producto().getNombre());
 				if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
-					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), f.getLink_foto(), p.getORMID());
+					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(),
+							String.valueOf(p.getPrecio()), f.getLink_foto(), p.getORMID());
 					listaProductos.add(producto);
 					vista_productos.add(producto);
 					break;
 				}
-//				System.out.println(f.getLink_foto());
+
 			}
-			//interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
-//			listaProductos.add(producto);
-//			vista_productos.add(producto);
+
 		}
 
 	}
