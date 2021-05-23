@@ -36,9 +36,7 @@ public interface iCibernauta_registrado {
 
 	public void eliminar_producto(int aId_item) throws PersistentException;
 
-	public void publicar(int aValoracion, String aCuerpo);
-
-	public void publicar(int aValoracion, String aCuerpo, int aId_producto);
+	public void publicar(int aValoracion, String aCuerpo, int aId_producto, int aId_usuario)throws PersistentException;
 
 	public void confirmar_compra(int aId_compra) throws PersistentException;
 
@@ -46,4 +44,6 @@ public interface iCibernauta_registrado {
 			String repetirContrasena, String telefono, String Pais, String localidad, String calle, String portal,
 			String provincia, int codigoPostal, String numeroTarjeta, String titularTarjeta, String fechaCaducidad,
 			int cvv, String img,int id) throws PersistentException;
+	
+	public void volver_a_comprar(int idProducto, int idUsuario) throws PersistentException;
 }

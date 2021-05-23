@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import vistas.VistaProductosCompradosRecientemente;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-ver-ultimas-compras template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-ver-ultimas-compras.js")
 public class VistaVerUltimasCompras extends PolymerTemplate<VistaVerUltimasCompras.VistaVerUltimasComprasModel> {
 
-    /**
+    @Id("productosCompradosLista")
+	private VistaProductosCompradosRecientemente productosCompradosLista;
+
+	/**
      * Creates a new VistaVerUltimasCompras.
      */
     public VistaVerUltimasCompras() {
@@ -28,4 +33,12 @@ public class VistaVerUltimasCompras extends PolymerTemplate<VistaVerUltimasCompr
     public interface VistaVerUltimasComprasModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public VistaProductosCompradosRecientemente getProductosCompradosLista() {
+		return productosCompradosLista;
+	}
+
+	public void setProductosCompradosLista(VistaProductosCompradosRecientemente productosCompradosLista) {
+		this.productosCompradosLista = productosCompradosLista;
+	}
 }

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Vector;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import basededatos.Resena;
 
@@ -32,7 +33,28 @@ public class Resenas {
 		
 	}
 
-	public void publicar(int aValoracion, String aCuerpo, int aId_producto) {
-		throw new UnsupportedOperationException();
+	public void publicar(int aValoracion, String aCuerpo, int aId_producto, int aId_usuario) throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		try {
+			
+			System.out.println("Usuario : " + aId_usuario + " Producto : " + aId_producto);
+
+			Resena r = basededatos.ResenaDAO.createResena();
+			Producto p = basededatos.ProductoDAO.loadProductoByORMID(aId_producto);
+			Cibernauta_registrado cb = Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(aId_usuario);
+			r.setComentario(aCuerpo);
+			r.setValoracion(aValoracion);
+			r.setEsta_asociados_a_un_producto(p);
+			r.setEsta_asociada_a_un_cibernauta_registrado(cb);
+			basededatos.ResenaDAO.save(r);
+			
+			pt.commit();
+		} catch (PersistentException e) {
+			pt.rollback();
+			e.printStackTrace();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
+	
 }

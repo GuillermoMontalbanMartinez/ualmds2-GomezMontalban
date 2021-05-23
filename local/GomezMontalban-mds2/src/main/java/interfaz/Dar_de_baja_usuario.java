@@ -48,14 +48,9 @@ public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario {
 		bd.BajaCuentaCibernautaRegistrado(idUsuario);
 	}
 
-	public void setUsuario(String nombre) throws PersistentException {
-		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
+	public void setUsuario(int id) throws PersistentException {
 
-		for (Cibernauta_registrado cib : cb) {
-			if (cib.getNombre().equals(nombre)) {
-				idUsuario = cib.getORMID();
-			}
-		}
+		idUsuario = id;
 	}
 
 }

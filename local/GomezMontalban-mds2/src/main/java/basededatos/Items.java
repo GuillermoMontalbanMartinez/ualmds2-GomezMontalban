@@ -172,8 +172,15 @@ public class Items {
 			if (p.getNombre().equals(producto.getNombre()) && p.getPrecio() == producto.getPrecio()
 					&& p.getDescripción().equals(producto.getDescripción())){
 
-				System.out.println("");
 				count++;
+//				System.out.println("");
+//				for(Item i : basededatos.ItemDAO.listItemByQuery(null, null)) {
+//					System.out.println(i.getEsta_asociado_a_un_producto().getORMID() + "   AAA A AAA   " + i.getEsta_asociado_a_una_compra().getORMID());
+//					if(i.getEsta_asociado_a_un_producto().equals(p) && i.getEsta_asociado_a_una_compra().getEstado_compra()==0) {
+//						count++;
+//					}
+//				}
+				
 			}
 			
 			if(count >=2) {
@@ -182,14 +189,14 @@ public class Items {
 						basededatos.FotoDAO.deleteAndDissociate(f);
 					}
 				}
-				ProductoDAO.deleteAndDissociate(p);
-
+				basededatos.ItemDAO.delete(item);
+				//ProductoDAO.deleteAndDissociate(p);
+				
 			} else {
 				p.setTiene_item(null);
 			}
 		}
 
-		basededatos.ItemDAO.deleteAndDissociate(item);
 		
 		t.commit();
 

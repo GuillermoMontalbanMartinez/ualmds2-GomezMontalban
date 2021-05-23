@@ -32,6 +32,12 @@ public class Cibernauta extends Cibernauta_común {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		inicio_sesion = new Iniciar_sesion();
 		catalogo = new Acceder_al_catalogo();
+		try {
+			catalogo.setUsuario("");
+		} catch (PersistentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		_banner_no_registrado.getVaadinButton().addClickListener(new ComponentEventListener() {
 			@Override

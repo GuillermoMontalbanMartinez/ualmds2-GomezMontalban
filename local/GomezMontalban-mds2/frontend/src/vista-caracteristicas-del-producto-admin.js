@@ -1,7 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-resenas-producto.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaCaracteristicasDelProductoAdmin extends PolymerElement {
@@ -40,10 +41,7 @@ class VistaCaracteristicasDelProductoAdmin extends PolymerElement {
       <img id="foto4" style="width: 100%; height: 100%;">
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing">
-     <p>Valoración</p>
-     <vaadin-text-field id="valoracionText" style="align-self: center;" readonly></vaadin-text-field>
-    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing"></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
   <vaadin-horizontal-layout theme="spacing" style="width: 90%; height: 70%; margin-left: var(--lumo-space-xl);">
@@ -53,11 +51,15 @@ class VistaCaracteristicasDelProductoAdmin extends PolymerElement {
     <vaadin-horizontal-layout theme="spacing">
      <p>Precio:</p>
      <vaadin-text-field id="precioText" style="align-self: center; padding-right: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);" readonly></vaadin-text-field>
+     <p style="margin-left: var(--lumo-space-xl);">Valoración media : </p>
+     <vaadin-text-field id="valoracionText" style="align-self: center;" readonly></vaadin-text-field>
     </vaadin-horizontal-layout>
+    <vaadin-vertical-layout theme="spacing" id="layoutResenas" style="width: 100%; height: 100%;">
+     <vista-resenas-producto></vista-resenas-producto>
+    </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 30%;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
     }

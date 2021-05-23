@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-productos-comprados-recientemente template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-productos-comprados-recientemente.js")
 public class VistaProductosCompradosRecientemente extends PolymerTemplate<VistaProductosCompradosRecientemente.VistaProductosCompradosRecientementeModel> {
 
-    /**
+    @Id("productosCompradosLayout")
+	private Element productosCompradosLayout;
+
+	/**
      * Creates a new VistaProductosCompradosRecientemente.
      */
     public VistaProductosCompradosRecientemente() {
@@ -28,4 +33,12 @@ public class VistaProductosCompradosRecientemente extends PolymerTemplate<VistaP
     public interface VistaProductosCompradosRecientementeModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getProductosCompradosLayout() {
+		return productosCompradosLayout;
+	}
+
+	public void setProductosCompradosLayout(Element productosCompradosLayout) {
+		this.productosCompradosLayout = productosCompradosLayout;
+	}
 }

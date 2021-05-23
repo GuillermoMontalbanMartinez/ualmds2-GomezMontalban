@@ -21,6 +21,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Compras_pendientes _db_compras_pendientes = new Compras_pendientes();
 	public Compras_enviadas _db_compras_enviadas = new Compras_enviadas();
 	public Compras_recibidas _db_compras_recibidas = new Compras_recibidas();
+
 	public Fotos _db_fotos;
 	public Items _db_item = new Items();
 
@@ -275,6 +276,11 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 
 	public Producto[] buscarProductos(String string) throws PersistentException {
 		return _db_productos.buscarProductos(string);
+	}
+
+	
+	public void volver_a_comprar(int idProducto, int idUsuario) throws PersistentException {
+		 _db_item.anadir_al_carrito(idProducto, idUsuario);
 	}
 
 }

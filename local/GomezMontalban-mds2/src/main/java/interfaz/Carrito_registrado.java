@@ -27,7 +27,6 @@ public class Carrito_registrado extends Carrito {
 				.as(VerticalLayout.class);
 		vista_productos = new ArrayList<interfaz.Producto_seleccionado>();
 
-		
 		this.getComprarButton().addClickListener(e -> {
 			try {
 				confirmar_compra();
@@ -66,23 +65,15 @@ public class Carrito_registrado extends Carrito {
 		vista_productos.clear();
 	}
 
-	
-
 	public void confirmar_compra() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		for(Producto p : productos) {
+		for (Producto p : productos) {
 			bd.confirmar_compra(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
 		}
 		vista_productos.clear();
 	}
 
-	public void setUsuario(String usuario) throws PersistentException {
-		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
-
-		for (Cibernauta_registrado cib : cb) {
-			if (cib.getNombre().equals(usuario)) {
-				id = cib.getORMID();
-			}
-		}
+	public void setUsuario(int id) throws PersistentException {
+		this.id = id;
 	}
 }
