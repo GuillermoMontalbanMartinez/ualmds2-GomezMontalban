@@ -16,13 +16,14 @@ import vistas.VistaComprasAEnviar;
 
 public class Compras_a_enviar extends VistaComprasAEnviar {
 	public Listado_de_compras _listado_de_compras;
-	public VerticalLayout layout;
-	public VerticalLayout listadoDeCompras;
+	public VerticalLayout layoutListadoDeCompras;
+	public VerticalLayout layoutComprasAEnviar;
 	public ArrayList<Compra> compras = new ArrayList<Compra>();
 	public Compra_pendiente[] compraAEnviar = null;
 
 	public Compras_a_enviar() {
-		listadoDeCompras = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		layoutComprasAEnviar = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		layoutListadoDeCompras = this.getVerticalListadoDeCompras().as(VerticalLayout.class);
 		
 		
 	}
@@ -46,13 +47,13 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 					cp.getTiene_asociado_un_cibernauta_registrado().getProvincia(),
 					String.valueOf(cp.getTiene_asociado_un_cibernauta_registrado().getCp()));
 			compras.add(compra);
-			listadoDeCompras.add(compra);
+			layoutComprasAEnviar.add(compra);
 		}
 	}
 
 	public void eliminar_compras_a_enviar() {
 
-		listadoDeCompras.removeAll();
+		layoutComprasAEnviar.removeAll();
 
 	}
 

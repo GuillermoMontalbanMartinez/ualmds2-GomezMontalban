@@ -283,4 +283,11 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		 _db_item.anadir_al_carrito(idProducto, idUsuario);
 	}
 
+	@Override
+	public void publicar(int aValoracion, String aCuerpo, int aId_producto, int aId_usuario)
+			throws PersistentException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -17,20 +17,6 @@ public class Compras_recibidas  {
 	public BDPrincipal _db_main_compras_recibidas;
 	public Vector<Compra_recibida> _contiene_compras_enviadas = new Vector<Compra_recibida>();
 	
-//	public Banner_registrado _banner_registrado;
-//	public HorizontalLayout banner;
-//	public VerticalLayout layout;
-//	private String usuario;
-//	Acceder_al_catalogo catalogo;
-//	public Producto producto;
-//
-//	public Cibernauta_registrado() {
-//		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-//		_banner_registrado = new Banner_registrado();
-//		banner = this.getBanner();
-//		banner.add(_banner_registrado);
-
-	
 
 	public Compra_recibida[] cargar_compras() {
 		throw new UnsupportedOperationException();
@@ -50,7 +36,9 @@ public class Compras_recibidas  {
 
 		try {
 			Compra_pendiente comprasPendiente = basededatos.Compra_pendienteDAO.createCompra_pendiente();
+			System.out.println(comprasPendiente.getORMID() + "compraPendiente");
 			Compra_recibida compraRecibida = basededatos.Compra_recibidaDAO.createCompra_recibida();
+			System.out.println(compraRecibida.getORMID() + "compraRecibida");
 			comprasPendiente.setEstado_compra(2);
 			compraRecibida.setFecha_compra(comprasPendiente.getFecha_compra());
 			compraRecibida.setTiene_asociado_un_cibernauta_registrado(
@@ -59,7 +47,7 @@ public class Compras_recibidas  {
 			compraRecibida.setTiene_item(comprasPendiente.getTiene_item());
 			compraRecibida.setTotal_productos(comprasPendiente.getTotal_productos());
 			compraRecibida.setEstado_compra(2);
-			compraRecibida.setFecha_envio(compraRecibida.getFecha_compra());
+			compraRecibida.setFecha_envio(comprasPendiente.getFecha_compra());
 
 			basededatos.Compra_recibidaDAO.save(compraRecibida);
 			basededatos.Compra_pendienteDAO.delete(comprasPendiente);

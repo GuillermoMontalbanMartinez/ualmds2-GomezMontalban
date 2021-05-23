@@ -31,7 +31,7 @@ public class Compra extends VistaCompra {
 	public Compra(int idPedido, String nombreCliente, String pais, String localidad, String calle, String portal,
 			String provincia, String codigoPostal) {
 		layoutCompra = this.getLayoutCompra().as(VerticalLayout.class);
-		encargadoDeCompras = new Encargado_de_compras();
+		// encargadoDeCompras = new Encargado_de_compras();
 		this.idPedido = idPedido;
 		this.nombreCliente = nombreCliente;
 		this.pais = pais;
@@ -53,9 +53,11 @@ public class Compra extends VistaCompra {
 		this.getButtonEnviado().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				layoutCompra.removeAll();
-				layoutCompra.add(encargadoDeCompras);
+				// layoutCompra.removeAll();
+				//layoutCompra.add(encargadoDeCompras);
+				
 				try {
+					System.out.println("El id de pedido enviado es " + idPedido);
 					comprasRecibidas.Enviar_compra(idPedido);
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block

@@ -29,6 +29,8 @@ public class VistaComprasAEnviar extends PolymerTemplate<VistaComprasAEnviar.Vis
 	private Button buttonInicio;
 	@Id("vistaListadoDeCompras")
 	private Element vistaListadoDeCompras;
+	@Id("verticalListadoDeCompras")
+	private Element verticalListadoDeCompras;
 
 
 	public VistaComprasAEnviar() {
@@ -88,6 +90,16 @@ public class VistaComprasAEnviar extends PolymerTemplate<VistaComprasAEnviar.Vis
 
 	public void setVistaListadoDeCompras(Element vistaListadoDeCompras) {
 		this.vistaListadoDeCompras = vistaListadoDeCompras;
+	}
+
+
+	public Element getVerticalListadoDeCompras() {
+		return verticalListadoDeCompras;
+	}
+
+
+	public void setVerticalListadoDeCompras(Element verticalListadoDeCompras) {
+		this.verticalListadoDeCompras = verticalListadoDeCompras;
 	}
 
 

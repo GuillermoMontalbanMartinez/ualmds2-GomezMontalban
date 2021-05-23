@@ -33,6 +33,8 @@ public class Compra_enviada extends VistaCompraEnviada {
 		this.getTextPortal().setValue(portal);
 		this.getTextProvincia().setValue(provincia);
 		this.getTextCodigoPostal().setValue(codigoPostal);
+		
+		
 	}
 	
 }
