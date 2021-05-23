@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaCaracteristicasDelProducto extends PolymerElement {
 
@@ -40,10 +40,7 @@ static get template() {
       <img id="foto4" style="width: 100%; height: 100%;">
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing">
-     <p>Valoracion media : </p>
-     <vaadin-text-field id="valoracionText" style="align-self: center;" readonly></vaadin-text-field>
-    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing"></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
   <vaadin-horizontal-layout style="width: 100%; height: 100%; margin-left: var(--lumo-space-xl); padding-left: var(--lumo-space-xl);">
@@ -53,14 +50,16 @@ static get template() {
     <vaadin-horizontal-layout theme="spacing">
      <p>Precio:</p>
      <vaadin-text-field id="vaadinTextField" style="align-self: center; padding-right: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);" readonly></vaadin-text-field>
-     <vaadin-button theme="primary" id="anadirAlCarrito" style="align-self: center; width: 100%; margin-left: var(--lumo-space-xl);">
-      Añadir al carrito
+     <vaadin-button theme="primary" id="anadirAlCarrito" style="align-self: center; width: 100%; margin-left: var(--lumo-space-xl); margin-right: var(--lumo-space-l);">
+       Añadir al carrito 
      </vaadin-button>
+     <p style="margin-left: var(--lumo-space-xl); width: 100%;">Valoracion media : </p>
+     <vaadin-text-field id="valoracionText" style="align-self: center; width: 10%;" readonly></vaadin-text-field>
     </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: center; height: 30%; margin-top: var(--lumo-space-xl);" id="layoutResenas"></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 30%;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
     }

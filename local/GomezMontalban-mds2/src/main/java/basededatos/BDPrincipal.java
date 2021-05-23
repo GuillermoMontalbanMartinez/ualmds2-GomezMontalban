@@ -14,7 +14,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Encargados_de_compras _db_encargado_de_compras;
 	public Empresas_de_transportes _db_empresas_de_transporte;
 	public Productos _db_productos = new Productos();
-	public Resenas _db_resena;
+	public Resenas _db_resena = new Resenas();
 	public Ofertas _db_ofertas = new Ofertas();
 	public Categorias _db_categorias = new Categorias();
 	public Compras_pendientes _db_compras_pendientes = new Compras_pendientes();
@@ -62,8 +62,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public Resena[] cargar_resenas() {
-		throw new UnsupportedOperationException();
+	public Resena[] cargar_resenas(int idProducto) throws PersistentException{
+		return _db_resena.cargar_resenas(idProducto);
 	}
 
 	
