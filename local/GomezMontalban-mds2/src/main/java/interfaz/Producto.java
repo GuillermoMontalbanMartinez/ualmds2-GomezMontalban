@@ -10,6 +10,7 @@ import com.vaadin.flow.component.ComponentEventListener;
 import basededatos.BDPrincipal;
 import basededatos.Cibernauta_registrado;
 import basededatos.Foto;
+import basededatos.Resena;
 import vistas.VistaProducto;
 
 public class Producto extends VistaProducto {
@@ -70,6 +71,7 @@ public class Producto extends VistaProducto {
 
 				}
 			}
+			
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -91,7 +93,12 @@ public class Producto extends VistaProducto {
 			}
 		}
 		_ver_carácteristicas_del_producto.setUsuario(idUsuario, idProducto);
-
+		
+		for(Resena r : _ver_carácteristicas_del_producto.cargar_resenas()) {
+			//interfaz.Reseña resena = new interfaz.Reseña(r.getEsta_asociada_a_un_cibernauta_registrado().getNombre(), r.getValoracion(), r.getComentario());
+			//_ver_carácteristicas_del_producto.getLayoutResenas().add(resena);
+		}
+		
 	}
 
 	public int getIdProducto() {

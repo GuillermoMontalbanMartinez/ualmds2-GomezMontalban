@@ -18,7 +18,7 @@ public interface iAdministrador {
 
 	public Producto[] cargar_lista_productos_admin();
 
-	public Resena[] cargar_resenas();
+	public Resena[] cargar_resenas(int idProducto) throws PersistentException;
 
 	public void enviar_admin(String aDestinatario, String aAsunto, String aCorreo) throws PersistentException;
 

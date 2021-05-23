@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-caracteristicas-del-producto template.
@@ -40,6 +41,8 @@ public class VistaCaracteristicasDelProducto extends PolymerTemplate<VistaCaract
 	private TextField vaadinTextField;
 	@Id("anadirAlCarrito")
 	private Button anadirAlCarrito;
+	@Id("layoutResenas")
+	private HorizontalLayout layoutResenas;
 
 	/**
      * Creates a new VistaCaracteristicasDelProducto.
@@ -133,5 +136,13 @@ public class VistaCaracteristicasDelProducto extends PolymerTemplate<VistaCaract
 
 	public void setAnadirAlCarrito(Button anadirAlCarrito) {
 		this.anadirAlCarrito = anadirAlCarrito;
+	}
+
+	public HorizontalLayout getLayoutResenas() {
+		return layoutResenas;
+	}
+
+	public void setLayoutResenas(HorizontalLayout layoutResenas) {
+		this.layoutResenas = layoutResenas;
 	}
 }

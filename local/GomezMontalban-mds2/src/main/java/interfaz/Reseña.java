@@ -1,6 +1,7 @@
 package interfaz;
 
-public class Reseña {
+import vistas.VistaResenaProducto;
 
-	public Reseña reseña;
+public class Reseña extends VistaResenaProducto {
+
 }
