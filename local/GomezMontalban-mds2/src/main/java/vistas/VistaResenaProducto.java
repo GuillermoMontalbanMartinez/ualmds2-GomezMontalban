@@ -38,4 +38,28 @@ public class VistaResenaProducto extends PolymerTemplate<VistaResenaProducto.Vis
     public interface VistaResenaProductoModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public TextField getNombreText() {
+		return nombreText;
+	}
+
+	public void setNombreText(TextField nombreText) {
+		this.nombreText = nombreText;
+	}
+
+	public TextField getValoracionText() {
+		return valoracionText;
+	}
+
+	public void setValoracionText(TextField valoracionText) {
+		this.valoracionText = valoracionText;
+	}
+
+	public TextArea getContenidoText() {
+		return contenidoText;
+	}
+
+	public void setContenidoText(TextArea contenidoText) {
+		this.contenidoText = contenidoText;
+	}
 }

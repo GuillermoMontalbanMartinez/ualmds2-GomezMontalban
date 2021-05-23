@@ -6,6 +6,7 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
 import basededatos.Cibernauta_registrado;
@@ -21,6 +22,9 @@ public class Producto extends VistaProducto {
 	public int idUsuario;
 	public int idProducto;
 	public String nombreP, descripcion, precio, foto;
+	VerticalLayout reseñas = _ver_carácteristicas_del_producto.getLayoutResenas().as(VerticalLayout.class);
+	double reseñaMedia=0;
+	
 
 	public Producto(String nombre, String descripcion, String precio, String foto, int id) {
 
@@ -94,12 +98,14 @@ public class Producto extends VistaProducto {
 			}
 		}
 		_ver_carácteristicas_del_producto.setUsuario(idUsuario, idProducto);
-		
-		for(Resena r : _ver_carácteristicas_del_producto.cargar_resenas()) {
-			//interfaz.Reseña resena = new interfaz.Reseña(r.getEsta_asociada_a_un_cibernauta_registrado().getNombre(), r.getValoracion(), r.getComentario());
-			//_ver_carácteristicas_del_producto.getLayoutResenas().add(resena);
+		ArrayList<Resena> cargar_resenas = _ver_carácteristicas_del_producto.cargar_resenas();
+		for(Resena r : cargar_resenas ) {
+			interfaz.Reseña resena = new interfaz.Reseña(r.getEsta_asociada_a_un_cibernauta_registrado().getNombre(), r.getValoracion(), r.getComentario());
+			reseñas.add(resena);
+			reseñaMedia+=r.getValoracion();
 		}
-		
+		reseñaMedia/= cargar_resenas.size();
+		_ver_carácteristicas_del_producto.getValoracionText().setValue(String.valueOf(reseñaMedia));
 	}
 
 	public int getIdProducto() {

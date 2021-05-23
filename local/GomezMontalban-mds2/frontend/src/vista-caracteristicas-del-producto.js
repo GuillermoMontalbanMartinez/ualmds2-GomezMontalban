@@ -2,8 +2,9 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import './vista-resenas-producto.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaCaracteristicasDelProducto extends PolymerElement {
 
@@ -56,7 +57,9 @@ static get template() {
      <p style="margin-left: var(--lumo-space-xl); width: 100%;">Valoracion media : </p>
      <vaadin-text-field id="valoracionText" style="align-self: center; width: 10%;" readonly></vaadin-text-field>
     </vaadin-horizontal-layout>
-    <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: center; height: 30%; margin-top: var(--lumo-space-xl);" id="layoutResenas"></vaadin-horizontal-layout>
+    <vaadin-vertical-layout theme="spacing" id="layoutResenas">
+     <vista-resenas-producto style="width: 100%; height: 100%;"></vista-resenas-producto>
+    </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
