@@ -74,8 +74,7 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 //		this.getVistaDatosDePago().getTextFechaCaducidad().setName(String.valueOf(fechaCaducidad));
 //		this.getVistaDatosDePago().getTextCVVTarjeta().setValue(String.valueOf(cvv));
 //		this.getImagen().setSrc(src);
-		
-		
+
 		this.getTextGuardarCambios().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -88,7 +87,7 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 				}
 			}
 		});
-		
+
 //		this.getButtonCancelar().addClickListener(new ComponentEventListener() {
 //			@Override
 //			public void onComponentEvent(ComponentEvent event) {
@@ -101,7 +100,6 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 //				}
 //			}
 //		});
-		
 
 		this.getUploader().setReceiver(buffer);
 
@@ -142,7 +140,6 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 		});
 
 	}
-
 
 	public void modificar_datos_personales() throws PersistentException {
 		bdPrincipal = new BDPrincipal();
@@ -193,7 +190,7 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 		for (Cibernauta_registrado cib : cb) {
 			if (cib.getNombre().equals(nombre)) {
 				id = cib.getORMID();
-				
+
 				this.getTextNombreDeUsuario().setValue(cib.getNombre());
 				this.getTextApellidos().setValue(cib.getApellidos());
 				this.getTextCorreo().setValue(cib.getCorreo_electronico());
@@ -210,10 +207,7 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 				this.getVistaDatosDePago().getTextNumeroTarjeta().setValue(cib.getNumero_tarjeta_credito());
 				this.getVistaDatosDePago().getTextFechaCaducidad().setName(String.valueOf(cib.getFecha_caducidad()));
 				this.getVistaDatosDePago().getTextCVVTarjeta().setValue(String.valueOf(cib.getCvv()));
-				
-				
-				
-				
+
 			}
 		}
 	}

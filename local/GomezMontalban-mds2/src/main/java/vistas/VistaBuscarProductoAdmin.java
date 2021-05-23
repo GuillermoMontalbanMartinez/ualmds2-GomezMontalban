@@ -4,6 +4,9 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-buscar-producto-admin template.
@@ -15,7 +18,12 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-buscar-producto-admin.js")
 public class VistaBuscarProductoAdmin extends PolymerTemplate<VistaBuscarProductoAdmin.VistaBuscarProductoAdminModel> {
 
-    /**
+    @Id("searchField")
+	private TextField searchField;
+	@Id("layoutBuscarProductoAdmin")
+	private Element layoutBuscarProductoAdmin;
+
+	/**
      * Creates a new VistaBuscarProductoAdmin.
      */
     public VistaBuscarProductoAdmin() {
@@ -28,4 +36,20 @@ public class VistaBuscarProductoAdmin extends PolymerTemplate<VistaBuscarProduct
     public interface VistaBuscarProductoAdminModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public TextField getSearchField() {
+		return searchField;
+	}
+
+	public void setSearchField(TextField searchField) {
+		this.searchField = searchField;
+	}
+
+	public Element getLayoutBuscarProductoAdmin() {
+		return layoutBuscarProductoAdmin;
+	}
+
+	public void setLayoutBuscarProductoAdmin(Element layoutBuscarProductoAdmin) {
+		this.layoutBuscarProductoAdmin = layoutBuscarProductoAdmin;
+	}
 }

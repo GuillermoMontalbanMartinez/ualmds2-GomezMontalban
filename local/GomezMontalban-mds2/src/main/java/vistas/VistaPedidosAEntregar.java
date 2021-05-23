@@ -44,13 +44,7 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
         // Add setters and getters for template properties here.
     }
 
-//	public Button getVaadinButton() {
-//		return vaadinButton;
-//	}
-//
-//	public void setVaadinButton(Button vaadinButton) {
-//		this.vaadinButton = vaadinButton;
-//	}
+
 
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;

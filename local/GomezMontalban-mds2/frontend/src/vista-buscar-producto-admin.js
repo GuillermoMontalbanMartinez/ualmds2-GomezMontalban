@@ -14,9 +14,9 @@ class VistaBuscarProductoAdmin extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;">
+<vaadin-vertical-layout style="width: 100%;" id="layoutBuscarProductoAdmin">
  <vaadin-vertical-layout theme="spacing" style="width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
-  <vaadin-text-field placeholder="Search" style="flex-shrink: 0; align-self: center; width: 50%;">
+  <vaadin-text-field placeholder="Search" style="flex-shrink: 0; align-self: center; width: 50%;" id="searchField">
    <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
   </vaadin-text-field>
  </vaadin-vertical-layout>

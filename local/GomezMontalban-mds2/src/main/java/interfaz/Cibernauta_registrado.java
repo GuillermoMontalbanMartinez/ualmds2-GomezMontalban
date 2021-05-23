@@ -212,7 +212,6 @@ public class Cibernauta_registrado extends Cibernauta_común {
 				try {
 					_banner_registrado._carrito_registrado.mostrar_productos();
 				} catch (PersistentException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				layout.removeAll();
@@ -252,7 +251,6 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					try {
 						p.añadir_al_carrito();
 					} catch (PersistentException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}

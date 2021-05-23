@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
@@ -109,5 +110,29 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 	public Categoria[] cargar_categoria() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
 		return bd.cargar_categoria();
+	}
+	
+	public void buscarProducto(String string) throws PersistentException  {
+		BDPrincipal bd = new BDPrincipal();
+		Producto[] aux =  bd.buscarProductos(string);
+		
+		
+		for (Producto p : aux) {
+			System.out.println(p.getNombre());
+			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+				System.out.println(f.getEsta_asociada_a_un_producto().getNombre());
+				if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
+					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), f.getLink_foto());
+					listaProductos.add(producto);
+					vista_productos.add(producto);
+					break;
+				}
+//				System.out.println(f.getLink_foto());
+			}
+			//interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+//			listaProductos.add(producto);
+//			vista_productos.add(producto);
+		}
+
 	}
 }

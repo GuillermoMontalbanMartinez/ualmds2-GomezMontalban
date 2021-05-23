@@ -44,29 +44,6 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
         // Add setters and getters for template properties here.
     }
 
-//	public HorizontalLayout getVaadinHorizontalLayout() {
-//		return vaadinHorizontalLayout;
-//	}
-//
-//	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-//		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-//	}
-
-//	public Button getVaadinButton() {
-//		return vaadinButton;
-//	}
-//
-//	public void setVaadinButton(Button vaadinButton) {
-//		this.vaadinButton = vaadinButton;
-//	}
-
-//	public Button getVaadinButton1() {
-//		return vaadinButton1;
-//	}
-//
-//	public void setVaadinButton1(Button vaadinButton1) {
-//		this.vaadinButton1 = vaadinButton1;
-//	}
 
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
@@ -92,13 +69,6 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
 		this.vistaListaProductosEnviados = vistaListaProductosEnviados;
 	}
 
-//	public Button getButtonCerrarSesion() {
-//		return buttonCerrarSesion;
-//	}
-//
-//	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
-//		this.buttonCerrarSesion = buttonCerrarSesion;
-//	}
 
 	public Button getButtonInicioPedidosEntregados() {
 		return buttonInicioPedidosEntregados;

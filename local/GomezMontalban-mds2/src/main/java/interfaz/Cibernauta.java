@@ -1,14 +1,20 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.HasValue.ValueChangeEvent;
+import com.vaadin.flow.component.HasValue.ValueChangeListener;
+import com.vaadin.flow.component.KeyDownEvent;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import ch.qos.logback.core.rolling.helper.ArchiveRemover;
+import vistas.VistaBuscarProducto;
 
 public class Cibernauta extends Cibernauta_común {
 	public Banner_no_registrado _banner_no_registrado;
@@ -86,7 +92,26 @@ public class Cibernauta extends Cibernauta_común {
 			});
 
 		}
+		
+
+		
+	_banner_no_registrado.getBuscadorTextField().addKeyDownListener(com.vaadin.flow.component.Key.ENTER, (ComponentEventListener<KeyDownEvent>) keyDownEvent -> {
+		System.out.println(_banner_no_registrado.getBuscadorTextField().getValue());
+		layout.removeAll();
+		layout.add(_banner_no_registrado);
+		catalogo.eliminar_producto();
+		try {
+			catalogo.buscarProducto(_banner_no_registrado.getBuscadorTextField().getValue());
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		layout.add(catalogo);
+	});
 
 	}
+
+	
+
 
 }

@@ -1,6 +1,7 @@
 package basededatos;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
@@ -151,5 +152,23 @@ public class Productos {
 			e.printStackTrace();
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+	}
+	
+	public Producto[] buscarProductos(String string) throws PersistentException {
+		Producto[] productosArray = null;
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		try {
+			ProductoCriteria productoCriteria = new ProductoCriteria();
+			productoCriteria.nombre.like("%"+string+"%");
+			productosArray = ProductoDAO.listProductoByCriteria(productoCriteria);
+
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
+		
+		return productosArray;
 	}
 }

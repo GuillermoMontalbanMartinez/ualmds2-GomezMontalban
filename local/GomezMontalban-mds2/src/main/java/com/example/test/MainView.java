@@ -38,28 +38,28 @@ public class MainView extends VerticalLayout {
 		Cibernauta cibernauta = new Cibernauta();
 		add(cibernauta);
 		login(cibernauta);
-		
+
 	}
 
 	public void login(Cibernauta cibernauta) {
-		
+
 		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
 			volver_a_principal(cibernauta);
 		});
-		
+
 		cibernauta._banner_no_registrado.getGetPrincipal().addClickListener(t -> {
 			volver_a_principal(cibernauta);
 		});
-		
-		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addForgotPasswordListener(e ->{
+
+		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addForgotPasswordListener(e -> {
 			Notification.show("AA");
 			Cibernauta cb = new Cibernauta();
 			removeAll();
-			
+
 		});
-		
+
 		cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().addLoginListener(e -> {
-			
+
 			String usuario = e.getUsername();
 			String password = e.getPassword();
 			int id = -1;
@@ -86,15 +86,15 @@ public class MainView extends VerticalLayout {
 
 				case 1:
 					Empresa_de_transportes et = new Empresa_de_transportes();
-					
-					et.getButtonCerrarSesion().addClickListener( t -> {
+
+					et.getButtonCerrarSesion().addClickListener(t -> {
 						cerrar_sesion(et, cibernauta);
 					});
-					
-					et.pedidos_a_entregar.getButtonInicio().addClickListener( t -> {
+
+					et.pedidos_a_entregar.getButtonInicio().addClickListener(t -> {
 						inicioEmpresaDeTransportes(et);
 					});
-					
+
 					et.pedidos_entregados.getButtonInicioPedidosEntregados().addClickListener(t -> {
 						inicioEmpresaDeTransportes(et);
 					});
@@ -108,16 +108,15 @@ public class MainView extends VerticalLayout {
 					ec._compras_a_enviar.getButtonInicio().addClickListener(t -> {
 						inicioEncargadoDeCompras(ec);
 					});
-					
+
 					ec._compras_enviadas.getButtonInicio().addClickListener(t -> {
 						inicioEncargadoDeCompras(ec);
 					});
-					
+
 					ec.getButtonCerrarSesion().addClickListener(t -> {
 						cerrar_sesion(ec, cibernauta);
 					});
-					
-					
+
 					remove(cibernauta);
 					add(ec);
 
@@ -131,20 +130,16 @@ public class MainView extends VerticalLayout {
 								cerrar_sesion(registrado, cibernauta);
 							});
 
-					registrado._banner_registrado.getPrincipalButton().addClickListener(event ->{
+					registrado._banner_registrado.getPrincipalButton().addClickListener(event -> {
 						volver_a_principal(registrado);
 					});
-					
-					registrado._banner_registrado._administrar_perfil._dar_de_baja_usuario.getButtonConfirmarBajaUsuario().addClickListener(event ->{
-						cerrar_sesion(registrado, cibernauta);
-					});
+
+					registrado._banner_registrado._administrar_perfil._dar_de_baja_usuario
+							.getButtonConfirmarBajaUsuario().addClickListener(event -> {
+								cerrar_sesion(registrado, cibernauta);
+							});
 					remove(cibernauta);
 					add(registrado);
-
-					
-					
-					
-					
 
 					break;
 				default:
@@ -152,35 +147,33 @@ public class MainView extends VerticalLayout {
 					cibernauta.inicio_sesion.getVaadinLoginFormLoginInicioDeSesion().setError(true);
 					break;
 				}
-				
-				
+
 			} catch (PersistentException e1) {
 				e1.printStackTrace();
 			}
 
 		});
-		
+
 	}
 
-	
 	public void inicioEmpresaDeTransportes(Empresa_de_transportes et) {
 		Empresa_de_transportes empresaDeTransportes = new Empresa_de_transportes();
 		Cibernauta cibernauta = new Cibernauta();
 		empresaDeTransportes.pedidos_a_entregar.getButtonInicio().addClickListener(t -> {
 			inicioEmpresaDeTransportes(et);
 		});
-		
+
 		empresaDeTransportes.pedidos_entregados.getButtonInicioPedidosEntregados().addClickListener(t -> {
 			inicioEmpresaDeTransportes(et);
 		});
 		remove(et);
 		removeAll();
 		add(empresaDeTransportes);
-		
+
 		empresaDeTransportes.getButtonCerrarSesion().addClickListener(t -> {
 			cerrar_sesion(et, cibernauta);
 		});
-		
+
 	}
 
 	public void inicioEncargadoDeCompras(Encargado_de_compras ec) {
@@ -189,21 +182,19 @@ public class MainView extends VerticalLayout {
 		encargadoDeCompras._compras_a_enviar.getButtonInicio().addClickListener(t -> {
 			inicioEncargadoDeCompras(ec);
 		});
-		
+
 		encargadoDeCompras._compras_enviadas.getButtonInicio().addClickListener(t -> {
 			inicioEncargadoDeCompras(ec);
 		});
 		remove(ec);
 		removeAll();
 		add(encargadoDeCompras);
-		
+
 		encargadoDeCompras.getButtonCerrarSesion().addClickListener(t -> {
 			cerrar_sesion(ec, cibernauta);
 		});
-	
-	}
-	
 
+	}
 
 	public void cerrar_sesion(Component comp, Cibernauta c) {
 		c = new Cibernauta();
@@ -211,22 +202,22 @@ public class MainView extends VerticalLayout {
 		add(c);
 		login(c);
 	}
-	
+
 	public void volver_a_principal(Empresa_de_transportes et) {
 		Empresa_de_transportes empresaDeTransportes = new Empresa_de_transportes();
 		Cibernauta cibernauta = new Cibernauta();
-		
-		empresaDeTransportes.getVaadinButtonPedidosAEntregar().addClickListener( t -> {
+
+		empresaDeTransportes.getVaadinButtonPedidosAEntregar().addClickListener(t -> {
 			volver_a_principal(empresaDeTransportes);
 		});
-		
+
 		remove(et);
 		add(empresaDeTransportes);
 
 		empresaDeTransportes.getButtonCerrarSesion().addClickListener(t -> {
 			cerrar_sesion(et, cibernauta);
 		});
-		
+
 	}
 
 	public void volver_a_principal(Administrador c) {
@@ -246,7 +237,7 @@ public class MainView extends VerticalLayout {
 			cerrar_sesion(c, cibernauta);
 		});
 	}
-	
+
 	public void volver_a_principal(Cibernauta c) {
 		Cibernauta cibernauta = new Cibernauta();
 		cibernauta.inicio_sesion.getCancelarB().addClickListener(t -> {
@@ -258,8 +249,7 @@ public class MainView extends VerticalLayout {
 
 		login(cibernauta);
 	}
-	
-	
+
 	public void volver_a_principal(Cibernauta_registrado c) {
 		Cibernauta_registrado registrado = new Cibernauta_registrado();
 		Cibernauta cibernauta = new Cibernauta();
@@ -283,5 +273,5 @@ public class MainView extends VerticalLayout {
 			cerrar_sesion(c, cibernauta);
 		});
 	}
-	
+
 }

@@ -162,7 +162,7 @@ public class Items {
 		
 		Item item = basededatos.ItemDAO.getItemByORMID(aId_item);
 		
-
+		
 		basededatos.CompraDAO.deleteAndDissociate(item.getEsta_asociado_a_una_compra());
 
 		Producto p = item.getEsta_asociado_a_un_producto();

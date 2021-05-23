@@ -1,8 +1,11 @@
 package basededatos;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.orm.PersistentException;
+
+import interfaz.Cibernauta;
 
 public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_común, iCibernauta_registrado, iCorreo, iEmpresa_de_transportes, iEncargado_de_compras, ICompra, iItem, iBanco {
 	public Correos _db_correo = new Correos();
@@ -19,6 +22,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Compras_recibidas _db_compras_recibidas;
 	public Fotos _db_fotos;
 	public Items _db_item = new Items();
+//	public Cibernauta _db_cibernauta = new Cibernauta();
 
 
 	public void baja_categoria(String nombreCategoria) {
@@ -261,6 +265,10 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public void anadir_al_carrito(int aIdProducto, int aIdUsuario) throws PersistentException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public Producto[] buscarProductos(String string) throws PersistentException {
+		return _db_productos.buscarProductos(string);
 	}
 	
 	

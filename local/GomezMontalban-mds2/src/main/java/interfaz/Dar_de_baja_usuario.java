@@ -9,11 +9,11 @@ import basededatos.BDPrincipal;
 import basededatos.Cibernauta_registrado;
 import vistas.VistaDarDeBajaUsuario;
 
-public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario{
+public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario {
 	public Administrar_perfil _administrar_perfil;
 	public BDPrincipal bd;
 	public int idUsuario;
-	
+
 	public Dar_de_baja_usuario() {
 		this.getButtonConfirmarBajaUsuario().addClickListener(new ComponentEventListener() {
 			@Override
@@ -26,9 +26,9 @@ public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario{
 				}
 			}
 		});
-	 
+
 	}
-	
+
 //	public void Baja_cuenta() throws PersistentException {
 //		bd = new BDPrincipal();
 //		this.correo = this.getTextCorreo().getValue().toString();	
@@ -47,7 +47,7 @@ public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario{
 		bd = new BDPrincipal();
 		bd.BajaCuentaCibernautaRegistrado(idUsuario);
 	}
-	
+
 	public void setUsuario(String nombre) throws PersistentException {
 		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
 
@@ -57,5 +57,5 @@ public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario{
 			}
 		}
 	}
-	
+
 }
