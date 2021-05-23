@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -34,8 +36,15 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a compras a enviar");
-				layout.removeAll();
+				//layout.removeAll();
 				layout.add(_compras_a_enviar);
+				try {
+					_compras_a_enviar.eliminar_compras_a_enviar();
+					_compras_a_enviar.mostrar_compras_a_enviar();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 				
@@ -57,6 +66,8 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 				layout.add(_compras_a_enviar);
 			}
 		});
+		
+		
 		
 		
 	}

@@ -33,4 +33,12 @@ public class VistaListadoDeCompras extends PolymerTemplate<VistaListadoDeCompras
     public interface VistaListadoDeComprasModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
 }
