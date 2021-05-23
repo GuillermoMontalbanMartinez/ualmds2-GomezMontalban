@@ -4,6 +4,10 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-escribir-reseña template.
@@ -15,7 +19,16 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-escribir-reseña.js")
 public class VistaEscribirReseña extends PolymerTemplate<VistaEscribirReseña.VistaEscribirReseñaModel> {
 
-    /**
+    @Id("selectLayout")
+	private HorizontalLayout selectLayout;
+	@Id("cuerpoText")
+	private TextArea cuerpoText;
+	@Id("publicarButton")
+	private Button publicarButton;
+	@Id("cancelarButton")
+	private Button cancelarButton;
+
+	/**
      * Creates a new VistaEscribirReseña.
      */
     public VistaEscribirReseña() {
@@ -28,4 +41,36 @@ public class VistaEscribirReseña extends PolymerTemplate<VistaEscribirReseña.V
     public interface VistaEscribirReseñaModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public HorizontalLayout getSelectLayout() {
+		return selectLayout;
+	}
+
+	public void setSelectLayout(HorizontalLayout selectLayout) {
+		this.selectLayout = selectLayout;
+	}
+
+	public TextArea getCuerpoText() {
+		return cuerpoText;
+	}
+
+	public void setCuerpoText(TextArea cuerpoText) {
+		this.cuerpoText = cuerpoText;
+	}
+
+	public Button getPublicarButton() {
+		return publicarButton;
+	}
+
+	public void setPublicarButton(Button publicarButton) {
+		this.publicarButton = publicarButton;
+	}
+
+	public Button getCancelarButton() {
+		return cancelarButton;
+	}
+
+	public void setCancelarButton(Button cancelarButton) {
+		this.cancelarButton = cancelarButton;
+	}
 }
