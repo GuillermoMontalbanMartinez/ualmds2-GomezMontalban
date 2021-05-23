@@ -20,7 +20,7 @@ class VistaCompraEnviada extends PolymerElement {
    <label style="align-self: center;">Número del pedido</label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing">
-   <vaadin-text-field id="textNumeroPedido"></vaadin-text-field>
+   <vaadin-text-field id="textNumeroPedido" readonly></vaadin-text-field>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
@@ -29,17 +29,17 @@ class VistaCompraEnviada extends PolymerElement {
     <label style="align-self: center;">Nombre del cliente</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
-    <vaadin-text-field id="textNombreCliente"></vaadin-text-field>
+    <vaadin-text-field id="textNombreCliente" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-s);">
   <vaadin-horizontal-layout theme="spacing" style="margin-left: var(--lumo-space-xs); margin-bottom: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing">
-    <label style="align-self: center;">Dirección</label>
+    <label style="align-self: center;">País </label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="padding-left: var(--lumo-space-xl); margin-left: var(--lumo-space-xl);">
-    <vaadin-text-field id="textDireccion"></vaadin-text-field>
+    <vaadin-text-field id="textDireccion" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -49,7 +49,7 @@ class VistaCompraEnviada extends PolymerElement {
     <label style="align-self: center;">Localidad</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-left: var(--lumo-space-xl); padding-left: var(--lumo-space-xl);">
-    <vaadin-text-field id="textLocalidad"></vaadin-text-field>
+    <vaadin-text-field id="textLocalidad" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -59,7 +59,7 @@ class VistaCompraEnviada extends PolymerElement {
     <label style="align-self: center;">Calle</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="padding-left: var(--lumo-space-xl); margin-left: var(--lumo-space-xl);">
-    <vaadin-text-field style="margin-left: var(--lumo-space-xl); padding-left: var(--lumo-space-s);" id="textCalle"></vaadin-text-field>
+    <vaadin-text-field style="margin-left: var(--lumo-space-xl); padding-left: var(--lumo-space-s);" id="textCalle" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -69,7 +69,7 @@ class VistaCompraEnviada extends PolymerElement {
     <label style="align-self: center;">Portal</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-left: var(--lumo-space-xl); padding-left: var(--lumo-space-xl);">
-    <vaadin-text-field style="padding-left: var(--lumo-space-l);" id="textPortal"></vaadin-text-field>
+    <vaadin-text-field style="padding-left: var(--lumo-space-l);" id="textPortal" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -79,7 +79,7 @@ class VistaCompraEnviada extends PolymerElement {
     <label style="align-self: center;">Provincia</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-left: var(--lumo-space-xl); padding-left: var(--lumo-space-xl);">
-    <vaadin-text-field id="textProvincia"></vaadin-text-field>
+    <vaadin-text-field id="textProvincia" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
@@ -89,7 +89,7 @@ class VistaCompraEnviada extends PolymerElement {
     <label style="align-self: center;">Código postal</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="margin-left: var(--lumo-space-xl); padding-left: var(--lumo-space-xs);">
-    <vaadin-text-field id="textCodigoPostal"></vaadin-text-field>
+    <vaadin-text-field id="textCodigoPostal" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

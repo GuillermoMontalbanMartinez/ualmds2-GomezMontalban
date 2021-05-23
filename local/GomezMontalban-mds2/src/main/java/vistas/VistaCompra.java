@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-compra template.
@@ -36,6 +37,8 @@ public class VistaCompra extends PolymerTemplate<VistaCompra.VistaCompraModel> {
 	private TextField textNombreCliente;
 	@Id("textNumeroPedido")
 	private TextField textNumeroPedido;
+	@Id("layoutCompra")
+	private Element layoutCompra;
 
 	/**
      * Creates a new VistaCompra.
@@ -121,5 +124,13 @@ public class VistaCompra extends PolymerTemplate<VistaCompra.VistaCompraModel> {
 
 	public void setTextNumeroPedido(TextField textNumeroPedido) {
 		this.textNumeroPedido = textNumeroPedido;
+	}
+
+	public Element getLayoutCompra() {
+		return layoutCompra;
+	}
+
+	public void setLayoutCompra(Element layoutCompra) {
+		this.layoutCompra = layoutCompra;
 	}
 }

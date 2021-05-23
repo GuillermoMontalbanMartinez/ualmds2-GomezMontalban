@@ -21,17 +21,15 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 	public ArrayList<Compra> compras = new ArrayList<Compra>();
 	public Compra_pendiente[] compraAEnviar = null;
 
-	
 	public Compras_a_enviar() {
 		listadoDeCompras = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		
+		
 	}
-	
+
 	public void cargar_compras_a_enviar() throws PersistentException {
 		try {
 			compraAEnviar = basededatos.Compra_pendienteDAO.listCompra_pendienteByQuery(null, null);
-			for(Compra_pendiente cp : compraAEnviar) {
-				System.out.println(cp.getORMID());
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -40,7 +38,6 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 	public void mostrar_compras_a_enviar() throws PersistentException {
 		cargar_compras_a_enviar();
 		for (Compra_pendiente cp : compraAEnviar) {
-			System.out.println(cp.getORMID() + " mostrar");
 			Compra compra = new Compra(cp.getId_compra(), cp.getTiene_asociado_un_cibernauta_registrado().getNombre(),
 					cp.getTiene_asociado_un_cibernauta_registrado().getPais(),
 					cp.getTiene_asociado_un_cibernauta_registrado().getLocalidad(),
@@ -52,12 +49,11 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 			listadoDeCompras.add(compra);
 		}
 	}
-	
+
 	public void eliminar_compras_a_enviar() {
 
 		listadoDeCompras.removeAll();
 
 	}
-	
-	
+
 }

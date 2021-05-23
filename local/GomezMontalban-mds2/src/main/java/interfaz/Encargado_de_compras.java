@@ -26,9 +26,17 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 		this.getButton_compras_enviadas().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				Notification.show("Acceso a compras a las compras enviadas");
-				layout.removeAll();
+				Notification.show("Acceso a  compras enviadas");
+				//layout.removeAll();
 				layout.add(_compras_enviadas);
+				
+				try {
+					_compras_enviadas.eliminar_compras_enviadas();
+					_compras_enviadas.mostrar_compras_enviadas();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -36,7 +44,6 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a compras a enviar");
-				//layout.removeAll();
 				layout.add(_compras_a_enviar);
 				try {
 					_compras_a_enviar.eliminar_compras_a_enviar();
@@ -54,14 +61,14 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 				Compras_a_enviar _compras_a_enviar = new Compras_a_enviar();
 				layout.removeAll();
 				layout.add(_compras_enviadas);
-				// _compras_a_enviar=null;
 			}
 		});
 		
 		this._compras_enviadas.getBoton_compras_a_enviar().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				Notification.show("Acceso a compras a enviar");
+				Notification.show("Acceso a compras a enviar prueba prueba");
+				Compras_enviadas comprasEnviadas = new Compras_enviadas();
 				layout.removeAll();
 				layout.add(_compras_a_enviar);
 			}

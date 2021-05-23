@@ -1,5 +1,7 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 public interface ICompra {
 
 	public void cancelarPedido(int aId_compra);
@@ -18,7 +20,7 @@ public interface ICompra {
 
 	public Compra[] cargar_lista_compras_admin();
 
-	public void Enviar_compra(int aId_compra);
+	public void Enviar_compra(int aId_compra) throws PersistentException;
 
 	public void Enviar_producto(int aId_compra);
 

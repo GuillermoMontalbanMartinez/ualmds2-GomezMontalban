@@ -24,6 +24,8 @@ public class VistaComprasEnviadas extends PolymerTemplate<VistaComprasEnviadas.V
 	private Button boton_compras_a_enviar;
 	@Id("buttonInicio")
 	private Button buttonInicio;
+	@Id("vistaListadoDeComprasEnviadas")
+	private Element vistaListadoDeComprasEnviadas;
 	/**
      * Creates a new VistaComprasEnviadas.
      */

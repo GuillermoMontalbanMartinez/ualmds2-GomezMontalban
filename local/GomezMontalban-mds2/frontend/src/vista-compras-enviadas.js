@@ -1,8 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import './vista-listado-de-compras-enviadas.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-listado-de-compras-enviadas.js';
 
 class VistaComprasEnviadas extends PolymerElement {
 
@@ -23,7 +23,7 @@ class VistaComprasEnviadas extends PolymerElement {
   <h1>Compras enviadas</h1>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-m);">
-  <vaadin-button theme="primary" disabled>
+  <vaadin-button theme="primary" disabled tabindex="">
     Compras enviadas 
   </vaadin-button>
  </vaadin-vertical-layout>
@@ -32,8 +32,10 @@ class VistaComprasEnviadas extends PolymerElement {
     Compras a enviar 
   </vaadin-button>
  </vaadin-vertical-layout>
- <h1>Listado de compras a enviar</h1>
- <vista-listado-de-compras-enviadas style="width: 100%;"></vista-listado-de-compras-enviadas>
+ <h1>Listado de compras compras enviadas </h1>
+</vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;">
+ <vista-listado-de-compras-enviadas style="width: 100%; align-self: center;" id="vistaListadoDeComprasEnviadas"></vista-listado-de-compras-enviadas>
 </vaadin-vertical-layout>
 `;
     }
