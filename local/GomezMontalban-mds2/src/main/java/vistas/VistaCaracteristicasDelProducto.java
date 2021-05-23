@@ -6,21 +6,24 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.button.Button;
 
 /**
- * A Designer generated component for the vista-caracteristicas-del-producto-admin template.
+ * A Designer generated component for the vista-caracteristicas-del-producto template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("vista-caracteristicas-del-producto-admin")
-@JsModule("./src/vista-caracteristicas-del-producto-admin.js")
-public class VistaCaracteristicasDelProductoAdmin extends PolymerTemplate<VistaCaracteristicasDelProductoAdmin.VistaCaracteristicasDelProductoAdminModel> {
+@Tag("vista-caracteristicas-del-producto")
+@JsModule("./src/vista-caracteristicas-del-producto.js")
+public class VistaCaracteristicasDelProducto extends PolymerTemplate<VistaCaracteristicasDelProducto.VistaCaracteristicasDelProductoModel> {
 
     @Id("nombreText")
 	private TextField nombreText;
+	@Id("descripcionText")
+	private TextArea descripcionText;
 	@Id("foto")
 	private Image foto;
 	@Id("foto1")
@@ -33,22 +36,22 @@ public class VistaCaracteristicasDelProductoAdmin extends PolymerTemplate<VistaC
 	private Image foto4;
 	@Id("valoracionText")
 	private TextField valoracionText;
-	@Id("descripcionText")
-	private TextArea descripcionText;
-	@Id("precioText")
-	private TextField precioText;
+	@Id("vaadinTextField")
+	private TextField vaadinTextField;
+	@Id("anadirAlCarrito")
+	private Button anadirAlCarrito;
 
 	/**
-     * Creates a new VistaCaracteristicasDelProductoAdmin.
+     * Creates a new VistaCaracteristicasDelProducto.
      */
-    public VistaCaracteristicasDelProductoAdmin() {
+    public VistaCaracteristicasDelProducto() {
         // You can initialise any data required for the connected UI components here.
     }
 
     /**
-     * This model binds properties between VistaCaracteristicasDelProductoAdmin and vista-caracteristicas-del-producto-admin
+     * This model binds properties between VistaCaracteristicasDelProducto and vista-caracteristicas-del-producto
      */
-    public interface VistaCaracteristicasDelProductoAdminModel extends TemplateModel {
+    public interface VistaCaracteristicasDelProductoModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
 
@@ -58,6 +61,14 @@ public class VistaCaracteristicasDelProductoAdmin extends PolymerTemplate<VistaC
 
 	public void setNombreText(TextField nombreText) {
 		this.nombreText = nombreText;
+	}
+
+	public TextArea getDescripcionText() {
+		return descripcionText;
+	}
+
+	public void setDescripcionText(TextArea descripcionText) {
+		this.descripcionText = descripcionText;
 	}
 
 	public Image getFoto() {
@@ -108,19 +119,19 @@ public class VistaCaracteristicasDelProductoAdmin extends PolymerTemplate<VistaC
 		this.valoracionText = valoracionText;
 	}
 
-	public TextArea getDescripcionText() {
-		return descripcionText;
+	public TextField getVaadinTextField() {
+		return vaadinTextField;
 	}
 
-	public void setDescripcionText(TextArea descripcionText) {
-		this.descripcionText = descripcionText;
+	public void setVaadinTextField(TextField vaadinTextField) {
+		this.vaadinTextField = vaadinTextField;
 	}
 
-	public TextField getPrecioText() {
-		return precioText;
+	public Button getAnadirAlCarrito() {
+		return anadirAlCarrito;
 	}
 
-	public void setPrecioText(TextField precioText) {
-		this.precioText = precioText;
+	public void setAnadirAlCarrito(Button anadirAlCarrito) {
+		this.anadirAlCarrito = anadirAlCarrito;
 	}
 }

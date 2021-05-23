@@ -10,14 +10,14 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextArea;
 
 /**
- * A Designer generated component for the vista-reseña template.
+ * A Designer generated component for the vista-resena template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
 @Tag("vista-reseña")
-@JsModule("./src/vista-reseña.js")
-public class VistaReseña extends PolymerTemplate<VistaReseña.VistaReseñaModel> {
+@JsModule("./src/vista-resena.js")
+public class VistaResena extends PolymerTemplate<VistaResena.VistaResenaModel> {
 
     @Id("verticalLayoutResena")
 	private Element verticalLayoutResena;
@@ -29,14 +29,14 @@ public class VistaReseña extends PolymerTemplate<VistaReseña.VistaReseñaModel
 	/**
      * Creates a new VistaReseña.
      */
-    public VistaReseña() {
+    public VistaResena() {
         // You can initialise any data required for the connected UI components here.
     }
 
     /**
-     * This model binds properties between VistaReseña and vista-reseña
+     * This model binds properties between VistaReseña and vista-resena
      */
-    public interface VistaReseñaModel extends TemplateModel {
+    public interface VistaResenaModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
 

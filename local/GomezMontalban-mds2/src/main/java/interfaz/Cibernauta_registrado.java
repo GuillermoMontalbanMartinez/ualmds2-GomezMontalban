@@ -255,6 +255,17 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					}
 				}
 			});
+			
+			p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					Ver_carácteristicas_del_producto v = new  Ver_carácteristicas_del_producto();
+					layout.removeAll();
+					layout.add(_banner_registrado);
+					layout.add(p._ver_carácteristicas_del_producto);
+
+				}
+			});
 
 		}
 
@@ -301,7 +312,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		_banner_registrado._carrito_registrado.setUsuario(usuario);
 		catalogo.setUsuario(usuario);
 		_banner_registrado._administrar_perfil._dar_de_baja_usuario.setUsuario(usuario);
-
+		
 	}
 
 	public String getUsuario() {

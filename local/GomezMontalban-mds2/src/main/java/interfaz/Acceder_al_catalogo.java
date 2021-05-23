@@ -83,12 +83,12 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 		for (Producto p : productos) {
 			if(value!=null) {
 				if(p.getCategoria().getNombre().equals(value)) {
-					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 					listaProductos.add(producto);
 					vista_productos.add(producto);
 				}
 			} else {
-				interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto());
+				interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 				listaProductos.add(producto);
 				vista_productos.add(producto);
 			}

@@ -91,6 +91,17 @@ public class Cibernauta extends Cibernauta_común {
 				}
 			});
 
+			p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+					layout.removeAll();
+					layout.add(_banner_no_registrado);
+					layout.add(p._ver_carácteristicas_del_producto);
+
+				}
+			});
+
 		}
 		
 
