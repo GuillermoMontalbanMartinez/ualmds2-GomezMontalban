@@ -25,7 +25,7 @@ public class Cibernauta extends Cibernauta_común {
 	public Registro registro;
 
 	public Cibernauta() {
-
+		super();
 		_banner_no_registrado = new Banner_no_registrado();
 		banner = this.getBanner();
 		banner.add(_banner_no_registrado);
