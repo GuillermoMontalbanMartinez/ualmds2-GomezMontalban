@@ -29,7 +29,6 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 				layoutEncargadoDeCompras.add(compras_enviadas);
 
 				try {
-//					compras_enviadas.eliminar_compras_enviadas();
 					compras_enviadas.mostrar_compras_enviadas();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
@@ -45,7 +44,6 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 				layoutEncargadoDeCompras.removeAll();
 				layoutEncargadoDeCompras.add(compras_a_enviar);
 				try {
-//					compras_a_enviar.eliminar_compras_a_enviar();
 					compras_a_enviar.mostrar_compras_a_enviar();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
@@ -68,7 +66,6 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 					e.printStackTrace();
 				}
 
-
 			}
 		});
 
@@ -78,7 +75,7 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 				Notification.show("Acceso a compras a enviar prueba prueba");
 				layoutEncargadoDeCompras.removeAll();
 				layoutEncargadoDeCompras.add(compras_a_enviar);
-				
+
 				try {
 
 					compras_a_enviar.eliminar_compras_a_enviar();

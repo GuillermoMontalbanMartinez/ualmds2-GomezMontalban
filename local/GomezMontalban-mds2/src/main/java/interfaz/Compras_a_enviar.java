@@ -24,8 +24,7 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 	public Compras_a_enviar() {
 		layoutComprasAEnviar = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		layoutListadoDeCompras = this.getVerticalListadoDeCompras().as(VerticalLayout.class);
-		
-		
+
 	}
 
 	public void cargar_compras_a_enviar() throws PersistentException {
@@ -47,16 +46,13 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 					cp.getTiene_asociado_un_cibernauta_registrado().getProvincia(),
 					String.valueOf(cp.getTiene_asociado_un_cibernauta_registrado().getCp()));
 			compras.add(compra);
-			//layoutComprasAEnviar.add(compra);
 			layoutListadoDeCompras.add(compra);
 		}
 	}
 
 	public void eliminar_compras_a_enviar() {
-		// layoutComprasAEnviar.remove(layoutListadoDeCompras);
 		layoutListadoDeCompras.removeAll();
 		compras.clear();
-		// layoutComprasAEnviar.removeAll();
 
 	}
 

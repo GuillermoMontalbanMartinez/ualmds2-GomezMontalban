@@ -29,6 +29,8 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 	private VistaProductosAEnviar vistaListaProductosAEnviar;
 	@Id("buttonInicioPedidosAEntregar")
 	private Button buttonInicio;
+	@Id("layoutvistaProductosAEnviar")
+	private Element layoutvistaProductosAEnviar;
 
 	/**
      * Creates a new VistaPedidosAEntregar.
@@ -84,6 +86,14 @@ public class VistaPedidosAEntregar extends PolymerTemplate<VistaPedidosAEntregar
 
 	public void setButtonInicio(Button buttonInicio) {
 		this.buttonInicio = buttonInicio;
+	}
+
+	public Element getLayoutvistaProductosAEnviar() {
+		return layoutvistaProductosAEnviar;
+	}
+
+	public void setLayoutvistaProductosAEnviar(Element layoutvistaProductosAEnviar) {
+		this.layoutvistaProductosAEnviar = layoutvistaProductosAEnviar;
 	}
 
 

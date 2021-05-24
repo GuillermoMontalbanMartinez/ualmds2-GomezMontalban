@@ -38,7 +38,7 @@ public class Compras_recibidas {
 			pt.rollback();
 		}
 		return compra_recibida;
-	} // Trabajando en ello 24/05/2021 13:45
+	} 
 	
 	public Compra[] cargar_lista_compras_admin() {
 		throw new UnsupportedOperationException();

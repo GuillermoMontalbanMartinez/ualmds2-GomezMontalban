@@ -134,8 +134,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 	
-	public Compra_pendiente[] cargar_pedidos_a_entregar() {
-		throw new UnsupportedOperationException();
+	public Compra_recibida[] cargar_pedidos_a_entregar() throws PersistentException {
+		return _db_compras_recibidas.cargar_compras_recibidas();
 	}
 	
 	public Compra[] cargar_productos_comprados_recientemente(int aId_usuario) throws PersistentException {
@@ -170,8 +170,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void Enviar_producto(int aId_compra) {
-		throw new UnsupportedOperationException();
+	public void Enviar_producto(int aId_compra) throws PersistentException {
+		_db_compras_enviadas.Enviar_producto(aId_compra);
 	}
 
 	public void Baja_producto(String nombreProducto) throws PersistentException {
@@ -221,8 +221,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public Compra_recibida[] cargar_pedidos_entregados() {
-		throw new UnsupportedOperationException();
+	public Compra_enviada[] cargar_pedidos_entregados() throws PersistentException {
+		return _db_compras_enviadas.cargar_compras_enviadas();
 	}
 
 	public void confirmar_compra(Object aId_compra) {

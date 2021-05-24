@@ -33,8 +33,31 @@ public class Compras_enviadas {
 		return comprasEnviadas;
 	}
 
-	public void Enviar_producto(int aId_compra) {
-		throw new UnsupportedOperationException();
+	public void Enviar_producto(int aId_compra) throws PersistentException {
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			Compra_recibida compraRecibida = basededatos.Compra_recibidaDAO.loadCompra_recibidaByORMID(aId_compra);
+			Compra_enviada compraEnviada = basededatos.Compra_enviadaDAO.createCompra_enviada();
+			compraRecibida.setEstado_compra(3);
+			compraEnviada.setFecha_compra(compraRecibida.getFecha_compra());
+			compraEnviada.setTiene_asociado_un_cibernauta_registrado(compraRecibida.getTiene_asociado_un_cibernauta_registrado());
+			System.out.println(compraRecibida.getTiene_item());
+			compraEnviada.setPrecio_compra(compraRecibida.getPrecio_compra());
+			compraEnviada.setTiene_item(compraRecibida.getTiene_item());
+			compraEnviada.setTotal_productos(compraRecibida.getTotal_productos());
+			compraEnviada.setEstado_compra(3);
+			compraEnviada.setFecha_envio(compraRecibida.getFecha_compra());
+			
+			basededatos.Compra_enviadaDAO.save(compraEnviada);
+			basededatos.Compra_recibidaDAO.deleteAndDissociate(compraRecibida);
+
+			t.commit();
+		} catch (PersistentException e) {
+			t.rollback();
+			e.printStackTrace();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
 	public basededatos.Compra[] cargar_productos_comprados_recientemente(int id_usuario) throws PersistentException {

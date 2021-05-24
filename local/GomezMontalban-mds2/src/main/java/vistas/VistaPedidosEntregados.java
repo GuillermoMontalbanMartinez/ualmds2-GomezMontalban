@@ -30,6 +30,8 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
 	private VistaProductosEnviados vistaListaProductosEnviados;
 	@Id("buttonInicioPedidosEntregados")
 	private Button buttonInicioPedidosEntregados;
+	@Id("layoutVistaProductosEnviados")
+	private Element layoutVistaProductosEnviados;
 	/**
      * Creates a new VistaPedidosEntregados.
      */
@@ -76,5 +78,13 @@ public class VistaPedidosEntregados extends PolymerTemplate<VistaPedidosEntregad
 
 	public void setButtonInicioPedidosEntregados(Button buttonInicioPedidosEntregados) {
 		this.buttonInicioPedidosEntregados = buttonInicioPedidosEntregados;
+	}
+
+	public Element getLayoutVistaProductosEnviados() {
+		return layoutVistaProductosEnviados;
+	}
+
+	public void setLayoutVistaProductosEnviados(Element layoutVistaProductosEnviados) {
+		this.layoutVistaProductosEnviados = layoutVistaProductosEnviados;
 	}
 }

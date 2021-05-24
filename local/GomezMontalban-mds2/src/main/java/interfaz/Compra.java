@@ -52,7 +52,6 @@ public class Compra extends VistaCompra {
 				//layoutCompra.add(encargadoDeCompras);
 				
 				try {
-					System.out.println("El id de pedido enviado es " + idPedido);
 					Enviar_compra();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block

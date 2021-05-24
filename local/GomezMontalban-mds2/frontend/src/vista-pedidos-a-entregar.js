@@ -1,7 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-productos-a-enviar.js';
 
 class VistaPedidosAEntregar extends PolymerElement {
@@ -15,7 +15,7 @@ class VistaPedidosAEntregar extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayoutPedidosAEntregar">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayoutPedidosAEntregar">
  <vaadin-button id="buttonInicioPedidosAEntregar" style="align-self: flex-start;" theme="primary">
    Inicio 
  </vaadin-button>
@@ -32,7 +32,10 @@ class VistaPedidosAEntregar extends PolymerElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vista-productos-a-enviar style="width: 100%;" id="vistaListaProductosAEnviar"></vista-productos-a-enviar>
+ <h1>Listado de pedidos a entregar </h1>
+ <vaadin-vertical-layout id="layoutvistaProductosAEnviar" style="width: 100%; height: 100%;">
+  <vista-productos-a-enviar style="width: 100%;" id="vistaListaProductosAEnviar"></vista-productos-a-enviar>
+ </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }
