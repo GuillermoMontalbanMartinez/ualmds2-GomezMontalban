@@ -33,9 +33,20 @@ public class Compras_recibidas  {
 	public void Enviar_compra(int aId_compra) throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
+		
+//		Compra compra = basededatos.CompraDAO.loadCompraByORMID(aId_compra);
+//		Compra_pendiente c = basededatos.Compra_pendienteDAO.createCompra_pendiente();
+//		compra.setEstado_compra(1);
+//		c.setFecha_compra(compra.getFecha_compra());
+//		c.setTiene_asociado_un_cibernauta_registrado(compra.getTiene_asociado_un_cibernauta_registrado());
+//		c.setPrecio_compra(compra.getPrecio_compra());
+//		c.setTiene_item(compra.getTiene_item());
+//		c.setTotal_productos(compra.getTotal_productos());
+//		c.setEstado_compra(1);
+//		c.setFecha_envio(compra.getFecha_compra());
 
 		try {
-			Compra_pendiente comprasPendiente = basededatos.Compra_pendienteDAO.createCompra_pendiente();
+			Compra_pendiente comprasPendiente = basededatos.Compra_pendienteDAO.loadCompra_pendienteByORMID(aId_compra);
 			System.out.println(comprasPendiente.getORMID() + "compraPendiente");
 			Compra_recibida compraRecibida = basededatos.Compra_recibidaDAO.createCompra_recibida();
 			System.out.println(compraRecibida.getORMID() + "compraRecibida");
@@ -50,7 +61,7 @@ public class Compras_recibidas  {
 			compraRecibida.setFecha_envio(comprasPendiente.getFecha_compra());
 
 			basededatos.Compra_recibidaDAO.save(compraRecibida);
-			basededatos.Compra_pendienteDAO.delete(comprasPendiente);
+			basededatos.Compra_pendienteDAO.deleteAndDissociate(comprasPendiente);
 			t.commit();
 
 		} catch (PersistentException e) {

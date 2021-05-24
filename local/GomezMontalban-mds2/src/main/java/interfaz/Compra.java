@@ -7,15 +7,11 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
-import basededatos.Compras_recibidas;
+import interfaz.Compra;
 import vistas.VistaCompra;
 
 public class Compra extends VistaCompra {
 	public Listado_de_compras _listado_de_compras;
-	// Creados por mi
-	public Encargado_de_compras encargadoDeCompras;
-	public Compras_recibidas comprasRecibidas;
-	//
 	public Correo _correo;
 	public Ficha_cliente _ficha_cliente;
 	public int idPedido;
@@ -31,7 +27,6 @@ public class Compra extends VistaCompra {
 	public Compra(int idPedido, String nombreCliente, String pais, String localidad, String calle, String portal,
 			String provincia, String codigoPostal) {
 		layoutCompra = this.getLayoutCompra().as(VerticalLayout.class);
-		// encargadoDeCompras = new Encargado_de_compras();
 		this.idPedido = idPedido;
 		this.nombreCliente = nombreCliente;
 		this.pais = pais;
@@ -58,7 +53,7 @@ public class Compra extends VistaCompra {
 				
 				try {
 					System.out.println("El id de pedido enviado es " + idPedido);
-					comprasRecibidas.Enviar_compra(idPedido);
+					Enviar_compra();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -72,7 +67,8 @@ public class Compra extends VistaCompra {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Enviar_compra() {
-		throw new UnsupportedOperationException();
+	public void Enviar_compra() throws PersistentException {
+		BDPrincipal bd = new BDPrincipal();
+		bd.Enviar_compra(idPedido);
 	}
 }
