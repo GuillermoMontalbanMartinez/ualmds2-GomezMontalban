@@ -33,18 +33,11 @@ public class Ver_carácteristicas_del_producto extends VistaCaracteristicasDelPr
 			}
 		});
 
-		try {
-			cargar_resenas();
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 	}
 
 	public void añadir_al_carrito() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		bd._db_item.anadir_al_carrito(this.idProducto, idUsuario);
+		if(this.idUsuario!=-1)bd._db_item.anadir_al_carrito(this.idProducto, idUsuario);
 	}
 
 	public void setUsuario(int idUsuario, int idProducto) {

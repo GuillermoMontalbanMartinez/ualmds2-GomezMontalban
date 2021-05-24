@@ -81,10 +81,8 @@ public class Ofertas {
 				if (producto.getTiene_una_oferta() != null) {
 					productos_con_oferta.add(producto);
 
-					pt.commit();
 				}
 			}
-			
 			Producto[] resultado = new Producto[productos_con_oferta.size()];
 			for(int i = 0; i < productos_con_oferta.size(); i++) {
 				resultado[i] = productos_con_oferta.get(i);
@@ -93,8 +91,9 @@ public class Ofertas {
 		} catch (PersistentException e) {
 			pt.rollback();
 			e.printStackTrace();
-			return null;
 		}
-		
+		pt.commit();
+		return null;
+
 	}
 }

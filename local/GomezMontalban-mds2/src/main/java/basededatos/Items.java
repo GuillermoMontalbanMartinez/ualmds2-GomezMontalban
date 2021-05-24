@@ -39,7 +39,8 @@ public class Items {
 
 			boolean aumentado = false;
 			for (Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
-				if(c.getEstado_compra()!=0)continue;
+				if (c.getEstado_compra() != 0)
+					continue;
 				if (c.getTiene_asociado_un_cibernauta_registrado().getORMID() == idUsuario) {
 
 					// if (c.getTiene_item().getEsta_asociado_a_un_producto().getORMID() ==
@@ -67,48 +68,32 @@ public class Items {
 				Item item = basededatos.ItemDAO.createItem();
 				Compra compra = basededatos.CompraDAO.createCompra();
 
-				if (producto.getTiene_item() != null) {
+				Producto aux = basededatos.ProductoDAO.createProducto();
+				aux.setNombre(producto.getNombre());
+				aux.setCategoria(producto.getCategoria());
+				aux.setDescripción(producto.getDescripción());
+				aux.setPrecio(producto.getPrecio());
+				aux.setTiene_una_oferta(producto.getTiene_una_oferta());
+				basededatos.ProductoDAO.save(aux);
+				for (Foto f : producto.tiene_fotos.toArray()) {
 
-					Producto aux = basededatos.ProductoDAO.createProducto();
-					aux.setNombre(producto.getNombre());
-					aux.setCategoria(producto.getCategoria());
-					aux.setDescripción(producto.getDescripción());
-					aux.setPrecio(producto.getPrecio());
-					aux.setTiene_una_oferta(producto.getTiene_una_oferta());
-					basededatos.ProductoDAO.save(aux);
-					for (Foto f : producto.tiene_fotos.toArray()) {
-
-						asociar_foto(aux, f.getLink_foto());
-
-					}
-
-					item.setEsta_asociado_a_un_producto(aux);
-					compra.setPrecio_compra(aux.getPrecio());
-
-					item.setCantidad(1);
-					basededatos.ItemDAO.save(item);
-					Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO
-							.getCibernauta_registradoByORMID(idUsuario);
-
-					compra.setTotal_productos(1);
-					compra.setTiene_asociado_un_cibernauta_registrado(cb);
-					compra.setTiene_item(item);
-					basededatos.CompraDAO.save(compra);
-
-				} else {
-					item.setEsta_asociado_a_un_producto(producto);
-					compra.setPrecio_compra(producto.getPrecio());
-					item.setCantidad(1);
-					basededatos.ItemDAO.save(item);
-					Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO
-							.getCibernauta_registradoByORMID(idUsuario);
-
-					compra.setTotal_productos(1);
-					compra.setTiene_asociado_un_cibernauta_registrado(cb);
-					compra.setTiene_item(item);
-					basededatos.CompraDAO.save(compra);
+					asociar_foto(aux, f.getLink_foto());
 
 				}
+
+				item.setEsta_asociado_a_un_producto(aux);
+				compra.setPrecio_compra(aux.getPrecio());
+
+				item.setCantidad(1);
+				basededatos.ItemDAO.save(item);
+				Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO
+						.getCibernauta_registradoByORMID(idUsuario);
+
+				compra.setTotal_productos(1);
+				compra.setTiene_asociado_un_cibernauta_registrado(cb);
+				compra.setTiene_item(item);
+				basededatos.CompraDAO.save(compra);
+				System.out.println("asi es");
 
 			}
 
@@ -127,9 +112,9 @@ public class Items {
 
 		Item i = basededatos.ItemDAO.getItemByORMID(aId_item);
 		i.setCantidad(i.getCantidad() + 1);
-		for(Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
-			if(c.getTiene_item().getORMID()==aId_item) {
-				c.setPrecio_compra(i.getCantidad()*i.getEsta_asociado_a_un_producto().getPrecio());
+		for (Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
+			if (c.getTiene_item().getORMID() == aId_item) {
+				c.setPrecio_compra(i.getCantidad() * i.getEsta_asociado_a_un_producto().getPrecio());
 			}
 		}
 		basededatos.ItemDAO.save(i);
@@ -144,9 +129,9 @@ public class Items {
 		Item i = basededatos.ItemDAO.getItemByORMID(aId_item);
 		if (i.getCantidad() >= 2) {
 			i.setCantidad(i.getCantidad() - 1);
-			for(Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
-				if(c.getTiene_item().getORMID()==aId_item) {
-					c.setPrecio_compra(i.getCantidad()*i.getEsta_asociado_a_un_producto().getPrecio());
+			for (Compra c : basededatos.CompraDAO.listCompraByQuery(null, null)) {
+				if (c.getTiene_item().getORMID() == aId_item) {
+					c.setPrecio_compra(i.getCantidad() * i.getEsta_asociado_a_un_producto().getPrecio());
 				}
 			}
 			basededatos.ItemDAO.save(i);
@@ -159,18 +144,16 @@ public class Items {
 		int count = 0;
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
-		
+
 		Item item = basededatos.ItemDAO.getItemByORMID(aId_item);
-		
-		
+
 		basededatos.CompraDAO.deleteAndDissociate(item.getEsta_asociado_a_una_compra());
 
 		Producto p = item.getEsta_asociado_a_un_producto();
 		for (Producto producto : ProductoDAO.listProductoByQuery(null, null)) {
-			
-			
+
 			if (p.getNombre().equals(producto.getNombre()) && p.getPrecio() == producto.getPrecio()
-					&& p.getDescripción().equals(producto.getDescripción())){
+					&& p.getDescripción().equals(producto.getDescripción())) {
 
 				count++;
 //				System.out.println("");
@@ -180,24 +163,23 @@ public class Items {
 //						count++;
 //					}
 //				}
-				
+
 			}
-			
-			if(count >=2) {
+
+			if (count >= 2) {
 				for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 					if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
 						basededatos.FotoDAO.deleteAndDissociate(f);
 					}
 				}
 				basededatos.ItemDAO.delete(item);
-				//ProductoDAO.deleteAndDissociate(p);
-				
+				// ProductoDAO.deleteAndDissociate(p);
+
 			} else {
 				p.setTiene_item(null);
 			}
 		}
 
-		
 		t.commit();
 
 	}
@@ -213,7 +195,7 @@ public class Items {
 					if (p.getTiene_item() == null) {
 						continue;
 					} else {
-						if (p.getTiene_item().getORMID() == c.getTiene_item().getORMID() && c.getEstado_compra()==0) {
+						if (p.getTiene_item().getORMID() == c.getTiene_item().getORMID() && c.getEstado_compra() == 0) {
 							if (aId_usuario == c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
 								items.add(c.getTiene_item());
 							}
@@ -239,7 +221,7 @@ public class Items {
 			foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
 			basededatos.FotoDAO.save(foto);
 			pt.commit();
-			
+
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}

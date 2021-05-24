@@ -39,6 +39,7 @@ class VistaPublicarOferta extends PolymerElement {
     </vaadin-horizontal-layout>
     <vaadin-horizontal-layout>
      <vaadin-text-field style="margin: var(--lumo-space-m);" id="textDescuentoOferta"></vaadin-text-field>
+     <p style="align-self: center;">%</p>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>

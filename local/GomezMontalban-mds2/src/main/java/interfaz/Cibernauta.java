@@ -52,6 +52,34 @@ public class Cibernauta extends Cibernauta_común {
 			}
 		});
 
+		
+		
+		
+		
+//		layoutOfretas = this.getLayoutOfertas().as(VerticalLayout.class);
+//		try {
+//			basededatos.Producto [] productos = cargar_ofertas_producto();
+//			for(basededatos.Producto p : productos) {
+//				Oferta o = new Oferta(p.getNombre(), p.getDescripción(), String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
+//				o.getImagen().setSrc(p.tiene_fotos.toArray()[0].getLink_foto());
+//				o.getNombreText().setValue(p.getNombre());
+//				o.getFechaLimiteText().setValue(p.getTiene_una_oferta().getFecha());
+//				o.getPrecioNuevoText().setValue(String.valueOf(p.getPrecio()));
+//				o.getPrecioAnteriorText().setValue(String.valueOf(p.getPrecio() * 100 / (100 - p.getTiene_una_oferta().getPrecio_oferta())));
+//				productos_con_oferta.add(p);
+//				layoutOfretas.add(o);
+//				ofertas.add(o);
+//			}
+//		} catch (PersistentException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		
+		
+		
+		
+		
 		inicio_sesion.getBottonRegistro().addClickListener(new ComponentEventListener() {
 
 			@Override
@@ -84,7 +112,27 @@ public class Cibernauta extends Cibernauta_común {
 			}
 		});
 
+		for(interfaz.Oferta o :this.ofertas) {
+			o.getVerCaracteristicasButton().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+					layout.removeAll();
+					layout.add(_banner_no_registrado);
+					layout.add(o._producto._ver_carácteristicas_del_producto);
+
+				}
+			});			
+			
+		}
 		for (interfaz.Producto p : this.catalogo.vista_productos) {
+			try {
+				p.setUsuario("no");
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
 
 				@Override

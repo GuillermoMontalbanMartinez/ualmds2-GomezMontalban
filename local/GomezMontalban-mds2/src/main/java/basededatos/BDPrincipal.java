@@ -191,8 +191,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public void publicar(int aValoracion, String aCuerpo, int aId_producto) {
-		throw new UnsupportedOperationException();
+	public void publicar(int aValoracion, String aCuerpo, int aId_producto) throws PersistentException{
+		_db_resena.publicar(aValoracion, aCuerpo, aId_producto, aId_producto);
 	}
 
 	public void confirmar_compra(int aId_compra) throws PersistentException {
@@ -272,7 +272,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 
 	@Override
 	public void anadir_al_carrito(int aIdProducto, int aIdUsuario) throws PersistentException {
-		// TODO Auto-generated method stub
+		_db_item.anadir_al_carrito(aIdProducto, aIdUsuario);
 
 	}
 
