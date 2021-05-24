@@ -21,14 +21,14 @@ class VistaProducto extends PolymerElement {
  <vaadin-vertical-layout style="align-self: center;">
   <vaadin-horizontal-layout>
    <vaadin-horizontal-layout>
-    <label style="margin: var(--lumo-space-m);">Producto</label>
+    <label style="margin: var(--lumo-space-m); align-self: center;">Producto</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout>
     <vaadin-text-field id="textNombre" style="margin: var(--lumo-space-m);" readonly></vaadin-text-field>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout style="width: 100%; margin: var(--lumo-space-m);">
+ <vaadin-vertical-layout style="width: 80%; margin: var(--lumo-space-m); height: 50%;">
   <vaadin-horizontal-layout style="width: 100%;">
    <vaadin-horizontal-layout style="width: 30%;">
     <img id="idFoto" style="width: 80%; height: 80%; margin: var(--lumo-space-m);">
@@ -53,7 +53,7 @@ class VistaProducto extends PolymerElement {
      <iron-icon icon="lumo:plus"></iron-icon>
     </vaadin-button>
     <vaadin-button theme="primary" id="verCaracteristicas" style="align-self: center; flex-grow: 1; margin-left: var(--lumo-space-xl);">
-     Ver carácteristicas
+      Ver carácteristicas 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

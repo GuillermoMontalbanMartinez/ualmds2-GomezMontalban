@@ -3,8 +3,10 @@ package basededatos;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.Vector;
 
+import org.hibernate.criterion.Order;
 import org.hibernate.tuple.entity.AbstractEntityBasedAttribute;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
@@ -54,8 +56,26 @@ public class Productos {
 		return producto;
 	}
 
-	public Producto[] cargar_productos_mas_vendidos() {
-		throw new UnsupportedOperationException();
+	public Producto[] cargar_productos_mas_vendidos() throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		try {
+			ItemCriteria criteria = new ItemCriteria();
+			criteria.addOrder(Order.desc("cantidad"));
+			
+			Item items [] = basededatos.ItemDAO.listItemByCriteria(criteria);
+			Producto p [] = new Producto[items.length];
+			for(int i=0; i<items.length; i++){
+				p[i] = items[i].getEsta_asociado_a_un_producto();
+			}	
+			return p;
+					
+		} catch (PersistentException e) {
+			pt.rollback();
+			e.printStackTrace();
+			return null;
+
+		}
 	}
 
 	public void Baja_producto(String nombreProducto) throws PersistentException {
