@@ -138,7 +138,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 	public Compra[] cargar_productos_comprados_recientemente(int aId_usuario) throws PersistentException {
-		return _db_compras_enviadas.cargar_productos_comprados_recientemente(aId_usuario);
+		return _db_compras_enviadas.cargar_productos_comprados_recientemente(aId_usuario); 
 	}
 
 	public Compra[] cargar_lista_compras_admin() {
