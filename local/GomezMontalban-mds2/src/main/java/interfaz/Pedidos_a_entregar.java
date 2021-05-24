@@ -45,7 +45,6 @@ public class Pedidos_a_entregar extends VistaPedidosAEntregar {
 	}
 
 	public void eliminar_pedidos_a_entregar() {
-		//layout_pedidos_a_entregar.removeAll();
 		listaPedidosAEntregar.removeAll();
 		pedidos.clear();
 	}

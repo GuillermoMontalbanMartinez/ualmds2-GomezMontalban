@@ -48,9 +48,6 @@ public class Compra extends VistaCompra {
 		this.getButtonEnviado().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				// layoutCompra.removeAll();
-				//layoutCompra.add(encargadoDeCompras);
-				
 				try {
 					Enviar_compra();
 				} catch (PersistentException e) {

@@ -23,13 +23,14 @@ public class Compras_recibidas {
 	}
 
 	public Compra_recibida[] cargar_compras_recibidas() throws PersistentException {
-		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
 		List listComprasRecibidas = null;
 		Compra_recibida compra_recibida[] = null;
 		try {
 			listComprasRecibidas = basededatos.Compra_recibidaDAO.queryCompra_recibida(null, null);
 			compra_recibida = new Compra_recibida[listComprasRecibidas.size()];
-			
+
 			for (int i = 0; i < compra_recibida.length; i++) {
 				compra_recibida[i] = (Compra_recibida) listComprasRecibidas.get(i);
 			}
@@ -38,8 +39,8 @@ public class Compras_recibidas {
 			pt.rollback();
 		}
 		return compra_recibida;
-	} 
-	
+	}
+
 	public Compra[] cargar_lista_compras_admin() {
 		throw new UnsupportedOperationException();
 	}
@@ -78,8 +79,4 @@ public class Compras_recibidas {
 		throw new UnsupportedOperationException();
 	}
 
-//	public Compra_enviada[] cargar_compras_recibidas() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 }

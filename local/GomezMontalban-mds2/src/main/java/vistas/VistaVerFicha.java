@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-ver-ficha template.
@@ -22,6 +23,22 @@ public class VistaVerFicha extends PolymerTemplate<VistaVerFicha.VistaVerFichaMo
 	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("textCliente")
+	private TextField textCliente;
+	@Id("textNombre")
+	private TextField textNombre;
+	@Id("textCalle")
+	private TextField textCalle;
+	@Id("textLocalidad")
+	private TextField textLocalidad;
+	@Id("textPais")
+	private TextField textPais;
+	@Id("textPortal")
+	private TextField textPortal;
+	@Id("textProvincia")
+	private TextField textProvincia;
+	@Id("textCodigoPostal")
+	private TextField textCodigoPostal;
 
 	/**
      * Creates a new VistaVerFicha.
