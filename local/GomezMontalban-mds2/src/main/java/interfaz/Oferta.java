@@ -12,10 +12,10 @@ public class Oferta extends VistaOferta{
 	public Oferta(String nombre, String descripcion, String precio, String foto, int id) {
 		_producto = new Producto(nombre, descripcion, precio, foto, id);
 		try {
-			_producto.setUsuario(null);
-		} catch (PersistentException e) {
+			_producto.setUsuario("no");
+		} catch (PersistentException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 	}
 }

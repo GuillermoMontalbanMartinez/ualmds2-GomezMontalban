@@ -14,9 +14,13 @@ public class Resenas {
 	public Vector<Resena> _contiene_resenas = new Vector<Resena>();
 
 	public Resena[] cargar_resenas(int idPRoducto) throws PersistentException {
+		
+		
+		
+		
 		Resena[] resenas = basededatos.ResenaDAO.listResenaByQuery(null, null);
 		ArrayList<Resena> r = new ArrayList<Resena>();
-
+		
 		for (Resena resena : resenas) {
 			if (resena.getEsta_asociados_a_un_producto().getORMID() == idPRoducto) {
 				r.add(resena);
@@ -30,6 +34,8 @@ public class Resenas {
 		}
 
 		return resultado;
+		
+//		return p.tiene_resenas.toArray();
 
 	}
 
@@ -42,11 +48,9 @@ public class Resenas {
 			Resena r = basededatos.ResenaDAO.createResena();
 			Producto p = basededatos.ProductoDAO.loadProductoByORMID(aId_producto);
 			for (Producto p_resena : basededatos.ProductoDAO.listProductoByQuery(null, null)) {
-				System.out.println("sesese");
-				if (p_resena.getNombre().equals(p.getNombre()) && p_resena.getDescripción().equals(p.getDescripción())
+				if (p_resena.getNombre().equals(p.getNombre()) && p_resena.getTiene_una_oferta().equals(p.getTiene_una_oferta()) && p_resena.getDescripción().equals(p.getDescripción())
 						&& p_resena.getPrecio() == p.getPrecio() && p_resena.getCategoria().equals(p.getCategoria())) {
 					if (p_resena.getTiene_item() == null) {
-						System.out.println("SI");
 						r.setEsta_asociados_a_un_producto(p_resena);
 						Cibernauta_registrado cb = Cibernauta_registradoDAO
 								.loadCibernauta_registradoByORMID(aId_usuario);
@@ -55,8 +59,6 @@ public class Resenas {
 						r.setEsta_asociada_a_un_cibernauta_registrado(cb);
 						basededatos.ResenaDAO.save(r);
 						p_resena.tiene_resenas.add(r);
-					}else {
-						System.out.println(p_resena.getORMID() + " tremendo gay");
 					}
 				}
 			}

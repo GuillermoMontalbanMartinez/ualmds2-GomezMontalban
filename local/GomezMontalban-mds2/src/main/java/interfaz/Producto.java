@@ -23,12 +23,10 @@ public class Producto extends VistaProducto {
 	public int idProducto;
 	public String nombreP, descripcion, precio, foto;
 	VerticalLayout reseñas = _ver_carácteristicas_del_producto.getLayoutResenas().as(VerticalLayout.class);
-	double reseñaMedia=0;
-	
+	double reseñaMedia = 0;
 
 	public Producto(String nombre, String descripcion, String precio, String foto, int id) {
 
-	
 		this.idProducto = id;
 		this.getTextNombre().setValue(nombre);
 		this.getTextDescripcion().setValue(descripcion);
@@ -48,7 +46,7 @@ public class Producto extends VistaProducto {
 			int aux = 0;
 			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 				if (f.getEsta_asociada_a_un_producto().equals(producto)) {
-					switch (aux%5) {
+					switch (aux % 5) {
 					case 0:
 						_ver_carácteristicas_del_producto.getFoto().setSrc(f.getLink_foto());
 						aux++;
@@ -75,7 +73,7 @@ public class Producto extends VistaProducto {
 
 				}
 			}
-			
+
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -89,22 +87,32 @@ public class Producto extends VistaProducto {
 	}
 
 	public void setUsuario(String nombre) throws PersistentException {
-		BDPrincipal bd = new BDPrincipal();
-		Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null, null);
-		for (Cibernauta_registrado cib : cb) {
-			if (cib.getNombre().equals(nombre)) {
-				idUsuario = cib.getORMID();
+		if (!nombre.equals("no")) {
+			BDPrincipal bd = new BDPrincipal();
+			Cibernauta_registrado cb[] = basededatos.Cibernauta_registradoDAO.listCibernauta_registradoByQuery(null,
+					null);
+			for (Cibernauta_registrado cib : cb) {
+				if (cib.getNombre().equals(nombre)) {
+					idUsuario = cib.getORMID();
+				}
 			}
+			_ver_carácteristicas_del_producto.setUsuario(idUsuario, idProducto);
+
+		}else {
+			_ver_carácteristicas_del_producto.setUsuario(-1, idProducto);
 		}
-		_ver_carácteristicas_del_producto.setUsuario(idUsuario, idProducto);
+		reseñas.removeAll();
 		ArrayList<Resena> cargar_resenas = _ver_carácteristicas_del_producto.cargar_resenas();
-		for(Resena r : cargar_resenas ) {
-			interfaz.Reseña resena = new interfaz.Reseña(r.getEsta_asociada_a_un_cibernauta_registrado().getNombre(), r.getValoracion(), r.getComentario());
+		for (Resena r : cargar_resenas) {
+			interfaz.Reseña resena = new interfaz.Reseña(r.getEsta_asociada_a_un_cibernauta_registrado().getNombre(),
+					r.getValoracion(), r.getComentario());
 			reseñas.add(resena);
-			reseñaMedia+=r.getValoracion();
+			reseñaMedia += r.getValoracion();
 		}
-		if(cargar_resenas!=null)reseñaMedia/= cargar_resenas.size();
+		if (cargar_resenas != null)
+			reseñaMedia /= cargar_resenas.size();
 		_ver_carácteristicas_del_producto.getValoracionText().setValue(String.valueOf(reseñaMedia));
+
 	}
 
 	public int getIdProducto() {

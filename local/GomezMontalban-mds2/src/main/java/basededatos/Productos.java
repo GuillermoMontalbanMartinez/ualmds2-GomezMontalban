@@ -119,14 +119,20 @@ public class Productos {
 	public Producto[] cargar_productos() throws PersistentException {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
-		List nombreProductos = null;
+		List<Producto> nombreProductos = null;
 		Producto producto[] = null;
 		try {
 			nombreProductos = basededatos.ProductoDAO.queryProducto(null, null);
-			producto = new Producto[nombreProductos.size()];
+			ArrayList<Producto> productos_a_mostrar = new ArrayList<Producto>();
+			for(Producto p : nombreProductos) {
+				if(p.getTiene_item()==null) {
+					productos_a_mostrar.add(p);
+				}
+			}
+			producto = new Producto[productos_a_mostrar.size()];
 
 			for (int i = 0; i < producto.length; i++) {
-				producto[i] = (Producto) nombreProductos.get(i);
+				producto[i] = (Producto) productos_a_mostrar.get(i);
 			}
 			pt.commit();
 		} catch (Exception e) {
