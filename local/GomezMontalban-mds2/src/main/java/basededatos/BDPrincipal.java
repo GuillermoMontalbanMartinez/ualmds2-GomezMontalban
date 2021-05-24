@@ -290,4 +290,9 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		
 	}
 
+	@Override
+	public Producto[] cargar_oferta_producto() throws PersistentException {
+		return _db_ofertas.cargar_oferta_producto();
+	}
+
 }

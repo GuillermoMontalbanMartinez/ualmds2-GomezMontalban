@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -67,5 +68,33 @@ public class Ofertas {
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
+	}
+
+
+	public Producto[] cargar_oferta_producto() throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			ArrayList<Producto> productos_con_oferta = new ArrayList<Producto>();
+			Producto productos[] = basededatos.ProductoDAO.listProductoByQuery(null, null);
+			for (Producto producto : productos) {
+				if (producto.getTiene_una_oferta() != null) {
+					productos_con_oferta.add(producto);
+
+					pt.commit();
+				}
+			}
+			
+			Producto[] resultado = new Producto[productos_con_oferta.size()];
+			for(int i = 0; i < productos_con_oferta.size(); i++) {
+				resultado[i] = productos_con_oferta.get(i);
+			}
+			return resultado;
+		} catch (PersistentException e) {
+			pt.rollback();
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 }

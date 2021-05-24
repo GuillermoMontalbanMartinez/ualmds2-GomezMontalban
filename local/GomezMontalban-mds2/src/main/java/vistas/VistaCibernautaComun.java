@@ -22,7 +22,8 @@ public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.V
 	private Button mostrarProductos;
 	@Id("vistaProductosMasVendidos")
 	private VistaProductosMasVendidos vistaProductosMasVendidos;
-
+	@Id("layoutOfertas")
+	private Element layoutOfertas;
 	/**
      * Creates a new VistaCibernautaComun.
      */
@@ -60,5 +61,14 @@ public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.V
 	public void setMostrarProductos(Button mostrarProductos) {
 		this.mostrarProductos = mostrarProductos;
 	}
+
+	public Element getLayoutOfertas() {
+		return layoutOfertas;
+	}
+
+	public void setLayoutOfertas(Element layoutOfertas) {
+		this.layoutOfertas = layoutOfertas;
+	}
+
 }
  
