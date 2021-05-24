@@ -25,11 +25,11 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a compras enviadas desde el principal");
-				// layoutEncargadoDeCompras.removeAll();
+				layoutEncargadoDeCompras.removeAll();
 				layoutEncargadoDeCompras.add(compras_enviadas);
 
 				try {
-					compras_enviadas.eliminar_compras_enviadas();
+//					compras_enviadas.eliminar_compras_enviadas();
 					compras_enviadas.mostrar_compras_enviadas();
 				} catch (PersistentException e) {
 					// TODO Auto-generated catch block
@@ -58,16 +58,16 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a compras enviadas desde el segundario");
-				Compras_a_enviar _compras_a_enviar = new Compras_a_enviar();
-//				try {
-//					compras_a_enviar.eliminar_compras_a_enviar();
-//					compras_a_enviar.mostrar_compras_a_enviar();
-//				} catch (PersistentException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
 				layoutEncargadoDeCompras.removeAll();
 				layoutEncargadoDeCompras.add(compras_enviadas);
+				try {
+					compras_enviadas.eliminar_compras_enviadas();
+					compras_enviadas.mostrar_compras_enviadas();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 
 			}
 		});
@@ -76,9 +76,17 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a compras a enviar prueba prueba");
-				Compras_enviadas comprasEnviadas = new Compras_enviadas();
 				layoutEncargadoDeCompras.removeAll();
 				layoutEncargadoDeCompras.add(compras_a_enviar);
+				
+				try {
+
+					compras_a_enviar.eliminar_compras_a_enviar();
+					compras_a_enviar.mostrar_compras_a_enviar();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 

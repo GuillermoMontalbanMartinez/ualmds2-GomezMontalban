@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -13,19 +14,32 @@ import interfaz.Acceder_al_catalogo;
 import interfaz.Banner_registrado;
 import interfaz.Producto;
 
-public class Compras_recibidas  {
+public class Compras_recibidas {
 	public BDPrincipal _db_main_compras_recibidas;
 	public Vector<Compra_recibida> _contiene_compras_enviadas = new Vector<Compra_recibida>();
-	
 
 	public Compra_recibida[] cargar_compras() {
 		throw new UnsupportedOperationException();
 	}
 
-	public Compra_recibida[] cargar_pedidos_entregados() {
-		throw new UnsupportedOperationException();
-	}
-
+	public Compra_recibida[] cargar_compras_recibidas() throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		List listComprasRecibidas = null;
+		Compra_recibida compra_recibida[] = null;
+		try {
+			listComprasRecibidas = basededatos.Compra_recibidaDAO.queryCompra_recibida(null, null);
+			compra_recibida = new Compra_recibida[listComprasRecibidas.size()];
+			
+			for (int i = 0; i < compra_recibida.length; i++) {
+				compra_recibida[i] = (Compra_recibida) listComprasRecibidas.get(i);
+			}
+			pt.commit();
+		} catch (Exception e) {
+			pt.rollback();
+		}
+		return compra_recibida;
+	} // Trabajando en ello 24/05/2021 13:45
+	
 	public Compra[] cargar_lista_compras_admin() {
 		throw new UnsupportedOperationException();
 	}
@@ -33,17 +47,6 @@ public class Compras_recibidas  {
 	public void Enviar_compra(int aId_compra) throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
-		
-//		Compra compra = basededatos.CompraDAO.loadCompraByORMID(aId_compra);
-//		Compra_pendiente c = basededatos.Compra_pendienteDAO.createCompra_pendiente();
-//		compra.setEstado_compra(1);
-//		c.setFecha_compra(compra.getFecha_compra());
-//		c.setTiene_asociado_un_cibernauta_registrado(compra.getTiene_asociado_un_cibernauta_registrado());
-//		c.setPrecio_compra(compra.getPrecio_compra());
-//		c.setTiene_item(compra.getTiene_item());
-//		c.setTotal_productos(compra.getTotal_productos());
-//		c.setEstado_compra(1);
-//		c.setFecha_envio(compra.getFecha_compra());
 
 		try {
 			Compra_pendiente comprasPendiente = basededatos.Compra_pendienteDAO.loadCompra_pendienteByORMID(aId_compra);
@@ -74,4 +77,9 @@ public class Compras_recibidas  {
 	public Compra[] cargar_listado_de_compras_admin() {
 		throw new UnsupportedOperationException();
 	}
+
+//	public Compra_enviada[] cargar_compras_recibidas() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 }

@@ -15,7 +15,7 @@ public class Compra_enviada extends VistaCompraEnviada {
 	public String codigoPostal;
 	
 	public Compra_enviada(int id_compra, String nombre, String pais, String localidad, String calle, String portal,
-			String provincia, String string) {
+			String provincia, String codigoPostal) {
 		this.idPedido = id_compra;
 		this.nombreCliente = nombre;
 		this.pais = pais;

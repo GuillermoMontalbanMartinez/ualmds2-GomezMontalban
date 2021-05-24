@@ -26,6 +26,8 @@ public class VistaComprasEnviadas extends PolymerTemplate<VistaComprasEnviadas.V
 	private Button buttonInicio;
 	@Id("vistaListadoDeComprasEnviadas")
 	private Element vistaListadoDeComprasEnviadas;
+	@Id("layoutVistaListadoDeComprasEnviadas")
+	private Element layoutVistaListadoDeComprasEnviadas;
 	/**
      * Creates a new VistaComprasEnviadas.
      */
@@ -62,6 +64,22 @@ public class VistaComprasEnviadas extends PolymerTemplate<VistaComprasEnviadas.V
 
 	public void setButtonInicio(Button buttonInicio) {
 		this.buttonInicio = buttonInicio;
+	}
+
+	public Element getVistaListadoDeComprasEnviadas() {
+		return vistaListadoDeComprasEnviadas;
+	}
+
+	public void setVistaListadoDeComprasEnviadas(Element vistaListadoDeComprasEnviadas) {
+		this.vistaListadoDeComprasEnviadas = vistaListadoDeComprasEnviadas;
+	}
+
+	public Element getLayoutVistaListadoDeComprasEnviadas() {
+		return layoutVistaListadoDeComprasEnviadas;
+	}
+
+	public void setLayoutVistaListadoDeComprasEnviadas(Element layoutVistaListadoDeComprasEnviadas) {
+		this.layoutVistaListadoDeComprasEnviadas = layoutVistaListadoDeComprasEnviadas;
 	}
 
 
