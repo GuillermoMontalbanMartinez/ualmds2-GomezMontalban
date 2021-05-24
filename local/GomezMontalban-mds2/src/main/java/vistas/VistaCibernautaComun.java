@@ -70,5 +70,13 @@ public class VistaCibernautaComun extends PolymerTemplate<VistaCibernautaComun.V
 		this.layoutOfertas = layoutOfertas;
 	}
 
+	public VistaProductosMasVendidos getVistaProductosMasVendidos() {
+		return vistaProductosMasVendidos;
+	}
+
+	public void setVistaProductosMasVendidos(VistaProductosMasVendidos vistaProductosMasVendidos) {
+		this.vistaProductosMasVendidos = vistaProductosMasVendidos;
+	}
+
 }
  

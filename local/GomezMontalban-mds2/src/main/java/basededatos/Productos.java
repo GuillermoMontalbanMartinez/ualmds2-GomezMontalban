@@ -27,7 +27,7 @@ public class Productos {
 		try {
 
 			if (producto.size() == 0) {
-				producto.add(products[0]);
+				if(products[0].getTiene_item()==null)producto.add(products[0]);
 
 			}
 			boolean repe = false;
@@ -42,7 +42,7 @@ public class Productos {
 
 				}
 				if (!repe)
-					producto.add(p);
+					if(p.getTiene_item()==null)producto.add(p);
 				repe = false;
 			}
 
