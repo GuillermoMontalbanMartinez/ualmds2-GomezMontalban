@@ -10,7 +10,7 @@ public interface iCibernauta_registrado {
 
 	public Categoria[] cargar_categorias_catalogo();
 
-	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario);
+	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) throws PersistentException;
 
 	public Oferta[] cargar_ofertas();
 

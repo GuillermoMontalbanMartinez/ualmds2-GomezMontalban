@@ -23,10 +23,10 @@ public class Pedidos_a_entregar extends VistaPedidosAEntregar {
 	public ArrayList<Producto_a_enviar> pedidos = new ArrayList<Producto_a_enviar>();
 	public Compra_recibida[] compraRecibida = null;
 
-
 	public Pedidos_a_entregar() {
 		layout_pedidos_a_entregar = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		listaPedidosAEntregar = this.getLayoutvistaProductosAEnviar().as(VerticalLayout.class);
+
 	}
 
 	public void cargar_pedidos_a_entregar() throws PersistentException {

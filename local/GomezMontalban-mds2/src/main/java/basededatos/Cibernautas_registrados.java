@@ -17,8 +17,8 @@ public class Cibernautas_registrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) {
-		throw new UnsupportedOperationException();
+	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) throws PersistentException {
+		return basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(aId_usuario);
 	}
 
 	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto) {

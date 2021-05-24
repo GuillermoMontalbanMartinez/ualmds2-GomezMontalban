@@ -84,8 +84,9 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
-	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) {
-		throw new UnsupportedOperationException();
+	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) throws PersistentException {
+		return _db_cibernautas_registrados.cargar_ficha_cliente(aId_usuario);
+		
 	}
 
 	public Oferta[] cargar_ofertas() {
