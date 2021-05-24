@@ -132,14 +132,15 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		throw new UnsupportedOperationException();
 	}
 
+	
 	public Compra_pendiente[] cargar_pedidos_a_entregar() {
 		throw new UnsupportedOperationException();
 	}
-
-	public Compra[] cargar_productos_comprados_recientemente(int aId_usuario) {
-		throw new UnsupportedOperationException();
+	
+	public Compra[] cargar_productos_comprados_recientemente(int aId_usuario) throws PersistentException {
+		return _db_compras_enviadas.cargar_productos_comprados_recientemente(aId_usuario); 
 	}
-
+	
 	public Compra[] cargar_lista_compras_admin() {
 		throw new UnsupportedOperationException();
 	}

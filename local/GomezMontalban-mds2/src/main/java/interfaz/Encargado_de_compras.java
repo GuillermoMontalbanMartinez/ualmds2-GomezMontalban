@@ -27,7 +27,7 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a  compras enviadas");
-				//layout.removeAll();
+				layout.removeAll();
 				layout.add(_compras_enviadas);
 				
 				try {
@@ -44,6 +44,7 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a compras a enviar");
+				layout.removeAll();
 				layout.add(_compras_a_enviar);
 				try {
 					_compras_a_enviar.eliminar_compras_a_enviar();
