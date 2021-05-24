@@ -38,7 +38,6 @@ public class Resenas {
 				.beginTransaction();
 		try {
 			
-			System.out.println("Usuario : " + aId_usuario + " Producto : " + aId_producto);
 
 			Resena r = basededatos.ResenaDAO.createResena();
 			Producto p = basededatos.ProductoDAO.loadProductoByORMID(aId_producto);

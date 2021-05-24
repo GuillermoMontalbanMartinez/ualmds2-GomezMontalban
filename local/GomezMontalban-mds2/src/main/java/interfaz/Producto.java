@@ -103,7 +103,7 @@ public class Producto extends VistaProducto {
 			reseñas.add(resena);
 			reseñaMedia+=r.getValoracion();
 		}
-		reseñaMedia/= cargar_resenas.size();
+		if(cargar_resenas!=null)reseñaMedia/= cargar_resenas.size();
 		_ver_carácteristicas_del_producto.getValoracionText().setValue(String.valueOf(reseñaMedia));
 	}
 

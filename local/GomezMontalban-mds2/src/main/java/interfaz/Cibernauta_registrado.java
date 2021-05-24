@@ -144,8 +144,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 									}
 								}
 							});
-							
-							
+
 							c.getReseñar().addClickListener(new ComponentEventListener() {
 
 								@Override
@@ -156,30 +155,43 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 								}
 							});
-							
-							
+
 							c._escribir_resena.getCancelarButton().addClickListener(new ComponentEventListener() {
 
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-									layout.remove(c._escribir_resena);
-									layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
+									layout.removeAll();
+									layout.add(_banner_registrado);
+									try {
+										_banner_registrado._administrar_perfil._ver_ultimas_compras
+												.mostrar_productos_comprados();
+										layout.add(_banner_registrado._administrar_perfil);
+									} catch (PersistentException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
 								}
 							});
-							
+
 							c._escribir_resena.getPublicarButton().addClickListener(new ComponentEventListener() {
 
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-									
-									layout.remove(c._escribir_resena);
-									layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
+									layout.removeAll();
+									layout.add(_banner_registrado);
+									try {
+										_banner_registrado._administrar_perfil._ver_ultimas_compras
+												.mostrar_productos_comprados();
+										layout.add(_banner_registrado._administrar_perfil);
+									} catch (PersistentException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 
 								}
 							});
-							
-							
+
 						}
 						layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
 						layout.add(
@@ -375,7 +387,6 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 		_banner_registrado.getBuscardorTextField().addKeyDownListener(com.vaadin.flow.component.Key.ENTER,
 				(ComponentEventListener<KeyDownEvent>) keyDownEvent -> {
-					System.out.println(_banner_registrado.getBuscardorTextField().getValue());
 					layout.removeAll();
 					layout.add(_banner_registrado);
 					catalogo.eliminar_producto();
@@ -459,7 +470,6 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		_banner_registrado._administrar_perfil._dar_de_baja_usuario.setUsuario(id);
 		_banner_registrado._administrar_perfil._ver_ultimas_compras.setUsuario(usuario);
 
-		
 	}
 
 	public String getUsuario() {

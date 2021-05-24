@@ -286,7 +286,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	@Override
 	public void publicar(int aValoracion, String aCuerpo, int aId_producto, int aId_usuario)
 			throws PersistentException {
-		// TODO Auto-generated method stub
+		_db_resena.publicar(aValoracion, aCuerpo, aId_producto, aId_usuario);
 		
 	}
 
