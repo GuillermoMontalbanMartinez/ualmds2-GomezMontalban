@@ -6,9 +6,9 @@ public interface ICompra {
 
 	public void cancelarPedido(int aId_compra);
 
-	public Compra_recibida[] cargar_compras();
-
 	public Compra_enviada[] cargar_compras_enviadas() throws PersistentException;
+
+	public Compra_recibida[] cargar_compras_recibidas() throws PersistentException;
 
 	public Compra[] cargar_pedidos_encargados(int aId_usuario);
 

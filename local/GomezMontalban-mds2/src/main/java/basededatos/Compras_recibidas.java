@@ -22,7 +22,7 @@ public class Compras_recibidas {
 		throw new UnsupportedOperationException();
 	}
 
-	public Compra_recibida[] cargar_pedidos_entregados() throws PersistentException {
+	public Compra_recibida[] cargar_compras_recibidas() throws PersistentException {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
 		List listComprasRecibidas = null;
 		Compra_recibida compra_recibida[] = null;
@@ -77,4 +77,9 @@ public class Compras_recibidas {
 	public Compra[] cargar_listado_de_compras_admin() {
 		throw new UnsupportedOperationException();
 	}
+
+//	public Compra_enviada[] cargar_compras_recibidas() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 }
