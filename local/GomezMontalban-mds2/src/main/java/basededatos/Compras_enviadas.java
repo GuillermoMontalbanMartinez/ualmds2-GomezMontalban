@@ -49,7 +49,7 @@ public class Compras_enviadas {
 			
 			for (Compra c : compras) {
 				if (c.getTiene_asociado_un_cibernauta_registrado().equals(cb)) {
-					if (c.getEstado_compra() != 0) {
+					if (c.getEstado_compra() ==1) {
 						comprasAsociadas.add(c);
 					}
 				}
