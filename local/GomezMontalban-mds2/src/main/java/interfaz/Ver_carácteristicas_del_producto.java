@@ -16,12 +16,10 @@ import vistas.VistaCaracteristicasDelProductoAdmin;
 
 public class Ver_carácteristicas_del_producto extends VistaCaracteristicasDelProducto {
 
-
-
 	private int idUsuario;
 	private int idProducto;
 	ArrayList<Resena> resenasProducto;
-	
+
 	public Ver_carácteristicas_del_producto() {
 		this.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
 			@Override
@@ -34,31 +32,31 @@ public class Ver_carácteristicas_del_producto extends VistaCaracteristicasDelPr
 				}
 			}
 		});
-		
+
 		try {
 			cargar_resenas();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public void añadir_al_carrito() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
 		bd._db_item.anadir_al_carrito(this.idProducto, idUsuario);
 	}
-	
+
 	public void setUsuario(int idUsuario, int idProducto) {
 		this.idUsuario = idUsuario;
 		this.idProducto = idProducto;
 	}
-	
-	public  ArrayList<Resena> cargar_resenas() throws PersistentException {
+
+	public ArrayList<Resena> cargar_resenas() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		resenasProducto = new ArrayList<Resena> ();
-		for(Resena r : bd.cargar_resenas(idProducto)) {
-			
+		resenasProducto = new ArrayList<Resena>();
+		for (Resena r : bd.cargar_resenas(idProducto)) {
+
 			resenasProducto.add(r);
 		}
 		return resenasProducto;

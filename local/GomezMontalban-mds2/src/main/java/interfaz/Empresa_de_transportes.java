@@ -21,7 +21,7 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 		pedidos_a_entregar = new Pedidos_a_entregar();
 		pedidos_entregados = new Pedidos_entregados();
 		layout_empresa_de_transportes = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		layout_pedidos_a_entregar = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		// layout_pedidos_a_entregar = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		// layout_pedidos_entregados = this.getVaadinVerticalLayoutPedidosEntregados().as(VerticalLayout.class);
 		
 

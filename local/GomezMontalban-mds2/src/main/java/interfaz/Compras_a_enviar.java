@@ -47,13 +47,15 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 					cp.getTiene_asociado_un_cibernauta_registrado().getProvincia(),
 					String.valueOf(cp.getTiene_asociado_un_cibernauta_registrado().getCp()));
 			compras.add(compra);
-			layoutComprasAEnviar.add(compra);
+			//layoutComprasAEnviar.add(compra);
+			layoutListadoDeCompras.add(compra);
 		}
 	}
 
 	public void eliminar_compras_a_enviar() {
-
-		layoutComprasAEnviar.removeAll();
+		layoutComprasAEnviar.remove(layoutListadoDeCompras);
+		layoutListadoDeCompras.removeAll();
+		// layoutComprasAEnviar.removeAll();
 
 	}
 
