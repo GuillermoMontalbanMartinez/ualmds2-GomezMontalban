@@ -8,7 +8,7 @@ public interface ICompra {
 
 	public Compra_recibida[] cargar_compras();
 
-	public Compra_enviada[] cargar_compras_enviadas();
+	public Compra_enviada[] cargar_compras_enviadas() throws PersistentException;
 
 	public Compra[] cargar_pedidos_encargados(int aId_usuario);
 

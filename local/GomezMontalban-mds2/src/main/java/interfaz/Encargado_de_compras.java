@@ -25,16 +25,16 @@ public class Encargado_de_compras extends VistaEncargadoDeCompras {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
 				Notification.show("Acceso a compras enviadas desde el principal");
-				// layoutEncargadoDeCompras.removeAll();
+				layoutEncargadoDeCompras.removeAll();
 				layoutEncargadoDeCompras.add(compras_enviadas);
 
-				try {
-					compras_enviadas.eliminar_compras_enviadas();
-					compras_enviadas.mostrar_compras_enviadas();
-				} catch (PersistentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+//				try {
+//					compras_enviadas.eliminar_compras_enviadas();
+//					compras_enviadas.mostrar_compras_enviadas();
+//				} catch (PersistentException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 			}
 		});
 
