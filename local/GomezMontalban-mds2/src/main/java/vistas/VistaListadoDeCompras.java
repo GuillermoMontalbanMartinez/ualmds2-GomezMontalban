@@ -19,6 +19,8 @@ public class VistaListadoDeCompras extends PolymerTemplate<VistaListadoDeCompras
 
     @Id("vaadinVerticalLayoutListadoDeCompras")
 	private Element vaadinVerticalLayout;
+	@Id("layoutVistaComprasAdmin")
+	private Element layoutVistaComprasAdmin;
 
 	/**
      * Creates a new VistaListadoDeCompras.
@@ -40,5 +42,13 @@ public class VistaListadoDeCompras extends PolymerTemplate<VistaListadoDeCompras
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Element getLayoutVistaComprasAdmin() {
+		return layoutVistaComprasAdmin;
+	}
+
+	public void setLayoutVistaComprasAdmin(Element layoutVistaComprasAdmin) {
+		this.layoutVistaComprasAdmin = layoutVistaComprasAdmin;
 	}
 }

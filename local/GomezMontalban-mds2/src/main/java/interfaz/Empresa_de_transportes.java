@@ -34,7 +34,7 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 				try {
 					pedidos_a_entregar.eliminar_pedidos_a_entregar();
 					pedidos_a_entregar.mostrar_pedidos_a_entregar();
-					
+
 					for (Producto_a_enviar cr : pedidos_a_entregar.pedidos) {
 						try {
 							cr.cargar_ficha_cliente();
@@ -46,30 +46,29 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 							cr.fichaCliente.getTextPais().setValue(cr.pais);
 							cr.fichaCliente.getTextPortal().setValue(cr.portal);
 							cr.fichaCliente.getTextProvincia().setValue(cr.provincia);
-							
-							
+
 							cr.fichaCliente.getButtonAtras().addClickListener(new ComponentEventListener() {
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-										layout_empresa_de_transportes.removeAll();
-										layout_empresa_de_transportes.add(pedidos_entregados);	
+									layout_empresa_de_transportes.removeAll();
+									layout_empresa_de_transportes.add(pedidos_entregados);
 								}
 							});
 						} catch (PersistentException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						
+
 						cr.getButtonFichaCliente().addClickListener(new ComponentEventListener() {
 							@Override
 							public void onComponentEvent(ComponentEvent event) {
 
-									layout_empresa_de_transportes.removeAll();
-									layout_empresa_de_transportes.add(cr.fichaCliente);
-									
+								layout_empresa_de_transportes.removeAll();
+								layout_empresa_de_transportes.add(cr.fichaCliente);
+
 							}
 						});
-						
+
 					}
 				} catch (PersistentException e) {
 					e.printStackTrace();
@@ -87,8 +86,7 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 					pedidos_entregados.eliminar_pedidos_entregados();
 					pedidos_entregados.mostrar_pedidos_entregados();
 					for (Producto_enviado cr : pedidos_entregados.enviados) {
-						
-						
+
 						try {
 							cr.cargar_ficha_cliente();
 							cr.fichaCliente.getTextCliente().setValue(cr.id);
@@ -99,13 +97,12 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 							cr.fichaCliente.getTextPais().setValue(cr.pais);
 							cr.fichaCliente.getTextPortal().setValue(cr.portal);
 							cr.fichaCliente.getTextProvincia().setValue(cr.provincia);
-							
-							
+
 							cr.fichaCliente.getButtonAtras().addClickListener(new ComponentEventListener() {
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-										layout_empresa_de_transportes.removeAll();
-										layout_empresa_de_transportes.add(pedidos_entregados);	
+									layout_empresa_de_transportes.removeAll();
+									layout_empresa_de_transportes.add(pedidos_entregados);
 								}
 							});
 						} catch (PersistentException e) {
@@ -115,11 +112,11 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 						cr.getButtonFichaCliente().addClickListener(new ComponentEventListener() {
 							@Override
 							public void onComponentEvent(ComponentEvent event) {
-									layout_empresa_de_transportes.removeAll();
-									layout_empresa_de_transportes.add(cr.fichaCliente);	
+								layout_empresa_de_transportes.removeAll();
+								layout_empresa_de_transportes.add(cr.fichaCliente);
 							}
 						});
-						
+
 					}
 				} catch (PersistentException e) {
 					e.printStackTrace();
@@ -135,10 +132,9 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 				try {
 					pedidos_entregados.eliminar_pedidos_entregados();
 					pedidos_entregados.mostrar_pedidos_entregados();
-					
+
 					for (Producto_enviado cr : pedidos_entregados.enviados) {
-						
-						
+
 						try {
 							cr.cargar_ficha_cliente();
 							cr.fichaCliente.getTextCliente().setValue(cr.id);
@@ -149,13 +145,12 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 							cr.fichaCliente.getTextPais().setValue(cr.pais);
 							cr.fichaCliente.getTextPortal().setValue(cr.portal);
 							cr.fichaCliente.getTextProvincia().setValue(cr.provincia);
-							
-							
+
 							cr.fichaCliente.getButtonAtras().addClickListener(new ComponentEventListener() {
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-										layout_empresa_de_transportes.removeAll();
-										layout_empresa_de_transportes.add(pedidos_entregados);	
+									layout_empresa_de_transportes.removeAll();
+									layout_empresa_de_transportes.add(pedidos_entregados);
 								}
 							});
 						} catch (PersistentException e) {
@@ -165,11 +160,11 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 						cr.getButtonFichaCliente().addClickListener(new ComponentEventListener() {
 							@Override
 							public void onComponentEvent(ComponentEvent event) {
-									layout_empresa_de_transportes.removeAll();
-									layout_empresa_de_transportes.add(cr.fichaCliente);	
+								layout_empresa_de_transportes.removeAll();
+								layout_empresa_de_transportes.add(cr.fichaCliente);
 							}
 						});
-						
+
 					}
 				} catch (PersistentException e) {
 					e.printStackTrace();
@@ -182,11 +177,11 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 				Notification.show("Acceso a pedidos a entregar");
 				layout_empresa_de_transportes.removeAll();
 				layout_empresa_de_transportes.add(pedidos_a_entregar);
-				
+
 				try {
 					pedidos_a_entregar.eliminar_pedidos_a_entregar();
 					pedidos_a_entregar.mostrar_pedidos_a_entregar();
-					
+
 					for (Producto_a_enviar cr : pedidos_a_entregar.pedidos) {
 						try {
 							cr.cargar_ficha_cliente();
@@ -198,30 +193,29 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 							cr.fichaCliente.getTextPais().setValue(cr.pais);
 							cr.fichaCliente.getTextPortal().setValue(cr.portal);
 							cr.fichaCliente.getTextProvincia().setValue(cr.provincia);
-							
-							
+
 							cr.fichaCliente.getButtonAtras().addClickListener(new ComponentEventListener() {
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-										layout_empresa_de_transportes.removeAll();
-										layout_empresa_de_transportes.add(pedidos_entregados);	
+									layout_empresa_de_transportes.removeAll();
+									layout_empresa_de_transportes.add(pedidos_entregados);
 								}
 							});
 						} catch (PersistentException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						
+
 						cr.getButtonFichaCliente().addClickListener(new ComponentEventListener() {
 							@Override
 							public void onComponentEvent(ComponentEvent event) {
 
-									layout_empresa_de_transportes.removeAll();
-									layout_empresa_de_transportes.add(cr.fichaCliente);
-									
+								layout_empresa_de_transportes.removeAll();
+								layout_empresa_de_transportes.add(cr.fichaCliente);
+
 							}
 						});
-						
+
 					}
 				} catch (PersistentException e) {
 					e.printStackTrace();
@@ -229,9 +223,6 @@ public class Empresa_de_transportes extends VistaEmpresaDeTransportes {
 
 			}
 		});
-		
-		
-	
 
 	}
 

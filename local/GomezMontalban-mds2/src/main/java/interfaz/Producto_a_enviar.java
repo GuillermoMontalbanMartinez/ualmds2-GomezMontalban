@@ -27,15 +27,6 @@ public class Producto_a_enviar extends VistaProductoAEnviar {
 		layoutProductoEnviar = this.getVerticalLayoutProductoAEnviar().as(VerticalLayout.class);
 		pedido = ormid;
 		try {
-//			cargar_ficha_cliente();
-//			fichaCliente.getTextCliente().setValue(String.valueOf(cr.getORMID()));
-//			fichaCliente.getTextCalle().setValue(cr.getCalle());
-//			fichaCliente.getTextCodigoPostal().setValue(String.valueOf(cr.getCp()));
-//			fichaCliente.getTextLocalidad().setValue(String.valueOf(cr.getLocalidad()));
-//			fichaCliente.getTextNombre().setValue(cr.getNombre());
-//			fichaCliente.getTextPais().setValue(cr.getPais());
-//			fichaCliente.getTextPortal().setValue(cr.getPortal());
-//			fichaCliente.getTextProvincia().setValue(cr.getProvincia());
 			cargar_ficha_cliente();
 			id = String.valueOf(cr.getORMID());
 			calle = cr.getCalle();
@@ -49,7 +40,7 @@ public class Producto_a_enviar extends VistaProductoAEnviar {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		this.getButtonEntregado().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -62,7 +53,6 @@ public class Producto_a_enviar extends VistaProductoAEnviar {
 
 			}
 		});
-		
 
 	}
 
@@ -74,10 +64,10 @@ public class Producto_a_enviar extends VistaProductoAEnviar {
 		BDPrincipal bd = new BDPrincipal();
 		bd.Enviar_producto(idCompra);
 	}
-	
+
 	public void cargar_ficha_cliente() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
 		basededatos.Compra compra = basededatos.CompraDAO.loadCompraByORMID(pedido);
-		cr  = bd.cargar_ficha_cliente(compra.getTiene_asociado_un_cibernauta_registrado().getORMID());
+		cr = bd.cargar_ficha_cliente(compra.getTiene_asociado_un_cibernauta_registrado().getORMID());
 	}
 }

@@ -137,4 +137,9 @@ public class Administradores {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
+	public Compra[] cargar_lista_compras_admin() throws PersistentException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
