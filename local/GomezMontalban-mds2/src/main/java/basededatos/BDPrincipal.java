@@ -146,7 +146,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 	public void Enviar_compra(int aId_compra) throws PersistentException {
-		// throw new UnsupportedOperationException();
 		_db_compras_recibidas.Enviar_compra(aId_compra);
 	}
 
