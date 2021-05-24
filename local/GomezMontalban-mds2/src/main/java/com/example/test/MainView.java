@@ -105,11 +105,11 @@ public class MainView extends VerticalLayout {
 
 				case 2:
 					Encargado_de_compras ec = new Encargado_de_compras();
-					ec._compras_a_enviar.getButtonInicio().addClickListener(t -> {
+					ec.compras_a_enviar.getButtonInicio().addClickListener(t -> {
 						inicioEncargadoDeCompras(ec);
 					});
 
-					ec._compras_enviadas.getButtonInicio().addClickListener(t -> {
+					ec.compras_enviadas.getButtonInicio().addClickListener(t -> {
 						inicioEncargadoDeCompras(ec);
 					});
 
@@ -179,11 +179,11 @@ public class MainView extends VerticalLayout {
 	public void inicioEncargadoDeCompras(Encargado_de_compras ec) {
 		Encargado_de_compras encargadoDeCompras = new Encargado_de_compras();
 		Cibernauta cibernauta = new Cibernauta();
-		encargadoDeCompras._compras_a_enviar.getButtonInicio().addClickListener(t -> {
+		encargadoDeCompras.compras_a_enviar.getButtonInicio().addClickListener(t -> {
 			inicioEncargadoDeCompras(ec);
 		});
 
-		encargadoDeCompras._compras_enviadas.getButtonInicio().addClickListener(t -> {
+		encargadoDeCompras.compras_enviadas.getButtonInicio().addClickListener(t -> {
 			inicioEncargadoDeCompras(ec);
 		});
 		remove(ec);
@@ -218,6 +218,22 @@ public class MainView extends VerticalLayout {
 			cerrar_sesion(et, cibernauta);
 		});
 
+	}
+	
+	public void volver_a_principal(Encargado_de_compras ec) {
+		Encargado_de_compras encargadoDeCompras = new Encargado_de_compras();
+		Cibernauta cibernauta = new Cibernauta();
+		
+		encargadoDeCompras.getButton_compras_a_enviar().addClickListener(t -> {
+			volver_a_principal(encargadoDeCompras);
+		});
+		
+		remove(ec);
+		add(encargadoDeCompras);
+		
+		encargadoDeCompras.getButtonCerrarSesion().addClickListener(t -> {
+			cerrar_sesion(encargadoDeCompras, cibernauta);
+		});
 	}
 
 	public void volver_a_principal(Administrador c) {
