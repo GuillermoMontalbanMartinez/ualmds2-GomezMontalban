@@ -34,18 +34,13 @@ public class Correo_usuario extends VistaCorreoUsuario {
 	}
 
 	public void cargar_lista_de_emails(int id_usuario) throws PersistentException {
-		try {
-			Correo[] co = basededatos.CorreoDAO.listCorreoByQuery(null, null);
 
-			for (Correo c : co) {
-				if (c.getPertenece_a_un_cibernauta_registrado()
-						.equals(basededatos.Cibernauta_registradoDAO.getCibernauta_registradoByORMID(id))) {
-					correos.add(c);
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		bd = new BDPrincipal();
+		Correo[] co = bd.cargar_lista_de_emails(id_usuario);
+		for (Correo c : co) {
+			correos.add(c);
 		}
+
 	}
 
 	public void mostra_correos() throws PersistentException {

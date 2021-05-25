@@ -300,4 +300,10 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		return _db_cibernautas_registrados.cargar_seguimiento_de_pedido(idUsuario);
 	}
 
+	@Override
+	public Correo[] cargar_lista_de_emails(int id_usuario) throws PersistentException {
+		return _db_correo.cargar_lista_de_emails(id_usuario);
+		
+	}
+
 }

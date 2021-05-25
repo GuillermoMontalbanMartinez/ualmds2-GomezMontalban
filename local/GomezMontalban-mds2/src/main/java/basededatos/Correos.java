@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -11,13 +12,19 @@ public class Correos {
 	public BDPrincipal _db_main_correo;
 	public Vector<Correo> _contiene_correo = new Vector<Correo>();
 
-	public Correo[] cargar_lista_de_emails(int aId_usuario) {
-		throw new UnsupportedOperationException();
+	public Correo[] cargar_lista_de_emails(int aId_usuario) throws PersistentException {
+		
+		Correo[] correo = basededatos.CorreoDAO.listCorreoByQuery(null, null);
+		Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO.getCibernauta_registradoByORMID(aId_usuario);
+		ArrayList<Correo> aux = new ArrayList<Correo>();
+		for(Correo c : correo) {
+			if(c.getPertenece_a_un_cibernauta_registrado().getORMID() == cb.getORMID())aux.add(c);
+		}
+		Correo resultado[] = new Correo [aux.size()]; 
+		return aux.toArray(resultado);
+		
 	}
 
-	public void correo_de_verificacion(String aMensaje, String aDestinatario) {
-		throw new UnsupportedOperationException();
-	}
 
 	public void enviar_admin(String aDestinatario, String aAsunto, String aCorreo) throws PersistentException{
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
