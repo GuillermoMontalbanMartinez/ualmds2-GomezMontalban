@@ -14,9 +14,9 @@ public interface iAdministrador {
 
 	public void Baja_cuenta(String aCorreo, int aTipoDeUsuario ) throws PersistentException;;
 
-	public Categoria[] cargar_lista_categorias();
+//	public Categoria[] cargar_lista_categorias();
 
-	public Producto[] cargar_lista_productos_admin();
+//	public Producto[] cargar_lista_productos_admin();
 
 	public Resena[] cargar_resenas(int idProducto) throws PersistentException;
 
@@ -26,7 +26,7 @@ public interface iAdministrador {
 	
 	public void Baja_oferta_producto(String nombreProducto) throws PersistentException;
 
-	public Compra[] cargar_listado_de_compras_admin();
+	public Compra[] cargar_listado_de_compras_admin() throws PersistentException;
 
 	public void Baja_producto(String nombreProducto) throws PersistentException;
 	
