@@ -175,20 +175,20 @@ public class Cibernauta_registrado extends basededatos.Usuarios implements Seria
 	
 	public final basededatos.CorreoSetCollection tiene_correos = new basededatos.CorreoSetCollection(this, _ormAdapter, ORMConstants.KEY_CIBERNAUTA_REGISTRADO_TIENE_CORREOS, ORMConstants.KEY_CORREO_PERTENECE_A_UN_CIBERNAUTA_REGISTRADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	public void confirmar(boolean respuesta) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
-	
-	public void confirmar_cambios(boolean respuesta) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
-	
-	public String enviar(String destinatario, String asunto, String correo) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
+//	public void confirmar(boolean respuesta) {
+//		//TODO: Implement Method
+//		throw new UnsupportedOperationException();
+//	}
+//	
+//	public void confirmar_cambios(boolean respuesta) {
+//		//TODO: Implement Method
+//		throw new UnsupportedOperationException();
+//	}
+//	
+//	public String enviar(String destinatario, String asunto, String correo) {
+//		//TODO: Implement Method
+//		throw new UnsupportedOperationException();
+//	}
 	
 	public String toString() {
 		return super.toString();
