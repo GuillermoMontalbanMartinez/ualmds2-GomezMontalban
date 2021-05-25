@@ -30,7 +30,7 @@ public interface iCibernauta_registrado {
 
 	public void aumentar_unidad_producto(int aId_item) throws PersistentException;
 
-	public void cancelarPedido(int aId_compra);
+	public void cancelarPedido(int aId_compra) throws PersistentException;
 
 	public void decrementar_unidad_producto(int aId_item) throws PersistentException;
 
@@ -39,6 +39,8 @@ public interface iCibernauta_registrado {
 	public void publicar(int aValoracion, String aCuerpo, int aId_producto, int aId_usuario)throws PersistentException;
 
 	public void confirmar_compra(int aId_compra) throws PersistentException;
+	
+	public Compra[] cargar_seguimiento_de_pedido(int idUsuario) throws PersistentException;
 
 	public void modificar_datos_personales(String nombreUsuario, String apellidos, String correo, String contrasena,
 			String repetirContrasena, String telefono, String Pais, String localidad, String calle, String portal,

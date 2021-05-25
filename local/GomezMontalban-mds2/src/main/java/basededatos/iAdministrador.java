@@ -26,7 +26,7 @@ public interface iAdministrador {
 	
 	public void Baja_oferta_producto(String nombreProducto) throws PersistentException;
 
-	public Compra[] cargar_listado_de_compras_admin();
+	public Compra[] cargar_listado_de_compras_admin() throws PersistentException;
 
 	public void Baja_producto(String nombreProducto) throws PersistentException;
 	

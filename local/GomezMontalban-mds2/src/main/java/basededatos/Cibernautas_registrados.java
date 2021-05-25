@@ -174,4 +174,14 @@ public class Cibernautas_registrados {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
+	public Compra[] cargar_seguimiento_de_pedido(int idUsuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void cancelarPedido(int aId_compra) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -18,7 +18,7 @@ public interface ICompra {
 
 	public Compra_enviada[] cargar_pedidos_entregados() throws PersistentException;
 
-	public Compra[] cargar_lista_compras_admin() throws PersistentException;
+//	public Compra[] cargar_lista_compras_admin() throws PersistentException;
 
 	public void Enviar_compra(int aId_compra) throws PersistentException;
 

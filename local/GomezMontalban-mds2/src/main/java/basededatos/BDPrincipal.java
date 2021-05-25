@@ -118,7 +118,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 	public void cancelarPedido(int aId_compra) {
-		throw new UnsupportedOperationException();
+		_db_cibernautas_registrados.cancelarPedido(aId_compra);
 	}
 
 	public Compra_recibida[] cargar_compras_recibidas() throws PersistentException{
@@ -143,9 +143,9 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		return _db_compras_enviadas.cargar_productos_comprados_recientemente(aId_usuario); 
 	}
 	
-	public Compra[] cargar_lista_compras_admin() throws PersistentException {
-		return _db_administradores.cargar_lista_compras_admin();
-	}
+//	public Compra[] cargar_lista_compras_admin() throws PersistentException {
+//		return _db_administradores.cargar_lista_compras_admin();
+//	}
 
 	public void Enviar_compra(int aId_compra) throws PersistentException {
 		_db_compras_recibidas.Enviar_compra(aId_compra);
@@ -199,9 +199,10 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_compras_pendientes.confirmar_compra(aId_compra);
 	}
 
-	public Compra[] cargar_listado_de_compras_admin() {
-		throw new UnsupportedOperationException();
+	public Compra[] cargar_listado_de_compras_admin() throws PersistentException {
+		return _db_administradores.cargar_lista_compras_admin();
 	}
+	
 
 	public boolean Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena,
 			String aContrasena_rep, String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal,
@@ -295,6 +296,11 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	@Override
 	public Producto[] cargar_oferta_producto() throws PersistentException {
 		return _db_ofertas.cargar_oferta_producto();
+	}
+
+	@Override
+	public Compra[] cargar_seguimiento_de_pedido(int idUsuario) throws PersistentException {
+		return _db_cibernautas_registrados.cargar_seguimiento_de_pedido(idUsuario);
 	}
 
 }

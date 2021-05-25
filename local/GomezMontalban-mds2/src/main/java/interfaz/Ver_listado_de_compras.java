@@ -25,7 +25,7 @@ public class Ver_listado_de_compras extends VistaListadoDeCompras {
 	
 	public void cargar_listas_compras_admin() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
-		compras = bd.cargar_lista_compras_admin();
+		compras = bd.cargar_listado_de_compras_admin();
 	}
 	
 //	public Banner_registrado _banner_registrado;
