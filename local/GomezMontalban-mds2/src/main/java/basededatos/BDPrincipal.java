@@ -43,10 +43,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_administradores.Alta_cuenta(aNombre, aCorreo, aContrasena, aTipoDeUsuario, aApellidos);
 	}
 
-//	public void adjuntar_nueva_foto_de_perfil(String aFoto) {
-//		throw new UnsupportedOperationException();
-//	}
-
 	public void Baja_cuenta(String aCorreo, int id_usuario) throws PersistentException {
 		_db_administradores.Baja_cuenta(aCorreo, id_usuario);
 	}
@@ -55,13 +51,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_ofertas.Baja_oferta_producto(nombreProducto);
 	}
 
-//	public Categoria[] cargar_lista_categorias() {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public Producto[] cargar_lista_productos_admin() {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public Resena[] cargar_resenas(int idProducto) throws PersistentException {
 		return _db_resena.cargar_resenas(idProducto);
@@ -80,18 +69,10 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		return _db_productos.cargar_productos_mas_vendidos();
 	}
 
-//	public Categoria[] cargar_categorias_catalogo() {
-//		throw new UnsupportedOperationException();
-//	}
-
 	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) throws PersistentException {
 		return _db_cibernautas_registrados.cargar_ficha_cliente(aId_usuario);
 		
 	}
-
-//	public Oferta[] cargar_ofertas() {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public ArrayList<Producto> cargar_productos_catalogo() throws PersistentException {
 		return _db_productos.cargar_productos_catalogo();
@@ -101,21 +82,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		return _db_productos.cargar_productos();
 	}
 
-//	public void confirmar(boolean aRespuesta) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public void confirmar_cambios(boolean aRespuesta) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public Correo[] cargar_lista_de_emails(int aId_usuario) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public void correo_de_verificacion(String aMensaje, String aDestiantario) {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public void cancelarPedido(int aId_compra) {
 		_db_cibernautas_registrados.cancelarPedido(aId_compra);
@@ -125,14 +91,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 
 		return _db_compras_recibidas.cargar_compras_recibidas();
 	}
-
-//	public Compra_enviada[] cargar_compras_enviadas() throws PersistentException {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public Compra[] cargar_pedidos_encargados(int aId_usuario) {
-//		throw new UnsupportedOperationException();
-//	}
 
 	
 	public Compra_recibida[] cargar_pedidos_a_entregar() throws PersistentException {
@@ -164,9 +122,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_ofertas.Alta_oferta_producto(aId_producto, aDescuento, aFechaLimite);
 	}
 
-//	public void recuperar_contrasena(String aCorreo) {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public void Enviar_producto(int aId_compra) throws PersistentException {
 		_db_compras_enviadas.Enviar_producto(aId_compra);
@@ -176,17 +131,6 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		_db_productos.Baja_producto(nombreProducto);
 	}
 
-//	public String recuperar_contrasena() {
-//		throw new UnsupportedOperationException();
-//	}
-
-//	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public void anadir_al_carrito(int aId_item) {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public void publicar(int aValoracion, String aCuerpo, int aId_producto) throws PersistentException{
 		_db_resena.publicar(aValoracion, aCuerpo, aId_producto, aId_producto);
@@ -216,17 +160,10 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		}
 	}
 
-//	public void publicar(int aValoracion, String aCuerpo) {
-//		throw new UnsupportedOperationException();
-//	}
-
 	public Compra_enviada[] cargar_pedidos_entregados() throws PersistentException {
 		return _db_compras_enviadas.cargar_compras_enviadas();
 	}
 
-//	public void confirmar_compra(Object aId_compra) {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public ArrayList<Item> cargar_productos_seleccionados(int aId_usuario) throws PersistentException {
 		return _db_item.cargar_productos_seleccionados(aId_usuario);

@@ -121,10 +121,6 @@ public class Resena implements Serializable {
 		return esta_asociada_a_un_cibernauta_registrado;
 	}
 	
-	public void publicar(int valoracion, String cuerpo) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
 	
 	public String toString() {
 		return String.valueOf(getId_resena());

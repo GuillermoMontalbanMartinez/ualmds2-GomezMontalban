@@ -45,15 +45,6 @@ public class Empresa_de_transportes extends basededatos.Usuarios implements Seri
 	
 	public final basededatos.Compra_enviadaSetCollection compra_enviada = new basededatos.Compra_enviadaSetCollection(this, _ormAdapter, ORMConstants.KEY_EMPRESA_DE_TRANSPORTES_COMPRA_ENVIADA, ORMConstants.KEY_COMPRA_ENVIADA_EMPRESA_DE_TRANSPORTES, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	public void Alta_cuenta(String nombre, String correo, String contrasena, int tipoDeUsuario, String Apellidos) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
-	
-	public void Baja_cuenta(int id_usuario) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
 	
 	public String toString() {
 		return super.toString();

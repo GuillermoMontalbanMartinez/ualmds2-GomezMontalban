@@ -20,7 +20,6 @@ public class Producto implements Serializable {
 	Productos producto;
 	
 	public Producto() {
-		producto = new Productos();
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -191,9 +190,6 @@ public class Producto implements Serializable {
 	
 	public final basededatos.ResenaSetCollection tiene_resenas = new basededatos.ResenaSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO_TIENE_RESENAS, ORMConstants.KEY_RESENA_ESTA_ASOCIADOS_A_UN_PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	public void Alta_producto(String nombre, String descripcion, double precio, int id_producto, String foto1, String foto2, String foto3, String foto4, String foto5, String categoria) throws PersistentException {
-		producto.Alta_producto(nombre, descripcion, precio, foto1, foto2, foto3, foto4, foto5, categoria);
-	}
 	
 	public String toString() {
 		return String.valueOf(getId_producto());

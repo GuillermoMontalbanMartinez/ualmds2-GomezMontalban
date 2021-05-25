@@ -18,11 +18,6 @@ public class Compra_recibida extends basededatos.Compra implements Serializable 
 	public Compra_recibida() {
 	}
 	
-	public basededatos.Compra[] cargar_pedidos_encargados(int id_usuario) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
-	
 	public String toString() {
 		return super.toString();
 	}

@@ -18,11 +18,7 @@ public class Compra_pendiente extends basededatos.Compra implements Serializable
 	public Compra_pendiente() {
 	}
 	
-	public void cancelarPedido(int id_compra) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
-	
+
 	public String toString() {
 		return super.toString();
 	}

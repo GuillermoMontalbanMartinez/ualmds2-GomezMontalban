@@ -20,16 +20,9 @@ public class Administrador extends basededatos.Usuarios implements Serializable 
 	Administradores ad;
 	
 	public Administrador() {
-		ad = new Administradores();
 	}
 	
-	public void Alta_cuenta(String nombre, String correo, String contrasena, int tipoDeUsuario, String Apellidos) throws PersistentException {
-		ad.Alta_cuenta(nombre, correo, contrasena, tipoDeUsuario, Apellidos);
-	}
-	
-	public void Baja_cuenta(String correo, int tipoDeUsuario) throws PersistentException {
-		ad.Baja_cuenta(correo, tipoDeUsuario );
-	}
+
 	
 	public String toString() {
 		return super.toString();
