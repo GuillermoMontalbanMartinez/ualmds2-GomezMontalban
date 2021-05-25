@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.orm.PersistentException;
@@ -15,6 +16,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.server.webcomponent.WebComponentExporterTagExtractor;
 
+import basededatos.BDPrincipal;
+import basededatos.Categoria;
+import basededatos.Producto;
 import vistas.VistaAdministrador;
 
 public class Administrador extends VistaAdministrador {
@@ -25,17 +29,51 @@ public class Administrador extends VistaAdministrador {
 	public VerticalLayout layout_administrador;
 	public VerticalLayout layout_cuerpo_administrador;
 	public Acceder_al_catalogo_admin catalogoAdmin;
-	
+	public Productos_mas_vendidos _productos_mas_vendidos = new Productos_mas_vendidos();
+	public Producto[] producto_mas_vendido = null;
+	ArrayList<interfaz.Producto_admin> vista_productos;
 
-	
+	Select<Categoria> select = new Select<Categoria>();
+	String value = null;
+
 	public Administrador() {
+		vista_productos = new ArrayList<interfaz.Producto_admin>();
 		banner_admin = new Banner_admin();
 		layout_administrador = this.getLayoutBannerAdmin().as(VerticalLayout.class);
 		layout_administrador.removeAll();
 		layout_administrador.add(banner_admin);
 		layout_cuerpo_administrador = this.getLayoutcuerpoAdmin().as(VerticalLayout.class);
 		catalogoAdmin = new Acceder_al_catalogo_admin();
+		filtro_por_categoria = new Filtro_por_categoria();
+
+		try {
+
+			mostrar_productos();
+
+			select.setItemLabelGenerator(Categoria::getNombre);
+
+			select.setItems(this.cargar_categoria());
+
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		this.getVistaFiltroCategoria().getSelectLayout().as(VerticalLayout.class).add(select);
+
+		select.addValueChangeListener(event -> {
+			if (event.getValue() != null) {
+				value = event.getValue().getNombre().toString();
+				try {
+					eliminar_producto();
+					mostrar_productos();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+	
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -345,5 +383,52 @@ public class Administrador extends VistaAdministrador {
 		}
 	}
 
-	
+	private void mostrar_productos() throws PersistentException {
+		producto_mas_vendido = _productos_mas_vendidos.cargar_productos_mas_vendidos();
+		int aux = 0;
+		for (Producto p : producto_mas_vendido) {
+
+			if (aux > 2) {
+				break;
+			} else {
+				if (value != null) {
+					if (p.getCategoria().getNombre().equals(value)) {
+						interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(),
+								p.getDescripción(), String.valueOf(p.getPrecio()),
+								p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
+						this.getVistaProducto().getProductosLayout().as(VerticalLayout.class).add(producto);
+						vista_productos.add(producto);
+						aux++;
+
+					}
+				} else {
+					interfaz.Producto_admin producto = new interfaz.Producto_admin(p.getNombre(), p.getDescripción(),
+							String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
+
+					this.getVistaProducto().getProductosLayout().as(VerticalLayout.class).add(producto);
+					vista_productos.add(producto);
+					aux++;
+
+				}
+			}
+
+		}
+		aux = 0;
+	}
+
+	public void eliminar_producto() {
+		this.getVistaProducto().getProductosLayout().as(VerticalLayout.class).removeAll();
+		vista_productos.clear();
+	}
+
+	public basededatos.Producto[] cargar_ofertas_producto() throws PersistentException {
+		BDPrincipal bd = new BDPrincipal();
+		return bd.cargar_oferta_producto();
+	}
+
+	public Categoria[] cargar_categoria() throws PersistentException {
+		BDPrincipal bd = new BDPrincipal();
+		return bd.cargar_categoria();
+	}
+
 }

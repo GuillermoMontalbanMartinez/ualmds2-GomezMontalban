@@ -8,6 +8,8 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import vistas.VistaFiltroPorCategoria;
+import vistas.VistaProductosAdmin;
 
 /**
  * A Designer generated component for the vista-administrador template.
@@ -28,6 +30,10 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 	private Element layoutcuerpoAdmin;
 	@Id("ButtonMostrarTodosLosProductos")
 	private Button vaadinButtonMostrarTodosLosProductos;
+	@Id("vistaFiltroCategoria")
+	private VistaFiltroPorCategoria vistaFiltroCategoria;
+	@Id("vistaProducto")
+	private VistaProductosAdmin vistaProducto;
 	/**
      * Creates a new VistaAdministrador.
      */
@@ -72,6 +78,22 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 
 	public void setVaadinButtonMostrarTodosLosProductos(Button vaadinButtonMostrarTodosLosProductos) {
 		this.vaadinButtonMostrarTodosLosProductos = vaadinButtonMostrarTodosLosProductos;
+	}
+
+	public VistaFiltroPorCategoria getVistaFiltroCategoria() {
+		return vistaFiltroCategoria;
+	}
+
+	public void setVistaFiltroCategoria(VistaFiltroPorCategoria vistaFiltroCategoria) {
+		this.vistaFiltroCategoria = vistaFiltroCategoria;
+	}
+
+	public VistaProductosAdmin getVistaProducto() {
+		return vistaProducto;
+	}
+
+	public void setVistaProducto(VistaProductosAdmin vistaProducto) {
+		this.vistaProducto = vistaProducto;
 	}
 
 	

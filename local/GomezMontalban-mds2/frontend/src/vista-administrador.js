@@ -22,10 +22,10 @@ class VistaAdministrador extends PolymerElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="width: 100%; height: 100%;" id="LayoutcuerpoAdmin">
   <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%;">
-   <vista-filtro-por-categoria style="flex-shrink: 0; align-self: center;"></vista-filtro-por-categoria>
+   <vista-filtro-por-categoria style="flex-shrink: 0; align-self: center; width: 100%; height: 100%;" id="vistaFiltroCategoria"></vista-filtro-por-categoria>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; margin: var(--lumo-space-m);">
-   <vista-productos-admin style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);"></vista-productos-admin>
+   <vista-productos-admin style="align-self: center; flex-shrink: 0; margin: var(--lumo-space-m);" id="vistaProducto"></vista-productos-admin>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m); width: 100%; justify-content: center; align-items: center;">
    <vaadin-button style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;" theme="primary" id="ButtonMostrarTodosLosProductos">

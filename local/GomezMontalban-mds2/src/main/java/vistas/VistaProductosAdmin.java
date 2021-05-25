@@ -4,6 +4,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.polymertemplate.Id;
 
 /**
  * A Designer generated component for the vista-productos-admin template.
@@ -15,7 +17,10 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-productos-admin.js")
 public class VistaProductosAdmin extends PolymerTemplate<VistaProductosAdmin.VistaProductosAdminModel> {
 
-    /**
+    @Id("ProductosLayout")
+	private Element productosLayout;
+
+	/**
      * Creates a new VistaProductosAdmin.
      */
     public VistaProductosAdmin() {
@@ -28,4 +33,12 @@ public class VistaProductosAdmin extends PolymerTemplate<VistaProductosAdmin.Vis
     public interface VistaProductosAdminModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getProductosLayout() {
+		return productosLayout;
+	}
+
+	public void setProductosLayout(Element productosLayout) {
+		this.productosLayout = productosLayout;
+	}
 }
