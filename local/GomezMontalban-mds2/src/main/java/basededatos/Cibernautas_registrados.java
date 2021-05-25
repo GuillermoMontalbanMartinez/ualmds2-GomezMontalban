@@ -13,17 +13,11 @@ public class Cibernautas_registrados {
 	public BDPrincipal _bd_main_cibernautas_registrados;
 	public Vector<Cibernauta_registrado> _contiene_cibernauta_registrados = new Vector<Cibernauta_registrado>();
 
-//	public void adjuntar_nueva_foto_de_perfil(String aFoto) {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) throws PersistentException {
 		return basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(aId_usuario);
 	}
 
-//	public void adjuntar_nueva_foto_de_perfil(int aId_usuario, String aFoto) {
-//		throw new UnsupportedOperationException();
-//	}
 
 	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep,
 			String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia,
