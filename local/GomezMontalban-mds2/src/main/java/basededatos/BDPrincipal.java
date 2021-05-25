@@ -76,8 +76,8 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		}
 	}
 
-	public Producto[] cargar_productos_mas_vendidos() {
-		throw new UnsupportedOperationException();
+	public Producto[] cargar_productos_mas_vendidos() throws PersistentException{
+		return _db_productos.cargar_productos_mas_vendidos();
 	}
 
 	public Categoria[] cargar_categorias_catalogo() {
