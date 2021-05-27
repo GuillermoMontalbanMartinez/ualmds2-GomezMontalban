@@ -83,7 +83,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 
-	public void cancelarPedido(int aId_compra) {
+	public void cancelarPedido(int aId_compra) throws PersistentException {
 		_db_cibernautas_registrados.cancelarPedido(aId_compra);
 	}
 

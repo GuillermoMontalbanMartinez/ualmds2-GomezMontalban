@@ -4,7 +4,7 @@ import org.orm.PersistentException;
 
 public interface ICompra {
 
-	public void cancelarPedido(int aId_compra);
+	public void cancelarPedido(int aId_compra)throws PersistentException;
 
 //	public Compra_enviada[] cargar_compras_enviadas() throws PersistentException;
 

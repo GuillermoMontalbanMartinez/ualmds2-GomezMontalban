@@ -1,7 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-pedidos-encargados.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaSeguimientoDelPedido extends PolymerElement {
 
@@ -22,7 +21,7 @@ class VistaSeguimientoDelPedido extends PolymerElement {
    <h4 style="margin-left: var(--lumo-space-m); padding-right: var(--lumo-space-xs); flex-grow: 0;">Estado del envio</h4>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vista-pedidos-encargados style="height: 100%; width: 100%; margin-left: var(--lumo-space-m);"></vista-pedidos-encargados>
+ <vaadin-vertical-layout id="layoutPedidos" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }

@@ -206,9 +206,32 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			public void onComponentEvent(ComponentEvent event) {
 				layout.removeAll();
 				layout.add(_banner_registrado);
-
+				_banner_registrado._administrar_perfil._seguimiento_del_pedido.eliminar();
+				try {
+					_banner_registrado._administrar_perfil._seguimiento_del_pedido.mostrarCompras();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				layout.add(_banner_registrado._administrar_perfil._seguimiento_del_pedido);
+				
+				
+			
+				for(Pedido_encargado p : _banner_registrado._administrar_perfil._seguimiento_del_pedido.pedidos) {
+					p.getButtonCancelar().addClickListener(new ComponentEventListener() {
 
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+							try {
+								p.cancelarPedido();
+							} catch (PersistentException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					});
+				}
+				
 			}
 		});
 
@@ -482,6 +505,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		catalogo.setUsuario(usuario);
 		_banner_registrado._administrar_perfil._dar_de_baja_usuario.setUsuario(id);
 		_banner_registrado._administrar_perfil._ver_ultimas_compras.setUsuario(usuario);
+		_banner_registrado._administrar_perfil._seguimiento_del_pedido.setUsuario(id);
+
 
 		
 		
