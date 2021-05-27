@@ -118,16 +118,30 @@ public class Acceder_al_catalogo extends VistaAccederCatalogo {
 		Producto[] aux = bd.buscarProductos(string);
 
 		for (Producto p : aux) {
-			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
-				if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
-					interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(),
-							String.valueOf(p.getPrecio()), f.getLink_foto(), p.getORMID());
-					producto.setUsuario(usuario);
-					listaProductos.add(producto);
-					vista_productos.add(producto);
-					break;
-				}
+			if (p.getTiene_item() == null) {
+				for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+					if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
+						interfaz.Producto producto = new interfaz.Producto(p.getNombre(), p.getDescripción(),
+								String.valueOf(p.getPrecio()), f.getLink_foto(), p.getORMID());
+						producto.setUsuario(usuario);
+						if (vista_productos.size() != 0) {
+							for (interfaz.Producto p2 : vista_productos) {
+								if (!p2.nombreP.equals(producto.nombreP) && !p2.descripcion.equals(producto.descripcion)
+										&& !p2.precio.equals(producto.precio)) {
+									vista_productos.add(producto);
+									listaProductos.add(producto);
 
+								}
+							}
+						} else {
+							vista_productos.add(producto);
+							listaProductos.add(producto);
+
+						}
+						break;
+					}
+
+				}
 			}
 
 		}
