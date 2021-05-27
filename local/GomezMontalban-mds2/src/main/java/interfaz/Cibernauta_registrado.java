@@ -528,6 +528,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+						
 						layout.add(p._ver_carácteristicas_del_producto);
 
 					}
