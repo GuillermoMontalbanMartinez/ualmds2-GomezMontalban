@@ -18,8 +18,11 @@ public class Correos {
 		Cibernauta_registrado cb = basededatos.Cibernauta_registradoDAO.getCibernauta_registradoByORMID(aId_usuario);
 		ArrayList<Correo> aux = new ArrayList<Correo>();
 		for (Correo c : correo) {
-			if (c.getPertenece_a_un_cibernauta_registrado().getORMID() == cb.getORMID())
-				aux.add(c);
+			if(c.getPertenece_a_un_cibernauta_registrado()!=null) {
+				if (c.getPertenece_a_un_cibernauta_registrado().getORMID() == cb.getORMID())
+					aux.add(c);
+			}
+			
 		}
 		Correo resultado[] = new Correo[aux.size()];
 		return aux.toArray(resultado);
