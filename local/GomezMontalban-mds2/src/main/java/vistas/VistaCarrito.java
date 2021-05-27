@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import vistas.VistaProductosSeleccionados;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-carrito template.
@@ -24,6 +25,8 @@ public class VistaCarrito extends PolymerTemplate<VistaCarrito.VistaCarritoModel
 	private Button comprarButton;
 	@Id("cambiarDatosButton")
 	private Button cambiarDatosButton;
+	@Id("textPrecio")
+	private TextField textPrecio;
 
 	/**
      * Creates a new VistaCarrito.
@@ -61,5 +64,13 @@ public class VistaCarrito extends PolymerTemplate<VistaCarrito.VistaCarritoModel
 
 	public void setCambiarDatosButton(Button cambiarDatosButton) {
 		this.cambiarDatosButton = cambiarDatosButton;
+	}
+
+	public TextField getTextPrecio() {
+		return textPrecio;
+	}
+
+	public void setTextPrecio(TextField textPrecio) {
+		this.textPrecio = textPrecio;
 	}
 }
