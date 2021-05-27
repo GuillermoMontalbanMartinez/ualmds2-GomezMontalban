@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.util.ArrayList;
+
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
@@ -20,7 +22,7 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 	// public int idProducto;
 	String value = "";
 	Select<basededatos.Producto> select = new Select();
-	
+
 	public Dar_baja_producto() {
 		this.getButtonAceptar().addClickListener(new ComponentEventListener() {
 			@Override
@@ -33,7 +35,7 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 				}
 			}
 		});
-		
+
 		select.setItemLabelGenerator(Producto::getNombre);
 		try {
 			select.setItems(this.cargar_producto());
@@ -41,21 +43,46 @@ public class Dar_baja_producto extends VistaDarBajaProducto {
 			e.printStackTrace();
 		}
 		this.getTextNombreProductoEliminarProducto().add(select);
-		
-		 select.addValueChangeListener(event -> {
-			    if (event.getValue() != null) {
-			    	value = event.getValue().getNombre().toString();
-			    } 
-			});
-}
+
+		select.addValueChangeListener(event -> {
+			if (event.getValue() != null) {
+				value = event.getValue().getNombre().toString();
+			}
+		});
+	}
 
 	public void Baja_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		bd.Baja_producto(value);	
+		bd.Baja_producto(value);
 	}
-	
+
 	public basededatos.Producto[] cargar_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		return bd.cargar_productos();
+		Producto[] productos = bd.cargar_productos();
+		ArrayList<Producto> aux = new ArrayList<Producto>();
+		for (Producto p : productos) {
+			if (aux.size() == 0) {
+				aux.add(p);
+			} else {
+				boolean insert = true;
+				for (Producto p2 : aux) {
+					if (p.getNombre().equals(p2.getNombre())) {
+						insert = false;
+						break;
+					}
+
+				}
+				if (insert) {
+					aux.add(p);
+				}
+			}
+		}
+		Producto resultado[] = new Producto[aux.size()];
+
+		for (int i = 0; i < resultado.length; i++) {
+			resultado[i] = aux.get(i);
+		}
+
+		return resultado;
 	}
 }

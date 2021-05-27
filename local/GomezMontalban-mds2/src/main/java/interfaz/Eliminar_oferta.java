@@ -65,6 +65,18 @@ public class Eliminar_oferta extends VistaEliminarOferta {
 
 	public basededatos.Producto[] cargar_producto() throws PersistentException {
 		bd = new BDPrincipal();
-		return bd.cargar_productos();
+		Producto[] productos = bd.cargar_productos();
+		ArrayList<Producto> aux = new ArrayList<Producto>();
+		for (Producto p : productos) {
+			if (p.getTiene_una_oferta() != null) {
+				aux.add(p);
+			}
+		}
+		Producto[] resultado = new Producto[aux.size()];
+		for (int i = 0; i < resultado.length; i++) {
+			resultado[i] = aux.get(i);
+		}
+		
+		return resultado;
 	}
 }
