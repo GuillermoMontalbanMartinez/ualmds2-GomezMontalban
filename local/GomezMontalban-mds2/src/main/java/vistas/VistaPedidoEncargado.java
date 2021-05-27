@@ -28,6 +28,10 @@ public class VistaPedidoEncargado extends PolymerTemplate<VistaPedidoEncargado.V
 	private Button buttonCancelar;
 	@Id("imagen")
 	private Image imagen;
+	@Id("cantidadText")
+	private TextField cantidadText;
+	@Id("nombreText")
+	private TextField nombreText;
 
 	/**
      * Creates a new VistaPedidoEncargado.
@@ -73,5 +77,21 @@ public class VistaPedidoEncargado extends PolymerTemplate<VistaPedidoEncargado.V
 
 	public void setImagen(Image imagen) {
 		this.imagen = imagen;
+	}
+
+	public TextField getCantidadText() {
+		return cantidadText;
+	}
+
+	public void setCantidadText(TextField cantidadText) {
+		this.cantidadText = cantidadText;
+	}
+
+	public TextField getNombreText() {
+		return nombreText;
+	}
+
+	public void setNombreText(TextField nombreText) {
+		this.nombreText = nombreText;
 	}
 }

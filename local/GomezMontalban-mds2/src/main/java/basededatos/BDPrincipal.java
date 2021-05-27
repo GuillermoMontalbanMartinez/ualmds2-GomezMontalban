@@ -83,7 +83,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 
-	public void cancelarPedido(int aId_compra) {
+	public void cancelarPedido(int aId_compra) throws PersistentException {
 		_db_cibernautas_registrados.cancelarPedido(aId_compra);
 	}
 
@@ -241,6 +241,11 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	public Correo[] cargar_lista_de_emails(int id_usuario) throws PersistentException {
 		return _db_correo.cargar_lista_de_emails(id_usuario);
 		
+	}
+
+	@Override
+	public Correo[] cargar_lista_de_emails_admin() throws PersistentException {
+		return _db_correo.cargar_lista_de_emails_admin();
 	}
 
 }

@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
@@ -168,14 +169,61 @@ public class Cibernautas_registrados {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
-	public Compra[] cargar_seguimiento_de_pedido(int idUsuario) {
-		// TODO Auto-generated method stub
+	public Compra[] cargar_seguimiento_de_pedido(int idUsuario) throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		try {
+			Cibernauta_registrado cibernautaRegistrado = basededatos.Cibernauta_registradoDAO
+					.loadCibernauta_registradoByORMID(idUsuario);
+			
+			Compra c []  = basededatos.CompraDAO.listCompraByQuery(null, null);
+			ArrayList<Compra> aux = new ArrayList<Compra>();
+			for(Compra compra : c ) {
+				if(compra.getTiene_asociado_un_cibernauta_registrado().equals(cibernautaRegistrado)) {
+					aux.add(compra);
+				}
+			}
+			
+			Compra resultado[] = new Compra[aux.size()];
+			for(int i = 0; i < aux.size(); i++) {
+				resultado[i] = aux.get(i);
+			}
+			pt.commit();
+			return resultado;
+		} catch (Exception e) {
+			pt.rollback();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 		return null;
 	}
 
-	public void cancelarPedido(int aId_compra) {
-		// TODO Auto-generated method stub
+	public void cancelarPedido(int aId_compra) throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		try {
+			Producto p = basededatos.ProductoDAO.loadProductoByORMID(aId_compra);
+			
+			Compra c = basededatos.CompraDAO.loadCompraByORMID(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
 		
+
+
+			for(Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+				if(f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
+
+					basededatos.FotoDAO.deleteAndDissociate(f);
+				}
+			}
+			Item item = c.getTiene_item();
+
+			basededatos.ProductoDAO.deleteAndDissociate(p);
+			basededatos.CompraDAO.deleteAndDissociate(c);
+			basededatos.ItemDAO.deleteAndDissociate(item);
+			
+			pt.commit();
+		} catch (Exception e) {
+			pt.rollback();
+		}
+		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
 }
