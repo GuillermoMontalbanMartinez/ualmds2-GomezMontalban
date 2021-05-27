@@ -506,6 +506,17 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			
 			
 			for(Producto p : vista_productos) {
+//				p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
+//					@Override
+//					public void onComponentEvent(ComponentEvent event) {
+//						try {
+//							p.añadir_al_carrito();
+//						} catch (PersistentException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
+//				});
 				p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
 					@Override
 					public void onComponentEvent(ComponentEvent event) {
@@ -549,6 +560,23 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 		for (Oferta o : ofertas) {
 			o._producto.setUsuario(usuario);
+		}
+		
+		
+		
+		for(Producto p : vista_productos) {
+			p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					try {
+						p.setUsuario(usuario);
+						p.añadir_al_carrito();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			});
 		}
 	}
 
