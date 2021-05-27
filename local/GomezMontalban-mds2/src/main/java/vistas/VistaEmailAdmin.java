@@ -4,6 +4,9 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-email-admin template.
@@ -15,7 +18,14 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 @JsModule("./src/vista-email-admin.js")
 public class VistaEmailAdmin extends PolymerTemplate<VistaEmailAdmin.VistaEmailAdminModel> {
 
-    /**
+    @Id("VerBoton")
+	private Button verBoton;
+	@Id("AsuntoText")
+	private TextField asuntoText;
+	@Id("AutorText")
+	private TextField autorText;
+
+	/**
      * Creates a new VistaEmailAdmin.
      */
     public VistaEmailAdmin() {
@@ -28,4 +38,28 @@ public class VistaEmailAdmin extends PolymerTemplate<VistaEmailAdmin.VistaEmailA
     public interface VistaEmailAdminModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Button getVerBoton() {
+		return verBoton;
+	}
+
+	public void setVerBoton(Button verBoton) {
+		this.verBoton = verBoton;
+	}
+
+	public TextField getAsuntoText() {
+		return asuntoText;
+	}
+
+	public void setAsuntoText(TextField asuntoText) {
+		this.asuntoText = asuntoText;
+	}
+
+	public TextField getAutorText() {
+		return autorText;
+	}
+
+	public void setAutorText(TextField autorText) {
+		this.autorText = autorText;
+	}
 }

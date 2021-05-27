@@ -11,4 +11,6 @@ public interface iCorreo {
 //	public void recuperar_contrasena(String aCorreo);
 	
 	public Correo[] cargar_lista_de_emails(int id_usuario) throws PersistentException ;
+	public Correo[] cargar_lista_de_emails_admin() throws PersistentException ;
+
 }

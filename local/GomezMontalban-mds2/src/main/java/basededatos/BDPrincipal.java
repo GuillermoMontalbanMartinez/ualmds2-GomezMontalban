@@ -243,4 +243,9 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 		
 	}
 
+	@Override
+	public Correo[] cargar_lista_de_emails_admin() throws PersistentException {
+		return _db_correo.cargar_lista_de_emails_admin();
+	}
+
 }

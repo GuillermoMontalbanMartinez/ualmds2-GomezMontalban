@@ -28,7 +28,7 @@ class VistaCorreoAdmin extends PolymerElement {
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vista-lista-emails-admin></vista-lista-emails-admin>
+ <vista-lista-emails-admin id="vistaListaEmails"></vista-lista-emails-admin>
 </vaadin-vertical-layout>
 `;
     }

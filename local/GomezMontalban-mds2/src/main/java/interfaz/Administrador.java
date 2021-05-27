@@ -147,6 +147,99 @@ public class Administrador extends VistaAdministrador {
 			}
 		});
 		
+		
+		
+		
+		
+		
+		
+		
+		banner_admin.getVaadinButtonCorreo().addClickListener(new ComponentEventListener() {
+
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.removeAll();
+				layout_administrador.add(banner_admin);
+				layout_administrador.add(banner_admin.correo_admin);
+				try {
+					banner_admin.correo_admin.eliminar_correos();
+
+					banner_admin.correo_admin.mostra_correos();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				for (Email email : banner_admin.correo_admin.emails) {
+
+					email.getVerButton().addClickListener(t -> {
+						layout_administrador.remove(banner_admin.correo_admin);
+						layout_administrador.add(email._ver_email);
+						if (email.getVaadinTextField().getValue().equals("Administrador")) {
+							email._ver_email.getResponderButton().setEnabled(false);
+						}
+					});
+
+					email._ver_email.getAtrasButton().addClickListener(new ComponentEventListener() {
+
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+							layout_administrador.remove(email._ver_email);
+							layout_administrador.add(banner_admin.correo_admin);
+
+						}
+					});
+
+					email._ver_email.getResponderButton().addClickListener(new ComponentEventListener() {
+
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+							layout_administrador.remove(email._ver_email);
+							layout_administrador.add(banner_admin.correo_admin._redactar_correo_admin);
+							banner_admin.correo_admin._redactar_correo_admin.getTextDestinatario()
+									.setValue(email.getVaadinTextField().getValue().toString());
+							banner_admin.correo_admin._redactar_correo_admin.getTextAsunto()
+									.setValue("RE: " + email.getAsuntoText().getValue().toString());
+						}
+
+					});
+
+				}
+
+			}
+		});
+
+		banner_admin.correo_admin.getVaadinButton().addClickListener(new ComponentEventListener() {
+
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout_administrador.remove(banner_admin.correo_admin);
+				layout_administrador.add(banner_admin.correo_admin._redactar_correo_admin);
+
+			}
+
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		banner_admin.administrar_categorias.getVaadinButtonAceptarAlta().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {

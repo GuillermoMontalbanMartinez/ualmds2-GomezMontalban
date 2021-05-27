@@ -8,6 +8,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import vistas.VistaListaEmailsAdmin;
 
 /**
  * A Designer generated component for the vista-correo-admin template.
@@ -23,6 +24,8 @@ public class VistaCorreoAdmin extends PolymerTemplate<VistaCorreoAdmin.VistaCorr
 	private VerticalLayout vaadinVerticalLayout;
 	@Id("vaadinButtonRedactarMensaje")
 	private Button vaadinButton;
+	@Id("vistaListaEmails")
+	private VistaListaEmailsAdmin vistaListaEmails;
 
 	/**
      * Creates a new VistaCorreoAdmin.
@@ -52,5 +55,13 @@ public class VistaCorreoAdmin extends PolymerTemplate<VistaCorreoAdmin.VistaCorr
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public VistaListaEmailsAdmin getVistaListaEmails() {
+		return vistaListaEmails;
+	}
+
+	public void setVistaListaEmails(VistaListaEmailsAdmin vistaListaEmails) {
+		this.vistaListaEmails = vistaListaEmails;
 	}
 }

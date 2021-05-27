@@ -29,7 +29,7 @@ class VistaEmail extends PolymerElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 20%;" id="vaadinHorizontalLayout">
   <vaadin-button theme="primary" id="VerButton">
-   Ver
+    Ver 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-horizontal-layout>
