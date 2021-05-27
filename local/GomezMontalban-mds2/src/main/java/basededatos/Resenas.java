@@ -45,13 +45,14 @@ public class Resenas {
 				.beginTransaction();
 		try {
 
-			Resena r = basededatos.ResenaDAO.createResena();
 			Producto p = basededatos.ProductoDAO.loadProductoByORMID(aId_producto);
 			for (Producto p_resena : basededatos.ProductoDAO.listProductoByQuery(null, null)) {
 				
 
 				if(p.getTiene_una_oferta()!=null && p_resena.getTiene_una_oferta()!=null) {
 					if(p_resena.getTiene_una_oferta().equals(p.getTiene_una_oferta())) {
+						Resena r = basededatos.ResenaDAO.createResena();
+
 						r.setEsta_asociados_a_un_producto(p_resena);
 						Cibernauta_registrado cb = Cibernauta_registradoDAO
 								.loadCibernauta_registradoByORMID(aId_usuario);
@@ -63,7 +64,7 @@ public class Resenas {
 					}
 				}else if (p_resena.getNombre().equals(p.getNombre())&& p_resena.getDescripción().equals(p.getDescripción())
 						&& p_resena.getPrecio() == p.getPrecio() && p_resena.getCategoria().equals(p.getCategoria())) {
-					if (p_resena.getTiene_item() == null) {
+					Resena r = basededatos.ResenaDAO.createResena();
 						r.setEsta_asociados_a_un_producto(p_resena);
 						Cibernauta_registrado cb = Cibernauta_registradoDAO
 								.loadCibernauta_registradoByORMID(aId_usuario);
@@ -72,7 +73,7 @@ public class Resenas {
 						r.setEsta_asociada_a_un_cibernauta_registrado(cb);
 						basededatos.ResenaDAO.save(r);
 						p_resena.tiene_resenas.add(r);
-					}
+					
 				}
 			}
 

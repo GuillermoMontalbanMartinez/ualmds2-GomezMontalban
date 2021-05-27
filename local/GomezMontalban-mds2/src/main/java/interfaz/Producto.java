@@ -17,16 +17,17 @@ import vistas.VistaProducto;
 public class Producto extends VistaProducto {
 	public Oferta _oferta;
 	public Productos _productos;
-	public Ver_carácteristicas_del_producto _ver_carácteristicas_del_producto = new Ver_carácteristicas_del_producto();
+	public Ver_carácteristicas_del_producto _ver_carácteristicas_del_producto;
 	public Iniciar_sesion i = new Iniciar_sesion();
 	public int idUsuario;
 	public int idProducto;
 	public String nombreP, descripcion, precio, foto;
-	VerticalLayout reseñas = _ver_carácteristicas_del_producto.getLayoutResenas().as(VerticalLayout.class);
+	VerticalLayout reseñas;
 	double reseñaMedia = 0;
 
 	public Producto(String nombre, String descripcion, String precio, String foto, int id) {
-
+		_ver_carácteristicas_del_producto = new Ver_carácteristicas_del_producto(id);
+		reseñas = _ver_carácteristicas_del_producto.getLayoutResenas().as(VerticalLayout.class);
 		this.idProducto = id;
 		this.getTextNombre().setValue(nombre);
 		this.getTextDescripcion().setValue(descripcion);
@@ -102,6 +103,10 @@ public class Producto extends VistaProducto {
 			_ver_carácteristicas_del_producto.setUsuario(-1, idProducto);
 		}
 		reseñas.removeAll();
+
+	}
+
+	public void cargar_resenas() throws PersistentException {
 		ArrayList<Resena> cargar_resenas = _ver_carácteristicas_del_producto.cargar_resenas();
 		for (Resena r : cargar_resenas) {
 			interfaz.Reseña resena = new interfaz.Reseña(r.getEsta_asociada_a_un_cibernauta_registrado().getNombre(),
@@ -112,9 +117,7 @@ public class Producto extends VistaProducto {
 		if (cargar_resenas != null)
 			reseñaMedia /= cargar_resenas.size();
 		_ver_carácteristicas_del_producto.getValoracionText().setValue(String.valueOf(reseñaMedia));
-
 	}
-
 	public int getIdProducto() {
 		return this.idProducto;
 	}

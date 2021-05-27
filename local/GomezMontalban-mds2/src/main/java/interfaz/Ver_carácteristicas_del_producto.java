@@ -20,7 +20,8 @@ public class Ver_carácteristicas_del_producto extends VistaCaracteristicasDelPr
 	private int idProducto;
 	ArrayList<Resena> resenasProducto;
 
-	public Ver_carácteristicas_del_producto() {
+	public Ver_carácteristicas_del_producto(int idProducto) {
+		this.idProducto = idProducto;
 		this.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {

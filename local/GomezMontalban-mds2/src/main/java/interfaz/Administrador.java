@@ -495,9 +495,15 @@ public class Administrador extends VistaAdministrador {
 			p.getButtonVerCaracteristicasDelProducto().addClickListener(new ComponentEventListener() {
 				@Override
 				public void onComponentEvent(ComponentEvent event) {
-					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto(p.idProducto);
 					layout_administrador.removeAll();
 					layout_administrador.add(banner_admin);
+					try {
+						p.cargar_resenas();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					layout_administrador.add(p._caracteristicas_del_producto_admin);
 
 				}
@@ -519,6 +525,27 @@ public class Administrador extends VistaAdministrador {
 								p.getDescripción(), String.valueOf(p.getPrecio()),
 								p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 						this.getVistaProducto().getProductosLayout().as(VerticalLayout.class).add(producto);
+						
+						
+						
+						producto.getButtonVerCaracteristicasDelProducto().addClickListener(new ComponentEventListener() {
+							@Override
+							public void onComponentEvent(ComponentEvent event) {
+								layout_administrador.removeAll();
+								layout_cuerpo_administrador.removeAll();
+								try {
+									producto.cargar_resenas();
+								} catch (PersistentException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+
+								layout_administrador.add(banner_admin);
+								layout_administrador.add(producto._caracteristicas_del_producto_admin);
+							}
+						});
+						
+						
 						vista_productos.add(producto);
 						aux++;
 
@@ -528,6 +555,24 @@ public class Administrador extends VistaAdministrador {
 							String.valueOf(p.getPrecio()), p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
 
 					this.getVistaProducto().getProductosLayout().as(VerticalLayout.class).add(producto);
+					
+					producto.getButtonVerCaracteristicasDelProducto().addClickListener(new ComponentEventListener() {
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+							layout_administrador.removeAll();
+							layout_cuerpo_administrador.removeAll();
+							try {
+								producto.cargar_resenas();
+							} catch (PersistentException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+
+							layout_administrador.add(banner_admin);
+							layout_administrador.add(producto._caracteristicas_del_producto_admin);
+						}
+					});
+					
 					vista_productos.add(producto);
 					aux++;
 

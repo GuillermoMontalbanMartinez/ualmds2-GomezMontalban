@@ -47,7 +47,7 @@ public class Cibernauta_común extends VistaCibernautaComun {
 				ofertas.add(o);
 			}
 
-			mostrar_productos();
+			
 
 			select.setItemLabelGenerator(Categoria::getNombre);
 
@@ -73,7 +73,7 @@ public class Cibernauta_común extends VistaCibernautaComun {
 		});
 	}
 
-	private void mostrar_productos() throws PersistentException {
+	public  void mostrar_productos() throws PersistentException {
 		producto_mas_vendido = _productos_mas_vendidos.cargar_productos_mas_vendidos();
 		int aux = 0;
 		for (Producto p : producto_mas_vendido) {
@@ -103,7 +103,8 @@ public class Cibernauta_común extends VistaCibernautaComun {
 
 				}
 			}
-
+			
+			
 		}
 		aux = 0;
 	}

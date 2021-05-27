@@ -14,14 +14,9 @@ public class Caracteristicas_del_producto_admin extends VistaCaracteristicasDelP
 	public Reseñas reseña;
 	private int idProducto;
 	ArrayList<Resena> resenasProducto;
-	public Caracteristicas_del_producto_admin() {
-
-		try {
-			cargar_resenas();
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public Caracteristicas_del_producto_admin(int id) {
+		this.idProducto=id;
+		
 	}
 	
 	public  ArrayList<Resena> cargar_resenas() throws PersistentException {

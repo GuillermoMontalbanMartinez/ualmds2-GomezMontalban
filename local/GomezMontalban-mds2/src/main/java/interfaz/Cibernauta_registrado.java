@@ -194,8 +194,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 
 						}
 						layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras);
-						layout.add(
-								_banner_registrado._administrar_perfil._ver_ultimas_compras._productos_comprados_recientemente);
+						layout.add(_banner_registrado._administrar_perfil._ver_ultimas_compras._productos_comprados_recientemente);
 
 					}
 				});
@@ -214,10 +213,8 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					e.printStackTrace();
 				}
 				layout.add(_banner_registrado._administrar_perfil._seguimiento_del_pedido);
-				
-				
-			
-				for(Pedido_encargado p : _banner_registrado._administrar_perfil._seguimiento_del_pedido.pedidos) {
+
+				for (Pedido_encargado p : _banner_registrado._administrar_perfil._seguimiento_del_pedido.pedidos) {
 					p.getButtonCancelar().addClickListener(new ComponentEventListener() {
 
 						@Override
@@ -231,7 +228,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 						}
 					});
 				}
-				
+
 			}
 		});
 
@@ -369,6 +366,12 @@ public class Cibernauta_registrado extends Cibernauta_común {
 				public void onComponentEvent(ComponentEvent event) {
 					layout.removeAll();
 					layout.add(_banner_registrado);
+					try {
+						p.cargar_resenas();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					layout.add(p._ver_carácteristicas_del_producto);
 
 				}
@@ -436,9 +439,15 @@ public class Cibernauta_registrado extends Cibernauta_común {
 							p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-									Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+									Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto(p.idProducto);
 									layout.removeAll();
 									layout.add(_banner_registrado);
+									try {
+										p.cargar_resenas();
+									} catch (PersistentException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 									layout.add(p._ver_carácteristicas_del_producto);
 
 								}
@@ -471,21 +480,52 @@ public class Cibernauta_registrado extends Cibernauta_común {
 					}
 					layout.add(catalogo);
 				});
-		
-		
-		for(interfaz.Oferta o :this.ofertas) {
+
+		for (interfaz.Oferta o : this.ofertas) {
 			o.getVerCaracteristicasButton().addClickListener(new ComponentEventListener() {
 				@Override
 				public void onComponentEvent(ComponentEvent event) {
-					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto(o._producto.idProducto);
 					layout.removeAll();
 					layout.add(_banner_registrado);
+					try {
+						o._producto.cargar_resenas();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					layout.add(o._producto._ver_carácteristicas_del_producto);
 
 				}
-			});		
+			});
 		}
 
+		
+		try {
+			mostrar_productos();
+			
+			
+			for(Producto p : vista_productos) {
+				p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout.removeAll();
+						layout.add(_banner_registrado);
+						try {
+							p.cargar_resenas();
+						} catch (PersistentException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						layout.add(p._ver_carácteristicas_del_producto);
+
+					}
+				});
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void setUsuario(String usuario) throws PersistentException {
@@ -507,11 +547,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 		_banner_registrado._administrar_perfil._ver_ultimas_compras.setUsuario(usuario);
 		_banner_registrado._administrar_perfil._seguimiento_del_pedido.setUsuario(id);
 
-
-		
-		
-		
-		for(Oferta o : ofertas) {
+		for (Oferta o : ofertas) {
 			o._producto.setUsuario(usuario);
 		}
 	}

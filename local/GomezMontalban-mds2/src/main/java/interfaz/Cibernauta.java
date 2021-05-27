@@ -52,10 +52,6 @@ public class Cibernauta extends Cibernauta_común {
 			}
 		});
 
-		
-		
-		
-		
 //		layoutOfretas = this.getLayoutOfertas().as(VerticalLayout.class);
 //		try {
 //			basededatos.Producto [] productos = cargar_ofertas_producto();
@@ -74,12 +70,7 @@ public class Cibernauta extends Cibernauta_común {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		
-		
-		
-		
-		
-		
+
 		inicio_sesion.getBottonRegistro().addClickListener(new ComponentEventListener() {
 
 			@Override
@@ -112,18 +103,24 @@ public class Cibernauta extends Cibernauta_común {
 			}
 		});
 
-		for(interfaz.Oferta o :this.ofertas) {
+		for (interfaz.Oferta o : this.ofertas) {
 			o.getVerCaracteristicasButton().addClickListener(new ComponentEventListener() {
 				@Override
 				public void onComponentEvent(ComponentEvent event) {
-					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto(o._producto.idProducto);
 					layout.removeAll();
 					layout.add(_banner_no_registrado);
+					try {
+						o._producto.cargar_resenas();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					layout.add(o._producto._ver_carácteristicas_del_producto);
 
 				}
-			});			
-			
+			});
+
 		}
 		for (interfaz.Producto p : this.catalogo.vista_productos) {
 			try {
@@ -148,9 +145,15 @@ public class Cibernauta extends Cibernauta_común {
 			p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
 				@Override
 				public void onComponentEvent(ComponentEvent event) {
-					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto(p.idProducto);
 					layout.removeAll();
 					layout.add(_banner_no_registrado);
+					try {
+						p.cargar_resenas();
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					layout.add(p._ver_carácteristicas_del_producto);
 
 				}
@@ -183,27 +186,33 @@ public class Cibernauta extends Cibernauta_común {
 							p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
 								@Override
 								public void onComponentEvent(ComponentEvent event) {
-									Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
+									Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto(p.idProducto);
 									layout.removeAll();
 									layout.add(_banner_no_registrado);
+									try {
+										p.cargar_resenas();
+									} catch (PersistentException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
 									layout.add(p._ver_carácteristicas_del_producto);
 
 								}
 							});
-							
-							
-							p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
 
-								@Override
-								public void onComponentEvent(ComponentEvent event) {
-									layout.removeAll();
-									layout.add(_banner_no_registrado);
-									layout.add(inicio_sesion);
-									catalogo.eliminar_producto();
+							p._ver_carácteristicas_del_producto.getAnadirAlCarrito()
+									.addClickListener(new ComponentEventListener() {
 
-								}
-							});
-							
+										@Override
+										public void onComponentEvent(ComponentEvent event) {
+											layout.removeAll();
+											layout.add(_banner_no_registrado);
+											layout.add(inicio_sesion);
+											catalogo.eliminar_producto();
+
+										}
+									});
+
 						}
 
 					} catch (PersistentException e) {
@@ -213,6 +222,30 @@ public class Cibernauta extends Cibernauta_común {
 					layout.add(catalogo);
 				});
 
+		try {
+			mostrar_productos();
+
+			for (Producto p : vista_productos) {
+				p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout.removeAll();
+						layout.add(_banner_no_registrado);
+						try {
+							p.cargar_resenas();
+						} catch (PersistentException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						layout.add(p._ver_carácteristicas_del_producto);
+
+					}
+				});
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
