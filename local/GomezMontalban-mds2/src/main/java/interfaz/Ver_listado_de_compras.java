@@ -17,99 +17,37 @@ public class Ver_listado_de_compras extends VistaListadoDeCompras {
 	public ArrayList<Compra> comprasArray = new ArrayList<Compra>();
 	public basededatos.Compra[] compras;
 	public VerticalLayout layoutVerListadoDeCompras;
-	
+	public VerticalLayout layoutListadoComprasAdmin;
+
 	public Ver_listado_de_compras() {
 		layoutVerListadoDeCompras = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		
+		layoutListadoComprasAdmin = this.getLayoutVistaComprasAdmin().as(VerticalLayout.class);
 	}
-	
-	public void cargar_listas_compras_admin() throws PersistentException {
+
+	public void cargar_lista_compras_admin() throws PersistentException {
 		BDPrincipal bd = new BDPrincipal();
 		compras = bd.cargar_listado_de_compras_admin();
 	}
-	
-//	public Banner_registrado _banner_registrado;
-//	public Lista_de_emails _lista_de_emails = new Lista_de_emails();
-//	public Redactar_correo _redactar_correo = new Redactar_correo();
-//	public HorizontalLayout layout = this.getLayout();
-//	public VerticalLayout listaEmails;
-//	private String usuario;
-//	int id;
-//	private BDPrincipal bd;
-//	private ArrayList<Correo> correos = new ArrayList<Correo>();
-//	public ArrayList<Email> emails = new ArrayList<Email>();
-//
-//	public Correo_usuario() {
-//		listaEmails = this.getLayoutEmails().as(VerticalLayout.class);
-//
-//	}
-//
-//	public void cargar_lista_de_emails(int id_usuario) throws PersistentException {
-//		try {
-//			Correo[] co = basededatos.CorreoDAO.listCorreoByQuery(null, null);
-//
-//			for (Correo c : co) {
-//				if (c.getPertenece_a_un_cibernauta_registrado()
-//						.equals(basededatos.Cibernauta_registradoDAO.getCibernauta_registradoByORMID(id))) {
-//					correos.add(c);
-//				}
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	public void mostra_correos() throws PersistentException {
-//
-//		for (Correo c : correos) {
-//			Email email = new Email(c.getAutor(), c.getAsunto(), c.getContenido());
-//
-//			emails.add(email);
-//			listaEmails.add(email);
-//		}
-//
-//	}
-//
-//	public void eliminar_correos() {
-//
-//		listaEmails.removeAll();
-//
-//	}
-//
-//	public void setUsuario(int id) throws PersistentException {
-//		this.id = id;
-//		cargar_lista_de_emails(id);
-//
-//	}
-	
-}
 
-//public Pedidos_a_entregar pedidos_a_entregar;
-//public VerticalLayout layout_pedidos_entregados;
-//public VerticalLayout listaPedidosEntregados;
-//public ArrayList<Producto_enviado> enviados = new ArrayList<Producto_enviado>();
-//public basededatos.Compra_enviada[] comprasEnviadas;
-//
-//public Pedidos_entregados() {
-//	layout_pedidos_entregados = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-//	listaPedidosEntregados = this.getLayoutVistaProductosEnviados().as(VerticalLayout.class);
-//}
-//
-//public void cargar_pedidos_entregados() throws PersistentException {
-//	BDPrincipal bd = new BDPrincipal();
-//	comprasEnviadas = bd.cargar_pedidos_entregados();
-//}
-//
-//public void mostrar_pedidos_entregados() throws PersistentException {
-//	cargar_pedidos_entregados();
-//	for (basededatos.Compra_enviada ce : comprasEnviadas) {
-//		Producto_enviado productoEnviado = new Producto_enviado(ce.getORMID());
-//		enviados.add(productoEnviado);
-//		listaPedidosEntregados.add(productoEnviado);
-//	}
-//}
-//
-//public void eliminar_pedidos_entregados() {
-//	listaPedidosEntregados.removeAll();
-//	enviados.clear();
-//}
+	public void mostrar_listado_compras_admin() throws PersistentException {
+		cargar_lista_compras_admin();
+		for (basededatos.Compra c : compras) {
+			Compra compra = new Compra(c.getORMID(), c.getTiene_asociado_un_cibernauta_registrado().getNombre(),
+					c.getTiene_asociado_un_cibernauta_registrado().getPais(),
+					c.getTiene_asociado_un_cibernauta_registrado().getLocalidad(),
+					c.getTiene_asociado_un_cibernauta_registrado().getCalle(),
+					c.getTiene_asociado_un_cibernauta_registrado().getPortal(),
+					c.getTiene_asociado_un_cibernauta_registrado().getProvincia(),
+					String.valueOf(c.getTiene_asociado_un_cibernauta_registrado().getCp()));
+			comprasArray.add(compra);
+			layoutListadoComprasAdmin.add(compra);
+		}
+
+	}
+
+	public void eliminar_listado_compras_admin() {
+		layoutListadoComprasAdmin.removeAll();
+		comprasArray.clear();
+	}
+
+}
