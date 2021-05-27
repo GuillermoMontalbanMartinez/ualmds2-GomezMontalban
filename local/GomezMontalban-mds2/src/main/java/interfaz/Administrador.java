@@ -190,14 +190,7 @@ public class Administrador extends VistaAdministrador {
 				layout_cuerpo_administrador.removeAll();
 			}
 		});
-		
-		
-		
-		
-		
-		
-		
-		
+
 		banner_admin.getVaadinButtonCorreo().addClickListener(new ComponentEventListener() {
 
 			@Override
@@ -263,27 +256,7 @@ public class Administrador extends VistaAdministrador {
 			}
 
 		});
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		banner_admin.administrar_categorias.getVaadinButtonAceptarAlta().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
