@@ -21,7 +21,7 @@ class VistaDarAltaProducto extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m);">
   <h1>Dar alta producto</h1>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%;">
+ <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; width: 100%; align-self: center; align-items: center;">
   <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); width: 70%;">
    <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m);">
     <vaadin-horizontal-layout theme="spacing">
@@ -30,7 +30,7 @@ class VistaDarAltaProducto extends PolymerElement {
        <label style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center;font-weight: bold;">Nombre</label>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
-       <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textNombre"></vaadin-text-field>
+       <vaadin-text-field style="flex-shrink: 0; align-self: center; margin: var(--lumo-space-m);" id="textNombre" autofocus></vaadin-text-field>
       </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
@@ -56,13 +56,13 @@ class VistaDarAltaProducto extends PolymerElement {
      <h4 style="flex-shrink: 0; align-self: center;">Descripción</h4>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="height: 100%; width: 100%;">
-     <vaadin-text-area style="height: 100%; width: 100%; flex-shrink: 0; align-self: center; " id="textArea"></vaadin-text-area>
+     <vaadin-text-area style="height: 100%; width: 100%; flex-shrink: 0; align-self: center; " id="textArea" maxlength="255"></vaadin-text-area>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-xl); flex-shrink: 0; width: 100%; align-self: center; justify-content: center;">
-  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; margin: var(--lumo-space-xl); align-self: center; padding: var(--lumo-space-xl);">
+  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; margin: var(--lumo-space-m); align-self: center; padding: var(--lumo-space-m); width: 100%; height: 100%;">
    <vaadin-vertical-layout theme="spacing" style="margin: var(--lumo-space-m);">
     <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; margin: var(--lumo-space-m); flex-shrink: 1; align-self: center;">
      <h4>Foto principal</h4>
@@ -76,15 +76,15 @@ class VistaDarAltaProducto extends PolymerElement {
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing" style="width: 50%; height: 100%;">
+   <vaadin-vertical-layout theme="spacing" style="width: 50%; height: 100%; align-items: flex-end;">
     <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
      <h4 style="margin: var(--lumo-space-m); align-self: center; flex-shrink: 0;">Fotos secundarias</h4>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-shrink: 0; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%; height: 50%;">
-     <vaadin-vertical-layout theme="spacing">
-      <vaadin-horizontal-layout theme="spacing" style="align-self: center; margin: var(--lumo-space-m); align-items: center; justify-content: center;">
+     <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center;">
+      <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center;">
        <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); height: 100%; width: 100%;">
-        <img style="width: 25%; flex-shrink: 0; align-self: center; height: 25%; margin: var(--lumo-space-m);" id="im2">
+        <img style="width: 35%; flex-shrink: 0; align-self: center; height: 35%; margin: var(--lumo-space-m);" id="im2">
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); height: 100%;">
         <img style="width: 25%; flex-shrink: 0; align-self: center; height: 25%; margin: var(--lumo-space-m);" id="img3">
@@ -102,22 +102,22 @@ class VistaDarAltaProducto extends PolymerElement {
       </vaadin-vertical-layout>
      </vaadin-vertical-layout>
     </vaadin-vertical-layout>
-    <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m); width: 100%; height: 50%;">
-     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
+    <vaadin-vertical-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; width: 100%; height: 50%; margin: var(--lumo-space-m);">
+     <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
       <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; margin: var(--lumo-space-m);">
-       <img style="width: 25%; flex-shrink: 0; align-self: center; height: 25%; margin: var(--lumo-space-m);" id="img4">
+       <img style="width: 35%; flex-shrink: 0; align-self: center; height: 35%; margin: var(--lumo-space-m);" id="img4">
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-shrink: 0; align-self: center; align-items: center; justify-content: center; height: 100%; margin: var(--lumo-space-m);">
-       <img style="width: 25%; align-self: center; flex-shrink: 0; height: 25%; margin: var(--lumo-space-m);" id="img5">
+       <img style="width: 35%; align-self: center; flex-shrink: 0; height: 35%; margin: var(--lumo-space-m);" id="img5">
       </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
      <vaadin-vertical-layout theme="spacing">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-horizontal-layout theme="spacing">
-        <vaadin-upload id="upload4"></vaadin-upload>
+        <vaadin-upload id="upload4" style="width: 100%;"></vaadin-upload>
        </vaadin-horizontal-layout>
        <vaadin-horizontal-layout theme="spacing">
-        <vaadin-upload id="upload5"></vaadin-upload>
+        <vaadin-upload id="upload5" style="width: 100%;"></vaadin-upload>
        </vaadin-horizontal-layout>
       </vaadin-horizontal-layout>
      </vaadin-vertical-layout>
