@@ -18,10 +18,6 @@ public class Compras_recibidas {
 	public BDPrincipal _db_main_compras_recibidas;
 	public Vector<Compra_recibida> _contiene_compras_enviadas = new Vector<Compra_recibida>();
 
-//	public Compra_recibida[] cargar_compras() {
-//		throw new UnsupportedOperationException();
-//	}
-
 	public Compra_recibida[] cargar_compras_recibidas() throws PersistentException {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
@@ -74,9 +70,27 @@ public class Compras_recibidas {
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
+	
+	// --------------------------------------------------------------------------------------------------
 
-	public Compra[] cargar_listado_de_compras_admin() {
-		throw new UnsupportedOperationException();
-	}
-
+//	public Compra[] cargar_listado_de_compras_admin() {
+//		throw new UnsupportedOperationException();
+//	}
+	
+//	public Compra[] cargar_listado_compras_admin() throws PersistentException {
+//		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+////		List listComprasTotales = null;
+//		Compra compras[] = null;
+//		try {
+////			listComprasTotales = basededatos.CompraDAO.queryCompra(null, null);
+//			compras = basededatos.CompraDAO.listCompraByQuery(null, null);
+//			pt.commit();
+//		} catch (Exception e) {
+//			pt.rollback();
+//			e.printStackTrace();
+//		}
+//		
+//		return compras;
+//	}
+// ----------------------------------- ESTO SON PRUEBAS---------------------------
 }

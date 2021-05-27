@@ -31,7 +31,7 @@ class VistaCompraAdmin extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m); flex-shrink: 0; align-self: center; align-items: center; justify-content: center;">
     <vaadin-horizontal-layout theme="spacing">
      <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
-      <label>ID Producto</label>
+      <label>ID Compra</label>
      </vaadin-horizontal-layout>
      <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; margin: var(--lumo-space-m);">
       <vaadin-text-field id="textIdProducto" readonly></vaadin-text-field>

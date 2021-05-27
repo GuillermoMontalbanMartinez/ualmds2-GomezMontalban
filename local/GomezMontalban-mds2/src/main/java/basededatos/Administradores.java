@@ -137,9 +137,21 @@ public class Administradores {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
-	public Compra[] cargar_lista_compras_admin() throws PersistentException {
-		// TODO Auto-generated method stub
-		return null;
+	public Compra[] cargar_listado_compras_admin() throws PersistentException {
+		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
+		Compra compras[] = null;
+		try {
+
+			compras = basededatos.CompraDAO.listCompraByQuery(null, null);
+
+			pt.commit();
+		} catch (Exception e) {
+			pt.rollback();
+			e.printStackTrace();
+		}
+
+		return compras;
 	}
 
 }

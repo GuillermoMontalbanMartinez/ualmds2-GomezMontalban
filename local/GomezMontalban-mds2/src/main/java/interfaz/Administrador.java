@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Optional;
 
 import org.orm.PersistentException;
@@ -58,7 +59,7 @@ public class Administrador extends VistaAdministrador {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		this.getVistaFiltroCategoria().getSelectLayout().as(VerticalLayout.class).add(select);
 
 		select.addValueChangeListener(event -> {
@@ -73,7 +74,7 @@ public class Administrador extends VistaAdministrador {
 				}
 			}
 		});
-	
+
 		banner_admin.getVaadinButtonAdministrarCategorias().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -83,7 +84,7 @@ public class Administrador extends VistaAdministrador {
 				layout_cuerpo_administrador.removeAll();
 			}
 		});
-		
+
 		banner_admin.getVaadinButtonAdministrarCuentas().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -93,8 +94,7 @@ public class Administrador extends VistaAdministrador {
 				layout_cuerpo_administrador.removeAll();
 			}
 		});
-		
-		
+
 		banner_admin.getVaadinButtonAdministrarOfertas().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -104,7 +104,7 @@ public class Administrador extends VistaAdministrador {
 				layout_cuerpo_administrador.removeAll();
 			}
 		});
-		
+
 		banner_admin.getVaadinButtonAdministrarProductos().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -114,7 +114,7 @@ public class Administrador extends VistaAdministrador {
 				layout_cuerpo_administrador.removeAll();
 			}
 		});
-		
+
 		banner_admin.getVaadinButtonCerrarSesión().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -124,19 +124,63 @@ public class Administrador extends VistaAdministrador {
 				layout_cuerpo_administrador.removeAll();
 			}
 		});
-		
+
 		banner_admin.getVaadinButtonListadoDeCompras().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
+				banner_admin.ver_listado_de_compras.eliminar_listado_compras_admin();
+				try {
+					banner_admin.ver_listado_de_compras.mostrar_listado_compras_admin();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				layout_administrador.removeAll();
 				layout_administrador.add(banner_admin);
 				layout_administrador.add(banner_admin.ver_listado_de_compras);
 				layout_cuerpo_administrador.removeAll();
+
+				for (Compra_admin c : banner_admin.ver_listado_de_compras.comprasArray) {
+
+					try {
+						c.cargar_ficha_cliente();
+						c.fichaCliente.getTextCliente().setValue(c.id);
+						c.fichaCliente.getTextCalle().setValue(c.calle);
+						c.fichaCliente.getTextCodigoPostal().setValue(c.codigoPostal);
+						c.fichaCliente.getTextLocalidad().setValue(c.localidad);
+						c.fichaCliente.getTextNombre().setValue(c.nombre);
+						c.fichaCliente.getTextPais().setValue(c.pais);
+						c.fichaCliente.getTextPortal().setValue(c.portal);
+						c.fichaCliente.getTextProvincia().setValue(c.provincia);
+
+						c.fichaCliente.getButtonAtras().addClickListener(new ComponentEventListener() {
+							@Override
+							public void onComponentEvent(ComponentEvent event) {
+								layout_administrador.removeAll();
+								layout_administrador.add(banner_admin);
+								layout_administrador.add(banner_admin.ver_listado_de_compras);
+							}
+						});
+					} catch (PersistentException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					c.getButtonDatosDeEnvio().addClickListener(new ComponentEventListener() {
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+
+							layout_administrador.removeAll();
+							layout_administrador.add(c.fichaCliente);
+
+						}
+					});
+
+				}
+
 			}
 		});
-		
-		
-		
+
 		banner_admin.getVaadinButtonCorreo().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -146,11 +190,11 @@ public class Administrador extends VistaAdministrador {
 				layout_cuerpo_administrador.removeAll();
 			}
 		});
-		
+
 		banner_admin.administrar_categorias.getVaadinButtonAceptarAlta().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
-				
+
 				Notification.show("Categoria dada de alta");
 			}
 		});
@@ -160,24 +204,26 @@ public class Administrador extends VistaAdministrador {
 				Notification.show("Categoria dada de baja");
 			}
 		});
-		
-		banner_admin.administrar_categorias.getVaadinButtonCancelarAlta().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin);
-			}
-		});
-		
-		banner_admin.administrar_categorias.getVaadinButtonCancelarBaja().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(new Administrador());
-			}
-		});
-		
+
+		banner_admin.administrar_categorias.getVaadinButtonCancelarAlta()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin);
+					}
+				});
+
+		banner_admin.administrar_categorias.getVaadinButtonCancelarBaja()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(new Administrador());
+					}
+				});
+
 		banner_admin.cerrar_sesion_admin.getVaadinButtonCancelar().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -186,117 +232,125 @@ public class Administrador extends VistaAdministrador {
 				layout_administrador.add(layout_cuerpo_administrador);
 			}
 		});
-		
-		
-		
-		banner_admin.administrar_cuentas.getVaadinButtonAltaCuentaDeUsuario().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_cuentas._dar_alta_cuenta);
-			}
-		});
-		
-		banner_admin.administrar_cuentas.getVaadinButtonBajaCuentaUsuario().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_cuentas._dar_baja_cuenta);
-			}
-		});
-		
-		banner_admin.administrar_cuentas._dar_alta_cuenta.getVaadinButtonAceptar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_cuentas);	
-			}
-		});
-		
-		banner_admin.administrar_cuentas._dar_alta_cuenta.getVaadinButton().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_cuentas);
-				Notification.show("Cancelado");
-			}
-		});
-		
-		banner_admin.administrar_cuentas._dar_baja_cuenta.getButtonAceptar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_cuentas);
-				Notification.show("Dada de baja la cuenta");
-			}
-		});
-		
-		banner_admin.administrar_cuentas._dar_baja_cuenta.getButtonCancelar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_cuentas);
-				Notification.show("Cancelado");
-			}
-		});
-		
-		banner_admin.administrar_productos.getVaadinButtonAnadirProductos().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_productos._dar_alta_producto);
-			}
-		});
-		
-		banner_admin.administrar_productos.getVaadinButtonEliminarProducto().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_productos._dar_baja_producto);
-			}
-		});
-		
-		
-		banner_admin.administrar_productos._dar_alta_producto.getButtonCancelar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_productos);
-				Notification.show("Cancelado");
-			}
-		});
-		
-		banner_admin.administrar_productos._dar_baja_producto.getButtonAceptar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_productos);
-				Notification.show("Dado de baja el producto");
-			}
-		});
-		
-		banner_admin.administrar_productos._dar_baja_producto.getButtonCancelar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_productos);
-				Notification.show("Cancelado");
-			}
-		});
-		
+
+		banner_admin.administrar_cuentas.getVaadinButtonAltaCuentaDeUsuario()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_cuentas._dar_alta_cuenta);
+					}
+				});
+
+		banner_admin.administrar_cuentas.getVaadinButtonBajaCuentaUsuario()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_cuentas._dar_baja_cuenta);
+					}
+				});
+
+		banner_admin.administrar_cuentas._dar_alta_cuenta.getVaadinButtonAceptar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_cuentas);
+					}
+				});
+
+		banner_admin.administrar_cuentas._dar_alta_cuenta.getVaadinButton()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_cuentas);
+						Notification.show("Cancelado");
+					}
+				});
+
+		banner_admin.administrar_cuentas._dar_baja_cuenta.getButtonAceptar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_cuentas);
+						Notification.show("Dada de baja la cuenta");
+					}
+				});
+
+		banner_admin.administrar_cuentas._dar_baja_cuenta.getButtonCancelar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_cuentas);
+						Notification.show("Cancelado");
+					}
+				});
+
+		banner_admin.administrar_productos.getVaadinButtonAnadirProductos()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_productos._dar_alta_producto);
+					}
+				});
+
+		banner_admin.administrar_productos.getVaadinButtonEliminarProducto()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_productos._dar_baja_producto);
+					}
+				});
+
+		banner_admin.administrar_productos._dar_alta_producto.getButtonCancelar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_productos);
+						Notification.show("Cancelado");
+					}
+				});
+
+		banner_admin.administrar_productos._dar_baja_producto.getButtonAceptar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_productos);
+						Notification.show("Dado de baja el producto");
+					}
+				});
+
+		banner_admin.administrar_productos._dar_baja_producto.getButtonCancelar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_productos);
+						Notification.show("Cancelado");
+					}
+				});
+
 		// EMPIEZA OFERTAS
-		
+
 		banner_admin.administrar_ofertas.getVaadinButtonAgregarOfertas().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -305,57 +359,61 @@ public class Administrador extends VistaAdministrador {
 				layout_administrador.add(banner_admin.administrar_ofertas._publicar_oferta);
 			}
 		});
-		
-		banner_admin.administrar_ofertas.getVaadinButtonEliminarOfertas().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas._eliminar_oferta);
-			}
-		});
-		
-		banner_admin.administrar_ofertas._publicar_oferta.getButtonPublicarOferta().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Publicada la oferta del producto");
-			}
-		});
-		
-		banner_admin.administrar_ofertas._publicar_oferta.getButtonCancelar().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Cancelado");
-			}
-		});
-		
 
-		banner_admin.administrar_ofertas._eliminar_oferta.getButtonEliminarOfertaProducto().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Eliminada la oferta del producto");
-			}
-		});
-		
-		banner_admin.administrar_ofertas._eliminar_oferta.getButtonCancelarOfertaProducto().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				layout_administrador.removeAll();
-				layout_administrador.add(banner_admin);
-				layout_administrador.add(banner_admin.administrar_ofertas);
-				Notification.show("Cancelado");
-			}
-		});
-		
+		banner_admin.administrar_ofertas.getVaadinButtonEliminarOfertas()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_ofertas._eliminar_oferta);
+					}
+				});
+
+		banner_admin.administrar_ofertas._publicar_oferta.getButtonPublicarOferta()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_ofertas);
+						Notification.show("Publicada la oferta del producto");
+					}
+				});
+
+		banner_admin.administrar_ofertas._publicar_oferta.getButtonCancelar()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_ofertas);
+						Notification.show("Cancelado");
+					}
+				});
+
+		banner_admin.administrar_ofertas._eliminar_oferta.getButtonEliminarOfertaProducto()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_ofertas);
+						Notification.show("Eliminada la oferta del producto");
+					}
+				});
+
+		banner_admin.administrar_ofertas._eliminar_oferta.getButtonCancelarOfertaProducto()
+				.addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						layout_administrador.removeAll();
+						layout_administrador.add(banner_admin);
+						layout_administrador.add(banner_admin.administrar_ofertas);
+						Notification.show("Cancelado");
+					}
+				});
+
 		this.getVaadinButtonMostrarTodosLosProductos().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -365,15 +423,13 @@ public class Administrador extends VistaAdministrador {
 				layout_administrador.add(catalogoAdmin);
 			}
 		});
-		
+
 		for (Producto_admin p : catalogoAdmin.vista_productos) {
 
-			
-			
 			p.getButtonVerCaracteristicasDelProducto().addClickListener(new ComponentEventListener() {
 				@Override
 				public void onComponentEvent(ComponentEvent event) {
-					Ver_carácteristicas_del_producto v = new  Ver_carácteristicas_del_producto();
+					Ver_carácteristicas_del_producto v = new Ver_carácteristicas_del_producto();
 					layout_administrador.removeAll();
 					layout_administrador.add(banner_admin);
 					layout_administrador.add(p._caracteristicas_del_producto_admin);

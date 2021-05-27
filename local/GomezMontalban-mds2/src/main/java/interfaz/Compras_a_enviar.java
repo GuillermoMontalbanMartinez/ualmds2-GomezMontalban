@@ -53,7 +53,6 @@ public class Compras_a_enviar extends VistaComprasAEnviar {
 	public void eliminar_compras_a_enviar() {
 		layoutListadoDeCompras.removeAll();
 		compras.clear();
-
 	}
 
 }

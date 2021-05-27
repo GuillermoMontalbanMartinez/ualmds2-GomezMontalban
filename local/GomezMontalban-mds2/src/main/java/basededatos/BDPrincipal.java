@@ -141,7 +141,7 @@ public class BDPrincipal implements iAdministrador, iCibernauta, iCibernauta_com
 	}
 
 	public Compra[] cargar_listado_de_compras_admin() throws PersistentException {
-		return _db_administradores.cargar_lista_compras_admin();
+		return _db_administradores.cargar_listado_compras_admin();
 	}
 	
 
