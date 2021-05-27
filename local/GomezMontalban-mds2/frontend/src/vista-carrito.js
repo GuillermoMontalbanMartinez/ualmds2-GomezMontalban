@@ -3,6 +3,7 @@ import './vista-productos-seleccionados.js';
 import './vista-ver-publicidad.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaCarrito extends PolymerElement {
 
@@ -20,6 +21,7 @@ class VistaCarrito extends PolymerElement {
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 10%;">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; flex-grow: 0; justify-content: flex-end; align-self: flex-start;">
   <p style="align-self: center; flex-grow: 0; margin-right: var(--lumo-space-xl);">Precio : </p>
+  <vaadin-text-field id="textPrecio" style="align-self: center; width: 7%; margin-right: var(--lumo-space-xl);" readonly></vaadin-text-field>
   <vaadin-button theme="primary" style="align-self: center; margin-left: var(--lumo-space-xl); margin-right: var(--lumo-space-xl);" id="comprarButton">
     Comprar 
   </vaadin-button>

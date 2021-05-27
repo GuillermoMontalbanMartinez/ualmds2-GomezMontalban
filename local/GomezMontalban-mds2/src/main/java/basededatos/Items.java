@@ -89,7 +89,6 @@ public class Items {
 				compra.setTiene_asociado_un_cibernauta_registrado(cb);
 				compra.setTiene_item(item);
 				basededatos.CompraDAO.save(compra);
-				System.out.println("asi es");
 
 			}
 
@@ -139,6 +138,7 @@ public class Items {
 		int count = 0;
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
+		try {
 
 		Item item = basededatos.ItemDAO.getItemByORMID(aId_item);
 
@@ -167,8 +167,12 @@ public class Items {
 						basededatos.FotoDAO.deleteAndDissociate(f);
 					}
 				}
+				
+				//ProductoDAO.deleteAndDissociate(item.getEsta_asociado_a_un_producto());
+
 				basededatos.ItemDAO.delete(item);
-				// ProductoDAO.deleteAndDissociate(p);
+
+
 
 			} else {
 				p.setTiene_item(null);
@@ -176,6 +180,10 @@ public class Items {
 		}
 
 		t.commit();
+		}catch (Exception e) {
+			t.rollback();
+			e.printStackTrace();
+		}
 
 	}
 

@@ -13,8 +13,9 @@ public class Producto_seleccionado extends VistaProductoSeleccionado {
 	public String nombre, descripcion, precio, foto;
 	public int idItem;
 	double precioTotal;
+	public basededatos.Producto producto;
 
-	public Producto_seleccionado(String nombre, String descripcion, String precio, String foto, int idUsuario) {
+	public Producto_seleccionado(String nombre, String descripcion, String precio, String foto, int idUsuario, int idItem) {
 
 		this.getNombreText().setValue(nombre);
 		this.getDescripcionText().setValue(descripcion);
@@ -31,9 +32,11 @@ public class Producto_seleccionado extends VistaProductoSeleccionado {
 					this.idItem = c.getTiene_item().getORMID();
 					this.precioTotal = (c.getTiene_item().getCantidad() * Double.parseDouble(precio));
 					this.getPrecioText().setValue(String.valueOf(precioTotal));
-
+					this.producto = c.getTiene_item().getEsta_asociado_a_un_producto();
 				}
 			}
+			
+			
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
