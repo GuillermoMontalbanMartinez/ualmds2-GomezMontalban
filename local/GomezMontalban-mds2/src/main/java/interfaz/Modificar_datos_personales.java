@@ -57,24 +57,6 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 
 	public Modificar_datos_personales() {
 
-//
-//		this.getTextNombreDeUsuario().setValue(nombre);
-//		this.getTextApellidos().setValue(apellidos);
-//		this.getTextCorreo().setValue(correoElectronico);
-//		this.getTextTelefono().setValue(telefono);
-//		this.getTextPassword().setValue(password);
-//		this.getTextRepeatPassword().setValue(passwordRepeat);
-//		this.getTextPais().setValue(pais);
-//		this.getTextLocalidad().setValue(localidad);
-//		this.getTextCalle().setValue(calle);
-//		this.getTextProvincia().setValue(provincia);
-//		this.getTextCogidoPostal().setValue(String.valueOf(cp));
-//		this.getVistaDatosDePago().getTextTitularTarjeta().setValue(titular);
-//		this.getVistaDatosDePago().getTextNumeroTarjeta().setValue(numeroTarjeta);
-//		this.getVistaDatosDePago().getTextFechaCaducidad().setName(String.valueOf(fechaCaducidad));
-//		this.getVistaDatosDePago().getTextCVVTarjeta().setValue(String.valueOf(cvv));
-//		this.getImagen().setSrc(src);
-
 		this.getTextGuardarCambios().addClickListener(new ComponentEventListener() {
 			@Override
 			public void onComponentEvent(ComponentEvent event) {
@@ -87,19 +69,6 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 				}
 			}
 		});
-
-//		this.getButtonCancelar().addClickListener(new ComponentEventListener() {
-//			@Override
-//			public void onComponentEvent(ComponentEvent event) {
-//				try {
-//					modificar_datos_personales();
-//					Notification.show("Datos modificados");
-//				} catch (PersistentException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
-//		});
 
 		this.getUploader().setReceiver(buffer);
 

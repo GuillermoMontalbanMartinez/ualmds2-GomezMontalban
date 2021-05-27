@@ -29,20 +29,6 @@ public class Dar_de_baja_usuario extends VistaDarDeBajaUsuario {
 
 	}
 
-//	public void Baja_cuenta() throws PersistentException {
-//		bd = new BDPrincipal();
-//		this.correo = this.getTextCorreo().getValue().toString();	
-//		
-//		
-//		if(value == "Administrador") tipo = 0;
-//		else if(value == "Empresa de transporte") tipo = 1;
-//		else if(value == "Encargado de compras") tipo = 2;
-//		else if(value == "Usuario registrado") tipo = 3;
-//		bd.Baja_cuenta(correo, tipo);
-//		
-//		
-//	}
-//	
 	public void bajaCuentaCibernautaRegistrado() throws PersistentException {
 		bd = new BDPrincipal();
 		bd.BajaCuentaCibernautaRegistrado(idUsuario);

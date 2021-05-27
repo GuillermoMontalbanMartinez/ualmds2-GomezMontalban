@@ -58,10 +58,6 @@ public class Items {
 
 				}
 
-//				if (i.getEsta_asociado_a_un_producto().getORMID() == idProducto) {
-//					i.setCantidad(i.getCantidad() + 1);
-//					aumentado = true;
-//				}
 			}
 			if (!aumentado) {
 
@@ -97,7 +93,6 @@ public class Items {
 
 			}
 
-			// item.setEsta_asociado_a_una_compra(compra);
 		} catch (PersistentException e) {
 			t.rollback();
 			e.printStackTrace();
