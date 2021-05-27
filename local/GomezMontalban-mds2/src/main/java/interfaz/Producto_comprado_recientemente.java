@@ -7,10 +7,12 @@ import vistas.VistaProductoCompradoRecientemente;
 
 public class Producto_comprado_recientemente extends VistaProductoCompradoRecientemente {
 	public Productos_comprados_recientemente _productos_comprados_recientemente;
-	public Escribir_reseña _escribir_resena = new Escribir_reseña();
+	public Escribir_reseña _escribir_resena;
 
 	int idProducto;
 	int idUsuario;
+	
+	
 	
 	
 	public void volver_a_comprar() throws PersistentException {
@@ -18,18 +20,13 @@ public class Producto_comprado_recientemente extends VistaProductoCompradoRecien
 		bd.volver_a_comprar(idProducto, idUsuario);
 	}
 	
-	public void setIdProducto(int id) {
-		this.idProducto = id;
-		_escribir_resena.setIdProducto(idProducto);
-
+	public void setIds(int idProducto, int idUsuario) {
+		this.idProducto = idProducto;
+		this.idUsuario = idUsuario;
+		
+		_escribir_resena = new Escribir_reseña(idProducto, idUsuario);
 
 	}
 	
-	public void setIdUsuario(int id) {
-
-		this.idUsuario = id;
-		_escribir_resena.setIdUsuario(idUsuario);
-
-
-	}
+	
 }

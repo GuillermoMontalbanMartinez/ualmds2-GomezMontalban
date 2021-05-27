@@ -46,8 +46,7 @@ public class Ver_ultimas_compras extends VistaVerUltimasCompras {
 			p.getImagen()
 					.setSrc(c.getTiene_item().getEsta_asociado_a_un_producto().tiene_fotos.toArray()[0].getLink_foto());
 			p.getPrecioText().setValue(String.valueOf(c.getTiene_item().getEsta_asociado_a_un_producto().getPrecio()));
-			p.setIdProducto(c.getTiene_item().getEsta_asociado_a_un_producto().getORMID());
-			p.setIdUsuario(idUsuario);
+			p.setIds(c.getTiene_item().getEsta_asociado_a_un_producto().getORMID(),idUsuario);
 			
 			compras.add(p);
 			compraInterfazList.add(p);

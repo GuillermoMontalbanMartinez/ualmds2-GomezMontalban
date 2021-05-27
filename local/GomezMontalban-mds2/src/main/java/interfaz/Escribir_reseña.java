@@ -19,7 +19,11 @@ public class Escribir_reseña extends VistaEscribirResenaProducto {
 
 	private int idUsuario;
 
-	public Escribir_reseña() {
+	public Escribir_reseña(int idProducto, int idUsuario) {
+		
+		this.idProducto = idProducto;
+		this.idUsuario = idUsuario;
+		
 		select.setItems("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 		this.getSelectLayout().add(select);
 
@@ -42,7 +46,7 @@ public class Escribir_reseña extends VistaEscribirResenaProducto {
 
 	public void publicar() throws PersistentException{
 		BDPrincipal bd = new BDPrincipal();
-
+System.out.println(Integer.parseInt(value) + " "+ this.getCuerpoText().getValue()+ " "+ idProducto+ " "+ idUsuario);
 		bd.publicar(Integer.parseInt(value), this.getCuerpoText().getValue(), idProducto, idUsuario);
 	}
 
