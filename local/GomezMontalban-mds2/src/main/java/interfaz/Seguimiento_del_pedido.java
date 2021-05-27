@@ -17,7 +17,7 @@ public class Seguimiento_del_pedido extends VistaSeguimientoDelPedido {
 	public int idUsuario;
 	public basededatos.Compra[] compras;
 	public ArrayList<Pedido_encargado> pedidos = new ArrayList<Pedido_encargado>();
-			// public VerticalLayout layout =
+	// public VerticalLayout layout =
 	// this.getLayoutPedidos().as(VerticalLayout.class);
 
 	public Seguimiento_del_pedido() {
@@ -37,34 +37,35 @@ public class Seguimiento_del_pedido extends VistaSeguimientoDelPedido {
 
 		compras = this.cargar_seguimiento_de_pedido(idUsuario);
 		for (basededatos.Compra c : compras) {
-			
-			int estado = c.getEstado_compra();
-			
-			Pedido_encargado p = new Pedido_encargado(c.getTiene_item().getEsta_asociado_a_un_producto().getNombre(),
-					c.getTiene_item().getEsta_asociado_a_un_producto().getDescripción(),
-					c.getTiene_item().getCantidad(),
-					c.getTiene_item().getEsta_asociado_a_un_producto().tiene_fotos.toArray()[0].getLink_foto(),
-					c.getTiene_item().getEsta_asociado_a_un_producto().getORMID());
-			
-			
-			switch (estado) {
-			case 1:
-				p.getTextEstadoDelPedido().setValue("Pedido confirmado");
-				break;
-			case 2:
-				p.getTextEstadoDelPedido().setValue("Pedido en envio");
-				break;
-			case 3:
-				p.getTextEstadoDelPedido().setValue("Pedido entregado");
-				break;
+			if (c.getEstado_compra() != 0) {
+				int estado = c.getEstado_compra();
 
-			default:
-				p.getTextEstadoDelPedido().setValue("Ha ocurrido un error :(");
-				break;
+				Pedido_encargado p = new Pedido_encargado(
+						c.getTiene_item().getEsta_asociado_a_un_producto().getNombre(),
+						c.getTiene_item().getEsta_asociado_a_un_producto().getDescripción(),
+						c.getTiene_item().getCantidad(),
+						c.getTiene_item().getEsta_asociado_a_un_producto().tiene_fotos.toArray()[0].getLink_foto(),
+						c.getTiene_item().getEsta_asociado_a_un_producto().getORMID());
+
+				switch (estado) {
+				case 1:
+					p.getTextEstadoDelPedido().setValue("Pedido confirmado");
+					break;
+				case 2:
+					p.getTextEstadoDelPedido().setValue("Pedido en envio");
+					break;
+				case 3:
+					p.getTextEstadoDelPedido().setValue("Pedido entregado");
+					break;
+
+				default:
+					p.getTextEstadoDelPedido().setValue("Ha ocurrido un error :(");
+					break;
+				}
+
+				_pedidos_encargados.getLayoutPedidoEncargado().as(VerticalLayout.class).add(p);
+				pedidos.add(p);
 			}
-			
-			_pedidos_encargados.getLayoutPedidoEncargado().as(VerticalLayout.class).add(p);
-			pedidos.add(p);
 		}
 	}
 
