@@ -51,10 +51,7 @@ public class VistaModificarDatosPersonales extends PolymerTemplate<VistaModifica
 	private Button textGuardarCambios;
 	@Id("vistaDatosDePago")
 	private VistaModificarDatosDeCompra vistaDatosDePago;
-	@Id("uploader")
-	private Upload uploader;
-	@Id("imagen")
-	private Image imagen;
+
 
 	/**
      * Creates a new VistaModificarDatosPersonales.
@@ -190,19 +187,5 @@ public class VistaModificarDatosPersonales extends PolymerTemplate<VistaModifica
 		this.vistaDatosDePago = vistaDatosDePago;
 	}
 
-	public Upload getUploader() {
-		return uploader;
-	}
 
-	public void setUploader(Upload uploader) {
-		this.uploader = uploader;
-	}
-
-	public Image getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(Image imagen) {
-		this.imagen = imagen;
-	}
 }

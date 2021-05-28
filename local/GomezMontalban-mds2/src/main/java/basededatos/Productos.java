@@ -29,7 +29,8 @@ public class Productos {
 		try {
 
 			if (producto.size() == 0) {
-				if(products[0].getTiene_item()==null)producto.add(products[0]);
+				if (products[0].getTiene_item() == null)
+					producto.add(products[0]);
 
 			}
 			boolean repe = false;
@@ -44,7 +45,8 @@ public class Productos {
 
 				}
 				if (!repe)
-					if(p.getTiene_item()==null)producto.add(p);
+					if (p.getTiene_item() == null)
+						producto.add(p);
 				repe = false;
 			}
 
@@ -62,14 +64,14 @@ public class Productos {
 		try {
 			ItemCriteria criteria = new ItemCriteria();
 			criteria.addOrder(Order.desc("cantidad"));
-			
-			Item items [] = basededatos.ItemDAO.listItemByCriteria(criteria);
-			Producto p [] = new Producto[items.length];
-			for(int i=0; i<items.length; i++){
+
+			Item items[] = basededatos.ItemDAO.listItemByCriteria(criteria);
+			Producto p[] = new Producto[items.length];
+			for (int i = 0; i < items.length; i++) {
 				p[i] = items[i].getEsta_asociado_a_un_producto();
-			}	
+			}
 			return p;
-					
+
 		} catch (PersistentException e) {
 			pt.rollback();
 			e.printStackTrace();
@@ -144,8 +146,8 @@ public class Productos {
 		try {
 			nombreProductos = basededatos.ProductoDAO.queryProducto(null, null);
 			ArrayList<Producto> productos_a_mostrar = new ArrayList<Producto>();
-			for(Producto p : nombreProductos) {
-				if(p.getTiene_item()==null) {
+			for (Producto p : nombreProductos) {
+				if (p.getTiene_item() == null) {
 					productos_a_mostrar.add(p);
 				}
 			}
@@ -167,7 +169,7 @@ public class Productos {
 			PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 					.beginTransaction();
 
-			Foto foto =  basededatos.FotoDAO.createFoto();
+			Foto foto = basededatos.FotoDAO.createFoto();
 			foto.setLink_foto(link);
 			foto.setEsta_asociada_a_un_producto(basededatos.ProductoDAO.getProductoByORMID(producto.getORMID()));
 			basededatos.FotoDAO.save(foto);
@@ -179,22 +181,23 @@ public class Productos {
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
-	
+
 	public Producto[] buscarProductos(String string) throws PersistentException {
 		Producto[] productosArray = null;
-		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
+				.beginTransaction();
 		try {
 			ProductoCriteria productoCriteria = new ProductoCriteria();
-			productoCriteria.nombre.like("%"+string+"%");
+			productoCriteria.nombre.like("%" + string + "%");
 			productosArray = ProductoDAO.listProductoByCriteria(productoCriteria);
 
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		
+
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
-		
+
 		return productosArray;
 	}
 }

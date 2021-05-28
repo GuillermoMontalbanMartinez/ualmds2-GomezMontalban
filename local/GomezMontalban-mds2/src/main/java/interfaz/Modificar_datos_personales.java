@@ -70,43 +70,8 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 			}
 		});
 
-		this.getUploader().setReceiver(buffer);
 
-		// UPLOADER PRINCIPAL
-		this.getUploader().addSucceededListener(event -> {
-
-			value = event.getFileName();
-			try {
-				BufferedImage inputImage = ImageIO.read(buffer.getInputStream(value));
-				ImageIO.write(inputImage, "png", new File("temp/" + value));
-
-				JSONObject myJson = new JSONObject(Uploader.upload(new File("temp/" + value)));
-				JSONObject myJson2 = new JSONObject(myJson.get("data").toString());
-				src = myJson2.get("link").toString();
-
-				if (src != null)
-					this.getImagen().setSrc(src);
-				this.getImagen().setVisible(true);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		});
-
-		this.getUploader().addFileRejectedListener(event -> {
-			Paragraph component = new Paragraph();
-			output.removeAll();
-			showOutput(event.getErrorMessage(), component, output);
-		});
-
-		this.getUploader().getElement().addEventListener("file-remove", event -> {
-			this.getImagen().setVisible(false);
-		});
-
-		getButtonCancelar().addClickListener(event -> {
-			borrar_datos();
-		});
+		
 
 	}
 
@@ -136,9 +101,6 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 				numeroTarjeta, fechaCaducidad, cvv, src, id);
 	}
 
-	public void adjuntar_nueva_foto_de_perfil() {
-		throw new UnsupportedOperationException();
-	}
 
 	private void showOutput(String text, Component content, HasComponents outputContainer) {
 		HtmlComponent p = new HtmlComponent(Tag.P);
@@ -147,11 +109,6 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 		outputContainer.add(content);
 	}
 
-	public void borrar_datos() {
-		this.getUploader().getElement().setPropertyJson("files", Json.createArray());
-		this.getImagen().setVisible(false);
-
-	}
 
 	public void setUsuario(int id) throws PersistentException {
 		Cibernauta_registrado cib = basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(id);

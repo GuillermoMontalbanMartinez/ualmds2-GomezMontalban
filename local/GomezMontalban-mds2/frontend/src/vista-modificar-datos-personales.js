@@ -1,10 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-upload/src/vaadin-upload.js';
-import './vista-modificar-datos-de-compra.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import './vista-modificar-datos-de-compra.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaModificarDatosPersonales extends PolymerElement {
 
@@ -21,7 +20,7 @@ class VistaModificarDatosPersonales extends PolymerElement {
  <h1>Modificar datos personales</h1>
  <vaadin-vertical-layout theme="spacing" style="width: 100%;">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
-   <vaadin-horizontal-layout theme="spacing" style="width: 40%;">
+   <vaadin-horizontal-layout theme="spacing" style="width: 40%; margin-right: var(--lumo-space-xl);">
     <vaadin-vertical-layout theme="spacing">
      <h2>Datos de usuario</h2>
      <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 100%;">
@@ -51,20 +50,7 @@ class VistaModificarDatosPersonales extends PolymerElement {
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
-    <vaadin-vertical-layout theme="spacing" style="width: 100%; align-items: center;">
-     <h2>Foto de perfil</h2>
-     <vaadin-vertical-layout theme="spacing" style="width: 50%; height: 50%;">
-      <img style="width: 100%; height: 100%;" id="imagen">
-     </vaadin-vertical-layout>
-     <vaadin-upload id="uploader"></vaadin-upload>
-    </vaadin-vertical-layout>
-   </vaadin-horizontal-layout>
-  </vaadin-horizontal-layout>
- </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="margin-top: var(--lumo-space-xl); width: 100%;">
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
-   <vaadin-horizontal-layout theme="spacing" style="width: 50%;">
-    <vaadin-vertical-layout theme="spacing" style="width: 80%;">
+    <vaadin-vertical-layout theme="spacing" style="width: 30%; margin-left: var(--lumo-space-xl);">
      <h2>Datos de envio</h2>
      <vaadin-horizontal-layout theme="spacing" style="align-items: center; width: 100%;">
       <h4 style="flex-grow: 1;">Pais</h4>
@@ -91,8 +77,6 @@ class VistaModificarDatosPersonales extends PolymerElement {
       <vaadin-text-field id="textCogidoPostal"></vaadin-text-field>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
     <vista-modificar-datos-de-compra style="height: 100%; width: 100%;" id="vistaDatosDePago"></vista-modificar-datos-de-compra>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

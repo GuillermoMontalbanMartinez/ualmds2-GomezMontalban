@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaBannerNoRegistrado extends PolymerElement {
 
@@ -32,11 +32,6 @@ class VistaBannerNoRegistrado extends PolymerElement {
    <iron-icon style="flex-shrink: 0; align-self: center; flex-grow: 1;"></iron-icon>
    <vaadin-button theme="primary" id="vaadinButton" style="align-self: center; flex-shrink: 0; flex-grow: 1;">
      Iniciar sesión 
-   </vaadin-button>
-  </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; align-self: center; align-items: center; justify-content: center; flex-grow: 0;">
-   <vaadin-button theme="icon" aria-label="Add new" style="flex-shrink: 0; align-self: center; flex-grow: 0;">
-    <iron-icon icon="lumo:plus"></iron-icon>
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>

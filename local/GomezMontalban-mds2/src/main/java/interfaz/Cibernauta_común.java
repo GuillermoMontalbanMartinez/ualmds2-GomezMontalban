@@ -47,8 +47,6 @@ public class Cibernauta_común extends VistaCibernautaComun {
 				ofertas.add(o);
 			}
 
-			
-
 			select.setItemLabelGenerator(Categoria::getNombre);
 
 			select.setItems(this.cargar_categoria());
@@ -73,11 +71,29 @@ public class Cibernauta_común extends VistaCibernautaComun {
 		});
 	}
 
-	public  void mostrar_productos() throws PersistentException {
+	public void mostrar_productos() throws PersistentException {
 		producto_mas_vendido = _productos_mas_vendidos.cargar_productos_mas_vendidos();
 		int aux = 0;
+		ArrayList<Producto> p_aux = new ArrayList<Producto>();
 		for (Producto p : producto_mas_vendido) {
-			
+			if (p_aux.size() == 0) {
+				p_aux.add(p);
+			} else {
+				boolean insert = true;
+				for (Producto p2 : p_aux) {
+					if (p.getNombre().equals(p2.getNombre())) {
+						insert = false;
+						break;
+					}
+				}
+					if (insert) {
+						p_aux.add(p);
+					}
+
+				
+			}
+		}
+		for (Producto p : p_aux) {
 			if (aux > 2) {
 				break;
 			} else {
@@ -90,9 +106,28 @@ public class Cibernauta_común extends VistaCibernautaComun {
 						vista_productos.add(producto);
 						aux++;
 
-
 					}
-				} else {
+				}
+
+//				for (Producto p : productos) {
+//					if (aux.size() == 0) {
+//						aux.add(p);
+//					} else {
+//						boolean insert = true;
+//						for (Producto p2 : aux) {
+//							if (p.getNombre().equals(p2.getNombre())) {
+//								insert = false;
+//								break;
+//							}
+//
+//						}
+//						if (insert) {
+//							aux.add(p);
+//						}
+//					}
+//				}
+
+				else {
 					interfaz.producto_mas_vendido producto = new interfaz.producto_mas_vendido(p.getNombre(),
 							p.getDescripción(), String.valueOf(p.getPrecio()),
 							p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
@@ -103,8 +138,7 @@ public class Cibernauta_común extends VistaCibernautaComun {
 
 				}
 			}
-			
-			
+
 		}
 		aux = 0;
 	}

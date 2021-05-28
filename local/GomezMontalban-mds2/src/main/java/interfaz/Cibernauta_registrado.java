@@ -367,6 +367,9 @@ public class Cibernauta_registrado extends Cibernauta_común {
 							}
 
 						});
+						
+						
+						
 					}
 
 				} catch (PersistentException e) {
@@ -375,6 +378,17 @@ public class Cibernauta_registrado extends Cibernauta_común {
 				layout.removeAll();
 				layout.add(_banner_registrado);
 				layout.add(_banner_registrado._carrito_registrado);
+
+			}
+		});
+		
+		this._banner_registrado._carrito_registrado.getCambiarDatosButton()
+		.addClickListener(new ComponentEventListener() {
+
+			@Override
+			public void onComponentEvent(ComponentEvent event) {
+				layout.remove(_banner_registrado._carrito_registrado);
+				layout.add(_banner_registrado._administrar_perfil._modificar_datos_personales);
 
 			}
 		});

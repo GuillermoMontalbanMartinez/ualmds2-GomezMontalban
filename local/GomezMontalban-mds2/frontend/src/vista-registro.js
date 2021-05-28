@@ -1,11 +1,10 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-upload/src/vaadin-upload.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaRegistro extends PolymerElement {
 
@@ -84,19 +83,6 @@ class VistaRegistro extends PolymerElement {
         <vaadin-text-field id="textTelefono"></vaadin-text-field>
        </vaadin-horizontal-layout>
       </vaadin-horizontal-layout>
-     </vaadin-vertical-layout>
-    </vaadin-vertical-layout>
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing">
-    <vaadin-vertical-layout theme="spacing">
-     <vaadin-vertical-layout theme="spacing">
-      <h4>Foto de perfil</h4>
-     </vaadin-vertical-layout>
-     <vaadin-vertical-layout theme="spacing">
-      <img style="margin: var(--lumo-space-m); width: 100%; height: 100%; align-self: center; flex-shrink: 0;">
-     </vaadin-vertical-layout>
-     <vaadin-vertical-layout theme="spacing">
-      <vaadin-upload></vaadin-upload>
      </vaadin-vertical-layout>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
