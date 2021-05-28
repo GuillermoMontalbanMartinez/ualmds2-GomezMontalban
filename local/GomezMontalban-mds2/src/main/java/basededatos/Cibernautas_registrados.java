@@ -14,11 +14,9 @@ public class Cibernautas_registrados {
 	public BDPrincipal _bd_main_cibernautas_registrados;
 	public Vector<Cibernauta_registrado> _contiene_cibernauta_registrados = new Vector<Cibernauta_registrado>();
 
-
 	public Cibernauta_registrado cargar_ficha_cliente(int aId_usuario) throws PersistentException {
 		return basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(aId_usuario);
 	}
-
 
 	public void Registro(String aNombre, String aApellidos, String aCorreo, String aContrasena, String aContrasena_rep,
 			String aTelefono, String aPais, String aLocalidad, String aCalle, String aPortal, String aProvincia,
@@ -120,56 +118,6 @@ public class Cibernautas_registrados {
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
 	}
 
-//	public void BajaCuentaCibernautaRegistrado(int idUsuario) throws PersistentException {
-//		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
-//				.beginTransaction();
-//
-//		try {
-//			List<Compra> compras = basededatos.CompraDAO.queryCompra(null, null);
-//
-//			for (Compra c : compras) {
-//				if (idUsuario == c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
-//					int count = 0;
-//					Item item = c.getTiene_item();
-//
-//					basededatos.CompraDAO.deleteAndDissociate(item.getEsta_asociado_a_una_compra());
-//
-//					Producto p = item.getEsta_asociado_a_un_producto();
-//					for (Producto producto : ProductoDAO.listProductoByQuery(null, null)) {
-//
-//						if (p.getNombre().equals(producto.getNombre()) && p.getPrecio() == producto.getPrecio()
-//								&& p.getDescripción().equals(producto.getDescripción())) {
-//
-//							count++;
-//						}
-//
-//						if (count >= 2) {
-//							for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
-//								if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
-//									basededatos.FotoDAO.deleteAndDissociate(f);
-//								}
-//							}
-//							ProductoDAO.deleteAndDissociate(p);
-//
-//						} else {
-//							p.setTiene_item(null);
-//						}
-//					}
-//					basededatos.ItemDAO.delete(item);
-//				}
-//			}
-//
-//			basededatos.Cibernauta_registradoDAO.deleteAndDissociate(
-//					basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(idUsuario));
-//			t.commit();
-//
-//		} catch (PersistentException e) {
-//			t.rollback();
-//		}
-//		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
-//	} ESTE ES EL BUENO
-	
-	// pruebas
 	public void BajaCuentaCibernautaRegistrado(int idUsuario) throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
@@ -179,48 +127,33 @@ public class Cibernautas_registrados {
 
 			for (Compra c : compras) {
 				if (idUsuario == c.getTiene_asociado_un_cibernauta_registrado().getORMID()) {
-					System.out.println(idUsuario + " para borrar");
 					int count = 0;
 					Item item = c.getTiene_item();
-					System.out.println(item + " del usuario " + idUsuario);
-					basededatos.CompraDAO.deleteAndDissociate(item.getEsta_asociado_a_una_compra());
 
 					Producto p = item.getEsta_asociado_a_un_producto();
-					for (Producto producto : ProductoDAO.listProductoByQuery(null, null)) {
 
-						if (p.getNombre().equals(producto.getNombre()) && p.getPrecio() == producto.getPrecio()
-								&& p.getDescripción().equals(producto.getDescripción())) {
-
-							count++;
-						}
-
-						if (count >= 2) {
-							for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
-								if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
-									basededatos.FotoDAO.deleteAndDissociate(f);
-								}
-							}
-							ProductoDAO.deleteAndDissociate(p);
-
-						} else {
-							p.setTiene_item(null);
+					for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+						if (f.getEsta_asociada_a_un_producto().equals(p)) {
+							basededatos.FotoDAO.deleteAndDissociate(f);
 						}
 					}
-					//basededatos.ItemDAO.delete(item);
+					ProductoDAO.deleteAndDissociate(p);
+					basededatos.CompraDAO.deleteAndDissociate(c);
 					basededatos.ItemDAO.deleteAndDissociate(item);
+
 				}
 			}
 
 			basededatos.Cibernauta_registradoDAO.deleteAndDissociate(
 					basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(idUsuario));
+
 			t.commit();
 
 		} catch (PersistentException e) {
 			t.rollback();
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
-	} 
-
+	}
 
 	public Compra[] cargar_seguimiento_de_pedido(int idUsuario) throws PersistentException {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
@@ -228,17 +161,17 @@ public class Cibernautas_registrados {
 		try {
 			Cibernauta_registrado cibernautaRegistrado = basededatos.Cibernauta_registradoDAO
 					.loadCibernauta_registradoByORMID(idUsuario);
-			
-			Compra c []  = basededatos.CompraDAO.listCompraByQuery(null, null);
+
+			Compra c[] = basededatos.CompraDAO.listCompraByQuery(null, null);
 			ArrayList<Compra> aux = new ArrayList<Compra>();
-			for(Compra compra : c ) {
-				if(compra.getTiene_asociado_un_cibernauta_registrado().equals(cibernautaRegistrado)) {
+			for (Compra compra : c) {
+				if (compra.getTiene_asociado_un_cibernauta_registrado().equals(cibernautaRegistrado)) {
 					aux.add(compra);
 				}
 			}
-			
+
 			Compra resultado[] = new Compra[aux.size()];
-			for(int i = 0; i < aux.size(); i++) {
+			for (int i = 0; i < aux.size(); i++) {
 				resultado[i] = aux.get(i);
 			}
 			pt.commit();
@@ -255,13 +188,12 @@ public class Cibernautas_registrados {
 				.beginTransaction();
 		try {
 			Producto p = basededatos.ProductoDAO.loadProductoByORMID(aId_compra);
-			
-			Compra c = basededatos.CompraDAO.loadCompraByORMID(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
-		
 
+			Compra c = basededatos.CompraDAO
+					.loadCompraByORMID(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
 
-			for(Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
-				if(f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
+			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+				if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
 
 					basededatos.FotoDAO.deleteAndDissociate(f);
 				}
@@ -271,7 +203,7 @@ public class Cibernautas_registrados {
 			basededatos.ProductoDAO.deleteAndDissociate(p);
 			basededatos.CompraDAO.deleteAndDissociate(c);
 			basededatos.ItemDAO.deleteAndDissociate(item);
-			
+
 			pt.commit();
 		} catch (Exception e) {
 			pt.rollback();
