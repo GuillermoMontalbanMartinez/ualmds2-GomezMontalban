@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.orm.PersistentException;
@@ -21,7 +22,7 @@ public class Publicar_oferta extends VistaPublicarOferta {
 	public int descuento;
 	public String fechaLimite;
 	Select<Producto> select = new Select<>();
-	
+
 	public Publicar_oferta() {
 
 		this.getButtonPublicarOferta().addClickListener(new ComponentEventListener() {
@@ -34,7 +35,6 @@ public class Publicar_oferta extends VistaPublicarOferta {
 				}
 			}
 		});
-		
 
 		select.setItemLabelGenerator(Producto::getNombre);
 		try {
@@ -44,13 +44,13 @@ public class Publicar_oferta extends VistaPublicarOferta {
 			e.printStackTrace();
 		}
 		this.getTextNombreProductoOferta().add(select);
-		
-		 select.addValueChangeListener(event -> {
-			    if (event.getValue() != null) {
-			    	value = event.getValue().getNombre().toString();
-			    } 
-			});
-		
+
+		select.addValueChangeListener(event -> {
+			if (event.getValue() != null) {
+				value = event.getValue().getNombre().toString();
+			}
+		});
+
 	}
 
 	public void Alta_oferta_producto() throws PersistentException {
@@ -59,18 +59,41 @@ public class Publicar_oferta extends VistaPublicarOferta {
 		descuento = Integer.parseInt(this.getTextDescuentoOferta().getValue().toString());
 		fechaLimite = this.getTextFechaLimiteOfertaProducto().getValue().toString();
 		Producto[] producto = bd.cargar_productos();
-		for (Producto pro: producto) {
+		for (Producto pro : producto) {
 			if (pro.getNombre().toString().equals(value)) {
 				id = pro.getORMID();
-			}			
+			}
 		}
 		bd.Alta_oferta_producto(id, descuento, fechaLimite);
 	}
-	
-	
+
 	public Producto[] cargar_productos() throws PersistentException {
 		bd = new BDPrincipal();
-		return bd.cargar_productos();
+		Producto[] productos = bd.cargar_productos();
+		ArrayList<Producto> aux = new ArrayList<Producto>();
+		for (Producto p : productos) {
+			if (aux.size() == 0) {
+				aux.add(p);
+			} else {
+				boolean insert = true;
+				for (Producto p2 : aux) {
+					if (p.getNombre().equals(p2.getNombre())) {
+						insert = false;
+						break;
+					}
+				}
+				if (insert) {
+					aux.add(p);
+				}
+			}
+		}
+		Producto resultado[] = new Producto[aux.size()];
+
+		for (int i = 0; i < resultado.length; i++) {
+			resultado[i] = aux.get(i);
+		}
+
+		return resultado;
 	}
 
 }

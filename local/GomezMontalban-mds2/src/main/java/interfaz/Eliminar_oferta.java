@@ -80,3 +80,4 @@ public class Eliminar_oferta extends VistaEliminarOferta {
 		return resultado;
 	}
 }
+
