@@ -167,8 +167,9 @@ public class Cibernautas_registrados {
 //			t.rollback();
 //		}
 //		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
-//	}
+//	} ESTE ES EL BUENO
 	
+	// pruebas
 	public void BajaCuentaCibernautaRegistrado(int idUsuario) throws PersistentException {
 		PersistentTransaction t = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
@@ -193,7 +194,7 @@ public class Cibernautas_registrados {
 							count++;
 						}
 
-						if (count >= 1) {
+						if (count >= 2) {
 							for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
 								if (f.getEsta_asociada_a_un_producto().equals(item.getEsta_asociado_a_un_producto())) {
 									basededatos.FotoDAO.deleteAndDissociate(f);
@@ -205,7 +206,8 @@ public class Cibernautas_registrados {
 							p.setTiene_item(null);
 						}
 					}
-					basededatos.ItemDAO.delete(item);
+					//basededatos.ItemDAO.delete(item);
+					basededatos.ItemDAO.deleteAndDissociate(item);
 				}
 			}
 
@@ -217,7 +219,8 @@ public class Cibernautas_registrados {
 			t.rollback();
 		}
 		basededatos.TFGómezMontalbánPersistentManager.instance().disposePersistentManager();
-	}
+	} 
+
 
 	public Compra[] cargar_seguimiento_de_pedido(int idUsuario) throws PersistentException {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
