@@ -595,17 +595,17 @@ public class Cibernauta_registrado extends Cibernauta_común {
 			mostrar_productos();
 
 			for (Producto p : vista_productos) {
-//				p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
-//					@Override
-//					public void onComponentEvent(ComponentEvent event) {
-//						try {
-//							p.añadir_al_carrito();
-//						} catch (PersistentException e) {
-//							// TODO Auto-generated catch block
-//							e.printStackTrace();
-//						}
-//					}
-//				});
+				p.getButtonAgregarCarrito().addClickListener(new ComponentEventListener() {
+					@Override
+					public void onComponentEvent(ComponentEvent event) {
+						try {
+							p.añadir_al_carrito();
+						} catch (PersistentException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				});
 				p.getVerCaracteristicas().addClickListener(new ComponentEventListener() {
 					@Override
 					public void onComponentEvent(ComponentEvent event) {
@@ -617,16 +617,7 @@ public class Cibernauta_registrado extends Cibernauta_común {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
-							@Override
-							public void onComponentEvent(ComponentEvent event) {
-								try {
-									p.añadir_al_carrito();
-								} catch (PersistentException e) {
-									e.printStackTrace();
-								}
-							}
-						});
+						
 						layout.add(p._ver_carácteristicas_del_producto);
 
 					}
@@ -670,6 +661,17 @@ public class Cibernauta_registrado extends Cibernauta_común {
 						p.añadir_al_carrito();
 					} catch (PersistentException e) {
 						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			});
+			p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+				@Override
+				public void onComponentEvent(ComponentEvent event) {
+					try {
+						p.setUsuario(usuario);
+						p.añadir_al_carrito();
+					} catch (PersistentException e) {
 						e.printStackTrace();
 					}
 				}
