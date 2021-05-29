@@ -91,6 +91,7 @@ public class Cibernautas_registrados {
 		PersistentTransaction pt = basededatos.TFGómezMontalbánPersistentManager.instance().getSession()
 				.beginTransaction();
 		try {
+			System.out.println(id);
 			Cibernauta_registrado cb = Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(id);
 
 			if (contrasena.equals(repetirContrasena)) {
@@ -107,7 +108,8 @@ public class Cibernautas_registrados {
 				cb.setCp(codigoPostal);
 				cb.setNumero_tarjeta_credito(numeroTarjeta);
 				cb.setNombre_titular_tarjeta(titularTarjeta);
-				cb.setFecha_caducidad(fechaCaducidad);
+				if (fechaCaducidad != null)
+					cb.setFecha_caducidad(fechaCaducidad);
 				cb.setCvv(cvv);
 				basededatos.Cibernauta_registradoDAO.save(cb);
 			}
@@ -191,20 +193,22 @@ public class Cibernautas_registrados {
 
 			Compra c = basededatos.CompraDAO
 					.loadCompraByORMID(p.getTiene_item().getEsta_asociado_a_una_compra().getORMID());
+			if (c.getEstado_compra() < 2) {
 
-			for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
-				if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
+				for (Foto f : basededatos.FotoDAO.listFotoByQuery(null, null)) {
+					if (f.getEsta_asociada_a_un_producto().getORMID() == p.getORMID()) {
 
-					basededatos.FotoDAO.deleteAndDissociate(f);
+						basededatos.FotoDAO.deleteAndDissociate(f);
+					}
 				}
+				Item item = c.getTiene_item();
+
+				basededatos.ProductoDAO.deleteAndDissociate(p);
+				basededatos.CompraDAO.deleteAndDissociate(c);
+				basededatos.ItemDAO.deleteAndDissociate(item);
+
+				pt.commit();
 			}
-			Item item = c.getTiene_item();
-
-			basededatos.ProductoDAO.deleteAndDissociate(p);
-			basededatos.CompraDAO.deleteAndDissociate(c);
-			basededatos.ItemDAO.deleteAndDissociate(item);
-
-			pt.commit();
 		} catch (Exception e) {
 			pt.rollback();
 		}

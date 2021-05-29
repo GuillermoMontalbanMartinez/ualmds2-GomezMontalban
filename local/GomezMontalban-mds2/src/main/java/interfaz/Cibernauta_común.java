@@ -107,27 +107,7 @@ public class Cibernauta_común extends VistaCibernautaComun {
 						aux++;
 
 					}
-				}
-
-//				for (Producto p : productos) {
-//					if (aux.size() == 0) {
-//						aux.add(p);
-//					} else {
-//						boolean insert = true;
-//						for (Producto p2 : aux) {
-//							if (p.getNombre().equals(p2.getNombre())) {
-//								insert = false;
-//								break;
-//							}
-//
-//						}
-//						if (insert) {
-//							aux.add(p);
-//						}
-//					}
-//				}
-
-				else {
+				}else {
 					interfaz.producto_mas_vendido producto = new interfaz.producto_mas_vendido(p.getNombre(),
 							p.getDescripción(), String.valueOf(p.getPrecio()),
 							p.tiene_fotos.toArray()[0].getLink_foto(), p.getORMID());
@@ -137,6 +117,7 @@ public class Cibernauta_común extends VistaCibernautaComun {
 					aux++;
 
 				}
+				
 			}
 
 		}

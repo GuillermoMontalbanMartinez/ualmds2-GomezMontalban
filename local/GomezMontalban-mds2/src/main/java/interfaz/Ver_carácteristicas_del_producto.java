@@ -22,17 +22,6 @@ public class Ver_carácteristicas_del_producto extends VistaCaracteristicasDelPr
 
 	public Ver_carácteristicas_del_producto(int idProducto) {
 		this.idProducto = idProducto;
-		this.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
-			@Override
-			public void onComponentEvent(ComponentEvent event) {
-				try {
-					añadir_al_carrito();
-				} catch (PersistentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
 
 	}
 

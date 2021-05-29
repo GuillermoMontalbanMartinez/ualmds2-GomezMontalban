@@ -512,9 +512,35 @@ public class Administrador extends VistaAdministrador {
 	}
 
 	private void mostrar_productos() throws PersistentException {
+		
+		
+		
+		
 		producto_mas_vendido = _productos_mas_vendidos.cargar_productos_mas_vendidos();
 		int aux = 0;
+		ArrayList<Producto> p_aux = new ArrayList<Producto>();
 		for (Producto p : producto_mas_vendido) {
+			if (p_aux.size() == 0) {
+				p_aux.add(p);
+			} else {
+				boolean insert = true;
+				for (Producto p2 : p_aux) {
+					if (p.getNombre().equals(p2.getNombre())) {
+						insert = false;
+						break;
+					}
+				}
+					if (insert) {
+						p_aux.add(p);
+					}
+
+				
+			}
+		}
+		
+		
+		
+		for (Producto p : p_aux) {
 
 			if (aux > 2) {
 				break;

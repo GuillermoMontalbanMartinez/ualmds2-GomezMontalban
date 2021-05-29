@@ -439,10 +439,23 @@ public class Cibernauta_registrado extends Cibernauta_común {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
+					p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+							try {
+								p.añadir_al_carrito();
+							} catch (PersistentException e) {
+								e.printStackTrace();
+							}
+						}
+					});
 					layout.add(p._ver_carácteristicas_del_producto);
 
 				}
 			});
+			
+			
 
 		}
 
@@ -562,6 +575,16 @@ public class Cibernauta_registrado extends Cibernauta_común {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					o._producto._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+							try {
+								o._producto.añadir_al_carrito();
+							} catch (PersistentException e) {
+								e.printStackTrace();
+							}
+						}
+					});
 					layout.add(o._producto._ver_carácteristicas_del_producto);
 
 				}
@@ -594,7 +617,16 @@ public class Cibernauta_registrado extends Cibernauta_común {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-
+						p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+							@Override
+							public void onComponentEvent(ComponentEvent event) {
+								try {
+									p.añadir_al_carrito();
+								} catch (PersistentException e) {
+									e.printStackTrace();
+								}
+							}
+						});
 						layout.add(p._ver_carácteristicas_del_producto);
 
 					}

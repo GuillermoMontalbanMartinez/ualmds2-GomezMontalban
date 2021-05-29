@@ -116,6 +116,18 @@ public class Cibernauta extends Cibernauta_común {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					
+					o._producto._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+
+						@Override
+						public void onComponentEvent(ComponentEvent event) {
+							layout.removeAll();
+							layout.add(_banner_no_registrado);
+							layout.add(inicio_sesion);
+							catalogo.eliminar_producto();
+
+						}
+					});
 					layout.add(o._producto._ver_carácteristicas_del_producto);
 
 				}
@@ -221,6 +233,8 @@ public class Cibernauta extends Cibernauta_común {
 					}
 					layout.add(catalogo);
 				});
+		
+		
 
 		try {
 			mostrar_productos();
@@ -237,6 +251,16 @@ public class Cibernauta extends Cibernauta_común {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+						p._ver_carácteristicas_del_producto.getAnadirAlCarrito().addClickListener(new ComponentEventListener() {
+
+							@Override
+							public void onComponentEvent(ComponentEvent event) {
+								layout.removeAll();
+								layout.add(_banner_no_registrado);
+								layout.add(inicio_sesion);
+
+							}
+						});
 						layout.add(p._ver_carácteristicas_del_producto);
 
 					}

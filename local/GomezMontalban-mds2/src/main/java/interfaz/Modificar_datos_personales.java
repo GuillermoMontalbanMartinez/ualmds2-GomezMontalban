@@ -93,7 +93,11 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 
 		titular = this.getVistaDatosDePago().getTextTitularTarjeta().getValue().toString();
 		numeroTarjeta = this.getVistaDatosDePago().getTextNumeroTarjeta().getValue().toString();
-		fechaCaducidad = this.getVistaDatosDePago().getTextFechaCaducidad().getValue().toString();
+		try{
+			fechaCaducidad = this.getVistaDatosDePago().getTextFechaCaducidad().getValue().toString();
+		}catch(Exception e) {
+			fechaCaducidad=null;
+		}
 		cvv = Integer.parseInt(this.getVistaDatosDePago().getTextCVVTarjeta().getValue().toString());
 
 		bdPrincipal._db_cibernautas_registrados.modificar_datos_personales(nombre, apellidos, correoElectronico,
@@ -112,7 +116,7 @@ public class Modificar_datos_personales extends VistaModificarDatosPersonales {
 
 	public void setUsuario(int id) throws PersistentException {
 		Cibernauta_registrado cib = basededatos.Cibernauta_registradoDAO.loadCibernauta_registradoByORMID(id);
-
+		this.id = id;
 		this.getTextNombreDeUsuario().setValue(cib.getNombre());
 		this.getTextApellidos().setValue(cib.getApellidos());
 		this.getTextCorreo().setValue(cib.getCorreo_electronico());
